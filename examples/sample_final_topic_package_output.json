@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "project_id": "demo_project",
+  "status": "validated",
+  "module_id": "06_final_topic_package",
+  "module_name": "Final Topic Package",
+  "input_summary": {
+    "direct_upstream_module_id": "05_chain_consistency_audit",
+    "summary": "Packages audited topic chain with open risks preserved.",
+    "consumed_files": ["workspaces/demo_project/05_chain_consistency_audit/next_input.json"]
+  },
+  "structured_output": {
+    "candidate_title": "Problem-Structure-Aware Evolutionary Joint Optimization of Wind Farm Layout and Cable Routing",
+    "alternative_titles": ["Structure-Aware Evolutionary Optimization for Coupled Wind Farm Layout and Cable Routing"],
+    "central_thesis": "A problem-structure-aware evolutionary joint optimization approach may help analyze aerodynamic-electrical-economic trade-offs, pending literature and experimental verification.",
+    "research_background": "Wind farm design can involve turbine layout decisions and cable routing decisions that interact through spatial and network constraints.",
+    "domain_gap": "The degree to which existing work handles coupled layout-cabling trade-offs requires literature verification.",
+    "core_problem": "How can turbine placement and cable routing be modeled and optimized as coupled spatial-network decisions?",
+    "theoretical_positioning": "Mixed discrete-continuous, spatial-network coupled, multi-objective constrained optimization.",
+    "research_questions": ["How should layout and cabling decisions be jointly represented?", "Which coupling mechanisms need algorithmic support?", "What baselines and ablations can test the claimed coupling benefit?"],
+    "contribution_claims": [{ "contribution_id": "c_001", "claim": "A candidate joint modeling perspective for coupled spatial-network wind farm optimization.", "evidence_status": "needs_literature_verification" }],
+    "method_design_implications": [{ "problem_property": "mixed spatial-network decision structure", "method_need": "coordinate spatial layout and cable topology search" }],
+    "validation_plan": [{ "validation_item_id": "v_001", "plan": "Compare joint optimization against sequential layout-then-cabling baseline and run coupling ablation." }],
+    "required_baselines": ["sequential layout-then-cabling optimization", "layout-only optimization with post-hoc cabling"],
+    "required_ablation_studies": ["remove coupling-aware encoding", "remove repair mechanism if used"],
+    "reviewer_risk_and_defense": [{ "risk": "ordinary algorithm application", "defense": "show mechanism follows from problem structure and improves interpretable trade-off analysis" }],
+    "introduction_logic_outline": ["Motivate wind farm design coupling.", "Describe layout-cabling trade-off tension.", "State problem structure.", "Derive method requirements.", "State bounded candidate contributions."],
+    "traceability_table": [{ "final_claim": "joint modeling perspective", "source_module": "04_contribution_argumentation", "domain_tension_id": "dt_001", "problem_id": "p_001", "theory_element_id": "th_001", "contribution_id": "c_001", "evidence_status": "needs_literature_verification" }],
+    "next_research_actions": ["Run literature verification.", "Define formal model.", "Implement baselines.", "Plan ablation studies."],
+    "evidence_requirements": [],
+    "uncertainty_log": []
+  },
+  "next_input": {},
+  "assumptions": [{ "id": "assumption_007", "statement": "This package is used before manuscript drafting.", "evidence_status": "user_provided", "source": "skill purpose" }],
+  "uncertainty_log": [{ "item": "Topic title and claims remain candidate until evidence is added.", "evidence_status": "needs_literature_verification", "action_required": "Verify literature and experiments." }],
+  "evidence_requirements": [{ "requirement_id": "er_007", "requirement": "Add citations, baselines, and ablation evidence before paper claims.", "evidence_status": "needs_literature_verification" }],
+  "reviewer_risks": [{ "risk_id": "rr_007", "question": "Are the claims supported?", "mitigation": "Keep claims bounded and require validation plan before manuscript use.", "evidence_status": "inferred" }],
+  "revision_hooks": [{ "field": "contribution_claims", "action": "Revise if literature verification changes novelty boundary.", "affects": ["final package and manuscript planning"] }],
+  "trace_context": {
+    "source_module_ids": ["05_chain_consistency_audit", "06_final_topic_package"],
+    "domain_tension_ids": ["dt_001"],
+    "problem_ids": ["p_001"],
+    "theory_element_ids": ["th_001"],
+    "contribution_ids": ["c_001"],
+    "lineage": [
+      { "from": "dt_001", "to": "p_001", "relation": "motivates", "evidence_status": "needs_literature_verification" },
+      { "from": "p_001", "to": "th_001", "relation": "is_positioned_by", "evidence_status": "inferred" },
+      { "from": "th_001", "to": "c_001", "relation": "supports_claim", "evidence_status": "inferred" }
+    ]
+  }
+}

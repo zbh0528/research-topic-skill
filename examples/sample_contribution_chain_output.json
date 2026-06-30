@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0",
+  "project_id": "demo_project",
+  "status": "validated",
+  "module_id": "04_contribution_argumentation",
+  "module_name": "Contribution Argumentation",
+  "input_summary": {
+    "direct_upstream_module_id": "03_theoretical_positioning",
+    "summary": "Builds contribution claims from selected problem p_001 and theory element th_001.",
+    "consumed_files": ["workspaces/demo_project/03_theoretical_positioning/next_input.json"]
+  },
+  "structured_output": {
+    "central_thesis": "A problem-structure-aware evolutionary joint optimization approach may help analyze layout-cabling trade-offs, pending literature and experimental verification.",
+    "contributions": [
+      {
+        "contribution_id": "c_001",
+        "contribution_type": "modeling contribution",
+        "contribution_claim": "A joint modeling perspective links turbine layout and cable routing as coupled spatial-network decisions.",
+        "linked_problem_id": "p_001",
+        "linked_problem_property": "mixed spatial-network decision structure",
+        "linked_theoretical_positioning": "th_001",
+        "linked_domain_tension_id": "dt_001",
+        "required_evidence": ["literature comparison", "formal model description"],
+        "required_experiment": ["sequential vs joint optimization comparison"],
+        "likely_reviewer_question": "Is this more than combining two known models?",
+        "defense_strategy": "Show which coupled constraints and objectives change the trade-off surface.",
+        "unsafe_wording_to_avoid": ["first", "novel", "state-of-the-art"],
+        "safer_wording": "a candidate joint modeling perspective requiring literature verification",
+        "boundary_of_claim": "Planning claim only; not a verified novelty claim.",
+        "evidence_status": "needs_literature_verification"
+      }
+    ],
+    "contribution_to_problem_links": [{ "contribution_id": "c_001", "problem_id": "p_001", "relation": "addresses mixed spatial-network decision structure" }],
+    "contribution_to_theory_links": [{ "contribution_id": "c_001", "theory_element_id": "th_001", "relation": "uses spatial-network coupled optimization framing" }],
+    "required_validation": [{ "validation_item_id": "v_001", "requirement": "Compare joint and sequential optimization baselines.", "supports": ["c_001"] }],
+    "unsafe_claims_removed": ["first", "state-of-the-art"],
+    "safer_wording_map": [{ "unsafe": "first joint framework", "safe": "candidate joint modeling perspective requiring literature verification" }],
+    "evidence_requirements": [],
+    "uncertainty_log": []
+  },
+  "next_input": {
+    "central_thesis": "A problem-structure-aware evolutionary joint optimization approach may help analyze layout-cabling trade-offs, pending verification.",
+    "contributions": [{ "contribution_id": "c_001", "claim": "joint modeling perspective", "evidence_status": "needs_literature_verification" }],
+    "contribution_links": [{ "domain_tension_id": "dt_001", "problem_id": "p_001", "theory_element_id": "th_001", "contribution_id": "c_001" }],
+    "required_validation": [{ "validation_item_id": "v_001", "requirement": "sequential vs joint baseline and ablation" }],
+    "reviewer_risks": [{ "risk_id": "rr_005", "question": "Is this just algorithm application?" }],
+    "evidence_policy": {
+      "default_literature_status": "needs_literature_verification",
+      "allowed_statuses": ["verified", "user_provided", "inferred", "needs_literature_verification", "speculative"]
+    },
+    "trace_context": {
+      "source_module_ids": ["03_theoretical_positioning", "04_contribution_argumentation"],
+      "domain_tension_ids": ["dt_001"],
+      "problem_ids": ["p_001"],
+      "theory_element_ids": ["th_001"],
+      "contribution_ids": ["c_001"],
+      "lineage": [
+        { "from": "dt_001", "to": "p_001", "relation": "motivates", "evidence_status": "needs_literature_verification" },
+        { "from": "p_001", "to": "th_001", "relation": "is_positioned_by", "evidence_status": "inferred" },
+        { "from": "th_001", "to": "c_001", "relation": "supports_claim", "evidence_status": "inferred" }
+      ]
+    }
+  },
+  "assumptions": [{ "id": "assumption_005", "statement": "A joint baseline can be implemented.", "evidence_status": "speculative", "source": "experiment planning" }],
+  "uncertainty_log": [{ "item": "Contribution novelty requires literature verification.", "evidence_status": "needs_literature_verification", "action_required": "Check related work before using contribution language." }],
+  "evidence_requirements": [{ "requirement_id": "er_005", "requirement": "Validate c_001 with literature comparison and experiments.", "evidence_status": "needs_literature_verification" }],
+  "reviewer_risks": [{ "risk_id": "rr_005", "question": "Why is this not ordinary algorithm application?", "mitigation": "Link claim to mixed spatial-network problem property and ablation evidence.", "evidence_status": "inferred" }],
+  "revision_hooks": [{ "field": "contributions", "action": "Downgrade or remove c_001 if literature verification fails.", "affects": ["05_chain_consistency_audit"] }],
+  "trace_context": {
+    "source_module_ids": ["03_theoretical_positioning", "04_contribution_argumentation"],
+    "domain_tension_ids": ["dt_001"],
+    "problem_ids": ["p_001"],
+    "theory_element_ids": ["th_001"],
+    "contribution_ids": ["c_001"],
+    "lineage": [
+      { "from": "dt_001", "to": "p_001", "relation": "motivates", "evidence_status": "needs_literature_verification" },
+      { "from": "p_001", "to": "th_001", "relation": "is_positioned_by", "evidence_status": "inferred" },
+      { "from": "th_001", "to": "c_001", "relation": "supports_claim", "evidence_status": "inferred" }
+    ]
+  }
+}

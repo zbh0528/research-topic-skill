@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "project_id": "demo_project",
+  "status": "validated",
+  "module_id": "05_chain_consistency_audit",
+  "module_name": "Chain Consistency Audit",
+  "input_summary": {
+    "direct_upstream_module_id": "04_contribution_argumentation",
+    "summary": "Audits contribution chain c_001 against p_001 and th_001.",
+    "consumed_files": ["workspaces/demo_project/04_contribution_argumentation/next_input.json"]
+  },
+  "structured_output": {
+    "chain_status": "pass_with_minor_risks",
+    "broken_links": [],
+    "weak_links": [{ "link": "dt_001 -> p_001", "issue": "Literature evidence still required." }],
+    "overclaim_risks": [{ "claim": "c_001", "issue": "Avoid first/novel wording." }],
+    "vague_claims": [],
+    "missing_evidence": [{ "item": "literature verification", "required_for": ["dt_001", "c_001"] }],
+    "missing_experiments": [{ "item": "sequential vs joint comparison", "required_for": ["c_001"] }],
+    "missing_baselines": [{ "item": "sequential layout-then-cabling baseline", "required_for": ["c_001"] }],
+    "missing_ablations": [{ "item": "coupling mechanism ablation", "required_for": ["c_001"] }],
+    "reviewer_questions": ["Is this more than applying an evolutionary algorithm?", "Does joint optimization change trade-offs?"],
+    "repair_actions": [{ "action": "Keep c_001 as candidate contribution until literature and experiments are available.", "target_module": "04_contribution_argumentation" }],
+    "pass_or_revise_decision": "Pass to final package with open risks preserved.",
+    "final_package_readiness": "ready_with_open_risks",
+    "evidence_requirements": [],
+    "uncertainty_log": []
+  },
+  "next_input": {
+    "audited_central_thesis": "A problem-structure-aware evolutionary joint optimization approach may help analyze layout-cabling trade-offs, pending verification.",
+    "approved_contributions": [{ "contribution_id": "c_001", "status": "approved_as_candidate", "evidence_status": "needs_literature_verification" }],
+    "required_repairs": [{ "repair_id": "repair_001", "action": "Do not use first/novel wording." }],
+    "validation_plan_requirements": ["sequential baseline", "joint optimization baseline", "coupling ablation"],
+    "reviewer_risk_summary": ["ordinary algorithm application risk", "insufficient baseline risk"],
+    "final_package_sections": ["Candidate Title", "Research Questions", "Contribution Claims", "Validation Plan", "Traceability Table"],
+    "evidence_policy": {
+      "default_literature_status": "needs_literature_verification",
+      "allowed_statuses": ["verified", "user_provided", "inferred", "needs_literature_verification", "speculative"]
+    },
+    "trace_context": {
+      "source_module_ids": ["04_contribution_argumentation", "05_chain_consistency_audit"],
+      "domain_tension_ids": ["dt_001"],
+      "problem_ids": ["p_001"],
+      "theory_element_ids": ["th_001"],
+      "contribution_ids": ["c_001"],
+      "lineage": [
+        { "from": "dt_001", "to": "p_001", "relation": "motivates", "evidence_status": "needs_literature_verification" },
+        { "from": "p_001", "to": "th_001", "relation": "is_positioned_by", "evidence_status": "inferred" },
+        { "from": "th_001", "to": "c_001", "relation": "supports_claim", "evidence_status": "inferred" }
+      ]
+    }
+  },
+  "assumptions": [{ "id": "assumption_006", "statement": "Open risks are acceptable for a topic package if preserved.", "evidence_status": "inferred", "source": "audit rule" }],
+  "uncertainty_log": [{ "item": "Literature and experiments are still missing.", "evidence_status": "needs_literature_verification", "action_required": "Do not finalize novelty claims." }],
+  "evidence_requirements": [{ "requirement_id": "er_006", "requirement": "Add real citations and experiment results before manuscript claims.", "evidence_status": "needs_literature_verification" }],
+  "reviewer_risks": [{ "risk_id": "rr_006", "question": "Are baselines sufficient?", "mitigation": "Require sequential baseline and ablation studies.", "evidence_status": "inferred" }],
+  "revision_hooks": [{ "field": "repair_actions", "action": "Apply before final package if risk becomes blocking.", "affects": ["06_final_topic_package"] }],
+  "trace_context": {
+    "source_module_ids": ["04_contribution_argumentation", "05_chain_consistency_audit"],
+    "domain_tension_ids": ["dt_001"],
+    "problem_ids": ["p_001"],
+    "theory_element_ids": ["th_001"],
+    "contribution_ids": ["c_001"],
+    "lineage": [
+      { "from": "dt_001", "to": "p_001", "relation": "motivates", "evidence_status": "needs_literature_verification" },
+      { "from": "p_001", "to": "th_001", "relation": "is_positioned_by", "evidence_status": "inferred" },
+      { "from": "th_001", "to": "c_001", "relation": "supports_claim", "evidence_status": "inferred" }
+    ]
+  }
+}

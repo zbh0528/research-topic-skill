@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Chain Consistency Audit Output",
+  "type": "object",
+  "required": ["status", "module_id", "module_name", "input_summary", "structured_output", "next_input", "assumptions", "uncertainty_log", "evidence_requirements", "reviewer_risks", "revision_hooks", "trace_context"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "project_id": { "type": "string" },
+    "status": { "$ref": "#/$defs/status" },
+    "module_id": { "const": "05_chain_consistency_audit" },
+    "module_name": { "const": "Chain Consistency Audit" },
+    "input_summary": { "$ref": "#/$defs/input_summary" },
+    "structured_output": {
+      "type": "object",
+      "required": ["chain_status", "broken_links", "weak_links", "overclaim_risks", "vague_claims", "missing_evidence", "missing_experiments", "missing_baselines", "missing_ablations", "reviewer_questions", "repair_actions", "pass_or_revise_decision", "final_package_readiness"],
+      "properties": {
+        "chain_status": { "enum": ["pass", "pass_with_minor_risks", "revise_required", "fail_due_to_broken_chain"] },
+        "broken_links": { "type": "array", "items": { "type": "object" } },
+        "weak_links": { "type": "array", "items": { "type": "object" } },
+        "overclaim_risks": { "type": "array", "items": { "type": "object" } },
+        "vague_claims": { "type": "array", "items": { "type": "object" } },
+        "missing_evidence": { "type": "array", "items": { "type": "object" } },
+        "missing_experiments": { "type": "array", "items": { "type": "object" } },
+        "missing_baselines": { "type": "array", "items": { "type": "object" } },
+        "missing_ablations": { "type": "array", "items": { "type": "object" } },
+        "reviewer_questions": { "type": "array", "items": { "type": "string" } },
+        "repair_actions": { "type": "array", "items": { "type": "object" } },
+        "pass_or_revise_decision": { "type": "string" },
+        "final_package_readiness": { "type": "string" },
+        "evidence_requirements": { "type": "array" },
+        "uncertainty_log": { "type": "array" }
+      },
+      "additionalProperties": false
+    },
+    "next_input": {
+      "type": "object",
+      "required": ["audited_central_thesis", "approved_contributions", "required_repairs", "validation_plan_requirements", "reviewer_risk_summary", "final_package_sections", "evidence_policy", "trace_context"],
+      "properties": {
+        "audited_central_thesis": { "type": "string" },
+        "approved_contributions": { "type": "array" },
+        "required_repairs": { "type": "array" },
+        "validation_plan_requirements": { "type": "array" },
+        "reviewer_risk_summary": { "type": "array" },
+        "final_package_sections": { "type": "array", "items": { "type": "string" } },
+        "evidence_policy": { "$ref": "#/$defs/evidence_policy" },
+        "trace_context": { "$ref": "#/$defs/trace_context" }
+      },
+      "additionalProperties": false
+    },
+    "assumptions": { "type": "array", "items": { "$ref": "#/$defs/evidence_item" } },
+    "uncertainty_log": { "type": "array", "items": { "$ref": "#/$defs/uncertainty_item" } },
+    "evidence_requirements": { "type": "array", "items": { "$ref": "#/$defs/evidence_requirement" } },
+    "reviewer_risks": { "type": "array", "items": { "$ref": "#/$defs/reviewer_risk" } },
+    "revision_hooks": { "type": "array", "items": { "$ref": "#/$defs/revision_hook" } },
+    "trace_context": { "$ref": "#/$defs/trace_context" }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "status": { "enum": ["draft", "complete", "validated", "needs_revision"] },
+    "evidence_status": { "enum": ["verified", "user_provided", "inferred", "needs_literature_verification", "speculative"] },
+    "evidence_item": { "type": "object", "required": ["statement", "evidence_status"], "properties": { "id": { "type": "string" }, "statement": { "type": "string" }, "evidence_status": { "$ref": "#/$defs/evidence_status" }, "source": { "type": "string" } }, "additionalProperties": false },
+    "input_summary": { "type": "object", "required": ["direct_upstream_module_id", "summary"], "properties": { "direct_upstream_module_id": { "type": ["string", "null"] }, "summary": { "type": "string" }, "consumed_files": { "type": "array", "items": { "type": "string" } } }, "additionalProperties": false },
+    "evidence_policy": { "type": "object", "required": ["default_literature_status", "allowed_statuses"], "properties": { "default_literature_status": { "const": "needs_literature_verification" }, "allowed_statuses": { "type": "array", "items": { "$ref": "#/$defs/evidence_status" } } }, "additionalProperties": false },
+    "trace_context": { "type": "object", "required": ["source_module_ids", "domain_tension_ids", "problem_ids", "theory_element_ids", "contribution_ids", "lineage"], "properties": { "source_module_ids": { "type": "array", "items": { "type": "string" } }, "domain_tension_ids": { "type": "array", "items": { "type": "string" } }, "problem_ids": { "type": "array", "items": { "type": "string" } }, "theory_element_ids": { "type": "array", "items": { "type": "string" } }, "contribution_ids": { "type": "array", "items": { "type": "string" } }, "lineage": { "type": "array", "items": { "type": "object" } } }, "additionalProperties": false },
+    "uncertainty_item": { "type": "object", "required": ["item", "evidence_status", "action_required"], "properties": { "item": { "type": "string" }, "evidence_status": { "$ref": "#/$defs/evidence_status" }, "action_required": { "type": "string" } }, "additionalProperties": false },
+    "evidence_requirement": { "type": "object", "required": ["requirement_id", "requirement", "evidence_status"], "properties": { "requirement_id": { "type": "string" }, "requirement": { "type": "string" }, "evidence_status": { "$ref": "#/$defs/evidence_status" } }, "additionalProperties": false },
+    "reviewer_risk": { "type": "object", "required": ["risk_id", "question", "mitigation", "evidence_status"], "properties": { "risk_id": { "type": "string" }, "question": { "type": "string" }, "mitigation": { "type": "string" }, "evidence_status": { "$ref": "#/$defs/evidence_status" } }, "additionalProperties": false },
+    "revision_hook": { "type": "object", "required": ["field", "action", "affects"], "properties": { "field": { "type": "string" }, "action": { "type": "string" }, "affects": { "type": "array", "items": { "type": "string" } } }, "additionalProperties": false }
+  }
+}

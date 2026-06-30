@@ -1,0 +1,17 @@
+{
+  "case_id": "redteam_algorithm_first",
+  "user_input": "I want to wrap the latest optimizer around wind farm layout optimization and claim it is first.",
+  "output_contract": {
+    "accepted_logic": false,
+    "required_reframe": "Identify problem structure before selecting an algorithm.",
+    "overclaim_risks": [
+      "unsupported first claim",
+      "ordinary algorithm wrapping"
+    ],
+    "reviewer_risks": [
+      "Reviewer may see the topic as ordinary algorithm wrapping without problem-structure justification."
+    ],
+    "safer_wording": "A problem-guided evolutionary optimization study for coupled wind farm layout and cable routing, pending literature verification.",
+    "evidence_status": "needs_literature_verification"
+  }
+}

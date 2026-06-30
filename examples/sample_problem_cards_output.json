@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "project_id": "demo_project",
+  "status": "validated",
+  "module_id": "02_problem_identification",
+  "module_name": "Problem Identification",
+  "input_summary": {
+    "direct_upstream_module_id": "01_domain_scan",
+    "summary": "Converts candidate domain tension dt_001 into a problem card.",
+    "consumed_files": ["workspaces/demo_project/01_domain_scan/next_input.json"]
+  },
+  "structured_output": {
+    "candidate_problems": [
+      {
+        "problem_id": "p_001",
+        "problem_title": "Spatial-network coupled wind farm layout and cabling optimization",
+        "problem_statement": "How can turbine placement and cable routing be modeled as coupled decisions under aerodynamic, electrical, and economic objectives?",
+        "source_domain_tension_id": "dt_001",
+        "source_domain_tension": "Sequential layout-cabling optimization may miss coupled trade-offs.",
+        "problem_type": "modeling and algorithmic problem",
+        "why_it_matters": "The coupled decision structure may affect Pareto trade-offs and feasibility.",
+        "why_not_solved_yet": "This requires literature verification; no unsupported claim is made.",
+        "research_question": "How can problem-structure-aware evolutionary optimization coordinate spatial layout and network topology search?",
+        "evidence_needed": ["literature matrix", "sequential vs joint baseline", "ablation on coupling mechanism"],
+        "expected_contribution_opportunities": ["modeling framing", "algorithmic mechanism", "empirical trade-off analysis"],
+        "feasibility": "Feasible if a layout-cabling evaluator and baselines are available.",
+        "novelty_risk": "Could be incremental if existing joint methods already cover the structure.",
+        "reviewer_risk": "Reviewer may see it as a standard algorithm application.",
+        "publishability_score": 0.78,
+        "scoring_breakdown": { "significance": 4, "novelty_potential": 3, "theoretical_depth": 4, "algorithmic_opportunity": 4, "experimental_feasibility": 3, "reviewer_comprehensibility": 4, "risk": 3 },
+        "next_input_fragment": { "problem_properties": ["mixed spatial-network decision structure", "multi-objective constrained optimization"] },
+        "evidence_status": "needs_literature_verification"
+      }
+    ],
+    "selected_problem": {
+      "problem_id": "p_001",
+      "problem_title": "Spatial-network coupled wind farm layout and cabling optimization",
+      "problem_statement": "How can turbine placement and cable routing be modeled as coupled decisions under aerodynamic, electrical, and economic objectives?",
+      "source_domain_tension_id": "dt_001",
+      "source_domain_tension": "Sequential layout-cabling optimization may miss coupled trade-offs.",
+      "problem_type": "modeling and algorithmic problem",
+      "why_it_matters": "The coupled decision structure may affect Pareto trade-offs and feasibility.",
+      "why_not_solved_yet": "This requires literature verification; no unsupported claim is made.",
+      "research_question": "How can problem-structure-aware evolutionary optimization coordinate spatial layout and network topology search?",
+      "evidence_needed": ["literature matrix", "sequential vs joint baseline", "ablation on coupling mechanism"],
+      "expected_contribution_opportunities": ["modeling framing", "algorithmic mechanism", "empirical trade-off analysis"],
+      "feasibility": "Feasible if a layout-cabling evaluator and baselines are available.",
+      "novelty_risk": "Could be incremental if existing joint methods already cover the structure.",
+      "reviewer_risk": "Reviewer may see it as a standard algorithm application.",
+      "publishability_score": 0.78,
+      "scoring_breakdown": { "significance": 4, "novelty_potential": 3, "theoretical_depth": 4, "algorithmic_opportunity": 4, "experimental_feasibility": 3, "reviewer_comprehensibility": 4, "risk": 3 },
+      "next_input_fragment": { "problem_properties": ["mixed spatial-network decision structure", "multi-objective constrained optimization"] },
+      "evidence_status": "needs_literature_verification"
+    },
+    "backup_problems": [],
+    "ranking_criteria": ["significance", "novelty_potential", "theoretical_depth", "algorithmic_opportunity", "experimental_feasibility", "reviewer_comprehensibility", "risk"],
+    "rejected_problems": [],
+    "selection_rationale": "The selected problem follows from dt_001 and foregrounds problem structure before algorithm choice.",
+    "evidence_requirements": [],
+    "uncertainty_log": []
+  },
+  "next_input": {
+    "selected_problem": { "problem_id": "p_001", "problem_statement": "How can turbine placement and cable routing be modeled as coupled decisions under aerodynamic, electrical, and economic objectives?" },
+    "backup_problems_summary": [],
+    "problem_properties": ["mixed spatial-network decision structure", "multi-objective constrained optimization", "aerodynamic-electrical-economic trade-off"],
+    "required_theoretical_positioning": ["multi-objective constrained optimization", "spatial-network coupled optimization", "evolutionary computation"],
+    "evidence_policy": {
+      "default_literature_status": "needs_literature_verification",
+      "allowed_statuses": ["verified", "user_provided", "inferred", "needs_literature_verification", "speculative"]
+    },
+    "trace_context": {
+      "source_module_ids": ["01_domain_scan", "02_problem_identification"],
+      "domain_tension_ids": ["dt_001"],
+      "problem_ids": ["p_001"],
+      "theory_element_ids": [],
+      "contribution_ids": [],
+      "lineage": [{ "from": "dt_001", "to": "p_001", "relation": "motivates", "evidence_status": "needs_literature_verification" }]
+    }
+  },
+  "assumptions": [{ "id": "assumption_003", "statement": "A joint evaluator can be built or reused.", "evidence_status": "speculative", "source": "planning assumption" }],
+  "uncertainty_log": [{ "item": "Existing joint methods may already address p_001.", "evidence_status": "needs_literature_verification", "action_required": "Check real literature." }],
+  "evidence_requirements": [{ "requirement_id": "er_003", "requirement": "Verify novelty potential of p_001.", "evidence_status": "needs_literature_verification" }],
+  "reviewer_risks": [{ "risk_id": "rr_003", "question": "Is this just applying an evolutionary algorithm?", "mitigation": "Derive mechanisms from mixed spatial-network properties.", "evidence_status": "inferred" }],
+  "revision_hooks": [{ "field": "selected_problem", "action": "Change if literature scan invalidates p_001.", "affects": ["03_theoretical_positioning", "04_contribution_argumentation"] }],
+  "trace_context": {
+    "source_module_ids": ["01_domain_scan", "02_problem_identification"],
+    "domain_tension_ids": ["dt_001"],
+    "problem_ids": ["p_001"],
+    "theory_element_ids": [],
+    "contribution_ids": [],
+    "lineage": [{ "from": "dt_001", "to": "p_001", "relation": "motivates", "evidence_status": "needs_literature_verification" }]
+  }
+}

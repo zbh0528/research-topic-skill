@@ -1,0 +1,43 @@
+project_id: demo_project
+researcher_profile:
+  role: computer_science_researcher
+  background:
+    - evolutionary_computation
+    - multi_objective_optimization
+    - constrained_optimization
+research_scope:
+  - wind farm layout optimization
+  - wind farm cable routing optimization
+  - joint layout-cabling optimization
+target_output:
+  - research topic package
+  - introduction logic outline
+  - method overview planning input
+  - experiment design planning input
+preferred_methods:
+  - evolutionary computation
+  - multi-objective optimization
+  - constraint handling
+  - structure-aware encoding
+avoided_directions:
+  - pure power system protection
+  - pure wind turbine blade design
+  - unsupported novelty claims
+constraints:
+  - do not fabricate literature conclusions
+  - do not claim first without verified evidence
+  - use modular workflow
+  - support resume from any module
+evidence_policy:
+  default_literature_status: needs_literature_verification
+  allowed_statuses:
+    - verified
+    - user_provided
+    - inferred
+    - needs_literature_verification
+    - speculative
+workflow_preferences:
+  save_outputs: true
+  require_next_input: true
+  require_reviewer_risks: true
+  require_traceability: true

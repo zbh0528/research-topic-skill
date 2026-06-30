@@ -1,0 +1,139 @@
+{
+  "name": "windfarm-research-topic-skill",
+  "version": "0.1.0",
+  "description": "A modular research-topic reasoning skill for evolutionary computation applied to wind farm layout and cable routing optimization.",
+  "entrypoint": "SKILL.md",
+  "domain": [
+    "computer science",
+    "evolutionary computation",
+    "wind farm layout optimization",
+    "wind farm cable routing optimization",
+    "joint wind farm layout and cabling optimization",
+    "multi-objective optimization",
+    "constrained optimization",
+    "mixed discrete-continuous optimization",
+    "spatial-network coupled optimization",
+    "evolutionary multi-objective optimization"
+  ],
+  "workflow": [
+    "project_intake",
+    "domain_scan",
+    "problem_identification",
+    "theoretical_positioning",
+    "contribution_argumentation",
+    "chain_consistency_audit",
+    "final_topic_package"
+  ],
+  "workspace_module_order": [
+    "00_project_intake",
+    "01_domain_scan",
+    "02_problem_identification",
+    "03_theoretical_positioning",
+    "04_contribution_argumentation",
+    "05_chain_consistency_audit",
+    "06_final_topic_package"
+  ],
+  "evidence_status": [
+    "verified",
+    "user_provided",
+    "inferred",
+    "needs_literature_verification",
+    "speculative"
+  ],
+  "output_files_per_module": [
+    "input.json",
+    "output.json",
+    "output.md",
+    "next_input.json",
+    "validation_report.md"
+  ],
+  "global_output_fields": [
+    "status",
+    "module_id",
+    "module_name",
+    "input_summary",
+    "structured_output",
+    "next_input",
+    "assumptions",
+    "uncertainty_log",
+    "evidence_requirements",
+    "reviewer_risks",
+    "revision_hooks",
+    "trace_context"
+  ],
+  "guarantees": [
+    "modular workflow",
+    "loose coupling via next_input.json",
+    "persistent outputs",
+    "resume support",
+    "local rerun support",
+    "evidence status labeling",
+    "reviewer-risk analysis",
+    "traceability from domain tension to contribution claim"
+  ],
+  "limitations": [
+    "does not fabricate literature",
+    "does not claim novelty without evidence",
+    "does not replace real literature review",
+    "does not generate unsupported experimental results",
+    "does not replace experiment execution or citation verification"
+  ],
+  "modules": [
+    {
+      "doc_id": "01_project_intake",
+      "workspace_id": "00_project_intake",
+      "module_doc": "modules/01_project_intake.md",
+      "schema": "schemas/project_context.schema.json",
+      "template": "templates/project_context.template.md",
+      "output_type": "project_context"
+    },
+    {
+      "doc_id": "02_domain_scan",
+      "workspace_id": "01_domain_scan",
+      "module_doc": "modules/02_domain_scan.md",
+      "schema": "schemas/domain_scan.schema.json",
+      "template": "templates/domain_scan_report.template.md",
+      "output_type": "domain_scan"
+    },
+    {
+      "doc_id": "03_problem_identification",
+      "workspace_id": "02_problem_identification",
+      "module_doc": "modules/03_problem_identification.md",
+      "schema": "schemas/problem_cards.schema.json",
+      "template": "templates/problem_card.template.md",
+      "output_type": "problem_cards"
+    },
+    {
+      "doc_id": "04_theoretical_positioning",
+      "workspace_id": "03_theoretical_positioning",
+      "module_doc": "modules/04_theoretical_positioning.md",
+      "schema": "schemas/theoretical_positioning.schema.json",
+      "template": "templates/theory_positioning.template.md",
+      "output_type": "theoretical_positioning"
+    },
+    {
+      "doc_id": "05_contribution_argumentation",
+      "workspace_id": "04_contribution_argumentation",
+      "module_doc": "modules/05_contribution_argumentation.md",
+      "schema": "schemas/contribution_chain.schema.json",
+      "template": "templates/contribution_chain.template.md",
+      "output_type": "contribution_chain"
+    },
+    {
+      "doc_id": "06_chain_consistency_audit",
+      "workspace_id": "05_chain_consistency_audit",
+      "module_doc": "modules/06_chain_consistency_audit.md",
+      "schema": "schemas/audit_report.schema.json",
+      "template": "templates/reviewer_audit.template.md",
+      "output_type": "audit_report"
+    },
+    {
+      "doc_id": "07_final_topic_package",
+      "workspace_id": "06_final_topic_package",
+      "module_doc": "modules/07_final_topic_package.md",
+      "schema": "schemas/final_topic_package.schema.json",
+      "template": "templates/final_topic_package.template.md",
+      "output_type": "final_topic_package"
+    }
+  ]
+}
