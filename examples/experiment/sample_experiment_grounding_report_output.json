@@ -288,7 +288,11 @@
         "M001",
         "M002",
         "M003",
-        "M004"
+        "M004",
+        "M005",
+        "M006",
+        "M007",
+        "M008"
       ],
       "ablation_ids": [],
       "statistical_test_ids": [
@@ -311,10 +315,16 @@
       "validation_target_id": "VT002",
       "experiment_id": "EX002",
       "baseline_ids": [
+        "B001",
+        "B004",
         "B006"
       ],
       "metric_ids": [
-        "M004"
+        "M004",
+        "M005",
+        "M006",
+        "M007",
+        "M008"
       ],
       "ablation_ids": [
         "A001"

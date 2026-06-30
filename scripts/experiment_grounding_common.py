@@ -388,10 +388,10 @@ def build_sample_plan(project_id: str, contributions: list[dict[str, Any]] | Non
         )
 
     baselines = [
-        baseline("B001", "Cabling-after-layout sequential baseline", "sequential_optimization", "EX001", ["VT001"], ["C1", "C3"], "Tests whether joint optimization is necessary beyond a decoupled workflow."),
+        baseline("B001", "Cabling-after-layout sequential baseline", "sequential_optimization", "EX001", ["VT001", "VT002"], ["C1", "C2", "C3"], "Tests whether joint optimization is necessary beyond a decoupled workflow."),
         baseline("B002", "Layout-only optimization baseline", "layout_only_optimization", "EX001", ["VT001"], ["C1"], "Separates aerodynamic layout benefit from cabling decisions."),
         baseline("B003", "Cabling-only fixed-layout baseline", "cabling_only_optimization", "EX001", ["VT001"], ["C1"], "Separates network routing decisions from layout changes."),
-        baseline("B004", "Standard multi-objective evolutionary baseline", "multi_objective_evolutionary_algorithm", "EX001", ["VT001", "VT003"], ["C1", "C3"], "Provides a non-problem-specific multi-objective comparison reference."),
+        baseline("B004", "Standard multi-objective evolutionary baseline", "multi_objective_evolutionary_algorithm", "EX001", ["VT001", "VT002", "VT003"], ["C1", "C2", "C3"], "Provides a non-problem-specific multi-objective comparison reference."),
         baseline("B005", "Greedy engineering sanity baseline", "random_or_greedy_baseline", "EX001", ["VT001"], ["C1"], "Detects whether planned methods are compared against a simple reproducible sanity check."),
         baseline("B006", "No-structure-aware ablated variant", "ablated_variant", "EX002", ["VT002"], ["C2"], "Tests whether the claimed structure-aware mechanism is necessary."),
     ]
@@ -400,10 +400,10 @@ def build_sample_plan(project_id: str, contributions: list[dict[str, Any]] | Non
         metric("M002", "Feasibility rate", "feasibility_metric", "EX001", ["VT001"], ["C1"], "Share of planned runs producing feasible layout-cabling solutions."),
         metric("M003", "Total constraint violation", "constraint_violation_metric", "EX001", ["VT001"], ["C1"], "Magnitude of infeasibility by constraint family."),
         metric("M004", "Runtime and evaluation budget", "runtime_metric", "EX001", ["VT001", "VT002"], ["C1", "C2"], "Computational cost needed to interpret fairness and scalability."),
-        metric("M005", "AEP or energy output", "energy_metric", "EX003", ["VT003"], ["C3"], "Energy relevance of aerodynamic trade-offs."),
-        metric("M006", "Wake loss", "wake_loss_metric", "EX003", ["VT003"], ["C3"], "Aerodynamic loss component for engineering interpretation."),
-        metric("M007", "Cable investment cost", "cable_cost_metric", "EX003", ["VT003"], ["C3"], "Electrical-economic cost component for trade-off interpretation."),
-        metric("M008", "LCOE or total cost proxy", "levelized_cost_metric", "EX003", ["VT003"], ["C3"], "Economic relevance when assumptions are disclosed."),
+        metric("M005", "AEP or energy output", "energy_metric", "EX003", ["VT001", "VT002", "VT003"], ["C1", "C2", "C3"], "Energy relevance of aerodynamic trade-offs."),
+        metric("M006", "Wake loss", "wake_loss_metric", "EX003", ["VT001", "VT002", "VT003"], ["C1", "C2", "C3"], "Aerodynamic loss component for engineering interpretation."),
+        metric("M007", "Cable investment cost", "cable_cost_metric", "EX003", ["VT001", "VT002", "VT003"], ["C1", "C2", "C3"], "Electrical-economic cost component for trade-off interpretation."),
+        metric("M008", "LCOE or total cost proxy", "levelized_cost_metric", "EX003", ["VT001", "VT002", "VT003"], ["C1", "C2", "C3"], "Economic relevance when assumptions are disclosed."),
         metric("M009", "Spread or spacing indicator", "diversity_metric", "EX003", ["VT003"], ["C3"], "Diversity of planned Pareto approximations."),
     ]
     ablations = [

@@ -6,10 +6,12 @@
       "baseline_type": "sequential_optimization",
       "linked_experiment_id": "EX001",
       "linked_validation_target_ids": [
-        "VT001"
+        "VT001",
+        "VT002"
       ],
       "linked_contribution_ids": [
         "C1",
+        "C2",
         "C3"
       ],
       "literature_evidence_ids": [],
@@ -83,10 +85,12 @@
       "linked_experiment_id": "EX001",
       "linked_validation_target_ids": [
         "VT001",
+        "VT002",
         "VT003"
       ],
       "linked_contribution_ids": [
         "C1",
+        "C2",
         "C3"
       ],
       "literature_evidence_ids": [],

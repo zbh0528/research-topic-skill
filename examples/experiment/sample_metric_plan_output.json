@@ -118,9 +118,13 @@
       "metric_type": "energy_metric",
       "linked_experiment_id": "EX003",
       "linked_validation_target_ids": [
+        "VT001",
+        "VT002",
         "VT003"
       ],
       "linked_contribution_ids": [
+        "C1",
+        "C2",
         "C3"
       ],
       "what_it_measures": "Energy relevance of aerodynamic trade-offs.",
@@ -145,9 +149,13 @@
       "metric_type": "wake_loss_metric",
       "linked_experiment_id": "EX003",
       "linked_validation_target_ids": [
+        "VT001",
+        "VT002",
         "VT003"
       ],
       "linked_contribution_ids": [
+        "C1",
+        "C2",
         "C3"
       ],
       "what_it_measures": "Aerodynamic loss component for engineering interpretation.",
@@ -172,9 +180,13 @@
       "metric_type": "cable_cost_metric",
       "linked_experiment_id": "EX003",
       "linked_validation_target_ids": [
+        "VT001",
+        "VT002",
         "VT003"
       ],
       "linked_contribution_ids": [
+        "C1",
+        "C2",
         "C3"
       ],
       "what_it_measures": "Electrical-economic cost component for trade-off interpretation.",
@@ -199,9 +211,13 @@
       "metric_type": "levelized_cost_metric",
       "linked_experiment_id": "EX003",
       "linked_validation_target_ids": [
+        "VT001",
+        "VT002",
         "VT003"
       ],
       "linked_contribution_ids": [
+        "C1",
+        "C2",
         "C3"
       ],
       "what_it_measures": "Economic relevance when assumptions are disclosed.",
