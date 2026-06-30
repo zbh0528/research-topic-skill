@@ -1,0 +1,355 @@
+{
+  "project_id": "sample_v04_project",
+  "manuscript_type": "journal_paper",
+  "target_audience": "evolutionary computation and wind farm optimization reviewers",
+  "target_venue_profile": "unspecified; requires user decision before submission framing",
+  "manuscript_thesis": "A manuscript plan for problem-structure-aware joint layout-cabling optimization; not a final paper claim.",
+  "section_plan": [
+    {
+      "section_id": "S001",
+      "section_name": "Introduction",
+      "section_role": "background_motivation",
+      "argument_goal": "Plan the Introduction section without unsupported manuscript claims.",
+      "linked_contribution_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "linked_problem_ids": [
+        "P001"
+      ],
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [
+        "EX001",
+        "EX002",
+        "EX003"
+      ],
+      "required_claims": [
+        "MC001",
+        "MC002",
+        "MC003"
+      ],
+      "required_citations": [
+        "CR001",
+        "CR002"
+      ],
+      "required_results": [
+        "RP001"
+      ],
+      "reviewer_risks": [
+        "RO001"
+      ],
+      "readiness_status": "needs_revision"
+    },
+    {
+      "section_id": "S002",
+      "section_name": "Related Work",
+      "section_role": "literature_positioning",
+      "argument_goal": "Plan the Related Work section without unsupported manuscript claims.",
+      "linked_contribution_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "linked_problem_ids": [
+        "P001"
+      ],
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [],
+      "required_claims": [
+        "MC004"
+      ],
+      "required_citations": [
+        "CR003",
+        "CR004"
+      ],
+      "required_results": [],
+      "reviewer_risks": [
+        "RO002"
+      ],
+      "readiness_status": "needs_revision"
+    },
+    {
+      "section_id": "S003",
+      "section_name": "Problem Formulation",
+      "section_role": "problem_statement",
+      "argument_goal": "Plan the Problem Formulation section without unsupported manuscript claims.",
+      "linked_contribution_ids": [
+        "C1"
+      ],
+      "linked_problem_ids": [
+        "P001"
+      ],
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [],
+      "required_claims": [
+        "MC005"
+      ],
+      "required_citations": [
+        "CR005"
+      ],
+      "required_results": [],
+      "reviewer_risks": [
+        "RO003"
+      ],
+      "readiness_status": "needs_revision"
+    },
+    {
+      "section_id": "S004",
+      "section_name": "Method",
+      "section_role": "method_rationale",
+      "argument_goal": "Plan the Method section without unsupported manuscript claims.",
+      "linked_contribution_ids": [
+        "C1",
+        "C2"
+      ],
+      "linked_problem_ids": [
+        "P001"
+      ],
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [
+        "EX002"
+      ],
+      "required_claims": [
+        "MC006"
+      ],
+      "required_citations": [],
+      "required_results": [
+        "RP002"
+      ],
+      "reviewer_risks": [
+        "RO004"
+      ],
+      "readiness_status": "needs_revision"
+    },
+    {
+      "section_id": "S005",
+      "section_name": "Experiments",
+      "section_role": "experimental_validation",
+      "argument_goal": "Plan the Experiments section without unsupported manuscript claims.",
+      "linked_contribution_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "linked_problem_ids": [
+        "P001"
+      ],
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [
+        "EX001",
+        "EX002",
+        "EX003"
+      ],
+      "required_claims": [
+        "MC007"
+      ],
+      "required_citations": [
+        "CR006"
+      ],
+      "required_results": [
+        "RP001",
+        "RP002",
+        "RP003"
+      ],
+      "reviewer_risks": [
+        "RO005"
+      ],
+      "readiness_status": "needs_revision"
+    },
+    {
+      "section_id": "S006",
+      "section_name": "Results and Analysis",
+      "section_role": "result_interpretation",
+      "argument_goal": "Plan the Results and Analysis section without unsupported manuscript claims.",
+      "linked_contribution_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "linked_problem_ids": [
+        "P001"
+      ],
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [
+        "EX001",
+        "EX002",
+        "EX003"
+      ],
+      "required_claims": [
+        "MC008"
+      ],
+      "required_citations": [],
+      "required_results": [
+        "RP001",
+        "RP002",
+        "RP003"
+      ],
+      "reviewer_risks": [
+        "RO006"
+      ],
+      "readiness_status": "needs_revision"
+    },
+    {
+      "section_id": "S007",
+      "section_name": "Discussion",
+      "section_role": "limitation_discussion",
+      "argument_goal": "Plan the Discussion section without unsupported manuscript claims.",
+      "linked_contribution_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "linked_problem_ids": [
+        "P001"
+      ],
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [
+        "EX001"
+      ],
+      "required_claims": [
+        "MC009"
+      ],
+      "required_citations": [
+        "CR007"
+      ],
+      "required_results": [
+        "RP004"
+      ],
+      "reviewer_risks": [
+        "RO007"
+      ],
+      "readiness_status": "needs_revision"
+    },
+    {
+      "section_id": "S008",
+      "section_name": "Conclusion",
+      "section_role": "conclusion_synthesis",
+      "argument_goal": "Plan the Conclusion section without unsupported manuscript claims.",
+      "linked_contribution_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "linked_problem_ids": [
+        "P001"
+      ],
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [],
+      "required_claims": [
+        "MC010"
+      ],
+      "required_citations": [],
+      "required_results": [],
+      "reviewer_risks": [
+        "RO008"
+      ],
+      "readiness_status": "needs_revision"
+    }
+  ],
+  "contribution_placement": [
+    {
+      "contribution_id": "C1",
+      "section_id": "S001"
+    },
+    {
+      "contribution_id": "C2",
+      "section_id": "S004"
+    },
+    {
+      "contribution_id": "C3",
+      "section_id": "S006"
+    }
+  ],
+  "evidence_placement": [
+    {
+      "citation_requirement_id": "CR001",
+      "section_id": "S001"
+    },
+    {
+      "citation_requirement_id": "CR002",
+      "section_id": "S001"
+    },
+    {
+      "citation_requirement_id": "CR003",
+      "section_id": "S002"
+    },
+    {
+      "citation_requirement_id": "CR004",
+      "section_id": "S002"
+    },
+    {
+      "citation_requirement_id": "CR005",
+      "section_id": "S003"
+    },
+    {
+      "citation_requirement_id": "CR006",
+      "section_id": "S005"
+    },
+    {
+      "citation_requirement_id": "CR007",
+      "section_id": "S007"
+    }
+  ],
+  "validation_placement": [
+    {
+      "result_placeholder_id": "RP001",
+      "section_id": "S005"
+    },
+    {
+      "result_placeholder_id": "RP002",
+      "section_id": "S004"
+    },
+    {
+      "result_placeholder_id": "RP003",
+      "section_id": "S006"
+    },
+    {
+      "result_placeholder_id": "RP004",
+      "section_id": "S007"
+    }
+  ],
+  "reviewer_risk_placement": [
+    {
+      "reviewer_objection_id": "RO001",
+      "section_id": "S001"
+    },
+    {
+      "reviewer_objection_id": "RO002",
+      "section_id": "S002"
+    },
+    {
+      "reviewer_objection_id": "RO003",
+      "section_id": "S003"
+    },
+    {
+      "reviewer_objection_id": "RO004",
+      "section_id": "S004"
+    },
+    {
+      "reviewer_objection_id": "RO005",
+      "section_id": "S005"
+    },
+    {
+      "reviewer_objection_id": "RO006",
+      "section_id": "S006"
+    },
+    {
+      "reviewer_objection_id": "RO007",
+      "section_id": "S007"
+    },
+    {
+      "reviewer_objection_id": "RO008",
+      "section_id": "S008"
+    }
+  ],
+  "writing_risks": [
+    "draft workspace",
+    "synthetic evidence",
+    "missing real results"
+  ],
+  "manuscript_readiness": "not_manuscript_ready",
+  "is_demo_manuscript_plan": true,
+  "requires_real_final_topic_package": true,
+  "requires_real_results": true
+}

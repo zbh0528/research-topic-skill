@@ -1,7 +1,7 @@
 {
   "name": "windfarm-research-topic-skill",
-  "version": "0.3.0",
-  "description": "A modular, literature-grounded and experiment-grounded research-topic reasoning skill for evolutionary computation applied to wind farm layout and cable routing optimization.",
+  "version": "0.4.0",
+  "description": "A modular, literature-grounded, experiment-grounded, and manuscript-grounded research-topic reasoning skill for evolutionary computation applied to wind farm layout and cable routing optimization.",
   "entrypoint": "SKILL.md",
   "domain": [
     "computer science",
@@ -15,7 +15,10 @@
     "spatial-network coupled optimization",
     "evolutionary multi-objective optimization",
     "literature-grounded research reasoning",
-    "experiment-grounded validation planning"
+    "experiment-grounded validation planning",
+    "manuscript-grounded writing support",
+    "reviewer-response planning",
+    "manuscript claim traceability"
   ],
   "workflow": [
     "project_intake",
@@ -26,12 +29,14 @@
     "contribution_argumentation",
     "chain_consistency_audit",
     "optional_experiment_grounding",
-    "final_topic_package"
+    "final_topic_package",
+    "optional_manuscript_grounding"
   ],
   "modes": [
     "logic_only_mode",
     "literature_grounded_mode",
-    "experiment_grounded_mode"
+    "experiment_grounded_mode",
+    "manuscript_grounded_mode"
   ],
   "workspace_module_order": [
     "00_project_intake",
@@ -116,7 +121,11 @@
     "traceability from literature evidence to domain tension to contribution claim",
     "traceability from contribution claim to baseline, metric, ablation, statistical test, and artifact requirement",
     "validation adequacy audit",
-    "experiment design without fabricated results"
+    "experiment design without fabricated results",
+    "traceability from contribution claim to manuscript section, paragraph claim, citation requirement, result placeholder, reviewer objection, and response strategy",
+    "manuscript adequacy audit before drafting",
+    "reviewer-objection planning without fabricated reviewer comments",
+    "manuscript structure support without generating final paper text"
   ],
   "limitations": [
     "does not fabricate literature",
@@ -129,7 +138,11 @@
     "does not fabricate experimental results",
     "does not infer unsupported performance improvements",
     "does not guarantee that a planned experiment will succeed",
-    "does not replace human experimental judgment"
+    "does not replace human experimental judgment",
+    "does not generate a final manuscript",
+    "does not fabricate citations, DOI values, author-year references, numerical results, p-values, or reviewer comments",
+    "does not turn result placeholders into empirical findings",
+    "does not replace human manuscript writing or reviewer-response judgment"
   ],
   "modules": [
     {
@@ -359,6 +372,192 @@
         "scripts/validate_outputs.py"
       ],
       "artifact": "experiment_validation/experiment_grounding_report.json"
+    }
+  ],
+  "manuscript_claim_status": [
+    "planned",
+    "evidence_supported",
+    "citation_required",
+    "experiment_result_required",
+    "partially_supported",
+    "unsupported",
+    "unsafe_until_verified",
+    "not_applicable"
+  ],
+  "claim_safety_level": [
+    "safe",
+    "needs_citation",
+    "needs_experiment_result",
+    "corpus_scoped_only",
+    "overclaim_risk",
+    "unsafe_until_verified"
+  ],
+  "section_role": [
+    "background_motivation",
+    "literature_positioning",
+    "gap_establishment",
+    "problem_statement",
+    "theory_framing",
+    "contribution_summary",
+    "method_rationale",
+    "algorithm_description",
+    "model_formulation",
+    "experimental_validation",
+    "result_interpretation",
+    "limitation_discussion",
+    "reviewer_risk_defense",
+    "conclusion_synthesis"
+  ],
+  "paragraph_role": [
+    "context_setting",
+    "known_stream_summary",
+    "contrast_between_streams",
+    "gap_claim",
+    "problem_formulation",
+    "theoretical_positioning",
+    "contribution_claim",
+    "design_rationale",
+    "validation_setup",
+    "evidence_interpretation",
+    "limitation_statement",
+    "transition",
+    "reviewer_preemption"
+  ],
+  "citation_requirement_type": [
+    "background_citation",
+    "domain_importance_citation",
+    "method_stream_citation",
+    "limitation_support_citation",
+    "gap_support_citation",
+    "baseline_support_citation",
+    "metric_support_citation",
+    "theory_support_citation",
+    "validation_protocol_citation",
+    "counterevidence_citation"
+  ],
+  "result_placeholder_type": [
+    "baseline_comparison_result",
+    "pareto_quality_result",
+    "feasibility_result",
+    "runtime_result",
+    "ablation_result",
+    "sensitivity_result",
+    "statistical_test_result",
+    "case_study_result",
+    "reproducibility_artifact_result",
+    "qualitative_interpretation_result"
+  ],
+  "reviewer_objection_type": [
+    "novelty_question",
+    "significance_question",
+    "problem_importance_question",
+    "method_necessity_question",
+    "algorithm_wrapping_question",
+    "baseline_sufficiency_question",
+    "metric_sufficiency_question",
+    "ablation_sufficiency_question",
+    "statistical_validity_question",
+    "reproducibility_question",
+    "limitation_question",
+    "generalization_question",
+    "writing_clarity_question",
+    "overclaim_question",
+    "citation_gap_question",
+    "counterevidence_question"
+  ],
+  "manuscript_grounding_modules": [
+    {
+      "doc_id": "MG00_manuscript_grounding_protocol",
+      "module_doc": "modules/manuscript_grounding/MG00_manuscript_grounding_protocol.md",
+      "artifact": "manuscript_grounding/"
+    },
+    {
+      "doc_id": "MG01_manuscript_blueprint",
+      "module_doc": "modules/manuscript_grounding/MG01_manuscript_blueprint.md",
+      "artifact": "manuscript_grounding/manuscript_blueprint.json",
+      "schema": "schemas/manuscript_grounding/manuscript_blueprint.schema.json",
+      "template": "templates/manuscript_grounding/manuscript_blueprint.template.md",
+      "script": "scripts/build_manuscript_blueprint.py"
+    },
+    {
+      "doc_id": "MG02_section_argument_map",
+      "module_doc": "modules/manuscript_grounding/MG02_section_argument_map.md",
+      "artifact": "manuscript_grounding/section_argument_map.json",
+      "schema": "schemas/manuscript_grounding/section_argument_map.schema.json",
+      "template": "templates/manuscript_grounding/section_argument_map.template.md"
+    },
+    {
+      "doc_id": "MG03_paragraph_claim_plan",
+      "module_doc": "modules/manuscript_grounding/MG03_paragraph_claim_plan.md",
+      "artifact": "manuscript_grounding/paragraph_claim_plan.json",
+      "schema": "schemas/manuscript_grounding/paragraph_claim_plan.schema.json",
+      "template": "templates/manuscript_grounding/paragraph_claim_plan.template.md"
+    },
+    {
+      "doc_id": "MG04_citation_requirement_map",
+      "module_doc": "modules/manuscript_grounding/MG04_citation_requirement_map.md",
+      "artifact": "manuscript_grounding/citation_requirement_map.json",
+      "schema": "schemas/manuscript_grounding/citation_requirement_map.schema.json",
+      "template": "templates/manuscript_grounding/citation_requirement_map.template.md"
+    },
+    {
+      "doc_id": "MG05_result_placeholder_map",
+      "module_doc": "modules/manuscript_grounding/MG05_result_placeholder_map.md",
+      "artifact": "manuscript_grounding/result_placeholder_map.json",
+      "schema": "schemas/manuscript_grounding/result_placeholder_map.schema.json",
+      "template": "templates/manuscript_grounding/result_placeholder_map.template.md"
+    },
+    {
+      "doc_id": "MG06_method_section_alignment",
+      "module_doc": "modules/manuscript_grounding/MG06_method_section_alignment.md",
+      "artifact": "manuscript_grounding/method_section_alignment.json",
+      "schema": "schemas/manuscript_grounding/method_section_alignment.schema.json",
+      "template": "templates/manuscript_grounding/method_section_alignment.template.md"
+    },
+    {
+      "doc_id": "MG07_experiment_section_alignment",
+      "module_doc": "modules/manuscript_grounding/MG07_experiment_section_alignment.md",
+      "artifact": "manuscript_grounding/experiment_section_alignment.json",
+      "schema": "schemas/manuscript_grounding/experiment_section_alignment.schema.json",
+      "template": "templates/manuscript_grounding/experiment_section_alignment.template.md"
+    },
+    {
+      "doc_id": "MG08_discussion_limitations_plan",
+      "module_doc": "modules/manuscript_grounding/MG08_discussion_limitations_plan.md",
+      "artifact": "manuscript_grounding/discussion_limitations_plan.json",
+      "schema": "schemas/manuscript_grounding/discussion_limitations_plan.schema.json",
+      "template": "templates/manuscript_grounding/discussion_limitations_plan.template.md"
+    },
+    {
+      "doc_id": "MG09_reviewer_objection_map",
+      "module_doc": "modules/manuscript_grounding/MG09_reviewer_objection_map.md",
+      "artifact": "manuscript_grounding/reviewer_objection_map.json",
+      "schema": "schemas/manuscript_grounding/reviewer_objection_map.schema.json",
+      "template": "templates/manuscript_grounding/reviewer_objection_map.template.md"
+    },
+    {
+      "doc_id": "MG10_reviewer_response_strategy",
+      "module_doc": "modules/manuscript_grounding/MG10_reviewer_response_strategy.md",
+      "artifact": "manuscript_grounding/reviewer_response_strategy.json",
+      "schema": "schemas/manuscript_grounding/reviewer_response_strategy.schema.json",
+      "template": "templates/manuscript_grounding/reviewer_response_strategy.template.md",
+      "script": "scripts/generate_reviewer_response_plan.py"
+    },
+    {
+      "doc_id": "MG11_manuscript_adequacy_audit",
+      "module_doc": "modules/manuscript_grounding/MG11_manuscript_adequacy_audit.md",
+      "artifact": "manuscript_grounding/manuscript_adequacy_audit.json",
+      "schema": "schemas/manuscript_grounding/manuscript_adequacy_audit.schema.json",
+      "template": "templates/manuscript_grounding/manuscript_adequacy_audit.template.md",
+      "script": "scripts/audit_manuscript_claims.py"
+    },
+    {
+      "doc_id": "MG12_grounded_pipeline_integration",
+      "module_doc": "modules/manuscript_grounding/MG12_grounded_pipeline_integration.md",
+      "artifact": "manuscript_grounding/manuscript_grounding_report.json",
+      "schema": "schemas/manuscript_grounding/manuscript_grounding_report.schema.json",
+      "template": "templates/manuscript_grounding/manuscript_grounding_report.template.md",
+      "script": "scripts/validate_manuscript_plan.py"
     }
   ]
 }

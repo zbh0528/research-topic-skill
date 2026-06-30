@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Section Argument Map",
+  "type": "object",
+  "required": [
+    "section_arguments",
+    "section_argument_summary",
+    "assumptions",
+    "limitations"
+  ],
+  "properties": {
+    "section_arguments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "section_id",
+          "section_name",
+          "section_role",
+          "argument_chain"
+        ],
+        "properties": {
+          "section_id": {
+            "type": "string"
+          },
+          "section_name": {
+            "type": "string"
+          },
+          "section_role": {
+            "type": "string",
+            "enum": [
+              "background_motivation",
+              "literature_positioning",
+              "gap_establishment",
+              "problem_statement",
+              "theory_framing",
+              "contribution_summary",
+              "method_rationale",
+              "algorithm_description",
+              "model_formulation",
+              "experimental_validation",
+              "result_interpretation",
+              "limitation_discussion",
+              "reviewer_risk_defense",
+              "conclusion_synthesis"
+            ]
+          },
+          "argument_chain": {
+            "type": "array"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "section_argument_summary": {
+      "type": "array",
+      "items": {}
+    },
+    "missing_section_links": {
+      "type": "array",
+      "items": {}
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {}
+    },
+    "limitations": {
+      "type": "array",
+      "items": {}
+    },
+    "is_demo_manuscript_plan": {
+      "type": "boolean"
+    },
+    "requires_real_final_topic_package": {
+      "type": "boolean"
+    },
+    "requires_real_results": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,532 @@
+{
+  "project_id": "sample_v04_project",
+  "manuscript_blueprint_summary": {
+    "section_count": 8,
+    "readiness": "needs_revision"
+  },
+  "section_argument_summary": [
+    {
+      "section_id": "S001",
+      "section_role": "background_motivation"
+    },
+    {
+      "section_id": "S002",
+      "section_role": "literature_positioning"
+    },
+    {
+      "section_id": "S003",
+      "section_role": "problem_statement"
+    },
+    {
+      "section_id": "S004",
+      "section_role": "method_rationale"
+    },
+    {
+      "section_id": "S005",
+      "section_role": "experimental_validation"
+    },
+    {
+      "section_id": "S006",
+      "section_role": "result_interpretation"
+    },
+    {
+      "section_id": "S007",
+      "section_role": "limitation_discussion"
+    },
+    {
+      "section_id": "S008",
+      "section_role": "conclusion_synthesis"
+    }
+  ],
+  "paragraph_claim_summary": [
+    {
+      "paragraph_id": "P001",
+      "main_claim_id": "MC001"
+    },
+    {
+      "paragraph_id": "P002",
+      "main_claim_id": "MC002"
+    },
+    {
+      "paragraph_id": "P003",
+      "main_claim_id": "MC003"
+    },
+    {
+      "paragraph_id": "P004",
+      "main_claim_id": "MC004"
+    },
+    {
+      "paragraph_id": "P005",
+      "main_claim_id": "MC005"
+    },
+    {
+      "paragraph_id": "P006",
+      "main_claim_id": "MC006"
+    },
+    {
+      "paragraph_id": "P007",
+      "main_claim_id": "MC007"
+    },
+    {
+      "paragraph_id": "P008",
+      "main_claim_id": "MC008"
+    },
+    {
+      "paragraph_id": "P009",
+      "main_claim_id": "MC009"
+    },
+    {
+      "paragraph_id": "P010",
+      "main_claim_id": "MC010"
+    }
+  ],
+  "citation_requirement_summary": [
+    {
+      "citation_requirement_id": "CR001",
+      "linked_claim_id": "MC001"
+    },
+    {
+      "citation_requirement_id": "CR002",
+      "linked_claim_id": "MC002"
+    },
+    {
+      "citation_requirement_id": "CR003",
+      "linked_claim_id": "MC004"
+    },
+    {
+      "citation_requirement_id": "CR004",
+      "linked_claim_id": "MC004"
+    },
+    {
+      "citation_requirement_id": "CR005",
+      "linked_claim_id": "MC005"
+    },
+    {
+      "citation_requirement_id": "CR006",
+      "linked_claim_id": "MC007"
+    },
+    {
+      "citation_requirement_id": "CR007",
+      "linked_claim_id": "MC009"
+    }
+  ],
+  "result_placeholder_summary": [
+    {
+      "result_placeholder_id": "RP001",
+      "linked_claim_id": "MC007"
+    },
+    {
+      "result_placeholder_id": "RP002",
+      "linked_claim_id": "MC006"
+    },
+    {
+      "result_placeholder_id": "RP003",
+      "linked_claim_id": "MC008"
+    },
+    {
+      "result_placeholder_id": "RP004",
+      "linked_claim_id": "MC009"
+    }
+  ],
+  "method_alignment_summary": [
+    {
+      "method_component_id": "MCMP001",
+      "linked_contribution_id": "C1"
+    }
+  ],
+  "experiment_section_summary": [
+    {
+      "experiment_section_item_id": "ESI001",
+      "linked_experiment_id": "EX001"
+    }
+  ],
+  "discussion_limitations_summary": {
+    "limitation_count": 4,
+    "counterevidence_visible": true
+  },
+  "reviewer_objection_summary": [
+    {
+      "reviewer_objection_id": "RO001",
+      "severity": "high"
+    },
+    {
+      "reviewer_objection_id": "RO002",
+      "severity": "high"
+    },
+    {
+      "reviewer_objection_id": "RO003",
+      "severity": "medium"
+    },
+    {
+      "reviewer_objection_id": "RO004",
+      "severity": "high"
+    },
+    {
+      "reviewer_objection_id": "RO005",
+      "severity": "high"
+    },
+    {
+      "reviewer_objection_id": "RO006",
+      "severity": "high"
+    },
+    {
+      "reviewer_objection_id": "RO007",
+      "severity": "critical"
+    },
+    {
+      "reviewer_objection_id": "RO008",
+      "severity": "medium"
+    }
+  ],
+  "reviewer_response_summary": [
+    {
+      "response_strategy_id": "RS001",
+      "linked_reviewer_objection_id": "RO001"
+    },
+    {
+      "response_strategy_id": "RS002",
+      "linked_reviewer_objection_id": "RO002"
+    },
+    {
+      "response_strategy_id": "RS003",
+      "linked_reviewer_objection_id": "RO003"
+    },
+    {
+      "response_strategy_id": "RS004",
+      "linked_reviewer_objection_id": "RO004"
+    },
+    {
+      "response_strategy_id": "RS005",
+      "linked_reviewer_objection_id": "RO005"
+    },
+    {
+      "response_strategy_id": "RS006",
+      "linked_reviewer_objection_id": "RO006"
+    },
+    {
+      "response_strategy_id": "RS007",
+      "linked_reviewer_objection_id": "RO007"
+    },
+    {
+      "response_strategy_id": "RS008",
+      "linked_reviewer_objection_id": "RO008"
+    }
+  ],
+  "manuscript_adequacy_summary": {
+    "manuscript_chain_status": "pass_with_minor_risks"
+  },
+  "manuscript_context": {
+    "manuscript_grounding_mode": "manuscript_grounded",
+    "manuscript_blueprint_summary": {
+      "section_count": 8,
+      "readiness": "needs_revision"
+    },
+    "section_argument_summary": [
+      {
+        "section_id": "S001",
+        "section_role": "background_motivation"
+      },
+      {
+        "section_id": "S002",
+        "section_role": "literature_positioning"
+      },
+      {
+        "section_id": "S003",
+        "section_role": "problem_statement"
+      },
+      {
+        "section_id": "S004",
+        "section_role": "method_rationale"
+      },
+      {
+        "section_id": "S005",
+        "section_role": "experimental_validation"
+      },
+      {
+        "section_id": "S006",
+        "section_role": "result_interpretation"
+      },
+      {
+        "section_id": "S007",
+        "section_role": "limitation_discussion"
+      },
+      {
+        "section_id": "S008",
+        "section_role": "conclusion_synthesis"
+      }
+    ],
+    "paragraph_claim_summary": [
+      {
+        "paragraph_id": "P001",
+        "main_claim_id": "MC001"
+      },
+      {
+        "paragraph_id": "P002",
+        "main_claim_id": "MC002"
+      },
+      {
+        "paragraph_id": "P003",
+        "main_claim_id": "MC003"
+      },
+      {
+        "paragraph_id": "P004",
+        "main_claim_id": "MC004"
+      },
+      {
+        "paragraph_id": "P005",
+        "main_claim_id": "MC005"
+      },
+      {
+        "paragraph_id": "P006",
+        "main_claim_id": "MC006"
+      },
+      {
+        "paragraph_id": "P007",
+        "main_claim_id": "MC007"
+      },
+      {
+        "paragraph_id": "P008",
+        "main_claim_id": "MC008"
+      },
+      {
+        "paragraph_id": "P009",
+        "main_claim_id": "MC009"
+      },
+      {
+        "paragraph_id": "P010",
+        "main_claim_id": "MC010"
+      }
+    ],
+    "citation_requirement_summary": [
+      {
+        "citation_requirement_id": "CR001",
+        "linked_claim_id": "MC001"
+      },
+      {
+        "citation_requirement_id": "CR002",
+        "linked_claim_id": "MC002"
+      },
+      {
+        "citation_requirement_id": "CR003",
+        "linked_claim_id": "MC004"
+      },
+      {
+        "citation_requirement_id": "CR004",
+        "linked_claim_id": "MC004"
+      },
+      {
+        "citation_requirement_id": "CR005",
+        "linked_claim_id": "MC005"
+      },
+      {
+        "citation_requirement_id": "CR006",
+        "linked_claim_id": "MC007"
+      },
+      {
+        "citation_requirement_id": "CR007",
+        "linked_claim_id": "MC009"
+      }
+    ],
+    "result_placeholder_summary": [
+      {
+        "result_placeholder_id": "RP001",
+        "linked_claim_id": "MC007"
+      },
+      {
+        "result_placeholder_id": "RP002",
+        "linked_claim_id": "MC006"
+      },
+      {
+        "result_placeholder_id": "RP003",
+        "linked_claim_id": "MC008"
+      },
+      {
+        "result_placeholder_id": "RP004",
+        "linked_claim_id": "MC009"
+      }
+    ],
+    "reviewer_objection_summary": [
+      {
+        "reviewer_objection_id": "RO001",
+        "severity": "high"
+      },
+      {
+        "reviewer_objection_id": "RO002",
+        "severity": "high"
+      },
+      {
+        "reviewer_objection_id": "RO003",
+        "severity": "medium"
+      },
+      {
+        "reviewer_objection_id": "RO004",
+        "severity": "high"
+      },
+      {
+        "reviewer_objection_id": "RO005",
+        "severity": "high"
+      },
+      {
+        "reviewer_objection_id": "RO006",
+        "severity": "high"
+      },
+      {
+        "reviewer_objection_id": "RO007",
+        "severity": "critical"
+      },
+      {
+        "reviewer_objection_id": "RO008",
+        "severity": "medium"
+      }
+    ],
+    "response_strategy_summary": [
+      {
+        "response_strategy_id": "RS001",
+        "linked_reviewer_objection_id": "RO001"
+      },
+      {
+        "response_strategy_id": "RS002",
+        "linked_reviewer_objection_id": "RO002"
+      },
+      {
+        "response_strategy_id": "RS003",
+        "linked_reviewer_objection_id": "RO003"
+      },
+      {
+        "response_strategy_id": "RS004",
+        "linked_reviewer_objection_id": "RO004"
+      },
+      {
+        "response_strategy_id": "RS005",
+        "linked_reviewer_objection_id": "RO005"
+      },
+      {
+        "response_strategy_id": "RS006",
+        "linked_reviewer_objection_id": "RO006"
+      },
+      {
+        "response_strategy_id": "RS007",
+        "linked_reviewer_objection_id": "RO007"
+      },
+      {
+        "response_strategy_id": "RS008",
+        "linked_reviewer_objection_id": "RO008"
+      }
+    ],
+    "manuscript_adequacy_summary": {
+      "manuscript_chain_status": "pass_with_minor_risks"
+    },
+    "claims_not_ready_for_manuscript": [
+      "MC002",
+      "MC003",
+      "MC006",
+      "MC007",
+      "MC008"
+    ],
+    "trace_context": {
+      "contribution_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "manuscript_claim_ids": [
+        "MC001",
+        "MC002",
+        "MC003",
+        "MC004",
+        "MC005",
+        "MC006",
+        "MC007",
+        "MC008",
+        "MC009",
+        "MC010"
+      ]
+    }
+  },
+  "claims_not_ready_for_manuscript": [
+    "MC002",
+    "MC003",
+    "MC006",
+    "MC007",
+    "MC008"
+  ],
+  "reviewer_response_risks": [
+    "anticipated objections only; no real reviewer comment is claimed"
+  ],
+  "contribution_to_manuscript_traceability_table": [
+    {
+      "contribution_id": "C1",
+      "contribution_claim": "joint layout-cabling optimization model",
+      "manuscript_claim_id": "MC002",
+      "section_id": "S001",
+      "paragraph_id": "P002",
+      "citation_requirement_ids": [
+        "CR002"
+      ],
+      "result_placeholder_ids": [
+        "RP001"
+      ],
+      "evidence_ids": [],
+      "experiment_ids": [
+        "EX001"
+      ],
+      "reviewer_objection_ids": [
+        "RO001"
+      ],
+      "response_strategy_ids": [
+        "RS001"
+      ],
+      "claim_safety_level": "needs_experiment_result",
+      "manuscript_claim_status": "experiment_result_required"
+    },
+    {
+      "contribution_id": "C2",
+      "contribution_claim": "problem-structure-aware evolutionary mechanism",
+      "manuscript_claim_id": "MC006",
+      "section_id": "S004",
+      "paragraph_id": "P006",
+      "citation_requirement_ids": [],
+      "result_placeholder_ids": [
+        "RP002"
+      ],
+      "evidence_ids": [],
+      "experiment_ids": [
+        "EX002"
+      ],
+      "reviewer_objection_ids": [
+        "RO004"
+      ],
+      "response_strategy_ids": [
+        "RS004"
+      ],
+      "claim_safety_level": "needs_experiment_result",
+      "manuscript_claim_status": "experiment_result_required"
+    },
+    {
+      "contribution_id": "C3",
+      "contribution_claim": "aerodynamic-electrical-economic trade-off analysis",
+      "manuscript_claim_id": "MC008",
+      "section_id": "S006",
+      "paragraph_id": "P008",
+      "citation_requirement_ids": [],
+      "result_placeholder_ids": [
+        "RP003"
+      ],
+      "evidence_ids": [],
+      "experiment_ids": [
+        "EX003"
+      ],
+      "reviewer_objection_ids": [
+        "RO006"
+      ],
+      "response_strategy_ids": [
+        "RS006"
+      ],
+      "claim_safety_level": "needs_experiment_result",
+      "manuscript_claim_status": "experiment_result_required"
+    }
+  ],
+  "is_demo_manuscript_plan": true,
+  "requires_real_final_topic_package": true,
+  "requires_real_results": true
+}

@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Manuscript Blueprint",
+  "type": "object",
+  "required": [
+    "project_id",
+    "manuscript_type",
+    "manuscript_thesis",
+    "section_plan",
+    "manuscript_readiness"
+  ],
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "manuscript_type": {
+      "type": "string"
+    },
+    "target_audience": {
+      "type": "string"
+    },
+    "target_venue_profile": {
+      "type": "string"
+    },
+    "manuscript_thesis": {
+      "type": "string"
+    },
+    "manuscript_readiness": {
+      "type": "string"
+    },
+    "section_plan": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "section_id",
+          "section_name",
+          "section_role"
+        ],
+        "properties": {
+          "section_id": {
+            "type": "string"
+          },
+          "section_name": {
+            "type": "string"
+          },
+          "section_role": {
+            "type": "string",
+            "enum": [
+              "background_motivation",
+              "literature_positioning",
+              "gap_establishment",
+              "problem_statement",
+              "theory_framing",
+              "contribution_summary",
+              "method_rationale",
+              "algorithm_description",
+              "model_formulation",
+              "experimental_validation",
+              "result_interpretation",
+              "limitation_discussion",
+              "reviewer_risk_defense",
+              "conclusion_synthesis"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "contribution_placement": {
+      "type": "array",
+      "items": {}
+    },
+    "evidence_placement": {
+      "type": "array",
+      "items": {}
+    },
+    "validation_placement": {
+      "type": "array",
+      "items": {}
+    },
+    "reviewer_risk_placement": {
+      "type": "array",
+      "items": {}
+    },
+    "writing_risks": {
+      "type": "array",
+      "items": {}
+    },
+    "is_demo_manuscript_plan": {
+      "type": "boolean"
+    },
+    "requires_real_final_topic_package": {
+      "type": "boolean"
+    },
+    "requires_real_results": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

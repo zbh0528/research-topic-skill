@@ -993,6 +993,18 @@
       "items": {
         "type": "object"
       }
+    },
+    "manuscript_traceability_table": {
+      "type": "array"
+    },
+    "Contribution-to-Manuscript Traceability": {
+      "type": "array"
+    },
+    "manuscript_grounding_report": {
+      "type": "object"
+    },
+    "manuscript_readiness": {
+      "type": "string"
     }
   },
   "additionalProperties": false,

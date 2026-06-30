@@ -53,6 +53,22 @@ bibliographic record
 -> contribution claim
 ```
 
+```text
+manuscript-grounded mode:
+final topic package
+-> manuscript blueprint
+-> section argument map
+-> paragraph claim plan
+-> citation requirement map
+-> result placeholder map
+-> method / experiment section alignment
+-> discussion limitations plan
+-> reviewer objection map
+-> reviewer response strategy
+-> manuscript adequacy audit
+-> contribution-to-manuscript traceability table
+```
+
 ## 目录结构
 
 ```text
@@ -390,6 +406,116 @@ v0.3.0 limitations:
 - It cannot guarantee planned experiments will lead to publication.
 - It cannot replace real wind-farm simulation, optimization code, data, or engineering review.
 - It only checks contribution-to-validation adequacy.
+
+## v0.4.0 manuscript grounding
+
+v0.4.0 adds manuscript-structure and reviewer-response planning on top of v0.1-v0.3. It does not generate a final paper. It creates a grounded writing plan that keeps every section, paragraph claim, citation requirement, result placeholder, limitation, reviewer objection, and response strategy traceable to upstream topic, literature, and validation artifacts.
+
+The four supported modes are:
+
+- `logic-only mode`: topic reasoning without real literature or experiment evidence.
+- `literature-grounded mode`: corpus-scoped evidence checking through v0.2.0 artifacts.
+- `experiment-grounded mode`: validation planning through v0.3.0 artifacts.
+- `manuscript-grounded mode`: manuscript blueprint, paragraph claim plan, citation requirements, result placeholders, limitations, and reviewer-response strategy.
+
+New commands:
+
+```bash
+python3 scripts/build_manuscript_blueprint.py \
+  --workspace workspaces/demo_project \
+  --overwrite \
+  --demo-if-missing
+
+python3 scripts/validate_manuscript_plan.py \
+  --workspace workspaces/demo_project \
+  --strict
+
+python3 scripts/audit_manuscript_claims.py \
+  --workspace workspaces/demo_project \
+  --strict
+
+python3 scripts/generate_reviewer_response_plan.py \
+  --workspace workspaces/demo_project \
+  --overwrite
+
+python3 scripts/generate_manuscript_checklist.py \
+  --workspace workspaces/demo_project
+```
+
+Minimum v0.4.0 flow:
+
+```bash
+cd windfarm-research-topic-skill
+
+python3 scripts/init_workspace.py \
+  --input examples/sample_project_input.yaml \
+  --project-id manuscript_demo \
+  --overwrite
+
+python3 scripts/ingest_literature.py \
+  --workspace workspaces/manuscript_demo \
+  --input examples/literature/sample_literature_input.json \
+  --corpus-id manuscript_demo_synthetic_corpus \
+  --overwrite
+
+python3 scripts/build_literature_matrix.py \
+  --workspace workspaces/manuscript_demo \
+  --overwrite
+
+python3 scripts/validate_literature.py \
+  --workspace workspaces/manuscript_demo \
+  --strict
+
+python3 scripts/build_validation_plan.py \
+  --workspace workspaces/manuscript_demo \
+  --overwrite \
+  --demo-if-missing
+
+python3 scripts/validate_experiment_plan.py \
+  --workspace workspaces/manuscript_demo \
+  --strict
+
+python3 scripts/build_manuscript_blueprint.py \
+  --workspace workspaces/manuscript_demo \
+  --overwrite \
+  --demo-if-missing
+
+python3 scripts/validate_manuscript_plan.py \
+  --workspace workspaces/manuscript_demo \
+  --strict
+
+python3 scripts/audit_manuscript_claims.py \
+  --workspace workspaces/manuscript_demo \
+  --strict
+
+python3 scripts/validate_outputs.py \
+  --workspace workspaces/manuscript_demo \
+  --literature-grounded \
+  --strict-evidence \
+  --experiment-grounded \
+  --strict-validation \
+  --manuscript-grounded \
+  --strict-manuscript
+```
+
+Complete-chain manuscript acceptance:
+
+```bash
+python3 scripts/audit_manuscript_claims.py \
+  --workspace workspaces/manuscript_demo \
+  --strict \
+  --require-complete-manuscript-chain
+```
+
+For draft or demo workspaces this command is expected to fail with clear causes such as incomplete final topic package, demo manuscript plan requiring a real final topic package, missing real result evidence, or incomplete manuscript traceability. Normal `--strict` validates the existing manuscript plan; complete-chain mode validates release-grade readiness.
+
+v0.4.0 limitations:
+
+- It does not generate a final manuscript.
+- It does not fabricate citations, DOI values, author-year references, numerical results, p-values, or reviewer comments.
+- Citation requirements are not citations.
+- Result placeholders are not results.
+- Anticipated reviewer objections are not received reviewer comments.
 
 ## 测试命令
 

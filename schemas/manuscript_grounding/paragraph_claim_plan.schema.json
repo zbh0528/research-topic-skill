@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Paragraph Claim Plan",
+  "type": "object",
+  "required": [
+    "paragraph_plans",
+    "manuscript_claims",
+    "paragraph_claim_summary",
+    "unsupported_claims",
+    "assumptions",
+    "limitations"
+  ],
+  "properties": {
+    "paragraph_plans": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "manuscript_claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "manuscript_claim_id",
+          "claim_text",
+          "manuscript_claim_status",
+          "claim_safety_level"
+        ],
+        "properties": {
+          "manuscript_claim_id": {
+            "type": "string"
+          },
+          "claim_text": {
+            "type": "string"
+          },
+          "manuscript_claim_status": {
+            "type": "string",
+            "enum": [
+              "planned",
+              "evidence_supported",
+              "citation_required",
+              "experiment_result_required",
+              "partially_supported",
+              "unsupported",
+              "unsafe_until_verified",
+              "not_applicable"
+            ]
+          },
+          "claim_safety_level": {
+            "type": "string",
+            "enum": [
+              "safe",
+              "needs_citation",
+              "needs_experiment_result",
+              "corpus_scoped_only",
+              "overclaim_risk",
+              "unsafe_until_verified"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "paragraph_claim_summary": {
+      "type": "array",
+      "items": {}
+    },
+    "unsupported_claims": {
+      "type": "array",
+      "items": {}
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {}
+    },
+    "limitations": {
+      "type": "array",
+      "items": {}
+    },
+    "is_demo_manuscript_plan": {
+      "type": "boolean"
+    },
+    "requires_real_final_topic_package": {
+      "type": "boolean"
+    },
+    "requires_real_results": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

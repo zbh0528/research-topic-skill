@@ -1,0 +1,28 @@
+{
+  "manuscript_chain_status": "pass_with_minor_risks",
+  "unsupported_manuscript_claims": [],
+  "missing_traceability": [],
+  "missing_citation_requirements": [],
+  "missing_result_placeholders": [],
+  "fabricated_citation_risks": [],
+  "fabricated_result_risks": [],
+  "overclaim_risks": [],
+  "weak_introduction_links": [],
+  "weak_related_work_links": [],
+  "method_alignment_risks": [],
+  "experiment_alignment_risks": [],
+  "hidden_limitation_risks": [],
+  "reviewer_response_gaps": [],
+  "repair_actions": [],
+  "pass_or_revise_decision": "pass_with_warnings",
+  "pass_count": 1,
+  "warning_count": 1,
+  "fail_count": 0,
+  "passes": [
+    "PASS sample audit object"
+  ],
+  "warnings": [
+    "WARNING demo plan requires real evidence before manuscript drafting"
+  ],
+  "failures": []
+}

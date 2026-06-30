@@ -1,0 +1,157 @@
+{
+  "result_placeholders": [
+    {
+      "result_placeholder_id": "RP001",
+      "linked_section_id": "S005",
+      "linked_paragraph_id": "P007",
+      "linked_claim_id": "MC007",
+      "linked_experiment_id": "EX001",
+      "linked_metric_ids": [
+        "M001",
+        "M002",
+        "M003"
+      ],
+      "linked_baseline_ids": [
+        "B001",
+        "B004"
+      ],
+      "linked_ablation_ids": [],
+      "result_placeholder_type": "baseline_comparison_result",
+      "expected_result_needed": "Insert real, traceable results here only after experiments are run.",
+      "success_condition": "Claim can be strengthened only if real evidence meets the validation threshold.",
+      "failure_condition": "Claim must be downgraded or removed if evidence does not support it.",
+      "interpretation_plan": "Interpret against baseline, metric, ablation, statistical, and artifact links.",
+      "required_table_or_figure": "To be selected after real results exist.",
+      "statistical_requirement": "Use planned statistical test outputs only after execution.",
+      "current_status": "result_not_available",
+      "unsafe_result_wording_to_avoid": [
+        "outperforms",
+        "improves by",
+        "p < 0.05"
+      ],
+      "allowed_placeholder_wording": "insert traceable result evidence from the linked experiment here after execution"
+    },
+    {
+      "result_placeholder_id": "RP002",
+      "linked_section_id": "S004",
+      "linked_paragraph_id": "P006",
+      "linked_claim_id": "MC006",
+      "linked_experiment_id": "EX002",
+      "linked_metric_ids": [
+        "M001",
+        "M004"
+      ],
+      "linked_baseline_ids": [
+        "B006"
+      ],
+      "linked_ablation_ids": [
+        "A001"
+      ],
+      "result_placeholder_type": "ablation_result",
+      "expected_result_needed": "Insert real, traceable results here only after experiments are run.",
+      "success_condition": "Claim can be strengthened only if real evidence meets the validation threshold.",
+      "failure_condition": "Claim must be downgraded or removed if evidence does not support it.",
+      "interpretation_plan": "Interpret against baseline, metric, ablation, statistical, and artifact links.",
+      "required_table_or_figure": "To be selected after real results exist.",
+      "statistical_requirement": "Use planned statistical test outputs only after execution.",
+      "current_status": "result_not_available",
+      "unsafe_result_wording_to_avoid": [
+        "outperforms",
+        "improves by",
+        "p < 0.05"
+      ],
+      "allowed_placeholder_wording": "insert traceable result evidence from the linked experiment here after execution"
+    },
+    {
+      "result_placeholder_id": "RP003",
+      "linked_section_id": "S006",
+      "linked_paragraph_id": "P008",
+      "linked_claim_id": "MC008",
+      "linked_experiment_id": "EX003",
+      "linked_metric_ids": [
+        "M005",
+        "M006",
+        "M007",
+        "M008"
+      ],
+      "linked_baseline_ids": [
+        "B001",
+        "B004"
+      ],
+      "linked_ablation_ids": [],
+      "result_placeholder_type": "pareto_quality_result",
+      "expected_result_needed": "Insert real, traceable results here only after experiments are run.",
+      "success_condition": "Claim can be strengthened only if real evidence meets the validation threshold.",
+      "failure_condition": "Claim must be downgraded or removed if evidence does not support it.",
+      "interpretation_plan": "Interpret against baseline, metric, ablation, statistical, and artifact links.",
+      "required_table_or_figure": "To be selected after real results exist.",
+      "statistical_requirement": "Use planned statistical test outputs only after execution.",
+      "current_status": "result_not_available",
+      "unsafe_result_wording_to_avoid": [
+        "outperforms",
+        "improves by",
+        "p < 0.05"
+      ],
+      "allowed_placeholder_wording": "insert traceable result evidence from the linked experiment here after execution"
+    },
+    {
+      "result_placeholder_id": "RP004",
+      "linked_section_id": "S007",
+      "linked_paragraph_id": "P009",
+      "linked_claim_id": "MC009",
+      "linked_experiment_id": "EX001",
+      "linked_metric_ids": [
+        "M002",
+        "M003"
+      ],
+      "linked_baseline_ids": [
+        "B001"
+      ],
+      "linked_ablation_ids": [],
+      "result_placeholder_type": "qualitative_interpretation_result",
+      "expected_result_needed": "Insert real, traceable results here only after experiments are run.",
+      "success_condition": "Claim can be strengthened only if real evidence meets the validation threshold.",
+      "failure_condition": "Claim must be downgraded or removed if evidence does not support it.",
+      "interpretation_plan": "Interpret against baseline, metric, ablation, statistical, and artifact links.",
+      "required_table_or_figure": "To be selected after real results exist.",
+      "statistical_requirement": "Use planned statistical test outputs only after execution.",
+      "current_status": "result_not_available",
+      "unsafe_result_wording_to_avoid": [
+        "outperforms",
+        "improves by",
+        "p < 0.05"
+      ],
+      "allowed_placeholder_wording": "insert traceable result evidence from the linked experiment here after execution"
+    }
+  ],
+  "result_placeholder_summary": [
+    {
+      "result_placeholder_id": "RP001",
+      "linked_claim_id": "MC007"
+    },
+    {
+      "result_placeholder_id": "RP002",
+      "linked_claim_id": "MC006"
+    },
+    {
+      "result_placeholder_id": "RP003",
+      "linked_claim_id": "MC008"
+    },
+    {
+      "result_placeholder_id": "RP004",
+      "linked_claim_id": "MC009"
+    }
+  ],
+  "missing_results": [
+    "All empirical result placeholders require real experiment outputs."
+  ],
+  "assumptions": [
+    "Placeholders mark needed evidence only."
+  ],
+  "limitations": [
+    "No numeric result exists."
+  ],
+  "is_demo_manuscript_plan": true,
+  "requires_real_final_topic_package": true,
+  "requires_real_results": true
+}

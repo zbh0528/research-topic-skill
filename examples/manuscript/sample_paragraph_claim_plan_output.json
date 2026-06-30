@@ -1,0 +1,620 @@
+{
+  "paragraph_plans": [
+    {
+      "paragraph_id": "P001",
+      "section_id": "S001",
+      "paragraph_role": "context_setting",
+      "topic_sentence_purpose": "Open with domain context and evidence boundary.",
+      "main_claim_id": "MC001",
+      "supporting_claim_ids": [],
+      "linked_problem_id": "P001",
+      "linked_contribution_id": "C1",
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [],
+      "required_citation_ids": [
+        "CR001"
+      ],
+      "required_result_placeholder_ids": [],
+      "claim_safety_level": "needs_citation",
+      "manuscript_claim_status": "citation_required",
+      "unsafe_wording_to_avoid": [
+        "first",
+        "novel",
+        "outperforms",
+        "statistically significant"
+      ],
+      "safer_wording": "Use planned validation and requirement wording.",
+      "reviewer_risk": "Reviewer may ask for evidence or clearer boundaries.",
+      "revision_hooks": [
+        "Add verified citation or real result evidence before strengthening this paragraph."
+      ]
+    },
+    {
+      "paragraph_id": "P002",
+      "section_id": "S001",
+      "paragraph_role": "gap_claim",
+      "topic_sentence_purpose": "Establish specific gap without first/novel wording.",
+      "main_claim_id": "MC002",
+      "supporting_claim_ids": [
+        "MC001"
+      ],
+      "linked_problem_id": "P001",
+      "linked_contribution_id": "C1",
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [
+        "EX001"
+      ],
+      "required_citation_ids": [
+        "CR002"
+      ],
+      "required_result_placeholder_ids": [
+        "RP001"
+      ],
+      "claim_safety_level": "needs_experiment_result",
+      "manuscript_claim_status": "experiment_result_required",
+      "unsafe_wording_to_avoid": [
+        "first",
+        "novel",
+        "outperforms",
+        "statistically significant"
+      ],
+      "safer_wording": "Use planned validation and requirement wording.",
+      "reviewer_risk": "Reviewer may ask for evidence or clearer boundaries.",
+      "revision_hooks": [
+        "Add verified citation or real result evidence before strengthening this paragraph."
+      ]
+    },
+    {
+      "paragraph_id": "P003",
+      "section_id": "S001",
+      "paragraph_role": "contribution_claim",
+      "topic_sentence_purpose": "Preview contributions and validation plan only.",
+      "main_claim_id": "MC003",
+      "supporting_claim_ids": [
+        "MC002"
+      ],
+      "linked_problem_id": "P001",
+      "linked_contribution_id": "C2",
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [
+        "EX001"
+      ],
+      "required_citation_ids": [],
+      "required_result_placeholder_ids": [
+        "RP002"
+      ],
+      "claim_safety_level": "needs_experiment_result",
+      "manuscript_claim_status": "experiment_result_required",
+      "unsafe_wording_to_avoid": [
+        "first",
+        "novel",
+        "outperforms",
+        "statistically significant"
+      ],
+      "safer_wording": "Use planned validation and requirement wording.",
+      "reviewer_risk": "Reviewer may ask for evidence or clearer boundaries.",
+      "revision_hooks": [
+        "Add verified citation or real result evidence before strengthening this paragraph."
+      ]
+    },
+    {
+      "paragraph_id": "P004",
+      "section_id": "S002",
+      "paragraph_role": "known_stream_summary",
+      "topic_sentence_purpose": "Organize streams and relation to selected problem.",
+      "main_claim_id": "MC004",
+      "supporting_claim_ids": [],
+      "linked_problem_id": "P001",
+      "linked_contribution_id": "C3",
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [],
+      "required_citation_ids": [
+        "CR003",
+        "CR004"
+      ],
+      "required_result_placeholder_ids": [],
+      "claim_safety_level": "needs_citation",
+      "manuscript_claim_status": "citation_required",
+      "unsafe_wording_to_avoid": [
+        "first",
+        "novel",
+        "outperforms",
+        "statistically significant"
+      ],
+      "safer_wording": "Use planned validation and requirement wording.",
+      "reviewer_risk": "Reviewer may ask for evidence or clearer boundaries.",
+      "revision_hooks": [
+        "Add verified citation or real result evidence before strengthening this paragraph."
+      ]
+    },
+    {
+      "paragraph_id": "P005",
+      "section_id": "S003",
+      "paragraph_role": "problem_formulation",
+      "topic_sentence_purpose": "Define coupled problem properties.",
+      "main_claim_id": "MC005",
+      "supporting_claim_ids": [],
+      "linked_problem_id": "P001",
+      "linked_contribution_id": "C1",
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [],
+      "required_citation_ids": [
+        "CR005"
+      ],
+      "required_result_placeholder_ids": [],
+      "claim_safety_level": "corpus_scoped_only",
+      "manuscript_claim_status": "planned",
+      "unsafe_wording_to_avoid": [
+        "first",
+        "novel",
+        "outperforms",
+        "statistically significant"
+      ],
+      "safer_wording": "Use planned validation and requirement wording.",
+      "reviewer_risk": "Reviewer may ask for evidence or clearer boundaries.",
+      "revision_hooks": [
+        "Add verified citation or real result evidence before strengthening this paragraph."
+      ]
+    },
+    {
+      "paragraph_id": "P006",
+      "section_id": "S004",
+      "paragraph_role": "design_rationale",
+      "topic_sentence_purpose": "Map mechanism to problem property and ablation.",
+      "main_claim_id": "MC006",
+      "supporting_claim_ids": [],
+      "linked_problem_id": "P001",
+      "linked_contribution_id": "C2",
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [
+        "EX001"
+      ],
+      "required_citation_ids": [],
+      "required_result_placeholder_ids": [
+        "RP002"
+      ],
+      "claim_safety_level": "needs_experiment_result",
+      "manuscript_claim_status": "experiment_result_required",
+      "unsafe_wording_to_avoid": [
+        "first",
+        "novel",
+        "outperforms",
+        "statistically significant"
+      ],
+      "safer_wording": "Use planned validation and requirement wording.",
+      "reviewer_risk": "Reviewer may ask for evidence or clearer boundaries.",
+      "revision_hooks": [
+        "Add verified citation or real result evidence before strengthening this paragraph."
+      ]
+    },
+    {
+      "paragraph_id": "P007",
+      "section_id": "S005",
+      "paragraph_role": "validation_setup",
+      "topic_sentence_purpose": "Describe validation setup, not results.",
+      "main_claim_id": "MC007",
+      "supporting_claim_ids": [],
+      "linked_problem_id": "P001",
+      "linked_contribution_id": "C2",
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [
+        "EX001"
+      ],
+      "required_citation_ids": [
+        "CR006"
+      ],
+      "required_result_placeholder_ids": [
+        "RP001",
+        "RP002"
+      ],
+      "claim_safety_level": "needs_experiment_result",
+      "manuscript_claim_status": "experiment_result_required",
+      "unsafe_wording_to_avoid": [
+        "first",
+        "novel",
+        "outperforms",
+        "statistically significant"
+      ],
+      "safer_wording": "Use planned validation and requirement wording.",
+      "reviewer_risk": "Reviewer may ask for evidence or clearer boundaries.",
+      "revision_hooks": [
+        "Add verified citation or real result evidence before strengthening this paragraph."
+      ]
+    },
+    {
+      "paragraph_id": "P008",
+      "section_id": "S006",
+      "paragraph_role": "evidence_interpretation",
+      "topic_sentence_purpose": "Reserve result interpretation until evidence exists.",
+      "main_claim_id": "MC008",
+      "supporting_claim_ids": [],
+      "linked_problem_id": "P001",
+      "linked_contribution_id": "C3",
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [
+        "EX001"
+      ],
+      "required_citation_ids": [],
+      "required_result_placeholder_ids": [
+        "RP003"
+      ],
+      "claim_safety_level": "needs_experiment_result",
+      "manuscript_claim_status": "experiment_result_required",
+      "unsafe_wording_to_avoid": [
+        "first",
+        "novel",
+        "outperforms",
+        "statistically significant"
+      ],
+      "safer_wording": "Use planned validation and requirement wording.",
+      "reviewer_risk": "Reviewer may ask for evidence or clearer boundaries.",
+      "revision_hooks": [
+        "Add verified citation or real result evidence before strengthening this paragraph."
+      ]
+    },
+    {
+      "paragraph_id": "P009",
+      "section_id": "S007",
+      "paragraph_role": "limitation_statement",
+      "topic_sentence_purpose": "State limitations and threats.",
+      "main_claim_id": "MC009",
+      "supporting_claim_ids": [],
+      "linked_problem_id": "P001",
+      "linked_contribution_id": "C3",
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [
+        "EX001"
+      ],
+      "required_citation_ids": [
+        "CR007"
+      ],
+      "required_result_placeholder_ids": [
+        "RP004"
+      ],
+      "claim_safety_level": "safe",
+      "manuscript_claim_status": "planned",
+      "unsafe_wording_to_avoid": [
+        "first",
+        "novel",
+        "outperforms",
+        "statistically significant"
+      ],
+      "safer_wording": "Use planned validation and requirement wording.",
+      "reviewer_risk": "Reviewer may ask for evidence or clearer boundaries.",
+      "revision_hooks": [
+        "Add verified citation or real result evidence before strengthening this paragraph."
+      ]
+    },
+    {
+      "paragraph_id": "P010",
+      "section_id": "S008",
+      "paragraph_role": "transition",
+      "topic_sentence_purpose": "Conclude without new claims.",
+      "main_claim_id": "MC010",
+      "supporting_claim_ids": [],
+      "linked_problem_id": "P001",
+      "linked_contribution_id": "C3",
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [],
+      "required_citation_ids": [],
+      "required_result_placeholder_ids": [],
+      "claim_safety_level": "safe",
+      "manuscript_claim_status": "planned",
+      "unsafe_wording_to_avoid": [
+        "first",
+        "novel",
+        "outperforms",
+        "statistically significant"
+      ],
+      "safer_wording": "Use planned validation and requirement wording.",
+      "reviewer_risk": "Reviewer may ask for evidence or clearer boundaries.",
+      "revision_hooks": [
+        "Add verified citation or real result evidence before strengthening this paragraph."
+      ]
+    }
+  ],
+  "manuscript_claims": [
+    {
+      "manuscript_claim_id": "MC001",
+      "claim_text": "The manuscript should motivate wind farm layout-cabling coupling as a planned research problem, within provided evidence limits.",
+      "claim_type": "gap_claim",
+      "section_id": "S001",
+      "paragraph_id": "P001",
+      "linked_problem_id": "P001",
+      "linked_contribution_id": "C1",
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [],
+      "linked_result_placeholders": [],
+      "manuscript_claim_status": "citation_required",
+      "claim_safety_level": "needs_citation",
+      "required_citations": [
+        "CR001"
+      ],
+      "required_results": [],
+      "counterevidence": [],
+      "safer_wording": "Use planned, corpus-scoped, or requires-confirmation wording until evidence exists.",
+      "reviewer_risk": "Claim may be challenged if evidence, results, or traceability are missing."
+    },
+    {
+      "manuscript_claim_id": "MC002",
+      "claim_text": "The manuscript should present the joint model contribution as requiring formulation and validation support.",
+      "claim_type": "contribution_claim",
+      "section_id": "S001",
+      "paragraph_id": "P002",
+      "linked_problem_id": "P001",
+      "linked_contribution_id": "C1",
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [
+        "EX001"
+      ],
+      "linked_result_placeholders": [
+        "RP001"
+      ],
+      "manuscript_claim_status": "experiment_result_required",
+      "claim_safety_level": "needs_experiment_result",
+      "required_citations": [
+        "CR002"
+      ],
+      "required_results": [
+        "RP001"
+      ],
+      "counterevidence": [],
+      "safer_wording": "Use planned, corpus-scoped, or requires-confirmation wording until evidence exists.",
+      "reviewer_risk": "Claim may be challenged if evidence, results, or traceability are missing."
+    },
+    {
+      "manuscript_claim_id": "MC003",
+      "claim_text": "The manuscript should preview validation plans without reporting outcomes.",
+      "claim_type": "validation_claim",
+      "section_id": "S001",
+      "paragraph_id": "P003",
+      "linked_problem_id": "P001",
+      "linked_contribution_id": "C2",
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [
+        "EX002"
+      ],
+      "linked_result_placeholders": [
+        "RP002"
+      ],
+      "manuscript_claim_status": "experiment_result_required",
+      "claim_safety_level": "needs_experiment_result",
+      "required_citations": [],
+      "required_results": [
+        "RP002"
+      ],
+      "counterevidence": [],
+      "safer_wording": "Use planned, corpus-scoped, or requires-confirmation wording until evidence exists.",
+      "reviewer_risk": "Claim may be challenged if evidence, results, or traceability are missing."
+    },
+    {
+      "manuscript_claim_id": "MC004",
+      "claim_text": "Related Work should be organized by layout-only, cabling-only, sequential, joint, evolutionary, constrained, and baseline streams.",
+      "claim_type": "literature_positioning_claim",
+      "section_id": "S002",
+      "paragraph_id": "P004",
+      "linked_problem_id": "P001",
+      "linked_contribution_id": "C1",
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [],
+      "linked_result_placeholders": [],
+      "manuscript_claim_status": "citation_required",
+      "claim_safety_level": "needs_citation",
+      "required_citations": [
+        "CR003",
+        "CR004"
+      ],
+      "required_results": [],
+      "counterevidence": [],
+      "safer_wording": "Use planned, corpus-scoped, or requires-confirmation wording until evidence exists.",
+      "reviewer_risk": "Claim may be challenged if evidence, results, or traceability are missing."
+    },
+    {
+      "manuscript_claim_id": "MC005",
+      "claim_text": "Problem Formulation should define the coupled decision structure without claiming empirical benefit.",
+      "claim_type": "problem_claim",
+      "section_id": "S003",
+      "paragraph_id": "P005",
+      "linked_problem_id": "P001",
+      "linked_contribution_id": "C1",
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [],
+      "linked_result_placeholders": [],
+      "manuscript_claim_status": "planned",
+      "claim_safety_level": "corpus_scoped_only",
+      "required_citations": [
+        "CR005"
+      ],
+      "required_results": [],
+      "counterevidence": [],
+      "safer_wording": "Use planned, corpus-scoped, or requires-confirmation wording until evidence exists.",
+      "reviewer_risk": "Claim may be challenged if evidence, results, or traceability are missing."
+    },
+    {
+      "manuscript_claim_id": "MC006",
+      "claim_text": "Method should map each mechanism to a problem property and ablation requirement.",
+      "claim_type": "method_claim",
+      "section_id": "S004",
+      "paragraph_id": "P006",
+      "linked_problem_id": "P001",
+      "linked_contribution_id": "C2",
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [
+        "EX002"
+      ],
+      "linked_result_placeholders": [
+        "RP002"
+      ],
+      "manuscript_claim_status": "experiment_result_required",
+      "claim_safety_level": "needs_experiment_result",
+      "required_citations": [],
+      "required_results": [
+        "RP002"
+      ],
+      "counterevidence": [],
+      "safer_wording": "Use planned, corpus-scoped, or requires-confirmation wording until evidence exists.",
+      "reviewer_risk": "Claim may be challenged if evidence, results, or traceability are missing."
+    },
+    {
+      "manuscript_claim_id": "MC007",
+      "claim_text": "Experiments should compare validation targets, baselines, metrics, ablations, statistics, and artifacts before making performance claims.",
+      "claim_type": "experiment_plan_claim",
+      "section_id": "S005",
+      "paragraph_id": "P007",
+      "linked_problem_id": "P001",
+      "linked_contribution_id": "C2",
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [
+        "EX001",
+        "EX002"
+      ],
+      "linked_result_placeholders": [
+        "RP001",
+        "RP002"
+      ],
+      "manuscript_claim_status": "experiment_result_required",
+      "claim_safety_level": "needs_experiment_result",
+      "required_citations": [
+        "CR006"
+      ],
+      "required_results": [
+        "RP001",
+        "RP002"
+      ],
+      "counterevidence": [],
+      "safer_wording": "Use planned, corpus-scoped, or requires-confirmation wording until evidence exists.",
+      "reviewer_risk": "Claim may be challenged if evidence, results, or traceability are missing."
+    },
+    {
+      "manuscript_claim_id": "MC008",
+      "claim_text": "Results and Analysis should use placeholders until real results are provided.",
+      "claim_type": "result_placeholder_claim",
+      "section_id": "S006",
+      "paragraph_id": "P008",
+      "linked_problem_id": "P001",
+      "linked_contribution_id": "C3",
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [
+        "EX003"
+      ],
+      "linked_result_placeholders": [
+        "RP003"
+      ],
+      "manuscript_claim_status": "experiment_result_required",
+      "claim_safety_level": "needs_experiment_result",
+      "required_citations": [],
+      "required_results": [
+        "RP003"
+      ],
+      "counterevidence": [],
+      "safer_wording": "Use planned, corpus-scoped, or requires-confirmation wording until evidence exists.",
+      "reviewer_risk": "Claim may be challenged if evidence, results, or traceability are missing."
+    },
+    {
+      "manuscript_claim_id": "MC009",
+      "claim_text": "Discussion must state corpus-scope, synthetic-demo, missing-real-result, and generalization limits.",
+      "claim_type": "limitation_claim",
+      "section_id": "S007",
+      "paragraph_id": "P009",
+      "linked_problem_id": "P001",
+      "linked_contribution_id": "C3",
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [
+        "EX001"
+      ],
+      "linked_result_placeholders": [
+        "RP004"
+      ],
+      "manuscript_claim_status": "planned",
+      "claim_safety_level": "safe",
+      "required_citations": [
+        "CR007"
+      ],
+      "required_results": [
+        "RP004"
+      ],
+      "counterevidence": [
+        "synthetic demo limitation"
+      ],
+      "safer_wording": "Use planned, corpus-scoped, or requires-confirmation wording until evidence exists.",
+      "reviewer_risk": "Claim may be challenged if evidence, results, or traceability are missing."
+    },
+    {
+      "manuscript_claim_id": "MC010",
+      "claim_text": "Conclusion should summarize only supported or planned claims and introduce no new claim.",
+      "claim_type": "conclusion_claim",
+      "section_id": "S008",
+      "paragraph_id": "P010",
+      "linked_problem_id": "P001",
+      "linked_contribution_id": "C3",
+      "linked_evidence_ids": [],
+      "linked_experiment_ids": [],
+      "linked_result_placeholders": [],
+      "manuscript_claim_status": "planned",
+      "claim_safety_level": "safe",
+      "required_citations": [],
+      "required_results": [],
+      "counterevidence": [],
+      "safer_wording": "Use planned, corpus-scoped, or requires-confirmation wording until evidence exists.",
+      "reviewer_risk": "Claim may be challenged if evidence, results, or traceability are missing."
+    }
+  ],
+  "paragraph_claim_summary": [
+    {
+      "paragraph_id": "P001",
+      "main_claim_id": "MC001"
+    },
+    {
+      "paragraph_id": "P002",
+      "main_claim_id": "MC002"
+    },
+    {
+      "paragraph_id": "P003",
+      "main_claim_id": "MC003"
+    },
+    {
+      "paragraph_id": "P004",
+      "main_claim_id": "MC004"
+    },
+    {
+      "paragraph_id": "P005",
+      "main_claim_id": "MC005"
+    },
+    {
+      "paragraph_id": "P006",
+      "main_claim_id": "MC006"
+    },
+    {
+      "paragraph_id": "P007",
+      "main_claim_id": "MC007"
+    },
+    {
+      "paragraph_id": "P008",
+      "main_claim_id": "MC008"
+    },
+    {
+      "paragraph_id": "P009",
+      "main_claim_id": "MC009"
+    },
+    {
+      "paragraph_id": "P010",
+      "main_claim_id": "MC010"
+    }
+  ],
+  "unsupported_claims": [
+    "MC002",
+    "MC003",
+    "MC006",
+    "MC007",
+    "MC008"
+  ],
+  "assumptions": [
+    "Claims are planned and safety-labeled."
+  ],
+  "limitations": [
+    "No final manuscript-ready empirical claim exists in demo mode."
+  ],
+  "is_demo_manuscript_plan": true,
+  "requires_real_final_topic_package": true,
+  "requires_real_results": true
+}

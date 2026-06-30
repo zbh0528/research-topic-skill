@@ -1,0 +1,255 @@
+{
+  "response_strategies": [
+    {
+      "response_strategy_id": "RS001",
+      "linked_reviewer_objection_id": "RO001",
+      "linked_claim_id": "MC001",
+      "linked_section_id": "S001",
+      "direct_answer_plan": "Answer as an anticipated risk, not as a real reviewer exchange.",
+      "evidence_to_cite": [
+        "Use verified evidence IDs only when available."
+      ],
+      "experiment_to_reference": [
+        "EX001"
+      ],
+      "manuscript_revision": "Add or revise the relevant manuscript section before submission.",
+      "safer_claim_revision": "Downgrade unsupported wording to planned or requires-confirmation wording.",
+      "additional_analysis_needed": "Run or verify the required experiment/literature support before making a strong claim.",
+      "what_not_to_claim": [
+        "Do not claim reviewer approval.",
+        "Do not claim completed experiments.",
+        "Do not invent citations."
+      ],
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    },
+    {
+      "response_strategy_id": "RS002",
+      "linked_reviewer_objection_id": "RO002",
+      "linked_claim_id": "MC004",
+      "linked_section_id": "S002",
+      "direct_answer_plan": "Answer as an anticipated risk, not as a real reviewer exchange.",
+      "evidence_to_cite": [
+        "Use verified evidence IDs only when available."
+      ],
+      "experiment_to_reference": [
+        "EX001"
+      ],
+      "manuscript_revision": "Add or revise the relevant manuscript section before submission.",
+      "safer_claim_revision": "Downgrade unsupported wording to planned or requires-confirmation wording.",
+      "additional_analysis_needed": "Run or verify the required experiment/literature support before making a strong claim.",
+      "what_not_to_claim": [
+        "Do not claim reviewer approval.",
+        "Do not claim completed experiments.",
+        "Do not invent citations."
+      ],
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    },
+    {
+      "response_strategy_id": "RS003",
+      "linked_reviewer_objection_id": "RO003",
+      "linked_claim_id": "MC005",
+      "linked_section_id": "S003",
+      "direct_answer_plan": "Answer as an anticipated risk, not as a real reviewer exchange.",
+      "evidence_to_cite": [
+        "Use verified evidence IDs only when available."
+      ],
+      "experiment_to_reference": [
+        "EX001"
+      ],
+      "manuscript_revision": "Add or revise the relevant manuscript section before submission.",
+      "safer_claim_revision": "Downgrade unsupported wording to planned or requires-confirmation wording.",
+      "additional_analysis_needed": "Run or verify the required experiment/literature support before making a strong claim.",
+      "what_not_to_claim": [
+        "Do not claim reviewer approval.",
+        "Do not claim completed experiments.",
+        "Do not invent citations."
+      ],
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    },
+    {
+      "response_strategy_id": "RS004",
+      "linked_reviewer_objection_id": "RO004",
+      "linked_claim_id": "MC006",
+      "linked_section_id": "S004",
+      "direct_answer_plan": "Answer as an anticipated risk, not as a real reviewer exchange.",
+      "evidence_to_cite": [
+        "Use verified evidence IDs only when available."
+      ],
+      "experiment_to_reference": [
+        "EX002"
+      ],
+      "manuscript_revision": "Add or revise the relevant manuscript section before submission.",
+      "safer_claim_revision": "Downgrade unsupported wording to planned or requires-confirmation wording.",
+      "additional_analysis_needed": "Run or verify the required experiment/literature support before making a strong claim.",
+      "what_not_to_claim": [
+        "Do not claim reviewer approval.",
+        "Do not claim completed experiments.",
+        "Do not invent citations."
+      ],
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    },
+    {
+      "response_strategy_id": "RS005",
+      "linked_reviewer_objection_id": "RO005",
+      "linked_claim_id": "MC007",
+      "linked_section_id": "S005",
+      "direct_answer_plan": "Answer as an anticipated risk, not as a real reviewer exchange.",
+      "evidence_to_cite": [
+        "Use verified evidence IDs only when available."
+      ],
+      "experiment_to_reference": [
+        "EX002"
+      ],
+      "manuscript_revision": "Add or revise the relevant manuscript section before submission.",
+      "safer_claim_revision": "Downgrade unsupported wording to planned or requires-confirmation wording.",
+      "additional_analysis_needed": "Run or verify the required experiment/literature support before making a strong claim.",
+      "what_not_to_claim": [
+        "Do not claim reviewer approval.",
+        "Do not claim completed experiments.",
+        "Do not invent citations."
+      ],
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    },
+    {
+      "response_strategy_id": "RS006",
+      "linked_reviewer_objection_id": "RO006",
+      "linked_claim_id": "MC008",
+      "linked_section_id": "S006",
+      "direct_answer_plan": "Answer as an anticipated risk, not as a real reviewer exchange.",
+      "evidence_to_cite": [
+        "Use verified evidence IDs only when available."
+      ],
+      "experiment_to_reference": [
+        "EX003"
+      ],
+      "manuscript_revision": "Add or revise the relevant manuscript section before submission.",
+      "safer_claim_revision": "Downgrade unsupported wording to planned or requires-confirmation wording.",
+      "additional_analysis_needed": "Run or verify the required experiment/literature support before making a strong claim.",
+      "what_not_to_claim": [
+        "Do not claim reviewer approval.",
+        "Do not claim completed experiments.",
+        "Do not invent citations."
+      ],
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    },
+    {
+      "response_strategy_id": "RS007",
+      "linked_reviewer_objection_id": "RO007",
+      "linked_claim_id": "MC009",
+      "linked_section_id": "S007",
+      "direct_answer_plan": "Answer as an anticipated risk, not as a real reviewer exchange.",
+      "evidence_to_cite": [
+        "Use verified evidence IDs only when available."
+      ],
+      "experiment_to_reference": [
+        "EX001"
+      ],
+      "manuscript_revision": "Add or revise the relevant manuscript section before submission.",
+      "safer_claim_revision": "Downgrade unsupported wording to planned or requires-confirmation wording.",
+      "additional_analysis_needed": "Run or verify the required experiment/literature support before making a strong claim.",
+      "what_not_to_claim": [
+        "Do not claim reviewer approval.",
+        "Do not claim completed experiments.",
+        "Do not invent citations."
+      ],
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    },
+    {
+      "response_strategy_id": "RS008",
+      "linked_reviewer_objection_id": "RO008",
+      "linked_claim_id": "MC010",
+      "linked_section_id": "S008",
+      "direct_answer_plan": "Answer as an anticipated risk, not as a real reviewer exchange.",
+      "evidence_to_cite": [
+        "Use verified evidence IDs only when available."
+      ],
+      "experiment_to_reference": [],
+      "manuscript_revision": "Add or revise the relevant manuscript section before submission.",
+      "safer_claim_revision": "Downgrade unsupported wording to planned or requires-confirmation wording.",
+      "additional_analysis_needed": "Run or verify the required experiment/literature support before making a strong claim.",
+      "what_not_to_claim": [
+        "Do not claim reviewer approval.",
+        "Do not claim completed experiments.",
+        "Do not invent citations."
+      ],
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    }
+  ],
+  "response_strategy_summary": [
+    {
+      "response_strategy_id": "RS001",
+      "linked_reviewer_objection_id": "RO001"
+    },
+    {
+      "response_strategy_id": "RS002",
+      "linked_reviewer_objection_id": "RO002"
+    },
+    {
+      "response_strategy_id": "RS003",
+      "linked_reviewer_objection_id": "RO003"
+    },
+    {
+      "response_strategy_id": "RS004",
+      "linked_reviewer_objection_id": "RO004"
+    },
+    {
+      "response_strategy_id": "RS005",
+      "linked_reviewer_objection_id": "RO005"
+    },
+    {
+      "response_strategy_id": "RS006",
+      "linked_reviewer_objection_id": "RO006"
+    },
+    {
+      "response_strategy_id": "RS007",
+      "linked_reviewer_objection_id": "RO007"
+    },
+    {
+      "response_strategy_id": "RS008",
+      "linked_reviewer_objection_id": "RO008"
+    }
+  ],
+  "unresolved_objections": [
+    {
+      "reviewer_objection_id": "RO001",
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    },
+    {
+      "reviewer_objection_id": "RO002",
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    },
+    {
+      "reviewer_objection_id": "RO003",
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    },
+    {
+      "reviewer_objection_id": "RO004",
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    },
+    {
+      "reviewer_objection_id": "RO005",
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    },
+    {
+      "reviewer_objection_id": "RO006",
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    },
+    {
+      "reviewer_objection_id": "RO007",
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    },
+    {
+      "reviewer_objection_id": "RO008",
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    }
+  ],
+  "assumptions": [
+    "Response strategies are plans only."
+  ],
+  "limitations": [
+    "No real rebuttal is drafted."
+  ],
+  "is_demo_manuscript_plan": true,
+  "requires_real_final_topic_package": true,
+  "requires_real_results": true
+}

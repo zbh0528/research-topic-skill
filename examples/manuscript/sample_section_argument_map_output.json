@@ -1,0 +1,302 @@
+{
+  "section_arguments": [
+    {
+      "section_id": "S001",
+      "section_name": "Introduction",
+      "section_role": "background_motivation",
+      "argument_chain": [
+        "background",
+        "existing streams",
+        "unresolved tension",
+        "specific gap",
+        "problem statement",
+        "theoretical positioning",
+        "contribution preview",
+        "validation preview"
+      ],
+      "opening_purpose": "Plan the Introduction section without unsupported manuscript claims.",
+      "key_claims": [
+        "MC001",
+        "MC002",
+        "MC003"
+      ],
+      "evidence_requirements": [],
+      "citation_requirements": [
+        "CR001",
+        "CR002"
+      ],
+      "result_placeholders": [
+        "RP001"
+      ],
+      "transition_in": "Use a controlled transition from the previous section.",
+      "transition_out": "Prepare the next section without adding unsupported claims.",
+      "reviewer_risks": [
+        "RO001"
+      ],
+      "missing_support": [],
+      "revision_hooks": [
+        "Add evidence, citation requirement, or result placeholder before strengthening claims."
+      ]
+    },
+    {
+      "section_id": "S002",
+      "section_name": "Related Work",
+      "section_role": "literature_positioning",
+      "argument_chain": [
+        "research stream",
+        "representative evidence",
+        "limitation or boundary",
+        "relation to selected problem",
+        "baseline relevance",
+        "remaining gap"
+      ],
+      "opening_purpose": "Plan the Related Work section without unsupported manuscript claims.",
+      "key_claims": [
+        "MC004"
+      ],
+      "evidence_requirements": [],
+      "citation_requirements": [
+        "CR003",
+        "CR004"
+      ],
+      "result_placeholders": [],
+      "transition_in": "Use a controlled transition from the previous section.",
+      "transition_out": "Prepare the next section without adding unsupported claims.",
+      "reviewer_risks": [
+        "RO002"
+      ],
+      "missing_support": [],
+      "revision_hooks": [
+        "Add evidence, citation requirement, or result placeholder before strengthening claims."
+      ]
+    },
+    {
+      "section_id": "S003",
+      "section_name": "Problem Formulation",
+      "section_role": "problem_statement",
+      "argument_chain": [
+        "planned claim",
+        "support boundary",
+        "transition"
+      ],
+      "opening_purpose": "Plan the Problem Formulation section without unsupported manuscript claims.",
+      "key_claims": [
+        "MC005"
+      ],
+      "evidence_requirements": [],
+      "citation_requirements": [
+        "CR005"
+      ],
+      "result_placeholders": [],
+      "transition_in": "Use a controlled transition from the previous section.",
+      "transition_out": "Prepare the next section without adding unsupported claims.",
+      "reviewer_risks": [
+        "RO003"
+      ],
+      "missing_support": [],
+      "revision_hooks": [
+        "Add evidence, citation requirement, or result placeholder before strengthening claims."
+      ]
+    },
+    {
+      "section_id": "S004",
+      "section_name": "Method",
+      "section_role": "method_rationale",
+      "argument_chain": [
+        "problem property",
+        "method component",
+        "design rationale",
+        "contribution link",
+        "validation or ablation link"
+      ],
+      "opening_purpose": "Plan the Method section without unsupported manuscript claims.",
+      "key_claims": [
+        "MC006"
+      ],
+      "evidence_requirements": [],
+      "citation_requirements": [],
+      "result_placeholders": [
+        "RP002"
+      ],
+      "transition_in": "Use a controlled transition from the previous section.",
+      "transition_out": "Prepare the next section without adding unsupported claims.",
+      "reviewer_risks": [
+        "RO004"
+      ],
+      "missing_support": [],
+      "revision_hooks": [
+        "Add evidence, citation requirement, or result placeholder before strengthening claims."
+      ]
+    },
+    {
+      "section_id": "S005",
+      "section_name": "Experiments",
+      "section_role": "experimental_validation",
+      "argument_chain": [
+        "validation target",
+        "experiment design",
+        "baseline",
+        "metric",
+        "ablation",
+        "statistical test",
+        "artifact"
+      ],
+      "opening_purpose": "Plan the Experiments section without unsupported manuscript claims.",
+      "key_claims": [
+        "MC007"
+      ],
+      "evidence_requirements": [],
+      "citation_requirements": [
+        "CR006"
+      ],
+      "result_placeholders": [
+        "RP001",
+        "RP002",
+        "RP003"
+      ],
+      "transition_in": "Use a controlled transition from the previous section.",
+      "transition_out": "Prepare the next section without adding unsupported claims.",
+      "reviewer_risks": [
+        "RO005"
+      ],
+      "missing_support": [],
+      "revision_hooks": [
+        "Add evidence, citation requirement, or result placeholder before strengthening claims."
+      ]
+    },
+    {
+      "section_id": "S006",
+      "section_name": "Results and Analysis",
+      "section_role": "result_interpretation",
+      "argument_chain": [
+        "planned claim",
+        "support boundary",
+        "transition"
+      ],
+      "opening_purpose": "Plan the Results and Analysis section without unsupported manuscript claims.",
+      "key_claims": [
+        "MC008"
+      ],
+      "evidence_requirements": [],
+      "citation_requirements": [],
+      "result_placeholders": [
+        "RP001",
+        "RP002",
+        "RP003"
+      ],
+      "transition_in": "Use a controlled transition from the previous section.",
+      "transition_out": "Prepare the next section without adding unsupported claims.",
+      "reviewer_risks": [
+        "RO006"
+      ],
+      "missing_support": [],
+      "revision_hooks": [
+        "Add evidence, citation requirement, or result placeholder before strengthening claims."
+      ]
+    },
+    {
+      "section_id": "S007",
+      "section_name": "Discussion",
+      "section_role": "limitation_discussion",
+      "argument_chain": [
+        "supported insight",
+        "limitation",
+        "counterevidence",
+        "generalization boundary",
+        "future repair"
+      ],
+      "opening_purpose": "Plan the Discussion section without unsupported manuscript claims.",
+      "key_claims": [
+        "MC009"
+      ],
+      "evidence_requirements": [],
+      "citation_requirements": [
+        "CR007"
+      ],
+      "result_placeholders": [
+        "RP004"
+      ],
+      "transition_in": "Use a controlled transition from the previous section.",
+      "transition_out": "Prepare the next section without adding unsupported claims.",
+      "reviewer_risks": [
+        "RO007"
+      ],
+      "missing_support": [],
+      "revision_hooks": [
+        "Add evidence, citation requirement, or result placeholder before strengthening claims."
+      ]
+    },
+    {
+      "section_id": "S008",
+      "section_name": "Conclusion",
+      "section_role": "conclusion_synthesis",
+      "argument_chain": [
+        "planned claim",
+        "support boundary",
+        "transition"
+      ],
+      "opening_purpose": "Plan the Conclusion section without unsupported manuscript claims.",
+      "key_claims": [
+        "MC010"
+      ],
+      "evidence_requirements": [],
+      "citation_requirements": [],
+      "result_placeholders": [],
+      "transition_in": "Use a controlled transition from the previous section.",
+      "transition_out": "Prepare the next section without adding unsupported claims.",
+      "reviewer_risks": [
+        "RO008"
+      ],
+      "missing_support": [
+        "No external support required or currently planned."
+      ],
+      "revision_hooks": [
+        "Add evidence, citation requirement, or result placeholder before strengthening claims."
+      ]
+    }
+  ],
+  "section_argument_summary": [
+    {
+      "section_id": "S001",
+      "section_role": "background_motivation"
+    },
+    {
+      "section_id": "S002",
+      "section_role": "literature_positioning"
+    },
+    {
+      "section_id": "S003",
+      "section_role": "problem_statement"
+    },
+    {
+      "section_id": "S004",
+      "section_role": "method_rationale"
+    },
+    {
+      "section_id": "S005",
+      "section_role": "experimental_validation"
+    },
+    {
+      "section_id": "S006",
+      "section_role": "result_interpretation"
+    },
+    {
+      "section_id": "S007",
+      "section_role": "limitation_discussion"
+    },
+    {
+      "section_id": "S008",
+      "section_role": "conclusion_synthesis"
+    }
+  ],
+  "missing_section_links": [],
+  "assumptions": [
+    "Section map is a plan, not manuscript prose."
+  ],
+  "limitations": [
+    "Requires human writing and real evidence before submission."
+  ],
+  "is_demo_manuscript_plan": true,
+  "requires_real_final_topic_package": true,
+  "requires_real_results": true
+}

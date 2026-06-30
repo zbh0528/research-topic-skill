@@ -1,0 +1,54 @@
+{
+  "experiment_section_items": [
+    {
+      "experiment_section_item_id": "ESI001",
+      "linked_validation_target_id": "VT001",
+      "linked_experiment_id": "EX001",
+      "linked_contribution_id": "C1",
+      "baseline_ids": [
+        "B001",
+        "B004"
+      ],
+      "metric_ids": [
+        "M001",
+        "M002",
+        "M003",
+        "M005",
+        "M007",
+        "M008"
+      ],
+      "ablation_ids": [],
+      "statistical_test_ids": [
+        "ST001"
+      ],
+      "artifact_ids": [
+        "AR001",
+        "AR002"
+      ],
+      "section_claim": "Experiment section should describe planned validation links only.",
+      "result_placeholder_ids": [
+        "RP001"
+      ],
+      "missing_validation_risk": "No real results are available in the demo plan.",
+      "reviewer_question": "Are baselines and metrics aligned with C1?",
+      "revision_action": "Insert real result evidence only after execution."
+    }
+  ],
+  "experiment_section_summary": [
+    {
+      "experiment_section_item_id": "ESI001",
+      "linked_validation_target_id": "VT001"
+    }
+  ],
+  "missing_validation_links": [],
+  "result_wording_risks": [],
+  "assumptions": [
+    "Experiment section alignment is planned."
+  ],
+  "limitations": [
+    "No results are available."
+  ],
+  "is_demo_manuscript_plan": true,
+  "requires_real_final_topic_package": true,
+  "requires_real_results": true
+}

@@ -1,0 +1,35 @@
+{
+  "method_component_alignments": [
+    {
+      "method_component_id": "MCMP001",
+      "component_name": "Joint layout-cabling representation",
+      "linked_problem_property": "spatial-network coupling",
+      "linked_theory_element_id": "TE001",
+      "linked_contribution_id": "C1",
+      "linked_mechanism_id": "MECH001",
+      "design_rationale": "Represent coupled decisions before claiming benefit.",
+      "expected_ablation_id": "A001",
+      "required_explanation": "Explain why decoupled layout then cabling is insufficient.",
+      "unsupported_design_risk": "algorithm wrapping risk if problem property is omitted",
+      "reviewer_question": "Why is this mechanism necessary for this problem structure?",
+      "revision_action": "Map component to problem property and validation target."
+    }
+  ],
+  "method_alignment_summary": [
+    {
+      "method_component_id": "MCMP001",
+      "linked_problem_property": "spatial-network coupling"
+    }
+  ],
+  "unsupported_components": [],
+  "algorithm_wrapping_risks": [],
+  "assumptions": [
+    "Method alignment is planned."
+  ],
+  "limitations": [
+    "No algorithm performance is claimed."
+  ],
+  "is_demo_manuscript_plan": true,
+  "requires_real_final_topic_package": true,
+  "requires_real_results": true
+}

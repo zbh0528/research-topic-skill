@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Experiment Section Alignment",
+  "type": "object",
+  "required": [
+    "experiment_section_items",
+    "experiment_section_summary",
+    "missing_validation_links",
+    "result_wording_risks",
+    "assumptions",
+    "limitations"
+  ],
+  "properties": {
+    "experiment_section_items": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "experiment_section_summary": {
+      "type": "array",
+      "items": {}
+    },
+    "missing_validation_links": {
+      "type": "array",
+      "items": {}
+    },
+    "result_wording_risks": {
+      "type": "array",
+      "items": {}
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {}
+    },
+    "limitations": {
+      "type": "array",
+      "items": {}
+    },
+    "is_demo_manuscript_plan": {
+      "type": "boolean"
+    },
+    "requires_real_final_topic_package": {
+      "type": "boolean"
+    },
+    "requires_real_results": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

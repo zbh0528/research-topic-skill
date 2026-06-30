@@ -409,5 +409,79 @@
       "artifact_id": "AR001",
       "validation_status": "requires_empirical_results"
     }
-  ]
+  ],
+  "manuscript_traceability_table": [
+    {
+      "contribution_id": "C1",
+      "contribution_claim": "joint layout-cabling optimization model",
+      "manuscript_claim_id": "MC002",
+      "section_id": "S001",
+      "paragraph_id": "P002",
+      "citation_requirement_ids": [
+        "CR002"
+      ],
+      "result_placeholder_ids": [
+        "RP001"
+      ],
+      "evidence_ids": [],
+      "experiment_ids": [
+        "EX001"
+      ],
+      "reviewer_objection_ids": [
+        "RO001"
+      ],
+      "response_strategy_ids": [
+        "RS001"
+      ],
+      "claim_safety_level": "needs_experiment_result",
+      "manuscript_claim_status": "experiment_result_required"
+    },
+    {
+      "contribution_id": "C2",
+      "contribution_claim": "problem-structure-aware evolutionary mechanism",
+      "manuscript_claim_id": "MC006",
+      "section_id": "S004",
+      "paragraph_id": "P006",
+      "citation_requirement_ids": [],
+      "result_placeholder_ids": [
+        "RP002"
+      ],
+      "evidence_ids": [],
+      "experiment_ids": [
+        "EX002"
+      ],
+      "reviewer_objection_ids": [
+        "RO004"
+      ],
+      "response_strategy_ids": [
+        "RS004"
+      ],
+      "claim_safety_level": "needs_experiment_result",
+      "manuscript_claim_status": "experiment_result_required"
+    },
+    {
+      "contribution_id": "C3",
+      "contribution_claim": "aerodynamic-electrical-economic trade-off analysis",
+      "manuscript_claim_id": "MC008",
+      "section_id": "S006",
+      "paragraph_id": "P008",
+      "citation_requirement_ids": [],
+      "result_placeholder_ids": [
+        "RP003"
+      ],
+      "evidence_ids": [],
+      "experiment_ids": [
+        "EX003"
+      ],
+      "reviewer_objection_ids": [
+        "RO006"
+      ],
+      "response_strategy_ids": [
+        "RS006"
+      ],
+      "claim_safety_level": "needs_experiment_result",
+      "manuscript_claim_status": "experiment_result_required"
+    }
+  ],
+  "manuscript_readiness": "not_manuscript_ready"
 }

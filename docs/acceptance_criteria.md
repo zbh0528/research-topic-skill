@@ -1,6 +1,6 @@
 # Acceptance Criteria
 
-This file records v0.1.0 and v0.2.0 acceptance gates for `windfarm-research-topic-skill`.
+This file records acceptance gates for `windfarm-research-topic-skill`.
 
 ## Engineering gates
 
@@ -121,3 +121,34 @@ Any one of these blocks acceptance:
 - Metric and contribution mismatch.
 - Final topic package missing the Contribution-to-Experiment Traceability Table in complete-chain acceptance.
 - v0.1.0 or v0.2.0 tests fail.
+
+## v0.4.0 Engineering Gates
+
+- Manuscript schemas are legal JSON Schema files.
+- Manuscript scripts run: `build_manuscript_blueprint.py`, `validate_manuscript_plan.py`, `audit_manuscript_claims.py`, `generate_reviewer_response_plan.py`, and `generate_manuscript_checklist.py`.
+- New v0.4.0 tests pass.
+- Existing v0.1.0, v0.2.0, and v0.3.0 tests still pass.
+- `validate_outputs.py --manuscript-grounded --strict-manuscript` works without breaking default validation.
+
+## v0.4.0 Semantic Gates
+
+- Every manuscript claim has `manuscript_claim_status` and `claim_safety_level`.
+- Every gap or background claim has citation requirements or verified evidence links.
+- Every empirical or effectiveness claim has result placeholders until real results exist.
+- Introduction links background, streams, gap, problem, contribution, and validation preview.
+- Related Work is organized by research stream and limitation, not citation dumping.
+- Method claims link method components to problem properties and ablation requirements.
+- Experiment-section claims link to validation targets, baselines, metrics, statistics, and artifacts.
+- Discussion exposes limitations, counterevidence, and generalization boundaries.
+- High-risk reviewer objections have response strategies.
+- Complete-chain acceptance has a Contribution-to-Manuscript Traceability Table.
+
+## v0.4.0 Veto Conditions
+
+- Fabricated citations, author-year references, DOI values, numerical results, p-values, or reviewer comments.
+- Result placeholders written as observed findings.
+- Citation requirements written as real citations.
+- Anticipated reviewer objections written as received reviewer comments.
+- Unsupported field-wide novelty or performance claims.
+- Manuscript claim without traceability.
+- Final manuscript generation from draft/demo artifacts.

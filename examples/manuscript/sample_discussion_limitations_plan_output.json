@@ -1,0 +1,51 @@
+{
+  "supported_claims": [
+    "Only planning and traceability claims are supported in the demo."
+  ],
+  "claims_requiring_more_evidence": [
+    "Effectiveness, Pareto quality, feasibility, runtime, and ablation claims require real results."
+  ],
+  "literature_limitations": [
+    "Synthetic corpus is not real field evidence."
+  ],
+  "experiment_limitations": [
+    "Demo validation plan is not executed."
+  ],
+  "model_limitations": [
+    "Model assumptions require real manuscript decisions."
+  ],
+  "algorithm_limitations": [
+    "Mechanism benefit is not established without ablation results."
+  ],
+  "case_study_limitations": [
+    "Synthetic demo cases cannot support field generalization."
+  ],
+  "external_validity_risks": [
+    "Generalization beyond planned instances is not supported."
+  ],
+  "construct_validity_risks": [
+    "Metric choices require final protocol confirmation."
+  ],
+  "internal_validity_risks": [
+    "Baseline implementation and budget fairness require verification."
+  ],
+  "conclusion_validity_risks": [
+    "Do not conclude performance benefit without result evidence."
+  ],
+  "counterevidence": [
+    "Counterevidence must be surfaced from literature_gap_audit when available."
+  ],
+  "generalization_boundary": "Claims are manuscript-planning claims until real evidence exists.",
+  "future_work": [
+    "Run experiments",
+    "Replace synthetic examples with real or justified benchmark evidence"
+  ],
+  "safer_discussion_wording": [
+    "requires empirical confirmation",
+    "within the provided corpus",
+    "the planned experiments should assess"
+  ],
+  "is_demo_manuscript_plan": true,
+  "requires_real_final_topic_package": true,
+  "requires_real_results": true
+}

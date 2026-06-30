@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Manuscript Grounding Report",
+  "type": "object",
+  "required": [
+    "project_id",
+    "manuscript_blueprint_summary",
+    "manuscript_context",
+    "claims_not_ready_for_manuscript",
+    "contribution_to_manuscript_traceability_table"
+  ],
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "section_argument_summary": {
+      "type": "array",
+      "items": {}
+    },
+    "paragraph_claim_summary": {
+      "type": "array",
+      "items": {}
+    },
+    "citation_requirement_summary": {
+      "type": "array",
+      "items": {}
+    },
+    "result_placeholder_summary": {
+      "type": "array",
+      "items": {}
+    },
+    "method_alignment_summary": {
+      "type": "array",
+      "items": {}
+    },
+    "experiment_section_summary": {
+      "type": "array",
+      "items": {}
+    },
+    "reviewer_objection_summary": {
+      "type": "array",
+      "items": {}
+    },
+    "reviewer_response_summary": {
+      "type": "array",
+      "items": {}
+    },
+    "claims_not_ready_for_manuscript": {
+      "type": "array",
+      "items": {}
+    },
+    "reviewer_response_risks": {
+      "type": "array",
+      "items": {}
+    },
+    "contribution_to_manuscript_traceability_table": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "manuscript_blueprint_summary": {
+      "type": "object"
+    },
+    "discussion_limitations_summary": {
+      "type": "object"
+    },
+    "manuscript_adequacy_summary": {
+      "type": "object"
+    },
+    "manuscript_context": {
+      "type": "object"
+    },
+    "is_demo_manuscript_plan": {
+      "type": "boolean"
+    },
+    "requires_real_final_topic_package": {
+      "type": "boolean"
+    },
+    "requires_real_results": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

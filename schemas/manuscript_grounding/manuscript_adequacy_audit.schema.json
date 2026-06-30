@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Manuscript Adequacy Audit",
+  "type": "object",
+  "required": [
+    "manuscript_chain_status",
+    "pass_or_revise_decision",
+    "pass_count",
+    "warning_count",
+    "fail_count",
+    "passes",
+    "warnings",
+    "failures"
+  ],
+  "properties": {
+    "manuscript_chain_status": {
+      "type": "string"
+    },
+    "pass_or_revise_decision": {
+      "type": "string"
+    },
+    "unsupported_manuscript_claims": {
+      "type": "array",
+      "items": {}
+    },
+    "missing_traceability": {
+      "type": "array",
+      "items": {}
+    },
+    "missing_citation_requirements": {
+      "type": "array",
+      "items": {}
+    },
+    "missing_result_placeholders": {
+      "type": "array",
+      "items": {}
+    },
+    "fabricated_citation_risks": {
+      "type": "array",
+      "items": {}
+    },
+    "fabricated_result_risks": {
+      "type": "array",
+      "items": {}
+    },
+    "overclaim_risks": {
+      "type": "array",
+      "items": {}
+    },
+    "weak_introduction_links": {
+      "type": "array",
+      "items": {}
+    },
+    "weak_related_work_links": {
+      "type": "array",
+      "items": {}
+    },
+    "method_alignment_risks": {
+      "type": "array",
+      "items": {}
+    },
+    "experiment_alignment_risks": {
+      "type": "array",
+      "items": {}
+    },
+    "hidden_limitation_risks": {
+      "type": "array",
+      "items": {}
+    },
+    "reviewer_response_gaps": {
+      "type": "array",
+      "items": {}
+    },
+    "repair_actions": {
+      "type": "array",
+      "items": {}
+    },
+    "passes": {
+      "type": "array",
+      "items": {}
+    },
+    "warnings": {
+      "type": "array",
+      "items": {}
+    },
+    "failures": {
+      "type": "array",
+      "items": {}
+    },
+    "pass_count": {
+      "type": "integer"
+    },
+    "warning_count": {
+      "type": "integer"
+    },
+    "fail_count": {
+      "type": "integer"
+    },
+    "is_demo_manuscript_plan": {
+      "type": "boolean"
+    },
+    "requires_real_final_topic_package": {
+      "type": "boolean"
+    },
+    "requires_real_results": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

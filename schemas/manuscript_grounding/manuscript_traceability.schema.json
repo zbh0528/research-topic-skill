@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Manuscript Traceability",
+  "type": "object",
+  "required": [
+    "contribution_to_manuscript_traceability_table"
+  ],
+  "properties": {
+    "contribution_to_manuscript_traceability_table": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "contribution_id",
+          "manuscript_claim_id",
+          "section_id",
+          "claim_safety_level",
+          "manuscript_claim_status"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "is_demo_manuscript_plan": {
+      "type": "boolean"
+    },
+    "requires_real_final_topic_package": {
+      "type": "boolean"
+    },
+    "requires_real_results": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

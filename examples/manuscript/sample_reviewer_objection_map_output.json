@@ -1,0 +1,183 @@
+{
+  "reviewer_objections": [
+    {
+      "reviewer_objection_id": "RO001",
+      "objection_type": "citation_gap_question",
+      "likely_question": "How is the gap supported?",
+      "source_risk": "missing citation",
+      "linked_section_id": "S001",
+      "linked_claim_id": "MC001",
+      "linked_contribution_id": "C1",
+      "linked_experiment_id": "EX001",
+      "severity": "high",
+      "required_evidence": [
+        "verified citation or real result evidence, as applicable"
+      ],
+      "manuscript_repair_action": "Revise section wording and add missing evidence requirement.",
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    },
+    {
+      "reviewer_objection_id": "RO002",
+      "objection_type": "baseline_sufficiency_question",
+      "likely_question": "Are the baselines sufficient?",
+      "source_risk": "baseline adequacy",
+      "linked_section_id": "S002",
+      "linked_claim_id": "MC004",
+      "linked_contribution_id": "C1",
+      "linked_experiment_id": "EX001",
+      "severity": "high",
+      "required_evidence": [
+        "verified citation or real result evidence, as applicable"
+      ],
+      "manuscript_repair_action": "Revise section wording and add missing evidence requirement.",
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    },
+    {
+      "reviewer_objection_id": "RO003",
+      "objection_type": "method_necessity_question",
+      "likely_question": "Why is the joint model necessary?",
+      "source_risk": "method necessity",
+      "linked_section_id": "S003",
+      "linked_claim_id": "MC005",
+      "linked_contribution_id": "C1",
+      "linked_experiment_id": "EX001",
+      "severity": "medium",
+      "required_evidence": [
+        "verified citation or real result evidence, as applicable"
+      ],
+      "manuscript_repair_action": "Revise section wording and add missing evidence requirement.",
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    },
+    {
+      "reviewer_objection_id": "RO004",
+      "objection_type": "algorithm_wrapping_question",
+      "likely_question": "Is this just wrapping an algorithm?",
+      "source_risk": "method alignment",
+      "linked_section_id": "S004",
+      "linked_claim_id": "MC006",
+      "linked_contribution_id": "C2",
+      "linked_experiment_id": "EX002",
+      "severity": "high",
+      "required_evidence": [
+        "verified citation or real result evidence, as applicable"
+      ],
+      "manuscript_repair_action": "Revise section wording and add missing evidence requirement.",
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    },
+    {
+      "reviewer_objection_id": "RO005",
+      "objection_type": "statistical_validity_question",
+      "likely_question": "How are stochastic effects handled?",
+      "source_risk": "statistical validity",
+      "linked_section_id": "S005",
+      "linked_claim_id": "MC007",
+      "linked_contribution_id": "C2",
+      "linked_experiment_id": "EX002",
+      "severity": "high",
+      "required_evidence": [
+        "verified citation or real result evidence, as applicable"
+      ],
+      "manuscript_repair_action": "Revise section wording and add missing evidence requirement.",
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    },
+    {
+      "reviewer_objection_id": "RO006",
+      "objection_type": "overclaim_question",
+      "likely_question": "Are results claimed before evidence exists?",
+      "source_risk": "result placeholder",
+      "linked_section_id": "S006",
+      "linked_claim_id": "MC008",
+      "linked_contribution_id": "C3",
+      "linked_experiment_id": "EX003",
+      "severity": "high",
+      "required_evidence": [
+        "verified citation or real result evidence, as applicable"
+      ],
+      "manuscript_repair_action": "Revise section wording and add missing evidence requirement.",
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    },
+    {
+      "reviewer_objection_id": "RO007",
+      "objection_type": "limitation_question",
+      "likely_question": "Are synthetic/demo limitations visible?",
+      "source_risk": "hidden limitation",
+      "linked_section_id": "S007",
+      "linked_claim_id": "MC009",
+      "linked_contribution_id": "C3",
+      "linked_experiment_id": "EX001",
+      "severity": "critical",
+      "required_evidence": [
+        "verified citation or real result evidence, as applicable"
+      ],
+      "manuscript_repair_action": "Revise section wording and add missing evidence requirement.",
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    },
+    {
+      "reviewer_objection_id": "RO008",
+      "objection_type": "generalization_question",
+      "likely_question": "Does the conclusion overgeneralize?",
+      "source_risk": "generalization boundary",
+      "linked_section_id": "S008",
+      "linked_claim_id": "MC010",
+      "linked_contribution_id": "C3",
+      "linked_experiment_id": "",
+      "severity": "medium",
+      "required_evidence": [
+        "verified citation or real result evidence, as applicable"
+      ],
+      "manuscript_repair_action": "Revise section wording and add missing evidence requirement.",
+      "residual_risk": "Residual risk remains until real evidence is supplied."
+    }
+  ],
+  "objection_summary": [
+    {
+      "reviewer_objection_id": "RO001",
+      "severity": "high"
+    },
+    {
+      "reviewer_objection_id": "RO002",
+      "severity": "high"
+    },
+    {
+      "reviewer_objection_id": "RO003",
+      "severity": "medium"
+    },
+    {
+      "reviewer_objection_id": "RO004",
+      "severity": "high"
+    },
+    {
+      "reviewer_objection_id": "RO005",
+      "severity": "high"
+    },
+    {
+      "reviewer_objection_id": "RO006",
+      "severity": "high"
+    },
+    {
+      "reviewer_objection_id": "RO007",
+      "severity": "critical"
+    },
+    {
+      "reviewer_objection_id": "RO008",
+      "severity": "medium"
+    }
+  ],
+  "high_severity_objections": [
+    "RO001",
+    "RO002",
+    "RO004",
+    "RO005",
+    "RO006",
+    "RO007"
+  ],
+  "assumptions": [
+    "Objections are anticipated, not real reviewer comments."
+  ],
+  "limitations": [
+    "No real review is represented."
+  ],
+  "is_demo_manuscript_plan": true,
+  "requires_real_final_topic_package": true,
+  "requires_real_results": true
+}

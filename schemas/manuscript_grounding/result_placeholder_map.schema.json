@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Result Placeholder Map",
+  "type": "object",
+  "required": [
+    "result_placeholders",
+    "result_placeholder_summary",
+    "missing_results",
+    "assumptions",
+    "limitations"
+  ],
+  "properties": {
+    "result_placeholders": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "result_placeholder_id",
+          "linked_claim_id",
+          "result_placeholder_type",
+          "current_status"
+        ],
+        "properties": {
+          "result_placeholder_id": {
+            "type": "string"
+          },
+          "linked_claim_id": {
+            "type": "string"
+          },
+          "result_placeholder_type": {
+            "type": "string",
+            "enum": [
+              "baseline_comparison_result",
+              "pareto_quality_result",
+              "feasibility_result",
+              "runtime_result",
+              "ablation_result",
+              "sensitivity_result",
+              "statistical_test_result",
+              "case_study_result",
+              "reproducibility_artifact_result",
+              "qualitative_interpretation_result"
+            ]
+          },
+          "current_status": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "result_placeholder_summary": {
+      "type": "array",
+      "items": {}
+    },
+    "missing_results": {
+      "type": "array",
+      "items": {}
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {}
+    },
+    "limitations": {
+      "type": "array",
+      "items": {}
+    },
+    "is_demo_manuscript_plan": {
+      "type": "boolean"
+    },
+    "requires_real_final_topic_package": {
+      "type": "boolean"
+    },
+    "requires_real_results": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

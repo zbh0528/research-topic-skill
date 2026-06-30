@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Reviewer Response Strategy",
+  "type": "object",
+  "required": [
+    "response_strategies",
+    "response_strategy_summary",
+    "unresolved_objections",
+    "assumptions",
+    "limitations"
+  ],
+  "properties": {
+    "response_strategies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "response_strategy_id",
+          "linked_reviewer_objection_id",
+          "what_not_to_claim"
+        ],
+        "properties": {
+          "response_strategy_id": {
+            "type": "string"
+          },
+          "linked_reviewer_objection_id": {
+            "type": "string"
+          },
+          "what_not_to_claim": {
+            "type": "array"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "response_strategy_summary": {
+      "type": "array",
+      "items": {}
+    },
+    "unresolved_objections": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {}
+    },
+    "limitations": {
+      "type": "array",
+      "items": {}
+    },
+    "is_demo_manuscript_plan": {
+      "type": "boolean"
+    },
+    "requires_real_final_topic_package": {
+      "type": "boolean"
+    },
+    "requires_real_results": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

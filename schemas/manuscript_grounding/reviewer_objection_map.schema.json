@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Reviewer Objection Map",
+  "type": "object",
+  "required": [
+    "reviewer_objections",
+    "objection_summary",
+    "high_severity_objections",
+    "assumptions",
+    "limitations"
+  ],
+  "properties": {
+    "reviewer_objections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "reviewer_objection_id",
+          "objection_type",
+          "severity"
+        ],
+        "properties": {
+          "reviewer_objection_id": {
+            "type": "string"
+          },
+          "objection_type": {
+            "type": "string",
+            "enum": [
+              "novelty_question",
+              "significance_question",
+              "problem_importance_question",
+              "method_necessity_question",
+              "algorithm_wrapping_question",
+              "baseline_sufficiency_question",
+              "metric_sufficiency_question",
+              "ablation_sufficiency_question",
+              "statistical_validity_question",
+              "reproducibility_question",
+              "limitation_question",
+              "generalization_question",
+              "writing_clarity_question",
+              "overclaim_question",
+              "citation_gap_question",
+              "counterevidence_question"
+            ]
+          },
+          "severity": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "objection_summary": {
+      "type": "array",
+      "items": {}
+    },
+    "high_severity_objections": {
+      "type": "array",
+      "items": {}
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {}
+    },
+    "limitations": {
+      "type": "array",
+      "items": {}
+    },
+    "is_demo_manuscript_plan": {
+      "type": "boolean"
+    },
+    "requires_real_final_topic_package": {
+      "type": "boolean"
+    },
+    "requires_real_results": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

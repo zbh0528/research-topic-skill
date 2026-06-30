@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Citation Requirement Map",
+  "type": "object",
+  "required": [
+    "citation_requirements",
+    "citation_requirement_summary",
+    "missing_citations",
+    "assumptions",
+    "limitations"
+  ],
+  "properties": {
+    "citation_requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "citation_requirement_id",
+          "linked_claim_id",
+          "citation_requirement_type"
+        ],
+        "properties": {
+          "citation_requirement_id": {
+            "type": "string"
+          },
+          "linked_claim_id": {
+            "type": "string"
+          },
+          "citation_requirement_type": {
+            "type": "string",
+            "enum": [
+              "background_citation",
+              "domain_importance_citation",
+              "method_stream_citation",
+              "limitation_support_citation",
+              "gap_support_citation",
+              "baseline_support_citation",
+              "metric_support_citation",
+              "theory_support_citation",
+              "validation_protocol_citation",
+              "counterevidence_citation"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "citation_requirement_summary": {
+      "type": "array",
+      "items": {}
+    },
+    "missing_citations": {
+      "type": "array",
+      "items": {}
+    },
+    "synthetic_citation_limitations": {
+      "type": "array",
+      "items": {}
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {}
+    },
+    "limitations": {
+      "type": "array",
+      "items": {}
+    },
+    "is_demo_manuscript_plan": {
+      "type": "boolean"
+    },
+    "requires_real_final_topic_package": {
+      "type": "boolean"
+    },
+    "requires_real_results": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

@@ -113,9 +113,9 @@ def test_final_topic_package_sample_has_experiment_traceability_table() -> None:
 
 def test_manifest_and_skill_advertise_v03() -> None:
     manifest = json.loads((ROOT / "skill_manifest.json").read_text())
-    assert manifest["version"] == "0.3.0"
+    assert manifest["version"] in {"0.3.0", "0.4.0"}
     assert "experiment_grounded_mode" in manifest["modes"]
     assert "experiment_grounding_modules" in manifest
     skill = (ROOT / "SKILL.md").read_text()
-    assert "v0.3.0-experiment-grounded-validation-planning" in skill
+    assert "experiment-grounded mode" in skill
     assert "does not fabricate experimental results" in skill

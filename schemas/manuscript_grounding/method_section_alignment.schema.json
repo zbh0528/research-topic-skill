@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Method Section Alignment",
+  "type": "object",
+  "required": [
+    "method_component_alignments",
+    "method_alignment_summary",
+    "unsupported_components",
+    "algorithm_wrapping_risks",
+    "assumptions",
+    "limitations"
+  ],
+  "properties": {
+    "method_component_alignments": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "method_alignment_summary": {
+      "type": "array",
+      "items": {}
+    },
+    "unsupported_components": {
+      "type": "array",
+      "items": {}
+    },
+    "algorithm_wrapping_risks": {
+      "type": "array",
+      "items": {}
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {}
+    },
+    "limitations": {
+      "type": "array",
+      "items": {}
+    },
+    "is_demo_manuscript_plan": {
+      "type": "boolean"
+    },
+    "requires_real_final_topic_package": {
+      "type": "boolean"
+    },
+    "requires_real_results": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

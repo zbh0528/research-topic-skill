@@ -1,0 +1,161 @@
+{
+  "citation_requirements": [
+    {
+      "citation_requirement_id": "CR001",
+      "linked_section_id": "S001",
+      "linked_paragraph_id": "P001",
+      "linked_claim_id": "MC001",
+      "citation_requirement_type": "domain_importance_citation",
+      "citation_purpose": "Support wind farm optimization background.",
+      "required_evidence_type": "domain evidence",
+      "candidate_paper_ids": [],
+      "linked_evidence_ids": [],
+      "corpus_scope": "provided corpus only; synthetic examples are not real citations",
+      "missing_citation_risk": "Claim must remain cautious until real citation evidence is supplied.",
+      "acceptable_if_unavailable": false,
+      "required_before_submission": true,
+      "safer_wording_without_citation": "requires further literature verification"
+    },
+    {
+      "citation_requirement_id": "CR002",
+      "linked_section_id": "S001",
+      "linked_paragraph_id": "P002",
+      "linked_claim_id": "MC002",
+      "citation_requirement_type": "gap_support_citation",
+      "citation_purpose": "Support the specific joint layout-cabling gap.",
+      "required_evidence_type": "gap evidence",
+      "candidate_paper_ids": [],
+      "linked_evidence_ids": [],
+      "corpus_scope": "provided corpus only; synthetic examples are not real citations",
+      "missing_citation_risk": "Claim must remain cautious until real citation evidence is supplied.",
+      "acceptable_if_unavailable": false,
+      "required_before_submission": true,
+      "safer_wording_without_citation": "requires further literature verification"
+    },
+    {
+      "citation_requirement_id": "CR003",
+      "linked_section_id": "S002",
+      "linked_paragraph_id": "P004",
+      "linked_claim_id": "MC004",
+      "citation_requirement_type": "method_stream_citation",
+      "citation_purpose": "Support layout-only and cabling-only streams.",
+      "required_evidence_type": "stream evidence",
+      "candidate_paper_ids": [],
+      "linked_evidence_ids": [],
+      "corpus_scope": "provided corpus only; synthetic examples are not real citations",
+      "missing_citation_risk": "Claim must remain cautious until real citation evidence is supplied.",
+      "acceptable_if_unavailable": false,
+      "required_before_submission": true,
+      "safer_wording_without_citation": "requires further literature verification"
+    },
+    {
+      "citation_requirement_id": "CR004",
+      "linked_section_id": "S002",
+      "linked_paragraph_id": "P004",
+      "linked_claim_id": "MC004",
+      "citation_requirement_type": "baseline_support_citation",
+      "citation_purpose": "Support baseline relevance.",
+      "required_evidence_type": "baseline evidence",
+      "candidate_paper_ids": [],
+      "linked_evidence_ids": [],
+      "corpus_scope": "provided corpus only; synthetic examples are not real citations",
+      "missing_citation_risk": "Claim must remain cautious until real citation evidence is supplied.",
+      "acceptable_if_unavailable": false,
+      "required_before_submission": true,
+      "safer_wording_without_citation": "requires further literature verification"
+    },
+    {
+      "citation_requirement_id": "CR005",
+      "linked_section_id": "S003",
+      "linked_paragraph_id": "P005",
+      "linked_claim_id": "MC005",
+      "citation_requirement_type": "theory_support_citation",
+      "citation_purpose": "Support problem formulation assumptions.",
+      "required_evidence_type": "theory evidence",
+      "candidate_paper_ids": [],
+      "linked_evidence_ids": [],
+      "corpus_scope": "provided corpus only; synthetic examples are not real citations",
+      "missing_citation_risk": "Claim must remain cautious until real citation evidence is supplied.",
+      "acceptable_if_unavailable": false,
+      "required_before_submission": true,
+      "safer_wording_without_citation": "requires further literature verification"
+    },
+    {
+      "citation_requirement_id": "CR006",
+      "linked_section_id": "S005",
+      "linked_paragraph_id": "P007",
+      "linked_claim_id": "MC007",
+      "citation_requirement_type": "validation_protocol_citation",
+      "citation_purpose": "Support metric and baseline protocols.",
+      "required_evidence_type": "validation protocol evidence",
+      "candidate_paper_ids": [],
+      "linked_evidence_ids": [],
+      "corpus_scope": "provided corpus only; synthetic examples are not real citations",
+      "missing_citation_risk": "Claim must remain cautious until real citation evidence is supplied.",
+      "acceptable_if_unavailable": false,
+      "required_before_submission": true,
+      "safer_wording_without_citation": "requires further literature verification"
+    },
+    {
+      "citation_requirement_id": "CR007",
+      "linked_section_id": "S007",
+      "linked_paragraph_id": "P009",
+      "linked_claim_id": "MC009",
+      "citation_requirement_type": "counterevidence_citation",
+      "citation_purpose": "Support limitations and counterevidence boundaries.",
+      "required_evidence_type": "counterevidence",
+      "candidate_paper_ids": [],
+      "linked_evidence_ids": [],
+      "corpus_scope": "provided corpus only; synthetic examples are not real citations",
+      "missing_citation_risk": "Claim must remain cautious until real citation evidence is supplied.",
+      "acceptable_if_unavailable": false,
+      "required_before_submission": true,
+      "safer_wording_without_citation": "requires further literature verification"
+    }
+  ],
+  "citation_requirement_summary": [
+    {
+      "citation_requirement_id": "CR001",
+      "linked_claim_id": "MC001"
+    },
+    {
+      "citation_requirement_id": "CR002",
+      "linked_claim_id": "MC002"
+    },
+    {
+      "citation_requirement_id": "CR003",
+      "linked_claim_id": "MC004"
+    },
+    {
+      "citation_requirement_id": "CR004",
+      "linked_claim_id": "MC004"
+    },
+    {
+      "citation_requirement_id": "CR005",
+      "linked_claim_id": "MC005"
+    },
+    {
+      "citation_requirement_id": "CR006",
+      "linked_claim_id": "MC007"
+    },
+    {
+      "citation_requirement_id": "CR007",
+      "linked_claim_id": "MC009"
+    }
+  ],
+  "missing_citations": [
+    "Real citations must be verified before submission."
+  ],
+  "synthetic_citation_limitations": [
+    "Synthetic corpus entries cannot be treated as real citations."
+  ],
+  "assumptions": [
+    "Citation requirements are not citations."
+  ],
+  "limitations": [
+    "No author-year citation is generated."
+  ],
+  "is_demo_manuscript_plan": true,
+  "requires_real_final_topic_package": true,
+  "requires_real_results": true
+}

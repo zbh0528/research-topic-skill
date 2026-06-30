@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Discussion Limitations Plan",
+  "type": "object",
+  "required": [
+    "supported_claims",
+    "claims_requiring_more_evidence",
+    "experiment_limitations",
+    "counterevidence",
+    "generalization_boundary"
+  ],
+  "properties": {
+    "generalization_boundary": {
+      "type": "string"
+    },
+    "supported_claims": {
+      "type": "array",
+      "items": {}
+    },
+    "claims_requiring_more_evidence": {
+      "type": "array",
+      "items": {}
+    },
+    "literature_limitations": {
+      "type": "array",
+      "items": {}
+    },
+    "experiment_limitations": {
+      "type": "array",
+      "items": {}
+    },
+    "model_limitations": {
+      "type": "array",
+      "items": {}
+    },
+    "algorithm_limitations": {
+      "type": "array",
+      "items": {}
+    },
+    "case_study_limitations": {
+      "type": "array",
+      "items": {}
+    },
+    "external_validity_risks": {
+      "type": "array",
+      "items": {}
+    },
+    "construct_validity_risks": {
+      "type": "array",
+      "items": {}
+    },
+    "internal_validity_risks": {
+      "type": "array",
+      "items": {}
+    },
+    "conclusion_validity_risks": {
+      "type": "array",
+      "items": {}
+    },
+    "counterevidence": {
+      "type": "array",
+      "items": {}
+    },
+    "future_work": {
+      "type": "array",
+      "items": {}
+    },
+    "safer_discussion_wording": {
+      "type": "array",
+      "items": {}
+    },
+    "is_demo_manuscript_plan": {
+      "type": "boolean"
+    },
+    "requires_real_final_topic_package": {
+      "type": "boolean"
+    },
+    "requires_real_results": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

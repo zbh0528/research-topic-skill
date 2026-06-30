@@ -55,3 +55,29 @@ Build real-literature-grounded topic selection by connecting verified literature
   - does not replace real optimization code or simulation
   - planned validation still requires implementation and empirical results
 - next target: `v0.4.0 manuscript-structure and reviewer-response grounded writing support`
+
+## v0.4.0
+
+- version: `v0.4.0-manuscript-structure-and-reviewer-response-grounded-writing-support`
+- status: `manuscript-grounded writing support upgrade`
+- new capabilities:
+  - manuscript blueprint
+  - section argument map
+  - paragraph claim plan
+  - citation requirement map
+  - result placeholder map
+  - method section alignment
+  - experiment section alignment
+  - discussion limitations plan
+  - reviewer objection map
+  - reviewer response strategy
+  - manuscript adequacy audit
+  - contribution-to-manuscript traceability
+- known limitations:
+  - does not generate a final manuscript
+  - does not fabricate citations or results
+  - does not fabricate reviewer comments
+  - citation requirements are not citations
+  - result placeholders are not results
+  - anticipated objections are not received reviewer comments
+- next target: real user manuscript drafting can be added only after verified final topic package, verified citations, and real experiment outputs exist.

@@ -1,6 +1,6 @@
 ---
 name: windfarm-research-topic-skill
-description: Use when constructing an evidence-bounded research topic package for computer science, evolutionary computation, wind farm layout optimization, wind farm cable routing optimization, joint layout-cabling optimization, multi-objective optimization, constrained optimization, mixed discrete-continuous optimization, or spatial-network coupled optimization. Typical inputs include researcher background, target domain, materials, method preferences, excluded directions, target venue level, literature notes, code or experiment platforms, and constraints. Produces persistent modular outputs through project intake, domain scan, problem identification, theoretical positioning, contribution argumentation, chain audit, and final topic package. Do not use for fabricating papers, literature reviews, citations, experiments, novelty claims, or unsupported conclusions; route real literature review, experiment execution, manuscript drafting, and citation verification elsewhere.
+description: Use when constructing an evidence-bounded research topic package or manuscript-grounding plan for computer science, evolutionary computation, wind farm layout optimization, wind farm cable routing optimization, joint layout-cabling optimization, multi-objective optimization, constrained optimization, mixed discrete-continuous optimization, or spatial-network coupled optimization. Typical inputs include researcher background, target domain, materials, method preferences, excluded directions, target venue level, literature notes, code or experiment platforms, manuscript section needs, reviewer-risk concerns, and constraints. Produces persistent modular outputs through project intake, domain scan, problem identification, theoretical positioning, contribution argumentation, chain audit, final topic package, optional literature grounding, optional experiment grounding, and optional manuscript grounding. Do not use for fabricating papers, literature reviews, citations, experiments, novelty claims, reviewer comments, or unsupported conclusions; route real literature review, experiment execution, final manuscript drafting, and citation verification elsewhere.
 ---
 
 # Windfarm Research Topic Skill
@@ -11,7 +11,7 @@ description: Use when constructing an evidence-bounded research topic package fo
 
 ## Version
 
-`v0.3.0-experiment-grounded-validation-planning`
+`v0.4.0-manuscript-structure-and-reviewer-response-grounded-writing-support`
 
 ## Use This Skill For
 
@@ -26,10 +26,15 @@ Use this skill to build a traceable research-topic reasoning chain before writin
 - Related work organization pre-logic construction.
 - Method overview pre-logic construction.
 - Experiment design pre-logic construction.
+- Manuscript blueprint and section argument planning.
+- Paragraph claim planning with citation requirements and result placeholders.
+- Anticipated reviewer-objection planning before real reviewer comments exist.
 
 ## Do Not Use This Skill For
 
 - Directly fabricating a paper, literature review, citations, DOI, author list, venue, or experiment result.
+- Generating a final manuscript or final reviewer response letter from placeholder evidence.
+- Writing received reviewer comments that the user did not provide.
 - Claiming `first`, `novel`, `unprecedented`, `state-of-the-art`, or similar strong novelty without verified evidence.
 - Turning ordinary algorithm application into a contribution without a problem-structure argument.
 - Pure wind turbine blade aerodynamic design.
@@ -69,6 +74,7 @@ Run the workflow in this order unless resuming from a saved workspace:
 6. `05 Contribution Argumentation` using `modules/05_contribution_argumentation.md`.
 7. `06 Chain Consistency Audit` using `modules/06_chain_consistency_audit.md`.
 8. `07 Final Topic Package` using `modules/07_final_topic_package.md`.
+9. Optional manuscript grounding using `modules/manuscript_grounding/MG00_manuscript_grounding_protocol.md` through `MG12_grounded_pipeline_integration.md`.
 
 Always read `modules/00_global_protocol.md` before running any module.
 
@@ -112,6 +118,24 @@ Allowed `experiment_risk_level` values are `low`, `medium`, `high`, and `critica
 
 Allowed `validation_claim_type` values are `model_validity_claim`, `algorithm_effectiveness_claim`, `mechanism_necessity_claim`, `tradeoff_insight_claim`, `robustness_claim`, `scalability_claim`, `feasibility_claim`, `runtime_claim`, `constraint_handling_claim`, `pareto_quality_claim`, `engineering_value_claim`, `benchmark_claim`, and `reproducibility_claim`.
 
+### Mode D: manuscript-grounded mode
+
+Use when the user has a topic package, literature grounding, experiment validation plan, or draft manuscript structure and needs grounded writing support. Generate a manuscript blueprint, section argument map, paragraph claim plan, citation requirement map, result placeholder map, method and experiment section alignment, limitations plan, reviewer objection map, reviewer response strategy, manuscript adequacy audit, and manuscript traceability report.
+
+Do not generate final manuscript prose. Do not invent citations, DOI values, author-year references, numerical results, p-values, or received reviewer comments. Every manuscript claim must be marked with claim status and safety level.
+
+Allowed `manuscript_claim_status` values are `planned`, `evidence_supported`, `citation_required`, `experiment_result_required`, `partially_supported`, `unsupported`, `unsafe_until_verified`, and `not_applicable`.
+
+Allowed `claim_safety_level` values are `safe`, `needs_citation`, `needs_experiment_result`, `corpus_scoped_only`, `overclaim_risk`, and `unsafe_until_verified`.
+
+Allowed `section_role` values are `background_motivation`, `literature_positioning`, `gap_establishment`, `problem_statement`, `theory_framing`, `contribution_summary`, `method_rationale`, `algorithm_description`, `model_formulation`, `experimental_validation`, `result_interpretation`, `limitation_discussion`, `reviewer_risk_defense`, and `conclusion_synthesis`.
+
+Allowed `paragraph_role` values are `context_setting`, `known_stream_summary`, `contrast_between_streams`, `gap_claim`, `problem_formulation`, `theoretical_positioning`, `contribution_claim`, `design_rationale`, `validation_setup`, `evidence_interpretation`, `limitation_statement`, `transition`, and `reviewer_preemption`.
+
+Allowed `citation_requirement_type` values are `background_citation`, `domain_importance_citation`, `method_stream_citation`, `limitation_support_citation`, `gap_support_citation`, `baseline_support_citation`, `metric_support_citation`, `theory_support_citation`, `validation_protocol_citation`, and `counterevidence_citation`.
+
+Allowed `result_placeholder_type` values are `baseline_comparison_result`, `pareto_quality_result`, `feasibility_result`, `runtime_result`, `ablation_result`, `sensitivity_result`, `statistical_test_result`, `case_study_result`, `reproducibility_artifact_result`, and `qualitative_interpretation_result`.
+
 ## Fixed Reasoning Chain
 
 Maintain this chain explicitly:
@@ -150,6 +174,24 @@ contribution claim
 -> reproducibility plan
 -> validation adequacy audit
 -> final topic package validation section
+```
+
+Manuscript-grounded mode extends the end of the chain:
+
+```text
+final topic package
+-> manuscript blueprint
+-> section argument map
+-> paragraph claim plan
+-> citation requirement map
+-> result placeholder map
+-> method section alignment
+-> experiment section alignment
+-> discussion limitations plan
+-> reviewer objection map
+-> reviewer response strategy
+-> manuscript adequacy audit
+-> contribution-to-manuscript traceability report
 ```
 
 ## Global Operating Rules
@@ -208,6 +250,21 @@ In experiment-grounded mode, module outputs and compact contexts may include:
 - `validation_adequacy_summary`
 - `experiment_risks`
 - `artifact_requirements`
+
+In manuscript-grounded mode, module outputs and compact contexts may include:
+
+- `manuscript_blueprint`
+- `section_argument_map`
+- `paragraph_claim_plan`
+- `citation_requirement_map`
+- `result_placeholder_map`
+- `method_section_alignment`
+- `experiment_section_alignment`
+- `discussion_limitations_plan`
+- `reviewer_objection_map`
+- `reviewer_response_strategy`
+- `manuscript_adequacy_audit`
+- `contribution_to_manuscript_traceability_table`
 
 Every module directory in a workspace must include:
 
@@ -269,6 +326,36 @@ In experiment-grounded mode, the final topic package must include:
 Each Contribution-to-Experiment Traceability row must include `contribution_id`, `contribution_claim`, `validation_target_id`, `experiment_id`, `baseline_ids`, `metric_ids`, `ablation_ids`, `statistical_test_ids`, `artifact_ids`, `success_condition`, `failure_condition`, `reviewer_risk`, and `validation_status`.
 
 Every contribution claim must link to at least one validation objective, one baseline or explicit no-baseline justification, one metric, one experiment design, one evidence threshold, one reviewer risk, and one artifact requirement. Algorithmic contributions also need ablation plans. Multi-objective claims need Pareto metric plans. Constrained optimization claims need feasibility and violation analysis. Joint layout-cabling claims need a sequential or decoupled baseline unless explicitly justified.
+
+## Final Topic Package Manuscript Requirements
+
+In manuscript-grounded mode, complete-chain acceptance requires:
+
+- `Manuscript Blueprint`
+- `Section Argument Map`
+- `Paragraph Claim Plan`
+- `Citation Requirement Map`
+- `Result Placeholder Map`
+- `Discussion Limitations Plan`
+- `Reviewer Objection Map`
+- `Reviewer Response Strategy`
+- `Contribution-to-Manuscript Traceability Table`
+- `Claims Not Ready for Manuscript`
+
+Draft or demo workspaces may pass normal strict plan validation, but must fail `audit_manuscript_claims.py --strict --require-complete-manuscript-chain` until a real final topic package, verified citation links, and real result evidence exist.
+
+## Manuscript Safety Boundaries
+
+- v0.4.0 plans manuscript structure; it does not write a final paper.
+- v0.4.0 does not fabricate citations, DOI values, author-year references, numerical results, p-values, or reviewer comments.
+- Citation requirements are not citations.
+- Result placeholders are not results.
+- Anticipated reviewer objections are not received reviewer comments.
+- Introduction must connect background, streams, gap, problem, contribution, and validation preview.
+- Related Work must be stream-based and evidence-bound, not bibliography dumping.
+- Method sections must link mechanisms to problem properties and ablation requirements.
+- Experiment sections must link claims to validation targets, baselines, metrics, ablations, statistics, and artifacts.
+- Discussion must surface limitations, counterevidence, and generalization boundaries.
 
 ## Experiment Safety Boundaries
 

@@ -9,7 +9,17 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
-from experiment_grounding_common import evaluate_plan, experiment_dir, find_fabricated_result_wording, load_plan
+from experiment_grounding_common import (
+    evaluate_plan as evaluate_experiment_plan,
+    experiment_dir,
+    find_fabricated_result_wording,
+    load_plan as load_experiment_plan,
+)
+from manuscript_grounding_common import (
+    evaluate_plan as evaluate_manuscript_plan,
+    load_plan as load_manuscript_plan,
+    manuscript_dir,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -205,6 +215,9 @@ def main() -> None:
     parser.add_argument("--experiment-grounded", action="store_true")
     parser.add_argument("--strict-validation", action="store_true")
     parser.add_argument("--experiment-dir", type=Path)
+    parser.add_argument("--manuscript-grounded", action="store_true")
+    parser.add_argument("--strict-manuscript", action="store_true")
+    parser.add_argument("--manuscript-dir", type=Path)
     args = parser.parse_args()
 
     workspace = args.workspace if args.workspace.is_absolute() else ROOT / args.workspace
@@ -383,7 +396,7 @@ def main() -> None:
             plan = {}
         else:
             passes.append(f"PASS experiment_validation directory exists: {exp_dir}")
-            plan = load_plan(exp_dir, failures)
+            plan = load_experiment_plan(exp_dir, failures)
         for filename in ["validation_targets.json", "experiment_grounding_report.json"]:
             if not (exp_dir / filename).exists():
                 failures.append(f"FAIL missing experiment-grounded file: {filename}")
@@ -395,7 +408,7 @@ def main() -> None:
                 failures.extend(f"FAIL fabricated result wording or unsupported empirical claim: {item}" for item in unsafe)
             else:
                 passes.append("PASS no fabricated result wording in experiment plan")
-            p, w, f = evaluate_plan(plan, strict=args.strict_validation)
+            p, w, f = evaluate_experiment_plan(plan, strict=args.strict_validation)
             passes.extend(p)
             warnings.extend(w)
             failures.extend(f)
@@ -420,6 +433,36 @@ def main() -> None:
                     failures.append("FAIL final_topic_package lacks Contribution-to-Experiment Traceability Table")
         elif args.strict_validation:
             failures.append("FAIL final_topic_package output missing in experiment-grounded mode")
+
+    if args.manuscript_grounded:
+        ms_dir = manuscript_dir(workspace, args.manuscript_dir)
+        if not ms_dir.exists():
+            failures.append(f"FAIL manuscript_grounding directory missing: {ms_dir}")
+            manuscript_plan = {}
+        else:
+            passes.append(f"PASS manuscript_grounding directory exists: {ms_dir}")
+            manuscript_plan = load_manuscript_plan(ms_dir, failures)
+        for filename in [
+            "manuscript_blueprint.json",
+            "paragraph_claim_plan.json",
+            "citation_requirement_map.json",
+            "result_placeholder_map.json",
+            "manuscript_grounding_report.json",
+        ]:
+            if not (ms_dir / filename).exists():
+                failures.append(f"FAIL missing manuscript-grounded file: {filename}")
+            else:
+                passes.append(f"PASS manuscript-grounded file exists: {filename}")
+        if manuscript_plan:
+            p, w, f = evaluate_manuscript_plan(manuscript_plan, strict=args.strict_manuscript, workspace=workspace)
+            passes.extend(p)
+            warnings.extend(w)
+            failures.extend(f)
+        if args.strict_manuscript:
+            report = manuscript_plan.get("manuscript_grounding_report", {}) if isinstance(manuscript_plan, dict) else {}
+            trace = report.get("contribution_to_manuscript_traceability_table", []) if isinstance(report, dict) else []
+            if not trace:
+                failures.append("FAIL manuscript_grounded mode lacks Contribution-to-Manuscript Traceability table")
 
     summary_lines = [
         f"# Validation Summary",

@@ -746,6 +746,15 @@
       "items": {
         "type": "object"
       }
+    },
+    "manuscript_adequacy_audit": {
+      "type": "object"
+    },
+    "manuscript_traceability_risks": {
+      "type": "array"
+    },
+    "unsupported_manuscript_claims": {
+      "type": "array"
     }
   },
   "additionalProperties": false,

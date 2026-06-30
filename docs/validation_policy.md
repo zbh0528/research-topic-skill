@@ -38,3 +38,19 @@ Each validation plan must answer:
 - Are engineering trade-offs interpretable?
 
 If any answer is missing, the plan should be revised before the contribution is used in a final topic package.
+
+## Manuscript Grounding Policy
+
+Every manuscript plan must separate planning artifacts from final manuscript evidence. A paragraph claim may be `planned`, `citation_required`, or `experiment_result_required`, but it must not be written as supported unless the required citation or result evidence exists.
+
+Required manuscript checks:
+
+- Introduction has background, streams, gap, problem, contribution, and validation preview.
+- Related Work is organized by research stream and limitation.
+- Method components link to problem properties, contribution IDs, and ablation needs.
+- Experiment-section claims link to validation targets, baselines, metrics, statistics, and artifacts.
+- Discussion lists limitations, counterevidence, and generalization boundaries.
+- Reviewer objections are anticipated risks only unless real reviewer comments are supplied.
+- Complete-chain acceptance requires a Contribution-to-Manuscript Traceability Table.
+
+`audit_manuscript_claims.py --strict` validates the existing manuscript plan. `--require-complete-manuscript-chain` validates release-grade manuscript readiness and should fail draft/demo workspaces with explicit causes.
