@@ -1,7 +1,7 @@
 {
   "name": "windfarm-research-topic-skill",
-  "version": "0.2.0",
-  "description": "A modular, literature-grounded research-topic reasoning skill for evolutionary computation applied to wind farm layout and cable routing optimization.",
+  "version": "0.3.0",
+  "description": "A modular, literature-grounded and experiment-grounded research-topic reasoning skill for evolutionary computation applied to wind farm layout and cable routing optimization.",
   "entrypoint": "SKILL.md",
   "domain": [
     "computer science",
@@ -14,7 +14,8 @@
     "mixed discrete-continuous optimization",
     "spatial-network coupled optimization",
     "evolutionary multi-objective optimization",
-    "literature-grounded research reasoning"
+    "literature-grounded research reasoning",
+    "experiment-grounded validation planning"
   ],
   "workflow": [
     "project_intake",
@@ -24,11 +25,13 @@
     "theoretical_positioning",
     "contribution_argumentation",
     "chain_consistency_audit",
+    "optional_experiment_grounding",
     "final_topic_package"
   ],
   "modes": [
     "logic_only_mode",
-    "literature_grounded_mode"
+    "literature_grounded_mode",
+    "experiment_grounded_mode"
   ],
   "workspace_module_order": [
     "00_project_intake",
@@ -110,7 +113,10 @@
     "evidence-claim mapping",
     "corpus-scoped novelty judgment",
     "reviewer-risk analysis",
-    "traceability from literature evidence to domain tension to contribution claim"
+    "traceability from literature evidence to domain tension to contribution claim",
+    "traceability from contribution claim to baseline, metric, ablation, statistical test, and artifact requirement",
+    "validation adequacy audit",
+    "experiment design without fabricated results"
   ],
   "limitations": [
     "does not fabricate literature",
@@ -118,7 +124,12 @@
     "does not replace real literature review",
     "does not perform mandatory online search",
     "does not infer unsupported experimental results",
-    "does not treat absence of evidence as evidence of absence"
+    "does not treat absence of evidence as evidence of absence",
+    "does not run experiments",
+    "does not fabricate experimental results",
+    "does not infer unsupported performance improvements",
+    "does not guarantee that a planned experiment will succeed",
+    "does not replace human experimental judgment"
   ],
   "modules": [
     {
@@ -179,12 +190,175 @@
     }
   ],
   "literature_grounding_modules": [
-    { "doc_id": "LG00_literature_grounding_protocol", "module_doc": "modules/literature_grounding/LG00_literature_grounding_protocol.md" },
-    { "doc_id": "LG01_literature_intake", "module_doc": "modules/literature_grounding/LG01_literature_intake.md", "script": "scripts/ingest_literature.py", "artifact": "literature_evidence/bibliographic_records.json" },
-    { "doc_id": "LG02_paper_card_extraction", "module_doc": "modules/literature_grounding/LG02_paper_card_extraction.md", "schema": "schemas/literature_grounding/paper_card.schema.json", "template": "templates/literature_grounding/paper_card.template.md", "artifact": "literature_evidence/paper_cards.json" },
-    { "doc_id": "LG03_literature_matrix_construction", "module_doc": "modules/literature_grounding/LG03_literature_matrix_construction.md", "schema": "schemas/literature_grounding/literature_matrix.schema.json", "template": "templates/literature_grounding/literature_matrix.template.md", "script": "scripts/build_literature_matrix.py", "artifact": "literature_evidence/literature_matrix.json" },
-    { "doc_id": "LG04_evidence_claim_mapping", "module_doc": "modules/literature_grounding/LG04_evidence_claim_mapping.md", "schema": "schemas/literature_grounding/evidence_claim_map.schema.json", "template": "templates/literature_grounding/evidence_claim_map.template.md", "artifact": "literature_evidence/evidence_claim_map.json" },
-    { "doc_id": "LG05_literature_gap_audit", "module_doc": "modules/literature_grounding/LG05_literature_gap_audit.md", "schema": "schemas/literature_grounding/literature_gap_audit.schema.json", "template": "templates/literature_grounding/literature_gap_audit.template.md", "artifact": "literature_evidence/literature_gap_audit.json" },
-    { "doc_id": "LG06_grounded_pipeline_integration", "module_doc": "modules/literature_grounding/LG06_grounded_pipeline_integration.md", "schema": "schemas/literature_grounding/literature_grounding_report.schema.json", "template": "templates/literature_grounding/literature_grounding_report.template.md", "scripts": ["scripts/validate_literature.py", "scripts/audit_claim_grounding.py"], "artifact": "literature_evidence/literature_grounding_report.json" }
+    {
+      "doc_id": "LG00_literature_grounding_protocol",
+      "module_doc": "modules/literature_grounding/LG00_literature_grounding_protocol.md"
+    },
+    {
+      "doc_id": "LG01_literature_intake",
+      "module_doc": "modules/literature_grounding/LG01_literature_intake.md",
+      "script": "scripts/ingest_literature.py",
+      "artifact": "literature_evidence/bibliographic_records.json"
+    },
+    {
+      "doc_id": "LG02_paper_card_extraction",
+      "module_doc": "modules/literature_grounding/LG02_paper_card_extraction.md",
+      "schema": "schemas/literature_grounding/paper_card.schema.json",
+      "template": "templates/literature_grounding/paper_card.template.md",
+      "artifact": "literature_evidence/paper_cards.json"
+    },
+    {
+      "doc_id": "LG03_literature_matrix_construction",
+      "module_doc": "modules/literature_grounding/LG03_literature_matrix_construction.md",
+      "schema": "schemas/literature_grounding/literature_matrix.schema.json",
+      "template": "templates/literature_grounding/literature_matrix.template.md",
+      "script": "scripts/build_literature_matrix.py",
+      "artifact": "literature_evidence/literature_matrix.json"
+    },
+    {
+      "doc_id": "LG04_evidence_claim_mapping",
+      "module_doc": "modules/literature_grounding/LG04_evidence_claim_mapping.md",
+      "schema": "schemas/literature_grounding/evidence_claim_map.schema.json",
+      "template": "templates/literature_grounding/evidence_claim_map.template.md",
+      "artifact": "literature_evidence/evidence_claim_map.json"
+    },
+    {
+      "doc_id": "LG05_literature_gap_audit",
+      "module_doc": "modules/literature_grounding/LG05_literature_gap_audit.md",
+      "schema": "schemas/literature_grounding/literature_gap_audit.schema.json",
+      "template": "templates/literature_grounding/literature_gap_audit.template.md",
+      "artifact": "literature_evidence/literature_gap_audit.json"
+    },
+    {
+      "doc_id": "LG06_grounded_pipeline_integration",
+      "module_doc": "modules/literature_grounding/LG06_grounded_pipeline_integration.md",
+      "schema": "schemas/literature_grounding/literature_grounding_report.schema.json",
+      "template": "templates/literature_grounding/literature_grounding_report.template.md",
+      "scripts": [
+        "scripts/validate_literature.py",
+        "scripts/audit_claim_grounding.py"
+      ],
+      "artifact": "literature_evidence/literature_grounding_report.json"
+    }
+  ],
+  "validation_status": [
+    "validation_planned",
+    "partially_planned",
+    "insufficiently_planned",
+    "unsupported_by_experiment_plan",
+    "not_applicable",
+    "requires_empirical_results"
+  ],
+  "experiment_support_status": [
+    "directly_tested_by_plan",
+    "indirectly_tested_by_plan",
+    "weakly_tested_by_plan",
+    "not_tested",
+    "requires_new_experiment",
+    "cannot_be_validated_empirically"
+  ],
+  "experiment_risk_level": [
+    "low",
+    "medium",
+    "high",
+    "critical"
+  ],
+  "validation_claim_type": [
+    "model_validity_claim",
+    "algorithm_effectiveness_claim",
+    "mechanism_necessity_claim",
+    "tradeoff_insight_claim",
+    "robustness_claim",
+    "scalability_claim",
+    "feasibility_claim",
+    "runtime_claim",
+    "constraint_handling_claim",
+    "pareto_quality_claim",
+    "engineering_value_claim",
+    "benchmark_claim",
+    "reproducibility_claim"
+  ],
+  "experiment_grounding_modules": [
+    {
+      "doc_id": "EG00_experiment_grounding_protocol",
+      "module_doc": "modules/experiment_grounding/EG00_experiment_grounding_protocol.md"
+    },
+    {
+      "doc_id": "EG01_validation_target_extraction",
+      "module_doc": "modules/experiment_grounding/EG01_validation_target_extraction.md",
+      "schema": "schemas/experiment_grounding/validation_target.schema.json",
+      "template": "templates/experiment_grounding/validation_target.template.md",
+      "artifact": "experiment_validation/validation_targets.json"
+    },
+    {
+      "doc_id": "EG02_experiment_design_mapping",
+      "module_doc": "modules/experiment_grounding/EG02_experiment_design_mapping.md",
+      "schema": "schemas/experiment_grounding/experiment_design.schema.json",
+      "template": "templates/experiment_grounding/experiment_design.template.md",
+      "script": "scripts/build_validation_plan.py",
+      "artifact": "experiment_validation/experiment_design.json"
+    },
+    {
+      "doc_id": "EG03_baseline_selection",
+      "module_doc": "modules/experiment_grounding/EG03_baseline_selection.md",
+      "schema": "schemas/experiment_grounding/baseline_plan.schema.json",
+      "template": "templates/experiment_grounding/baseline_plan.template.md",
+      "artifact": "experiment_validation/baseline_plan.json"
+    },
+    {
+      "doc_id": "EG04_metric_selection",
+      "module_doc": "modules/experiment_grounding/EG04_metric_selection.md",
+      "schema": "schemas/experiment_grounding/metric_plan.schema.json",
+      "template": "templates/experiment_grounding/metric_plan.template.md",
+      "artifact": "experiment_validation/metric_plan.json"
+    },
+    {
+      "doc_id": "EG05_ablation_design",
+      "module_doc": "modules/experiment_grounding/EG05_ablation_design.md",
+      "schema": "schemas/experiment_grounding/ablation_plan.schema.json",
+      "template": "templates/experiment_grounding/ablation_plan.template.md",
+      "artifact": "experiment_validation/ablation_plan.json"
+    },
+    {
+      "doc_id": "EG06_case_study_and_dataset_plan",
+      "module_doc": "modules/experiment_grounding/EG06_case_study_and_dataset_plan.md",
+      "schema": "schemas/experiment_grounding/case_study_plan.schema.json",
+      "template": "templates/experiment_grounding/case_study_plan.template.md",
+      "artifact": "experiment_validation/case_study_plan.json"
+    },
+    {
+      "doc_id": "EG07_statistical_analysis_plan",
+      "module_doc": "modules/experiment_grounding/EG07_statistical_analysis_plan.md",
+      "schema": "schemas/experiment_grounding/statistical_analysis_plan.schema.json",
+      "template": "templates/experiment_grounding/statistical_analysis_plan.template.md",
+      "artifact": "experiment_validation/statistical_analysis_plan.json"
+    },
+    {
+      "doc_id": "EG08_reproducibility_and_artifact_plan",
+      "module_doc": "modules/experiment_grounding/EG08_reproducibility_and_artifact_plan.md",
+      "schema": "schemas/experiment_grounding/reproducibility_plan.schema.json",
+      "template": "templates/experiment_grounding/reproducibility_plan.template.md",
+      "script": "scripts/generate_reproducibility_checklist.py",
+      "artifact": "experiment_validation/reproducibility_plan.json"
+    },
+    {
+      "doc_id": "EG09_validation_adequacy_audit",
+      "module_doc": "modules/experiment_grounding/EG09_validation_adequacy_audit.md",
+      "schema": "schemas/experiment_grounding/validation_adequacy_audit.schema.json",
+      "template": "templates/experiment_grounding/validation_adequacy_audit.template.md",
+      "script": "scripts/audit_validation_adequacy.py",
+      "artifact": "experiment_validation/validation_adequacy_audit.json"
+    },
+    {
+      "doc_id": "EG10_grounded_pipeline_integration",
+      "module_doc": "modules/experiment_grounding/EG10_grounded_pipeline_integration.md",
+      "schema": "schemas/experiment_grounding/experiment_grounding_report.schema.json",
+      "template": "templates/experiment_grounding/experiment_grounding_report.template.md",
+      "scripts": [
+        "scripts/validate_experiment_plan.py",
+        "scripts/validate_outputs.py"
+      ],
+      "artifact": "experiment_validation/experiment_grounding_report.json"
+    }
   ]
 }

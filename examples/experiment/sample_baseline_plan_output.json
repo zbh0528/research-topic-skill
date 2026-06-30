@@ -1,0 +1,175 @@
+{
+  "baselines": [
+    {
+      "baseline_id": "B001",
+      "baseline_name": "Cabling-after-layout sequential baseline",
+      "baseline_type": "sequential_optimization",
+      "linked_experiment_id": "EX001",
+      "linked_validation_target_ids": [
+        "VT001"
+      ],
+      "linked_contribution_ids": [
+        "C1",
+        "C3"
+      ],
+      "literature_evidence_ids": [],
+      "why_needed": "Tests whether joint optimization is necessary beyond a decoupled workflow.",
+      "what_it_tests": "Tests whether joint optimization is necessary beyond a decoupled workflow.",
+      "fairness_requirements": "Use equal termination criteria, disclosed parameters, same instances, and same feasibility handling.",
+      "implementation_requirements": "Implementation source, parameters, and deviations must be documented before execution.",
+      "parameter_tuning_policy": "Use a declared tuning budget or literature-supported defaults.",
+      "termination_criterion": "Use equal function-evaluation budget or report any alternative explicitly.",
+      "computational_budget_policy": "Same evaluation budget and hardware reporting policy where applicable.",
+      "expected_role": "Provides a planned comparison role; it is not a result.",
+      "risk_if_missing": "Reviewer may see the contribution as cherry-picked or insufficiently compared.",
+      "limitations": [
+        "Literature support and implementation availability require verification."
+      ]
+    },
+    {
+      "baseline_id": "B002",
+      "baseline_name": "Layout-only optimization baseline",
+      "baseline_type": "layout_only_optimization",
+      "linked_experiment_id": "EX001",
+      "linked_validation_target_ids": [
+        "VT001"
+      ],
+      "linked_contribution_ids": [
+        "C1"
+      ],
+      "literature_evidence_ids": [],
+      "why_needed": "Separates aerodynamic layout benefit from cabling decisions.",
+      "what_it_tests": "Separates aerodynamic layout benefit from cabling decisions.",
+      "fairness_requirements": "Use equal termination criteria, disclosed parameters, same instances, and same feasibility handling.",
+      "implementation_requirements": "Implementation source, parameters, and deviations must be documented before execution.",
+      "parameter_tuning_policy": "Use a declared tuning budget or literature-supported defaults.",
+      "termination_criterion": "Use equal function-evaluation budget or report any alternative explicitly.",
+      "computational_budget_policy": "Same evaluation budget and hardware reporting policy where applicable.",
+      "expected_role": "Provides a planned comparison role; it is not a result.",
+      "risk_if_missing": "Reviewer may see the contribution as cherry-picked or insufficiently compared.",
+      "limitations": [
+        "Literature support and implementation availability require verification."
+      ]
+    },
+    {
+      "baseline_id": "B003",
+      "baseline_name": "Cabling-only fixed-layout baseline",
+      "baseline_type": "cabling_only_optimization",
+      "linked_experiment_id": "EX001",
+      "linked_validation_target_ids": [
+        "VT001"
+      ],
+      "linked_contribution_ids": [
+        "C1"
+      ],
+      "literature_evidence_ids": [],
+      "why_needed": "Separates network routing decisions from layout changes.",
+      "what_it_tests": "Separates network routing decisions from layout changes.",
+      "fairness_requirements": "Use equal termination criteria, disclosed parameters, same instances, and same feasibility handling.",
+      "implementation_requirements": "Implementation source, parameters, and deviations must be documented before execution.",
+      "parameter_tuning_policy": "Use a declared tuning budget or literature-supported defaults.",
+      "termination_criterion": "Use equal function-evaluation budget or report any alternative explicitly.",
+      "computational_budget_policy": "Same evaluation budget and hardware reporting policy where applicable.",
+      "expected_role": "Provides a planned comparison role; it is not a result.",
+      "risk_if_missing": "Reviewer may see the contribution as cherry-picked or insufficiently compared.",
+      "limitations": [
+        "Literature support and implementation availability require verification."
+      ]
+    },
+    {
+      "baseline_id": "B004",
+      "baseline_name": "Standard multi-objective evolutionary baseline",
+      "baseline_type": "multi_objective_evolutionary_algorithm",
+      "linked_experiment_id": "EX001",
+      "linked_validation_target_ids": [
+        "VT001",
+        "VT003"
+      ],
+      "linked_contribution_ids": [
+        "C1",
+        "C3"
+      ],
+      "literature_evidence_ids": [],
+      "why_needed": "Provides a non-problem-specific multi-objective comparison reference.",
+      "what_it_tests": "Provides a non-problem-specific multi-objective comparison reference.",
+      "fairness_requirements": "Use equal termination criteria, disclosed parameters, same instances, and same feasibility handling.",
+      "implementation_requirements": "Implementation source, parameters, and deviations must be documented before execution.",
+      "parameter_tuning_policy": "Use a declared tuning budget or literature-supported defaults.",
+      "termination_criterion": "Use equal function-evaluation budget or report any alternative explicitly.",
+      "computational_budget_policy": "Same evaluation budget and hardware reporting policy where applicable.",
+      "expected_role": "Provides a planned comparison role; it is not a result.",
+      "risk_if_missing": "Reviewer may see the contribution as cherry-picked or insufficiently compared.",
+      "limitations": [
+        "Literature support and implementation availability require verification."
+      ]
+    },
+    {
+      "baseline_id": "B005",
+      "baseline_name": "Greedy engineering sanity baseline",
+      "baseline_type": "random_or_greedy_baseline",
+      "linked_experiment_id": "EX001",
+      "linked_validation_target_ids": [
+        "VT001"
+      ],
+      "linked_contribution_ids": [
+        "C1"
+      ],
+      "literature_evidence_ids": [],
+      "why_needed": "Detects whether planned methods are compared against a simple reproducible sanity check.",
+      "what_it_tests": "Detects whether planned methods are compared against a simple reproducible sanity check.",
+      "fairness_requirements": "Use equal termination criteria, disclosed parameters, same instances, and same feasibility handling.",
+      "implementation_requirements": "Implementation source, parameters, and deviations must be documented before execution.",
+      "parameter_tuning_policy": "Use a declared tuning budget or literature-supported defaults.",
+      "termination_criterion": "Use equal function-evaluation budget or report any alternative explicitly.",
+      "computational_budget_policy": "Same evaluation budget and hardware reporting policy where applicable.",
+      "expected_role": "Provides a planned comparison role; it is not a result.",
+      "risk_if_missing": "Reviewer may see the contribution as cherry-picked or insufficiently compared.",
+      "limitations": [
+        "Literature support and implementation availability require verification."
+      ]
+    },
+    {
+      "baseline_id": "B006",
+      "baseline_name": "No-structure-aware ablated variant",
+      "baseline_type": "ablated_variant",
+      "linked_experiment_id": "EX002",
+      "linked_validation_target_ids": [
+        "VT002"
+      ],
+      "linked_contribution_ids": [
+        "C2"
+      ],
+      "literature_evidence_ids": [],
+      "why_needed": "Tests whether the claimed structure-aware mechanism is necessary.",
+      "what_it_tests": "Tests whether the claimed structure-aware mechanism is necessary.",
+      "fairness_requirements": "Use equal termination criteria, disclosed parameters, same instances, and same feasibility handling.",
+      "implementation_requirements": "Implementation source, parameters, and deviations must be documented before execution.",
+      "parameter_tuning_policy": "Use a declared tuning budget or literature-supported defaults.",
+      "termination_criterion": "Use equal function-evaluation budget or report any alternative explicitly.",
+      "computational_budget_policy": "Same evaluation budget and hardware reporting policy where applicable.",
+      "expected_role": "Provides a planned comparison role; it is not a result.",
+      "risk_if_missing": "Reviewer may see the contribution as cherry-picked or insufficiently compared.",
+      "limitations": [
+        "Literature support and implementation availability require verification."
+      ]
+    }
+  ],
+  "baseline_adequacy_audit": {
+    "missing_standard_baselines": [],
+    "missing_problem_specific_baselines": [],
+    "missing_sequential_baseline": [],
+    "missing_joint_baseline": [],
+    "missing_ablated_variants": [],
+    "weak_baseline_risks": [],
+    "unfair_comparison_risks": [],
+    "recommended_repairs": []
+  },
+  "assumptions": [
+    "Baseline adequacy requires real literature review before execution."
+  ],
+  "limitations": [
+    "Baseline implementation availability is not verified."
+  ],
+  "is_demo_plan": true,
+  "requires_real_contribution_chain": true
+}

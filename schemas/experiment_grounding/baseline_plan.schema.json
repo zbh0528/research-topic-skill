@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Baseline Plan",
+  "type": "object",
+  "required": [
+    "baselines",
+    "baseline_adequacy_audit",
+    "assumptions",
+    "limitations"
+  ],
+  "properties": {
+    "baselines": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/baseline"
+      }
+    },
+    "baseline_adequacy_audit": {
+      "$ref": "#/$defs/baseline_adequacy_audit"
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_demo_plan": {
+      "type": "boolean"
+    },
+    "requires_real_contribution_chain": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "baseline": {
+      "type": "object",
+      "required": [
+        "baseline_id",
+        "baseline_name",
+        "baseline_type",
+        "linked_experiment_id",
+        "linked_validation_target_ids",
+        "linked_contribution_ids",
+        "literature_evidence_ids",
+        "why_needed",
+        "what_it_tests",
+        "fairness_requirements",
+        "implementation_requirements",
+        "parameter_tuning_policy",
+        "termination_criterion",
+        "computational_budget_policy",
+        "expected_role",
+        "risk_if_missing",
+        "limitations"
+      ],
+      "properties": {
+        "baseline_id": {
+          "type": "string"
+        },
+        "baseline_name": {
+          "type": "string"
+        },
+        "baseline_type": {
+          "type": "string",
+          "enum": [
+            "classical_evolutionary_algorithm",
+            "multi_objective_evolutionary_algorithm",
+            "problem_specific_heuristic",
+            "mathematical_programming",
+            "graph_algorithm",
+            "sequential_optimization",
+            "layout_only_optimization",
+            "cabling_only_optimization",
+            "joint_optimization_existing_method",
+            "random_or_greedy_baseline",
+            "surrogate_assisted_baseline",
+            "ablated_variant",
+            "user_provided_baseline",
+            "literature_supported_baseline"
+          ]
+        },
+        "linked_experiment_id": {
+          "type": "string"
+        },
+        "linked_validation_target_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "linked_contribution_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "literature_evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "why_needed": {
+          "type": "string"
+        },
+        "what_it_tests": {
+          "type": "string"
+        },
+        "fairness_requirements": {
+          "type": "string"
+        },
+        "implementation_requirements": {
+          "type": "string"
+        },
+        "parameter_tuning_policy": {
+          "type": "string"
+        },
+        "termination_criterion": {
+          "type": "string"
+        },
+        "computational_budget_policy": {
+          "type": "string"
+        },
+        "expected_role": {
+          "type": "string"
+        },
+        "risk_if_missing": {
+          "type": "string"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "baseline_adequacy_audit": {
+      "type": "object",
+      "required": [
+        "missing_standard_baselines",
+        "missing_problem_specific_baselines",
+        "missing_sequential_baseline",
+        "missing_joint_baseline",
+        "missing_ablated_variants",
+        "weak_baseline_risks",
+        "unfair_comparison_risks",
+        "recommended_repairs"
+      ],
+      "properties": {
+        "missing_standard_baselines": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing_problem_specific_baselines": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing_sequential_baseline": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing_joint_baseline": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing_ablated_variants": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "weak_baseline_risks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "unfair_comparison_risks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "recommended_repairs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

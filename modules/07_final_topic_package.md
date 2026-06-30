@@ -142,3 +142,40 @@ The final package should be usable as input for introduction, related work, meth
 - Each traceability row must include `final_claim_id`, `final_claim_text`, `claim_type`, `claim_scope`, `grounding_status`, `support_strength`, `linked_paper_ids`, `linked_evidence_ids`, `linked_problem_id`, `linked_contribution_id`, `counterevidence`, and `safer_wording`.
 - Do not hide counterevidence.
 - Do not upgrade corpus-scoped evidence into field-general novelty.
+
+## Experiment-Grounded Mode Requirements
+
+Add sections:
+
+- `Experiment-Grounded Validation Plan`
+- `Contribution-to-Experiment Traceability Table`
+- `Baseline Justification`
+- `Metric Justification`
+- `Ablation Study Plan`
+- `Statistical Analysis Plan`
+- `Reproducibility Checklist`
+- `Claims Not Yet Experimentally Supported`
+- `Reviewer Validation Risk and Defense`
+
+Each Contribution-to-Experiment Traceability Table row must include:
+
+- `contribution_id`
+- `contribution_claim`
+- `validation_target_id`
+- `experiment_id`
+- `baseline_ids`
+- `metric_ids`
+- `ablation_ids`
+- `statistical_test_ids`
+- `artifact_ids`
+- `success_condition`
+- `failure_condition`
+- `reviewer_risk`
+- `validation_status`
+
+Rules:
+
+- Do not present a validation plan as executed experiments.
+- Do not claim statistical significance, rankings, or performance superiority.
+- Surface claims that are not yet experimentally supported.
+- Surface validation limitations such as unavailable baselines or synthetic-only case studies.

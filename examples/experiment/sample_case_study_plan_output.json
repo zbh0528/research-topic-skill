@@ -1,0 +1,103 @@
+{
+  "case_studies": [
+    {
+      "case_study_id": "CS001",
+      "case_study_name": "Synthetic joint layout-cabling planning instance",
+      "case_study_type": "synthetic_instance",
+      "linked_experiment_ids": [
+        "EX001",
+        "EX002",
+        "EX003"
+      ],
+      "linked_validation_target_ids": [
+        "VT001",
+        "VT002",
+        "VT003"
+      ],
+      "site_or_instance_description": "Synthetic wind-farm instance for contract validation; not real field evidence.",
+      "turbine_count_range": "small to medium planning instances; exact counts require experiment protocol",
+      "layout_domain": "bounded offshore-style layout region placeholder",
+      "wind_resource_assumptions": "wind rose and wake assumptions must be declared before execution",
+      "wake_model_assumptions": "wake model choice must be reported and sensitivity-tested if claimed",
+      "cable_cost_assumptions": "cable unit cost and capacity assumptions must be declared",
+      "electrical_model_assumptions": "electrical loss and topology rules must be specified",
+      "constraints_included": [
+        "spacing",
+        "boundary",
+        "radial topology",
+        "cable capacity"
+      ],
+      "data_source": "synthetic example fixture",
+      "is_synthetic": true,
+      "realism_level": "contract fixture only",
+      "scalability_role": "baseline smoke scenario",
+      "why_needed": "Provides a reproducible placeholder for plan validation without real experiment claims.",
+      "limitations": [
+        "Synthetic example cannot support real engineering conclusions."
+      ],
+      "reproducibility_requirements": [
+        "publish instance generator",
+        "record seeds",
+        "report assumptions"
+      ]
+    },
+    {
+      "case_study_id": "CS002",
+      "case_study_name": "Scalability planning instance family",
+      "case_study_type": "scalability_instance",
+      "linked_experiment_ids": [
+        "EX001",
+        "EX002",
+        "EX003"
+      ],
+      "linked_validation_target_ids": [
+        "VT001",
+        "VT002",
+        "VT003"
+      ],
+      "site_or_instance_description": "Synthetic scale-varied family for planning scalability analysis.",
+      "turbine_count_range": "multiple sizes to be fixed before execution",
+      "layout_domain": "same domain family with size variation",
+      "wind_resource_assumptions": "held constant or varied by declared sensitivity plan",
+      "wake_model_assumptions": "same wake model across sizes unless sensitivity is planned",
+      "cable_cost_assumptions": "consistent cost model across sizes",
+      "electrical_model_assumptions": "consistent topology and capacity rules",
+      "constraints_included": [
+        "spacing",
+        "boundary",
+        "radial topology",
+        "cable capacity"
+      ],
+      "data_source": "synthetic example fixture",
+      "is_synthetic": true,
+      "realism_level": "planning only",
+      "scalability_role": "scalability and stress-test planning",
+      "why_needed": "Scalability claims require planned instance-size variation.",
+      "limitations": [
+        "No runtime or quality result is reported."
+      ],
+      "reproducibility_requirements": [
+        "document generator",
+        "record seeds",
+        "publish instance parameters"
+      ]
+    }
+  ],
+  "case_study_adequacy_audit": {
+    "missing_case_studies": [],
+    "synthetic_only_risks": [
+      "Demo cases are synthetic and cannot support real field evidence."
+    ],
+    "recommended_repairs": [
+      "Replace or supplement synthetic fixtures with justified real, benchmark, or user-provided instances before making empirical claims."
+    ]
+  },
+  "assumptions": [
+    "Synthetic examples are marked explicitly."
+  ],
+  "limitations": [
+    "Synthetic cases are corpus fixtures, not field evidence."
+  ],
+  "is_demo_plan": true,
+  "requires_real_contribution_chain": true
+}

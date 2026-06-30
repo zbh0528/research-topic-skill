@@ -1,0 +1,203 @@
+{
+  "artifact_requirements": [
+    {
+      "artifact_id": "AR001",
+      "artifact_type": "source_code",
+      "linked_experiment_id": "EX001",
+      "linked_contribution_id": "C1",
+      "description": "Experiment execution code and model implementation.",
+      "required_for_claim": true,
+      "reproducibility_role": "Required to reproduce or audit the planned evidence chain.",
+      "storage_location_placeholder": "artifacts/AR001",
+      "versioning_requirement": "Record commit, checksum, or version tag before execution.",
+      "risk_if_missing": "Claim cannot be audited or reproduced without this artifact."
+    },
+    {
+      "artifact_id": "AR002",
+      "artifact_type": "configuration_file",
+      "linked_experiment_id": "EX001",
+      "linked_contribution_id": "C1",
+      "description": "Configuration files for baseline and metric settings.",
+      "required_for_claim": true,
+      "reproducibility_role": "Required to reproduce or audit the planned evidence chain.",
+      "storage_location_placeholder": "artifacts/AR002",
+      "versioning_requirement": "Record commit, checksum, or version tag before execution.",
+      "risk_if_missing": "Claim cannot be audited or reproduced without this artifact."
+    },
+    {
+      "artifact_id": "AR003",
+      "artifact_type": "input_instance",
+      "linked_experiment_id": "EX001",
+      "linked_contribution_id": "C1",
+      "description": "Input case-study instances and generator metadata.",
+      "required_for_claim": true,
+      "reproducibility_role": "Required to reproduce or audit the planned evidence chain.",
+      "storage_location_placeholder": "artifacts/AR003",
+      "versioning_requirement": "Record commit, checksum, or version tag before execution.",
+      "risk_if_missing": "Claim cannot be audited or reproduced without this artifact."
+    },
+    {
+      "artifact_id": "AR004",
+      "artifact_type": "statistical_analysis_script",
+      "linked_experiment_id": "EX001",
+      "linked_contribution_id": "C2",
+      "description": "Script implementing the predeclared statistical analysis.",
+      "required_for_claim": true,
+      "reproducibility_role": "Required to reproduce or audit the planned evidence chain.",
+      "storage_location_placeholder": "artifacts/AR004",
+      "versioning_requirement": "Record commit, checksum, or version tag before execution.",
+      "risk_if_missing": "Claim cannot be audited or reproduced without this artifact."
+    },
+    {
+      "artifact_id": "AR005",
+      "artifact_type": "figure_generation_script",
+      "linked_experiment_id": "EX003",
+      "linked_contribution_id": "C3",
+      "description": "Scripts for Pareto and trade-off visualizations after real runs.",
+      "required_for_claim": true,
+      "reproducibility_role": "Required to reproduce or audit the planned evidence chain.",
+      "storage_location_placeholder": "artifacts/AR005",
+      "versioning_requirement": "Record commit, checksum, or version tag before execution.",
+      "risk_if_missing": "Claim cannot be audited or reproduced without this artifact."
+    },
+    {
+      "artifact_id": "AR006",
+      "artifact_type": "environment_file",
+      "linked_experiment_id": "EX001",
+      "linked_contribution_id": "C1",
+      "description": "Software and hardware environment description.",
+      "required_for_claim": true,
+      "reproducibility_role": "Required to reproduce or audit the planned evidence chain.",
+      "storage_location_placeholder": "artifacts/AR006",
+      "versioning_requirement": "Record commit, checksum, or version tag before execution.",
+      "risk_if_missing": "Claim cannot be audited or reproduced without this artifact."
+    }
+  ],
+  "code_requirements": [
+    "publish or archive source code for proposed and baseline implementations"
+  ],
+  "data_requirements": [
+    "publish synthetic instance generators and any real/user-provided data permissions"
+  ],
+  "parameter_requirements": [
+    "record all algorithm parameters and baseline parameters"
+  ],
+  "environment_requirements": [
+    "record hardware, operating system, language/runtime, and library versions"
+  ],
+  "random_seed_policy": "Predeclare and publish all random seeds for independent runs.",
+  "computational_budget_policy": "Predeclare function-evaluation budget, termination criterion, and hardware reporting.",
+  "result_reporting_schema": {
+    "project_id": "sample_experiment_project",
+    "required_columns": [
+      "experiment_id",
+      "method_id",
+      "case_study_id",
+      "seed",
+      "metric_id",
+      "metric_value",
+      "feasibility_status",
+      "runtime"
+    ]
+  },
+  "figure_table_plan": [
+    "Pareto front plots",
+    "baseline metric table",
+    "constraint violation table",
+    "runtime/scalability table"
+  ],
+  "experiment_log_requirements": [
+    "command line",
+    "commit or version",
+    "seed",
+    "start/end time",
+    "hardware",
+    "status"
+  ],
+  "reproducibility_risks": [
+    "baseline implementation unavailable",
+    "synthetic-only case studies require clear limitation labeling"
+  ],
+  "artifact_traceability_table": [
+    {
+      "artifact_id": "AR001",
+      "artifact_type": "source_code",
+      "linked_experiment_id": "EX001",
+      "linked_contribution_id": "C1",
+      "description": "Experiment execution code and model implementation.",
+      "required_for_claim": true,
+      "reproducibility_role": "Required to reproduce or audit the planned evidence chain.",
+      "storage_location_placeholder": "artifacts/AR001",
+      "versioning_requirement": "Record commit, checksum, or version tag before execution.",
+      "risk_if_missing": "Claim cannot be audited or reproduced without this artifact."
+    },
+    {
+      "artifact_id": "AR002",
+      "artifact_type": "configuration_file",
+      "linked_experiment_id": "EX001",
+      "linked_contribution_id": "C1",
+      "description": "Configuration files for baseline and metric settings.",
+      "required_for_claim": true,
+      "reproducibility_role": "Required to reproduce or audit the planned evidence chain.",
+      "storage_location_placeholder": "artifacts/AR002",
+      "versioning_requirement": "Record commit, checksum, or version tag before execution.",
+      "risk_if_missing": "Claim cannot be audited or reproduced without this artifact."
+    },
+    {
+      "artifact_id": "AR003",
+      "artifact_type": "input_instance",
+      "linked_experiment_id": "EX001",
+      "linked_contribution_id": "C1",
+      "description": "Input case-study instances and generator metadata.",
+      "required_for_claim": true,
+      "reproducibility_role": "Required to reproduce or audit the planned evidence chain.",
+      "storage_location_placeholder": "artifacts/AR003",
+      "versioning_requirement": "Record commit, checksum, or version tag before execution.",
+      "risk_if_missing": "Claim cannot be audited or reproduced without this artifact."
+    },
+    {
+      "artifact_id": "AR004",
+      "artifact_type": "statistical_analysis_script",
+      "linked_experiment_id": "EX001",
+      "linked_contribution_id": "C2",
+      "description": "Script implementing the predeclared statistical analysis.",
+      "required_for_claim": true,
+      "reproducibility_role": "Required to reproduce or audit the planned evidence chain.",
+      "storage_location_placeholder": "artifacts/AR004",
+      "versioning_requirement": "Record commit, checksum, or version tag before execution.",
+      "risk_if_missing": "Claim cannot be audited or reproduced without this artifact."
+    },
+    {
+      "artifact_id": "AR005",
+      "artifact_type": "figure_generation_script",
+      "linked_experiment_id": "EX003",
+      "linked_contribution_id": "C3",
+      "description": "Scripts for Pareto and trade-off visualizations after real runs.",
+      "required_for_claim": true,
+      "reproducibility_role": "Required to reproduce or audit the planned evidence chain.",
+      "storage_location_placeholder": "artifacts/AR005",
+      "versioning_requirement": "Record commit, checksum, or version tag before execution.",
+      "risk_if_missing": "Claim cannot be audited or reproduced without this artifact."
+    },
+    {
+      "artifact_id": "AR006",
+      "artifact_type": "environment_file",
+      "linked_experiment_id": "EX001",
+      "linked_contribution_id": "C1",
+      "description": "Software and hardware environment description.",
+      "required_for_claim": true,
+      "reproducibility_role": "Required to reproduce or audit the planned evidence chain.",
+      "storage_location_placeholder": "artifacts/AR006",
+      "versioning_requirement": "Record commit, checksum, or version tag before execution.",
+      "risk_if_missing": "Claim cannot be audited or reproduced without this artifact."
+    }
+  ],
+  "assumptions": [
+    "Artifacts are required by the plan but are not claimed to already exist."
+  ],
+  "limitations": [
+    "Reproducibility remains planned until real artifacts are created and checked."
+  ],
+  "is_demo_plan": true,
+  "requires_real_contribution_chain": true
+}

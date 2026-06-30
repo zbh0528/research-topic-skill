@@ -1,0 +1,44 @@
+{
+  "ablations": [
+    {
+      "ablation_id": "A001",
+      "ablation_name": "Remove problem-structure-aware co-evolution",
+      "linked_mechanism_id": "MECH001",
+      "linked_contribution_id": "C2",
+      "linked_experiment_id": "EX002",
+      "component_removed_or_modified": "Replace the structure-aware co-evolution mechanism with a single-population variant.",
+      "controlled_conditions": "Keep encoding, evaluation budget, case studies, and parameter reporting fixed except for the mechanism under test.",
+      "comparison_variant": "non-coevolutionary variant",
+      "expected_result_pattern": "Conditional plan only: C2 would be supported only if this variant clarifies the mechanism's role under the declared metrics.",
+      "failure_pattern": "If the ablation cannot isolate the mechanism, C2 should be narrowed or redesigned.",
+      "required_metrics": [
+        "M001",
+        "M002",
+        "M003",
+        "M004"
+      ],
+      "required_baselines": [
+        "B006"
+      ],
+      "interpretation_rule": "Interpret only the planned comparison structure until real empirical data exist.",
+      "reviewer_risk": "Reviewer may question C2 if the ablation changes more than the claimed mechanism.",
+      "limitations": [
+        "No empirical effect size is claimed."
+      ]
+    }
+  ],
+  "ablation_adequacy_audit": {
+    "missing_mechanism_ablations": [],
+    "weak_ablation_risks": [],
+    "confounded_ablation_risks": [],
+    "recommended_repairs": []
+  },
+  "assumptions": [
+    "C2 is treated as the algorithmic contribution in the demo fixture."
+  ],
+  "limitations": [
+    "No ablation result is reported."
+  ],
+  "is_demo_plan": true,
+  "requires_real_contribution_chain": true
+}

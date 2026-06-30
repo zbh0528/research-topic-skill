@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Metric Plan",
+  "type": "object",
+  "required": [
+    "metrics",
+    "metric_adequacy_audit",
+    "assumptions",
+    "limitations"
+  ],
+  "properties": {
+    "metrics": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/metric"
+      }
+    },
+    "metric_adequacy_audit": {
+      "$ref": "#/$defs/metric_adequacy_audit"
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_demo_plan": {
+      "type": "boolean"
+    },
+    "requires_real_contribution_chain": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "metric": {
+      "type": "object",
+      "required": [
+        "metric_id",
+        "metric_name",
+        "metric_type",
+        "linked_experiment_id",
+        "linked_validation_target_ids",
+        "linked_contribution_ids",
+        "what_it_measures",
+        "why_it_is_needed",
+        "formula_or_definition",
+        "interpretation_rule",
+        "success_pattern",
+        "failure_pattern",
+        "limitations",
+        "required_data",
+        "statistical_use"
+      ],
+      "properties": {
+        "metric_id": {
+          "type": "string"
+        },
+        "metric_name": {
+          "type": "string"
+        },
+        "metric_type": {
+          "type": "string",
+          "enum": [
+            "objective_value",
+            "cost_metric",
+            "energy_metric",
+            "wake_loss_metric",
+            "cable_cost_metric",
+            "electrical_loss_metric",
+            "levelized_cost_metric",
+            "pareto_quality_metric",
+            "convergence_metric",
+            "diversity_metric",
+            "feasibility_metric",
+            "constraint_violation_metric",
+            "runtime_metric",
+            "scalability_metric",
+            "robustness_metric",
+            "sensitivity_metric",
+            "statistical_metric",
+            "engineering_interpretability_metric"
+          ]
+        },
+        "linked_experiment_id": {
+          "type": "string"
+        },
+        "linked_validation_target_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "linked_contribution_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "what_it_measures": {
+          "type": "string"
+        },
+        "why_it_is_needed": {
+          "type": "string"
+        },
+        "formula_or_definition": {
+          "type": "string"
+        },
+        "interpretation_rule": {
+          "type": "string"
+        },
+        "success_pattern": {
+          "type": "string"
+        },
+        "failure_pattern": {
+          "type": "string"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_data": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "statistical_use": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "metric_adequacy_audit": {
+      "type": "object",
+      "required": [
+        "missing_pareto_metrics",
+        "missing_feasibility_metrics",
+        "missing_runtime_metrics",
+        "missing_engineering_metrics",
+        "metric_claim_mismatch_risks",
+        "recommended_repairs"
+      ],
+      "properties": {
+        "missing_pareto_metrics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing_feasibility_metrics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing_runtime_metrics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing_engineering_metrics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "metric_claim_mismatch_risks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "recommended_repairs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

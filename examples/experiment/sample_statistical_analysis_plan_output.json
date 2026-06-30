@@ -1,0 +1,58 @@
+{
+  "statistical_analyses": [
+    {
+      "statistical_test_id": "ST001",
+      "linked_experiment_id": "EX001",
+      "linked_metric_ids": [
+        "M001",
+        "M002",
+        "M003",
+        "M004",
+        "M005",
+        "M006",
+        "M007",
+        "M008",
+        "M009"
+      ],
+      "linked_baseline_ids": [
+        "B001",
+        "B002",
+        "B003",
+        "B004",
+        "B005",
+        "B006"
+      ],
+      "test_name": "Wilcoxon or Friedman planning rule",
+      "test_type": "wilcoxon_signed_rank",
+      "why_needed": "Stochastic optimization comparisons require independent runs and a predeclared test rule.",
+      "assumptions": [
+        "Use paired nonparametric tests when paired stochastic runs are appropriate."
+      ],
+      "independent_runs": 30,
+      "random_seed_policy": "Declare and publish the seed list before execution.",
+      "significance_level": "predeclare alpha before execution; do not claim significance in the plan",
+      "multiple_comparison_policy": "Use correction or Friedman plus post-hoc tests when comparing many algorithms.",
+      "effect_size_policy": "Report effect size or confidence interval when empirical data exist.",
+      "confidence_interval_policy": "Use bootstrap confidence intervals where assumptions warrant.",
+      "reporting_format": "Report per-instance summary, test statistic, adjusted decision, and limitations after real runs.",
+      "interpretation_rule": "The plan defines how results would be interpreted; it does not report results.",
+      "limitations": [
+        "No p-value or significance conclusion exists before experiments are run."
+      ]
+    }
+  ],
+  "statistical_adequacy_audit": {
+    "missing_statistical_tests": [],
+    "missing_independent_runs": [],
+    "missing_seed_policy": [],
+    "recommended_repairs": []
+  },
+  "assumptions": [
+    "Statistical choices must be checked against real data design."
+  ],
+  "limitations": [
+    "No significance claim is made."
+  ],
+  "is_demo_plan": true,
+  "requires_real_contribution_chain": true
+}

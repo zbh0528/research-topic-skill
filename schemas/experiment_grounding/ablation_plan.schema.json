@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ablation Plan",
+  "type": "object",
+  "required": [
+    "ablations",
+    "ablation_adequacy_audit",
+    "assumptions",
+    "limitations"
+  ],
+  "properties": {
+    "ablations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ablation"
+      }
+    },
+    "ablation_adequacy_audit": {
+      "$ref": "#/$defs/ablation_adequacy_audit"
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_demo_plan": {
+      "type": "boolean"
+    },
+    "requires_real_contribution_chain": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "ablation": {
+      "type": "object",
+      "required": [
+        "ablation_id",
+        "ablation_name",
+        "linked_mechanism_id",
+        "linked_contribution_id",
+        "linked_experiment_id",
+        "component_removed_or_modified",
+        "controlled_conditions",
+        "comparison_variant",
+        "expected_result_pattern",
+        "failure_pattern",
+        "required_metrics",
+        "required_baselines",
+        "interpretation_rule",
+        "reviewer_risk",
+        "limitations"
+      ],
+      "properties": {
+        "ablation_id": {
+          "type": "string"
+        },
+        "ablation_name": {
+          "type": "string"
+        },
+        "linked_mechanism_id": {
+          "type": "string"
+        },
+        "linked_contribution_id": {
+          "type": "string"
+        },
+        "linked_experiment_id": {
+          "type": "string"
+        },
+        "component_removed_or_modified": {
+          "type": "string"
+        },
+        "controlled_conditions": {
+          "type": "string"
+        },
+        "comparison_variant": {
+          "type": "string"
+        },
+        "expected_result_pattern": {
+          "type": "string"
+        },
+        "failure_pattern": {
+          "type": "string"
+        },
+        "required_metrics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_baselines": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "interpretation_rule": {
+          "type": "string"
+        },
+        "reviewer_risk": {
+          "type": "string"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ablation_adequacy_audit": {
+      "type": "object",
+      "required": [
+        "missing_mechanism_ablations",
+        "weak_ablation_risks",
+        "confounded_ablation_risks",
+        "recommended_repairs"
+      ],
+      "properties": {
+        "missing_mechanism_ablations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "weak_ablation_risks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confounded_ablation_risks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "recommended_repairs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

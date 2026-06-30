@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Experiment Traceability",
+  "type": "object",
+  "required": [
+    "contribution_to_experiment_traceability_table"
+  ],
+  "properties": {
+    "contribution_to_experiment_traceability_table": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/trace_row"
+      }
+    },
+    "is_demo_plan": {
+      "type": "boolean"
+    },
+    "requires_real_contribution_chain": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "trace_row": {
+      "type": "object",
+      "required": [
+        "contribution_id",
+        "contribution_claim",
+        "validation_target_id",
+        "experiment_id",
+        "baseline_ids",
+        "metric_ids",
+        "ablation_ids",
+        "statistical_test_ids",
+        "artifact_ids",
+        "success_condition",
+        "failure_condition",
+        "reviewer_risk",
+        "validation_status"
+      ],
+      "properties": {
+        "contribution_id": {
+          "type": "string"
+        },
+        "contribution_claim": {
+          "type": "string"
+        },
+        "validation_target_id": {
+          "type": "string"
+        },
+        "experiment_id": {
+          "type": "string"
+        },
+        "baseline_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "metric_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ablation_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "statistical_test_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "artifact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "success_condition": {
+          "type": "string"
+        },
+        "failure_condition": {
+          "type": "string"
+        },
+        "reviewer_risk": {
+          "type": "string"
+        },
+        "validation_status": {
+          "type": "string",
+          "enum": [
+            "validation_planned",
+            "partially_planned",
+            "insufficiently_planned",
+            "unsupported_by_experiment_plan",
+            "not_applicable",
+            "requires_empirical_results"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -245,6 +245,264 @@
             },
             "additionalProperties": false
           }
+        },
+        "validation_targets": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "experiment_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "baseline_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "metric_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "ablation_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "statistical_test_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "reproducibility_requirements": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "validation_adequacy_summary": {
+          "type": "object"
+        },
+        "experiment_risks": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "artifact_requirements": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "Experiment-Grounded Validation Plan": {
+          "type": "object"
+        },
+        "Contribution-to-Experiment Traceability Table": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "contribution_id",
+              "contribution_claim",
+              "validation_target_id",
+              "experiment_id",
+              "baseline_ids",
+              "metric_ids",
+              "ablation_ids",
+              "statistical_test_ids",
+              "artifact_ids",
+              "success_condition",
+              "failure_condition",
+              "reviewer_risk",
+              "validation_status"
+            ],
+            "properties": {
+              "contribution_id": {
+                "type": "string"
+              },
+              "contribution_claim": {
+                "type": "string"
+              },
+              "validation_target_id": {
+                "type": "string"
+              },
+              "experiment_id": {
+                "type": "string"
+              },
+              "baseline_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "metric_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "ablation_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "statistical_test_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "artifact_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "success_condition": {
+                "type": "string"
+              },
+              "failure_condition": {
+                "type": "string"
+              },
+              "reviewer_risk": {
+                "type": "string"
+              },
+              "validation_status": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "contribution_to_experiment_traceability_table": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "contribution_id",
+              "contribution_claim",
+              "validation_target_id",
+              "experiment_id",
+              "baseline_ids",
+              "metric_ids",
+              "ablation_ids",
+              "statistical_test_ids",
+              "artifact_ids",
+              "success_condition",
+              "failure_condition",
+              "reviewer_risk",
+              "validation_status"
+            ],
+            "properties": {
+              "contribution_id": {
+                "type": "string"
+              },
+              "contribution_claim": {
+                "type": "string"
+              },
+              "validation_target_id": {
+                "type": "string"
+              },
+              "experiment_id": {
+                "type": "string"
+              },
+              "baseline_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "metric_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "ablation_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "statistical_test_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "artifact_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "success_condition": {
+                "type": "string"
+              },
+              "failure_condition": {
+                "type": "string"
+              },
+              "reviewer_risk": {
+                "type": "string"
+              },
+              "validation_status": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "Baseline Justification": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "Metric Justification": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "Ablation Study Plan": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "Statistical Analysis Plan": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "Reproducibility Checklist": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "Claims Not Yet Experimentally Supported": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Reviewer Validation Risk and Defense": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
         }
       },
       "additionalProperties": false
@@ -435,6 +693,63 @@
             }
           },
           "additionalProperties": false
+        },
+        "validation_targets": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "experiment_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "baseline_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "metric_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "ablation_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "statistical_test_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "reproducibility_requirements": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "validation_adequacy_summary": {
+          "type": "object"
+        },
+        "experiment_risks": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "artifact_requirements": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
         }
       },
       "additionalProperties": false
@@ -620,6 +935,63 @@
           }
         },
         "additionalProperties": false
+      }
+    },
+    "validation_targets": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "experiment_links": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "baseline_links": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "metric_links": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "ablation_links": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "statistical_test_links": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "reproducibility_requirements": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "validation_adequacy_summary": {
+      "type": "object"
+    },
+    "experiment_risks": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "artifact_requirements": {
+      "type": "array",
+      "items": {
+        "type": "object"
       }
     }
   },

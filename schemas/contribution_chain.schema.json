@@ -91,6 +91,63 @@
         },
         "uncertainty_log": {
           "type": "array"
+        },
+        "validation_targets": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "experiment_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "baseline_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "metric_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "ablation_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "statistical_test_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "reproducibility_requirements": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "validation_adequacy_summary": {
+          "type": "object"
+        },
+        "experiment_risks": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "artifact_requirements": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
         }
       },
       "additionalProperties": false
@@ -311,6 +368,63 @@
             }
           },
           "additionalProperties": false
+        },
+        "validation_targets": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "experiment_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "baseline_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "metric_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "ablation_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "statistical_test_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "reproducibility_requirements": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "validation_adequacy_summary": {
+          "type": "object"
+        },
+        "experiment_risks": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "artifact_requirements": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
         }
       },
       "additionalProperties": false
@@ -497,6 +611,63 @@
         },
         "additionalProperties": false
       }
+    },
+    "validation_targets": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "experiment_links": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "baseline_links": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "metric_links": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "ablation_links": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "statistical_test_links": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "reproducibility_requirements": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "validation_adequacy_summary": {
+      "type": "object"
+    },
+    "experiment_risks": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "artifact_requirements": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
     }
   },
   "additionalProperties": false,
@@ -591,6 +762,54 @@
         },
         "evidence_status": {
           "$ref": "#/$defs/evidence_status"
+        },
+        "validation_required": {
+          "type": [
+            "boolean",
+            "string"
+          ]
+        },
+        "expected_validation_target_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "validation_claim_type": {
+          "type": "string"
+        },
+        "required_baseline_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_metric_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_ablation_if_algorithmic": {
+          "type": [
+            "boolean",
+            "string"
+          ]
+        },
+        "required_statistical_analysis": {
+          "type": [
+            "boolean",
+            "string"
+          ]
+        },
+        "validation_risks": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "experiment_support_status": {
+          "type": "string"
         }
       },
       "additionalProperties": false

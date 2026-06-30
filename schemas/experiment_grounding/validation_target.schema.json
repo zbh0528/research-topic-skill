@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Validation Target Plan",
+  "type": "object",
+  "required": [
+    "validation_targets",
+    "validation_target_summary",
+    "assumptions",
+    "limitations"
+  ],
+  "properties": {
+    "validation_targets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/validation_target"
+      }
+    },
+    "validation_target_summary": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_demo_plan": {
+      "type": "boolean"
+    },
+    "requires_real_contribution_chain": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "validation_target": {
+      "type": "object",
+      "required": [
+        "validation_target_id",
+        "linked_contribution_id",
+        "linked_claim_id",
+        "linked_problem_id",
+        "linked_theory_element_id",
+        "validation_claim_type",
+        "validation_question",
+        "hypothesis",
+        "required_evidence",
+        "success_condition",
+        "failure_condition",
+        "evidence_threshold",
+        "required_experiment_types",
+        "validation_status",
+        "experiment_support_status",
+        "reviewer_risk",
+        "assumptions",
+        "limitations"
+      ],
+      "properties": {
+        "validation_target_id": {
+          "type": "string"
+        },
+        "linked_contribution_id": {
+          "type": "string"
+        },
+        "linked_claim_id": {
+          "type": "string"
+        },
+        "linked_problem_id": {
+          "type": "string"
+        },
+        "linked_theory_element_id": {
+          "type": "string"
+        },
+        "validation_claim_type": {
+          "type": "string",
+          "enum": [
+            "model_validity_claim",
+            "algorithm_effectiveness_claim",
+            "mechanism_necessity_claim",
+            "tradeoff_insight_claim",
+            "robustness_claim",
+            "scalability_claim",
+            "feasibility_claim",
+            "runtime_claim",
+            "constraint_handling_claim",
+            "pareto_quality_claim",
+            "engineering_value_claim",
+            "benchmark_claim",
+            "reproducibility_claim"
+          ]
+        },
+        "validation_question": {
+          "type": "string"
+        },
+        "hypothesis": {
+          "type": "string"
+        },
+        "required_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "success_condition": {
+          "type": "string"
+        },
+        "failure_condition": {
+          "type": "string"
+        },
+        "evidence_threshold": {
+          "type": "string"
+        },
+        "required_experiment_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "validation_status": {
+          "type": "string",
+          "enum": [
+            "validation_planned",
+            "partially_planned",
+            "insufficiently_planned",
+            "unsupported_by_experiment_plan",
+            "not_applicable",
+            "requires_empirical_results"
+          ]
+        },
+        "experiment_support_status": {
+          "type": "string",
+          "enum": [
+            "directly_tested_by_plan",
+            "indirectly_tested_by_plan",
+            "weakly_tested_by_plan",
+            "not_tested",
+            "requires_new_experiment",
+            "cannot_be_validated_empirically"
+          ]
+        },
+        "reviewer_risk": {
+          "type": "string"
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "contribution_claim": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

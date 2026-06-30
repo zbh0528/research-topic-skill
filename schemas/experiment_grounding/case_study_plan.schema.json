@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Case Study Plan",
+  "type": "object",
+  "required": [
+    "case_studies",
+    "case_study_adequacy_audit",
+    "assumptions",
+    "limitations"
+  ],
+  "properties": {
+    "case_studies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/case_study"
+      }
+    },
+    "case_study_adequacy_audit": {
+      "type": "object",
+      "required": [
+        "missing_case_studies",
+        "synthetic_only_risks",
+        "recommended_repairs"
+      ],
+      "properties": {
+        "missing_case_studies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "synthetic_only_risks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "recommended_repairs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_demo_plan": {
+      "type": "boolean"
+    },
+    "requires_real_contribution_chain": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "case_study": {
+      "type": "object",
+      "required": [
+        "case_study_id",
+        "case_study_name",
+        "case_study_type",
+        "linked_experiment_ids",
+        "linked_validation_target_ids",
+        "site_or_instance_description",
+        "turbine_count_range",
+        "layout_domain",
+        "wind_resource_assumptions",
+        "wake_model_assumptions",
+        "cable_cost_assumptions",
+        "electrical_model_assumptions",
+        "constraints_included",
+        "data_source",
+        "is_synthetic",
+        "realism_level",
+        "scalability_role",
+        "why_needed",
+        "limitations",
+        "reproducibility_requirements"
+      ],
+      "properties": {
+        "case_study_id": {
+          "type": "string"
+        },
+        "case_study_name": {
+          "type": "string"
+        },
+        "case_study_type": {
+          "type": "string",
+          "enum": [
+            "synthetic_instance",
+            "benchmark_instance",
+            "real_site_case",
+            "literature_case",
+            "user_provided_case",
+            "scalability_instance",
+            "stress_test_instance"
+          ]
+        },
+        "linked_experiment_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "linked_validation_target_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "site_or_instance_description": {
+          "type": "string"
+        },
+        "turbine_count_range": {
+          "type": "string"
+        },
+        "layout_domain": {
+          "type": "string"
+        },
+        "wind_resource_assumptions": {
+          "type": "string"
+        },
+        "wake_model_assumptions": {
+          "type": "string"
+        },
+        "cable_cost_assumptions": {
+          "type": "string"
+        },
+        "electrical_model_assumptions": {
+          "type": "string"
+        },
+        "constraints_included": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "data_source": {
+          "type": "string"
+        },
+        "is_synthetic": {
+          "type": "boolean"
+        },
+        "realism_level": {
+          "type": "string"
+        },
+        "scalability_role": {
+          "type": "string"
+        },
+        "why_needed": {
+          "type": "string"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "reproducibility_requirements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Experiment Design Plan",
+  "type": "object",
+  "required": [
+    "experiment_designs",
+    "experiment_design_summary",
+    "assumptions",
+    "limitations"
+  ],
+  "properties": {
+    "experiment_designs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/experiment_design"
+      }
+    },
+    "experiment_design_summary": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_demo_plan": {
+      "type": "boolean"
+    },
+    "requires_real_contribution_chain": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "experiment_design": {
+      "type": "object",
+      "required": [
+        "experiment_id",
+        "experiment_name",
+        "linked_validation_target_ids",
+        "linked_contribution_ids",
+        "experiment_type",
+        "research_question",
+        "hypothesis",
+        "independent_variables",
+        "dependent_variables",
+        "controlled_variables",
+        "experimental_factors",
+        "comparison_groups",
+        "required_baselines",
+        "required_metrics",
+        "required_ablations",
+        "required_case_studies",
+        "statistical_requirements",
+        "computational_budget_policy",
+        "fairness_requirements",
+        "expected_result_pattern",
+        "failure_pattern",
+        "reviewer_risk",
+        "limitations"
+      ],
+      "properties": {
+        "experiment_id": {
+          "type": "string"
+        },
+        "experiment_name": {
+          "type": "string"
+        },
+        "linked_validation_target_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "linked_contribution_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "experiment_type": {
+          "type": "string",
+          "enum": [
+            "baseline_comparison",
+            "ablation_study",
+            "sensitivity_analysis",
+            "scalability_analysis",
+            "constraint_handling_analysis",
+            "pareto_tradeoff_analysis",
+            "case_study_analysis",
+            "robustness_analysis",
+            "runtime_analysis",
+            "feasibility_analysis",
+            "engineering_interpretability_analysis"
+          ]
+        },
+        "research_question": {
+          "type": "string"
+        },
+        "hypothesis": {
+          "type": "string"
+        },
+        "independent_variables": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dependent_variables": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "controlled_variables": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "experimental_factors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "comparison_groups": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_baselines": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_metrics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_ablations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_case_studies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "statistical_requirements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "computational_budget_policy": {
+          "type": "string"
+        },
+        "fairness_requirements": {
+          "type": "string"
+        },
+        "expected_result_pattern": {
+          "type": "string"
+        },
+        "failure_pattern": {
+          "type": "string"
+        },
+        "reviewer_risk": {
+          "type": "string"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

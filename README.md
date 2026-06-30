@@ -300,6 +300,97 @@ Strict audit boundary:
 - `audit_claim_grounding.py --strict` checks structured claims that already exist in module outputs. It intentionally skips untouched `PENDING_MODULE_OUTPUT` draft placeholders.
 - Use `audit_claim_grounding.py --strict --require-complete-chain` for release-grade chain acceptance. That mode fails if the final topic package is incomplete, the Evidence Traceability Table is missing, selected problem evidence links are missing, or contribution evidence links are missing.
 
+## v0.3.0 experiment grounding
+
+v0.3.0 adds an experiment-grounding layer that maps contribution claims to validation objectives, baselines, metrics, ablations, case studies, statistical tests, reproducibility requirements, and reviewer-risk defenses.
+
+The three supported modes are:
+
+- `logic-only mode`: no real literature or experiment plan input; keep v0.1.0 behavior and mark literature judgments `needs_literature_verification` and experiment judgments `validation_required`.
+- `literature-grounded mode`: use v0.2.0 paper cards, literature matrix, evidence claim map, and corpus-scoped gap judgment.
+- `experiment-grounded mode`: ask what experiment plan a contribution needs before a reviewer should believe it.
+
+The difference from v0.2.0 is:
+
+- v0.2.0 asks: "Does this gap or contribution have literature evidence?"
+- v0.3.0 asks: "What validation plan would make this contribution credible?"
+
+New commands:
+
+```bash
+python3 scripts/build_validation_plan.py \
+  --workspace workspaces/demo_project
+
+python3 scripts/validate_experiment_plan.py \
+  --workspace workspaces/demo_project \
+  --strict
+
+python3 scripts/audit_validation_adequacy.py \
+  --workspace workspaces/demo_project \
+  --strict
+
+python3 scripts/generate_reproducibility_checklist.py \
+  --workspace workspaces/demo_project
+```
+
+Minimum v0.3.0 flow:
+
+```bash
+cd windfarm-research-topic-skill
+
+python3 scripts/init_workspace.py \
+  --input examples/sample_project_input.yaml \
+  --project-id exp_demo \
+  --overwrite
+
+# Optional literature grounding
+python3 scripts/ingest_literature.py \
+  --workspace workspaces/exp_demo \
+  --input examples/literature/sample_literature_input.json \
+  --corpus-id exp_demo_synthetic_corpus \
+  --overwrite
+
+python3 scripts/build_literature_matrix.py \
+  --workspace workspaces/exp_demo \
+  --overwrite
+
+python3 scripts/validate_literature.py \
+  --workspace workspaces/exp_demo \
+  --strict
+
+# Experiment validation planning
+python3 scripts/build_validation_plan.py \
+  --workspace workspaces/exp_demo \
+  --overwrite \
+  --demo-if-missing
+
+python3 scripts/validate_experiment_plan.py \
+  --workspace workspaces/exp_demo \
+  --strict
+
+python3 scripts/audit_validation_adequacy.py \
+  --workspace workspaces/exp_demo \
+  --strict
+
+python3 scripts/generate_reproducibility_checklist.py \
+  --workspace workspaces/exp_demo
+
+python3 scripts/validate_outputs.py \
+  --workspace workspaces/exp_demo \
+  --literature-grounded \
+  --strict-evidence \
+  --experiment-grounded \
+  --strict-validation
+```
+
+v0.3.0 limitations:
+
+- It does not run experiments.
+- It does not generate experimental results.
+- It cannot guarantee planned experiments will lead to publication.
+- It cannot replace real wind-farm simulation, optimization code, data, or engineering review.
+- It only checks contribution-to-validation adequacy.
+
 ## 测试命令
 
 ```bash

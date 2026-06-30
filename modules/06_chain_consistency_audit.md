@@ -138,3 +138,22 @@ Summarize reviewer risks and required defenses for the final package.
 - Detect unsupported verified claims, hidden counterevidence, title-only inference, synthetic evidence misuse, field-general claims without evidence, and unsafe novelty wording.
 - Add output fields: `evidence_chain_status`, `unsupported_verified_claims`, `ungrounded_key_claims`, `hidden_counterevidence_risks`, `corpus_scope_risks`, `synthetic_evidence_misuse`, and `title_only_inference_risks`.
 - Fail readiness if a grounded claim lacks `evidence_id`.
+
+## Experiment-Grounded Mode Requirements
+
+The audit must check:
+
+- Whether each contribution has a validation target.
+- Whether each method implication has an ablation possibility when it describes an algorithmic mechanism.
+- Whether each contribution requires baselines and metrics aligned with the claim.
+- Whether reviewer risks are converted into validation requirements.
+- Whether unsupported empirical claims or result-like wording remain.
+- Whether `outperforms`, fake p-values, or significance wording are used as established conclusions.
+
+Additional output fields:
+
+- `validation_readiness`
+- `empirical_claim_risks`
+- `missing_validation_requirements`
+- `experiment_design_hints`
+- `validation_reviewer_questions`

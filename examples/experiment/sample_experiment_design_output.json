@@ -1,0 +1,236 @@
+{
+  "experiment_designs": [
+    {
+      "experiment_id": "EX001",
+      "experiment_name": "Validation design for C1",
+      "linked_validation_target_ids": [
+        "VT001"
+      ],
+      "linked_contribution_ids": [
+        "C1"
+      ],
+      "experiment_type": "pareto_tradeoff_analysis",
+      "research_question": "Which planned evidence would support C1 under fair comparison conditions?",
+      "hypothesis": "If C1 is credible, the planned evaluation should satisfy the evidence threshold across aligned metrics.",
+      "independent_variables": [
+        "algorithm variant",
+        "baseline family",
+        "case-study scale"
+      ],
+      "dependent_variables": [
+        "objective values",
+        "Pareto quality indicators",
+        "feasibility indicators",
+        "runtime"
+      ],
+      "controlled_variables": [
+        "evaluation budget",
+        "termination rule",
+        "parameter reporting",
+        "input instances"
+      ],
+      "experimental_factors": [
+        "layout-cabling coupling",
+        "constraint handling",
+        "wind and cost assumptions"
+      ],
+      "comparison_groups": [
+        "proposed method plan",
+        "sequential baseline",
+        "standard MOEA baseline",
+        "ablated variant where applicable"
+      ],
+      "required_baselines": [
+        "B001",
+        "B004"
+      ],
+      "required_metrics": [
+        "M001",
+        "M002",
+        "M003",
+        "M004"
+      ],
+      "required_ablations": [],
+      "required_case_studies": [
+        "CS001",
+        "CS002"
+      ],
+      "statistical_requirements": [
+        "ST001"
+      ],
+      "computational_budget_policy": "Use equal function-evaluation or wall-clock reporting policies and disclose any unavoidable difference.",
+      "fairness_requirements": "Use the same case instances, termination criteria, parameter reporting rules, and feasibility handling across methods.",
+      "expected_result_pattern": "Conditional plan only: the claim would be supported only if aligned metrics meet the predeclared evidence threshold across fair comparisons.",
+      "failure_pattern": "The claim should be revised if planned comparisons do not support the threshold or reveal unresolved feasibility, runtime, or baseline risks.",
+      "reviewer_risk": "Comparison may be challenged if baselines, metrics, or budgets are misaligned.",
+      "limitations": [
+        "This design does not report empirical outcomes."
+      ]
+    },
+    {
+      "experiment_id": "EX002",
+      "experiment_name": "Validation design for C2",
+      "linked_validation_target_ids": [
+        "VT002"
+      ],
+      "linked_contribution_ids": [
+        "C2"
+      ],
+      "experiment_type": "ablation_study",
+      "research_question": "Which planned evidence would support C2 under fair comparison conditions?",
+      "hypothesis": "If C2 is credible, the planned evaluation should satisfy the evidence threshold across aligned metrics.",
+      "independent_variables": [
+        "algorithm variant",
+        "baseline family",
+        "case-study scale"
+      ],
+      "dependent_variables": [
+        "objective values",
+        "Pareto quality indicators",
+        "feasibility indicators",
+        "runtime"
+      ],
+      "controlled_variables": [
+        "evaluation budget",
+        "termination rule",
+        "parameter reporting",
+        "input instances"
+      ],
+      "experimental_factors": [
+        "layout-cabling coupling",
+        "constraint handling",
+        "wind and cost assumptions"
+      ],
+      "comparison_groups": [
+        "proposed method plan",
+        "sequential baseline",
+        "standard MOEA baseline",
+        "ablated variant where applicable"
+      ],
+      "required_baselines": [
+        "B001",
+        "B004",
+        "B006"
+      ],
+      "required_metrics": [
+        "M001",
+        "M002",
+        "M003",
+        "M004"
+      ],
+      "required_ablations": [
+        "A001"
+      ],
+      "required_case_studies": [
+        "CS001",
+        "CS002"
+      ],
+      "statistical_requirements": [
+        "ST001"
+      ],
+      "computational_budget_policy": "Use equal function-evaluation or wall-clock reporting policies and disclose any unavoidable difference.",
+      "fairness_requirements": "Use the same case instances, termination criteria, parameter reporting rules, and feasibility handling across methods.",
+      "expected_result_pattern": "Conditional plan only: the claim would be supported only if aligned metrics meet the predeclared evidence threshold across fair comparisons.",
+      "failure_pattern": "The claim should be revised if planned comparisons do not support the threshold or reveal unresolved feasibility, runtime, or baseline risks.",
+      "reviewer_risk": "Comparison may be challenged if baselines, metrics, or budgets are misaligned.",
+      "limitations": [
+        "This design does not report empirical outcomes."
+      ]
+    },
+    {
+      "experiment_id": "EX003",
+      "experiment_name": "Validation design for C3",
+      "linked_validation_target_ids": [
+        "VT003"
+      ],
+      "linked_contribution_ids": [
+        "C3"
+      ],
+      "experiment_type": "pareto_tradeoff_analysis",
+      "research_question": "Which planned evidence would support C3 under fair comparison conditions?",
+      "hypothesis": "If C3 is credible, the planned evaluation should satisfy the evidence threshold across aligned metrics.",
+      "independent_variables": [
+        "algorithm variant",
+        "baseline family",
+        "case-study scale"
+      ],
+      "dependent_variables": [
+        "objective values",
+        "Pareto quality indicators",
+        "feasibility indicators",
+        "runtime"
+      ],
+      "controlled_variables": [
+        "evaluation budget",
+        "termination rule",
+        "parameter reporting",
+        "input instances"
+      ],
+      "experimental_factors": [
+        "layout-cabling coupling",
+        "constraint handling",
+        "wind and cost assumptions"
+      ],
+      "comparison_groups": [
+        "proposed method plan",
+        "sequential baseline",
+        "standard MOEA baseline",
+        "ablated variant where applicable"
+      ],
+      "required_baselines": [
+        "B001",
+        "B004"
+      ],
+      "required_metrics": [
+        "M001",
+        "M002",
+        "M003",
+        "M004"
+      ],
+      "required_ablations": [],
+      "required_case_studies": [
+        "CS001",
+        "CS002"
+      ],
+      "statistical_requirements": [
+        "ST001"
+      ],
+      "computational_budget_policy": "Use equal function-evaluation or wall-clock reporting policies and disclose any unavoidable difference.",
+      "fairness_requirements": "Use the same case instances, termination criteria, parameter reporting rules, and feasibility handling across methods.",
+      "expected_result_pattern": "Conditional plan only: the claim would be supported only if aligned metrics meet the predeclared evidence threshold across fair comparisons.",
+      "failure_pattern": "The claim should be revised if planned comparisons do not support the threshold or reveal unresolved feasibility, runtime, or baseline risks.",
+      "reviewer_risk": "Comparison may be challenged if baselines, metrics, or budgets are misaligned.",
+      "limitations": [
+        "This design does not report empirical outcomes."
+      ]
+    }
+  ],
+  "experiment_design_summary": [
+    {
+      "experiment_id": "EX001",
+      "linked_contribution_ids": [
+        "C1"
+      ]
+    },
+    {
+      "experiment_id": "EX002",
+      "linked_contribution_ids": [
+        "C2"
+      ]
+    },
+    {
+      "experiment_id": "EX003",
+      "linked_contribution_ids": [
+        "C3"
+      ]
+    }
+  ],
+  "assumptions": [
+    "Experiment designs are planned only."
+  ],
+  "limitations": [
+    "No empirical outcomes are generated."
+  ],
+  "is_demo_plan": true,
+  "requires_real_contribution_chain": true
+}

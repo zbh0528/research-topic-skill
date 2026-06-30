@@ -1,0 +1,267 @@
+{
+  "metrics": [
+    {
+      "metric_id": "M001",
+      "metric_name": "Hypervolume plan",
+      "metric_type": "pareto_quality_metric",
+      "linked_experiment_id": "EX001",
+      "linked_validation_target_ids": [
+        "VT001",
+        "VT003"
+      ],
+      "linked_contribution_ids": [
+        "C1",
+        "C3"
+      ],
+      "what_it_measures": "Pareto set quality under a disclosed reference strategy.",
+      "why_it_is_needed": "This metric is tied to the stated validation target and reviewer-risk question.",
+      "formula_or_definition": "Define formally in the experiment protocol before execution.",
+      "interpretation_rule": "Interpret only after real results exist and statistical plan is applied.",
+      "success_pattern": "Conditional: support requires meeting the predeclared evidence threshold across fair comparisons.",
+      "failure_pattern": "If the metric does not align with the claim or cannot be computed, revise the validation plan.",
+      "limitations": [
+        "Metric limitations and reference-front assumptions must be disclosed."
+      ],
+      "required_data": [
+        "planned raw results",
+        "case instance metadata",
+        "constraint logs"
+      ],
+      "statistical_use": "Included in the predeclared statistical analysis where applicable."
+    },
+    {
+      "metric_id": "M002",
+      "metric_name": "Feasibility rate",
+      "metric_type": "feasibility_metric",
+      "linked_experiment_id": "EX001",
+      "linked_validation_target_ids": [
+        "VT001"
+      ],
+      "linked_contribution_ids": [
+        "C1"
+      ],
+      "what_it_measures": "Share of planned runs producing feasible layout-cabling solutions.",
+      "why_it_is_needed": "This metric is tied to the stated validation target and reviewer-risk question.",
+      "formula_or_definition": "Define formally in the experiment protocol before execution.",
+      "interpretation_rule": "Interpret only after real results exist and statistical plan is applied.",
+      "success_pattern": "Conditional: support requires meeting the predeclared evidence threshold across fair comparisons.",
+      "failure_pattern": "If the metric does not align with the claim or cannot be computed, revise the validation plan.",
+      "limitations": [
+        "Metric limitations and reference-front assumptions must be disclosed."
+      ],
+      "required_data": [
+        "planned raw results",
+        "case instance metadata",
+        "constraint logs"
+      ],
+      "statistical_use": "Included in the predeclared statistical analysis where applicable."
+    },
+    {
+      "metric_id": "M003",
+      "metric_name": "Total constraint violation",
+      "metric_type": "constraint_violation_metric",
+      "linked_experiment_id": "EX001",
+      "linked_validation_target_ids": [
+        "VT001"
+      ],
+      "linked_contribution_ids": [
+        "C1"
+      ],
+      "what_it_measures": "Magnitude of infeasibility by constraint family.",
+      "why_it_is_needed": "This metric is tied to the stated validation target and reviewer-risk question.",
+      "formula_or_definition": "Define formally in the experiment protocol before execution.",
+      "interpretation_rule": "Interpret only after real results exist and statistical plan is applied.",
+      "success_pattern": "Conditional: support requires meeting the predeclared evidence threshold across fair comparisons.",
+      "failure_pattern": "If the metric does not align with the claim or cannot be computed, revise the validation plan.",
+      "limitations": [
+        "Metric limitations and reference-front assumptions must be disclosed."
+      ],
+      "required_data": [
+        "planned raw results",
+        "case instance metadata",
+        "constraint logs"
+      ],
+      "statistical_use": "Included in the predeclared statistical analysis where applicable."
+    },
+    {
+      "metric_id": "M004",
+      "metric_name": "Runtime and evaluation budget",
+      "metric_type": "runtime_metric",
+      "linked_experiment_id": "EX001",
+      "linked_validation_target_ids": [
+        "VT001",
+        "VT002"
+      ],
+      "linked_contribution_ids": [
+        "C1",
+        "C2"
+      ],
+      "what_it_measures": "Computational cost needed to interpret fairness and scalability.",
+      "why_it_is_needed": "This metric is tied to the stated validation target and reviewer-risk question.",
+      "formula_or_definition": "Define formally in the experiment protocol before execution.",
+      "interpretation_rule": "Interpret only after real results exist and statistical plan is applied.",
+      "success_pattern": "Conditional: support requires meeting the predeclared evidence threshold across fair comparisons.",
+      "failure_pattern": "If the metric does not align with the claim or cannot be computed, revise the validation plan.",
+      "limitations": [
+        "Metric limitations and reference-front assumptions must be disclosed."
+      ],
+      "required_data": [
+        "planned raw results",
+        "case instance metadata",
+        "constraint logs"
+      ],
+      "statistical_use": "Included in the predeclared statistical analysis where applicable."
+    },
+    {
+      "metric_id": "M005",
+      "metric_name": "AEP or energy output",
+      "metric_type": "energy_metric",
+      "linked_experiment_id": "EX003",
+      "linked_validation_target_ids": [
+        "VT003"
+      ],
+      "linked_contribution_ids": [
+        "C3"
+      ],
+      "what_it_measures": "Energy relevance of aerodynamic trade-offs.",
+      "why_it_is_needed": "This metric is tied to the stated validation target and reviewer-risk question.",
+      "formula_or_definition": "Define formally in the experiment protocol before execution.",
+      "interpretation_rule": "Interpret only after real results exist and statistical plan is applied.",
+      "success_pattern": "Conditional: support requires meeting the predeclared evidence threshold across fair comparisons.",
+      "failure_pattern": "If the metric does not align with the claim or cannot be computed, revise the validation plan.",
+      "limitations": [
+        "Metric limitations and reference-front assumptions must be disclosed."
+      ],
+      "required_data": [
+        "planned raw results",
+        "case instance metadata",
+        "constraint logs"
+      ],
+      "statistical_use": "Included in the predeclared statistical analysis where applicable."
+    },
+    {
+      "metric_id": "M006",
+      "metric_name": "Wake loss",
+      "metric_type": "wake_loss_metric",
+      "linked_experiment_id": "EX003",
+      "linked_validation_target_ids": [
+        "VT003"
+      ],
+      "linked_contribution_ids": [
+        "C3"
+      ],
+      "what_it_measures": "Aerodynamic loss component for engineering interpretation.",
+      "why_it_is_needed": "This metric is tied to the stated validation target and reviewer-risk question.",
+      "formula_or_definition": "Define formally in the experiment protocol before execution.",
+      "interpretation_rule": "Interpret only after real results exist and statistical plan is applied.",
+      "success_pattern": "Conditional: support requires meeting the predeclared evidence threshold across fair comparisons.",
+      "failure_pattern": "If the metric does not align with the claim or cannot be computed, revise the validation plan.",
+      "limitations": [
+        "Metric limitations and reference-front assumptions must be disclosed."
+      ],
+      "required_data": [
+        "planned raw results",
+        "case instance metadata",
+        "constraint logs"
+      ],
+      "statistical_use": "Included in the predeclared statistical analysis where applicable."
+    },
+    {
+      "metric_id": "M007",
+      "metric_name": "Cable investment cost",
+      "metric_type": "cable_cost_metric",
+      "linked_experiment_id": "EX003",
+      "linked_validation_target_ids": [
+        "VT003"
+      ],
+      "linked_contribution_ids": [
+        "C3"
+      ],
+      "what_it_measures": "Electrical-economic cost component for trade-off interpretation.",
+      "why_it_is_needed": "This metric is tied to the stated validation target and reviewer-risk question.",
+      "formula_or_definition": "Define formally in the experiment protocol before execution.",
+      "interpretation_rule": "Interpret only after real results exist and statistical plan is applied.",
+      "success_pattern": "Conditional: support requires meeting the predeclared evidence threshold across fair comparisons.",
+      "failure_pattern": "If the metric does not align with the claim or cannot be computed, revise the validation plan.",
+      "limitations": [
+        "Metric limitations and reference-front assumptions must be disclosed."
+      ],
+      "required_data": [
+        "planned raw results",
+        "case instance metadata",
+        "constraint logs"
+      ],
+      "statistical_use": "Included in the predeclared statistical analysis where applicable."
+    },
+    {
+      "metric_id": "M008",
+      "metric_name": "LCOE or total cost proxy",
+      "metric_type": "levelized_cost_metric",
+      "linked_experiment_id": "EX003",
+      "linked_validation_target_ids": [
+        "VT003"
+      ],
+      "linked_contribution_ids": [
+        "C3"
+      ],
+      "what_it_measures": "Economic relevance when assumptions are disclosed.",
+      "why_it_is_needed": "This metric is tied to the stated validation target and reviewer-risk question.",
+      "formula_or_definition": "Define formally in the experiment protocol before execution.",
+      "interpretation_rule": "Interpret only after real results exist and statistical plan is applied.",
+      "success_pattern": "Conditional: support requires meeting the predeclared evidence threshold across fair comparisons.",
+      "failure_pattern": "If the metric does not align with the claim or cannot be computed, revise the validation plan.",
+      "limitations": [
+        "Metric limitations and reference-front assumptions must be disclosed."
+      ],
+      "required_data": [
+        "planned raw results",
+        "case instance metadata",
+        "constraint logs"
+      ],
+      "statistical_use": "Included in the predeclared statistical analysis where applicable."
+    },
+    {
+      "metric_id": "M009",
+      "metric_name": "Spread or spacing indicator",
+      "metric_type": "diversity_metric",
+      "linked_experiment_id": "EX003",
+      "linked_validation_target_ids": [
+        "VT003"
+      ],
+      "linked_contribution_ids": [
+        "C3"
+      ],
+      "what_it_measures": "Diversity of planned Pareto approximations.",
+      "why_it_is_needed": "This metric is tied to the stated validation target and reviewer-risk question.",
+      "formula_or_definition": "Define formally in the experiment protocol before execution.",
+      "interpretation_rule": "Interpret only after real results exist and statistical plan is applied.",
+      "success_pattern": "Conditional: support requires meeting the predeclared evidence threshold across fair comparisons.",
+      "failure_pattern": "If the metric does not align with the claim or cannot be computed, revise the validation plan.",
+      "limitations": [
+        "Metric limitations and reference-front assumptions must be disclosed."
+      ],
+      "required_data": [
+        "planned raw results",
+        "case instance metadata",
+        "constraint logs"
+      ],
+      "statistical_use": "Included in the predeclared statistical analysis where applicable."
+    }
+  ],
+  "metric_adequacy_audit": {
+    "missing_pareto_metrics": [],
+    "missing_feasibility_metrics": [],
+    "missing_runtime_metrics": [],
+    "missing_engineering_metrics": [],
+    "metric_claim_mismatch_risks": [],
+    "recommended_repairs": []
+  },
+  "assumptions": [
+    "Metric definitions must be finalized before execution."
+  ],
+  "limitations": [
+    "No numeric metric values are reported."
+  ],
+  "is_demo_plan": true,
+  "requires_real_contribution_chain": true
+}

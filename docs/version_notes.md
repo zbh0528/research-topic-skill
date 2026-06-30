@@ -33,3 +33,25 @@ Build real-literature-grounded topic selection by connecting verified literature
 - capability: paper cards, literature matrix, evidence claim map, grounding audit, corpus-scoped gap judgment, stricter novelty safety
 - limitation: no automatic systematic review, no external DOI verification, no replacement for human literature reading, synthetic examples are not evidence
 - next target: `v0.3.0 experiment-grounded validation planning`
+
+## v0.3.0
+
+- version: `v0.3.0-experiment-grounded-validation-planning`
+- status: `experiment-grounded validation planning upgrade`
+- new capabilities:
+  - validation target extraction
+  - contribution-to-experiment mapping
+  - baseline adequacy planning
+  - metric adequacy planning
+  - ablation design
+  - case study / dataset planning
+  - statistical analysis planning
+  - reproducibility checklist
+  - validation adequacy audit
+- known limitations:
+  - does not run experiments
+  - does not fabricate results
+  - does not verify performance
+  - does not replace real optimization code or simulation
+  - planned validation still requires implementation and empirical results
+- next target: `v0.4.0 manuscript-structure and reviewer-response grounded writing support`

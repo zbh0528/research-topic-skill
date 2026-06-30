@@ -132,6 +132,93 @@
         },
         "uncertainty_log": {
           "type": "array"
+        },
+        "validation_targets": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "experiment_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "baseline_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "metric_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "ablation_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "statistical_test_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "reproducibility_requirements": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "validation_adequacy_summary": {
+          "type": "object"
+        },
+        "experiment_risks": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "artifact_requirements": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "validation_readiness": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "empirical_claim_risks": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "missing_validation_requirements": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "experiment_design_hints": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "validation_reviewer_questions": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
         }
       },
       "additionalProperties": false
@@ -359,6 +446,63 @@
             }
           },
           "additionalProperties": false
+        },
+        "validation_targets": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "experiment_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "baseline_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "metric_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "ablation_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "statistical_test_links": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "reproducibility_requirements": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "validation_adequacy_summary": {
+          "type": "object"
+        },
+        "experiment_risks": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "artifact_requirements": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
         }
       },
       "additionalProperties": false
@@ -544,6 +688,63 @@
           }
         },
         "additionalProperties": false
+      }
+    },
+    "validation_targets": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "experiment_links": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "baseline_links": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "metric_links": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "ablation_links": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "statistical_test_links": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "reproducibility_requirements": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "validation_adequacy_summary": {
+      "type": "object"
+    },
+    "experiment_risks": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "artifact_requirements": {
+      "type": "array",
+      "items": {
+        "type": "object"
       }
     }
   },

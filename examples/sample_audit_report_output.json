@@ -73,7 +73,64 @@
     "pass_or_revise_decision": "Pass to final package with open risks preserved.",
     "final_package_readiness": "ready_with_open_risks",
     "evidence_requirements": [],
-    "uncertainty_log": []
+    "uncertainty_log": [],
+    "validation_targets": [
+      {
+        "validation_target_id": "VT001",
+        "validation_status": "requires_empirical_results"
+      }
+    ],
+    "experiment_links": [
+      {
+        "experiment_id": "EX001",
+        "validation_status": "requires_empirical_results"
+      }
+    ],
+    "baseline_links": [
+      {
+        "baseline_id": "B001",
+        "validation_status": "requires_empirical_results"
+      }
+    ],
+    "metric_links": [
+      {
+        "metric_id": "M001",
+        "validation_status": "requires_empirical_results"
+      }
+    ],
+    "ablation_links": [
+      {
+        "ablation_id": "A001",
+        "validation_status": "requires_empirical_results"
+      }
+    ],
+    "statistical_test_links": [
+      {
+        "statistical_test_id": "ST001",
+        "validation_status": "requires_empirical_results"
+      }
+    ],
+    "reproducibility_requirements": [
+      {
+        "artifact_id": "AR001",
+        "validation_status": "requires_empirical_results"
+      }
+    ],
+    "validation_adequacy_summary": {
+      "validation_status": "requires_empirical_results",
+      "note": "No real experiment plan has been executed for this sample."
+    },
+    "experiment_risks": [
+      {
+        "risk": "Sample output is not empirical evidence."
+      }
+    ],
+    "artifact_requirements": [
+      {
+        "artifact_id": "AR001",
+        "validation_status": "requires_empirical_results"
+      }
+    ]
   },
   "next_input": {
     "audited_central_thesis": "A problem-structure-aware evolutionary joint optimization approach may help analyze layout-cabling trade-offs, pending verification.",
@@ -153,7 +210,64 @@
           "evidence_status": "inferred"
         }
       ]
-    }
+    },
+    "validation_targets": [
+      {
+        "validation_target_id": "VT001",
+        "validation_status": "requires_empirical_results"
+      }
+    ],
+    "experiment_links": [
+      {
+        "experiment_id": "EX001",
+        "validation_status": "requires_empirical_results"
+      }
+    ],
+    "baseline_links": [
+      {
+        "baseline_id": "B001",
+        "validation_status": "requires_empirical_results"
+      }
+    ],
+    "metric_links": [
+      {
+        "metric_id": "M001",
+        "validation_status": "requires_empirical_results"
+      }
+    ],
+    "ablation_links": [
+      {
+        "ablation_id": "A001",
+        "validation_status": "requires_empirical_results"
+      }
+    ],
+    "statistical_test_links": [
+      {
+        "statistical_test_id": "ST001",
+        "validation_status": "requires_empirical_results"
+      }
+    ],
+    "reproducibility_requirements": [
+      {
+        "artifact_id": "AR001",
+        "validation_status": "requires_empirical_results"
+      }
+    ],
+    "validation_adequacy_summary": {
+      "validation_status": "requires_empirical_results",
+      "note": "No real experiment plan has been executed for this sample."
+    },
+    "experiment_risks": [
+      {
+        "risk": "Sample output is not empirical evidence."
+      }
+    ],
+    "artifact_requirements": [
+      {
+        "artifact_id": "AR001",
+        "validation_status": "requires_empirical_results"
+      }
+    ]
   },
   "assumptions": [
     {
@@ -247,6 +361,63 @@
       "risk": "sample output is not real literature evidence",
       "severity": "medium",
       "required_action": "run v0.2 literature grounding before treating claims as grounded"
+    }
+  ],
+  "validation_targets": [
+    {
+      "validation_target_id": "VT001",
+      "validation_status": "requires_empirical_results"
+    }
+  ],
+  "experiment_links": [
+    {
+      "experiment_id": "EX001",
+      "validation_status": "requires_empirical_results"
+    }
+  ],
+  "baseline_links": [
+    {
+      "baseline_id": "B001",
+      "validation_status": "requires_empirical_results"
+    }
+  ],
+  "metric_links": [
+    {
+      "metric_id": "M001",
+      "validation_status": "requires_empirical_results"
+    }
+  ],
+  "ablation_links": [
+    {
+      "ablation_id": "A001",
+      "validation_status": "requires_empirical_results"
+    }
+  ],
+  "statistical_test_links": [
+    {
+      "statistical_test_id": "ST001",
+      "validation_status": "requires_empirical_results"
+    }
+  ],
+  "reproducibility_requirements": [
+    {
+      "artifact_id": "AR001",
+      "validation_status": "requires_empirical_results"
+    }
+  ],
+  "validation_adequacy_summary": {
+    "validation_status": "requires_empirical_results",
+    "note": "No real experiment plan has been executed for this sample."
+  },
+  "experiment_risks": [
+    {
+      "risk": "Sample output is not empirical evidence."
+    }
+  ],
+  "artifact_requirements": [
+    {
+      "artifact_id": "AR001",
+      "validation_status": "requires_empirical_results"
     }
   ]
 }

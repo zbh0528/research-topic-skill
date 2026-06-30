@@ -123,3 +123,27 @@ Each contribution must include likely reviewer question and defense strategy.
 - A contribution without evidence links is only a proposed contribution, not a verified contribution.
 - `first`, `novel`, `state-of-the-art`, and `unprecedented` are unsafe by default.
 - `safer_wording` must exist for every contribution claim.
+
+## Experiment-Grounded Mode Requirements
+
+Each contribution may add or support:
+
+- `validation_required`
+- `expected_validation_target_ids`
+- `validation_claim_type`
+- `required_baseline_types`
+- `required_metric_types`
+- `required_ablation_if_algorithmic`
+- `required_statistical_analysis`
+- `validation_risks`
+- `experiment_support_status`
+
+Rules:
+
+- Do not write a contribution as already experimentally validated.
+- Each contribution claim must be convertible into a validation target.
+- Algorithmic contributions must state whether ablation is required.
+- Multi-objective contributions must require Pareto quality metrics.
+- Constrained optimization contributions must require feasibility and violation analysis.
+- Joint layout-cabling contributions must require sequential or decoupled baselines unless explicitly justified.
+- If a contribution cannot be empirically validated, state the theoretical or analytical validation alternative and mark `experiment_support_status` accordingly.

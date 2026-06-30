@@ -11,7 +11,7 @@ description: Use when constructing an evidence-bounded research topic package fo
 
 ## Version
 
-`v0.2.0-real-literature-grounded-topic-selection`
+`v0.3.0-experiment-grounded-validation-planning`
 
 ## Use This Skill For
 
@@ -82,6 +82,36 @@ Use when the user has not provided real literature evidence. Keep the v0.1.0 log
 
 Use when the user provides real literature data. Build paper cards, literature matrix, evidence claim map, and gap audit. Important claims in domain scan, problem identification, theoretical positioning, contribution argumentation, audit, and final topic package must link to `evidence_id` or be marked `ungrounded` / `needs_literature_verification`. Gap and novelty judgments are corpus-scoped unless the user provides systematic-review evidence.
 
+### Mode C: experiment-grounded mode
+
+Use when the user already has a contribution chain, or has completed the v0.1/v0.2 topic-selection chain. Generate validation targets, experiment designs, baseline plans, metric plans, ablation plans, case-study plans, statistical analysis plans, reproducibility requirements, and validation adequacy audits. Do not generate fake experimental results. Do not claim the method has already beaten a baseline. Every contribution claim must map to an experiment validation plan.
+
+In this mode the chain is:
+
+```text
+contribution claim
+-> validation objective
+-> validation question
+-> hypothesis
+-> baseline set
+-> metric set
+-> ablation set
+-> case study / dataset
+-> statistical analysis
+-> expected evidence threshold
+-> artifact requirement
+-> validation adequacy audit
+-> reviewer defense
+```
+
+Allowed `validation_status` values are `validation_planned`, `partially_planned`, `insufficiently_planned`, `unsupported_by_experiment_plan`, `not_applicable`, and `requires_empirical_results`.
+
+Allowed `experiment_support_status` values are `directly_tested_by_plan`, `indirectly_tested_by_plan`, `weakly_tested_by_plan`, `not_tested`, `requires_new_experiment`, and `cannot_be_validated_empirically`.
+
+Allowed `experiment_risk_level` values are `low`, `medium`, `high`, and `critical`.
+
+Allowed `validation_claim_type` values are `model_validity_claim`, `algorithm_effectiveness_claim`, `mechanism_necessity_claim`, `tradeoff_insight_claim`, `robustness_claim`, `scalability_claim`, `feasibility_claim`, `runtime_claim`, `constraint_handling_claim`, `pareto_quality_claim`, `engineering_value_claim`, `benchmark_claim`, and `reproducibility_claim`.
+
 ## Fixed Reasoning Chain
 
 Maintain this chain explicitly:
@@ -104,6 +134,22 @@ literature evidence
 -> contribution claim
 -> validation evidence
 -> reviewer perception
+```
+
+Experiment-grounded mode extends the end of the chain:
+
+```text
+contribution claim
+-> validation target
+-> experiment design
+-> baseline selection
+-> metric selection
+-> ablation design
+-> case study / dataset plan
+-> statistical analysis plan
+-> reproducibility plan
+-> validation adequacy audit
+-> final topic package validation section
 ```
 
 ## Global Operating Rules
@@ -150,6 +196,19 @@ In literature-grounded mode, every module `output.json` must also include or exp
 - `counterevidence`
 - `claim_grounding_risks`
 
+In experiment-grounded mode, module outputs and compact contexts may include:
+
+- `validation_targets`
+- `experiment_links`
+- `baseline_links`
+- `metric_links`
+- `ablation_links`
+- `statistical_test_links`
+- `reproducibility_requirements`
+- `validation_adequacy_summary`
+- `experiment_risks`
+- `artifact_requirements`
+
 Every module directory in a workspace must include:
 
 - `input.json`
@@ -192,6 +251,34 @@ In literature-grounded mode, the final topic package must include:
 - `Evidence Traceability Table`
 
 Each evidence traceability row must include `final_claim_id`, `final_claim_text`, `claim_type`, `claim_scope`, `grounding_status`, `support_strength`, `linked_paper_ids`, `linked_evidence_ids`, `linked_problem_id`, `linked_contribution_id`, `counterevidence`, and `safer_wording`.
+
+## Final Topic Package Experiment Requirements
+
+In experiment-grounded mode, the final topic package must include:
+
+- `Experiment-Grounded Validation Plan`
+- `Contribution-to-Experiment Traceability Table`
+- `Baseline Justification`
+- `Metric Justification`
+- `Ablation Study Plan`
+- `Statistical Analysis Plan`
+- `Reproducibility Checklist`
+- `Reviewer Validation Risks`
+- `Claims Not Yet Experimentally Supported`
+
+Each Contribution-to-Experiment Traceability row must include `contribution_id`, `contribution_claim`, `validation_target_id`, `experiment_id`, `baseline_ids`, `metric_ids`, `ablation_ids`, `statistical_test_ids`, `artifact_ids`, `success_condition`, `failure_condition`, `reviewer_risk`, and `validation_status`.
+
+Every contribution claim must link to at least one validation objective, one baseline or explicit no-baseline justification, one metric, one experiment design, one evidence threshold, one reviewer risk, and one artifact requirement. Algorithmic contributions also need ablation plans. Multi-objective claims need Pareto metric plans. Constrained optimization claims need feasibility and violation analysis. Joint layout-cabling claims need a sequential or decoupled baseline unless explicitly justified.
+
+## Experiment Safety Boundaries
+
+- v0.3.0 only plans experiments; it does not run experiments.
+- v0.3.0 does not fabricate experimental results, numeric outcomes, p-values, runtime values, convergence curves, rankings, or significance conclusions.
+- `expected_result_pattern` must be conditional and must not be written as an observed result.
+- Do not claim `outperform`, statistical significance, or empirical superiority before real experiments exist.
+- Do not use weak baselines to make a contribution look stronger.
+- Do not allow algorithmic contributions without ablation plans.
+- Do not guarantee that a planned experiment will succeed or replace a real optimization platform.
 
 ## Literature Safety Boundaries
 

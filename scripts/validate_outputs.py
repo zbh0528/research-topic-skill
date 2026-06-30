@@ -9,6 +9,8 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
+from experiment_grounding_common import evaluate_plan, experiment_dir, find_fabricated_result_wording, load_plan
+
 
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_FILES = ["input.json", "output.json", "output.md", "next_input.json", "validation_report.md"]
@@ -200,6 +202,9 @@ def main() -> None:
     parser.add_argument("--strict-evidence", action="store_true")
     parser.add_argument("--literature-grounded", action="store_true")
     parser.add_argument("--literature-dir", type=Path)
+    parser.add_argument("--experiment-grounded", action="store_true")
+    parser.add_argument("--strict-validation", action="store_true")
+    parser.add_argument("--experiment-dir", type=Path)
     args = parser.parse_args()
 
     workspace = args.workspace if args.workspace.is_absolute() else ROOT / args.workspace
@@ -370,6 +375,51 @@ def main() -> None:
             failures.append("FAIL literature-grounded mode requires evidence_context in module input or next_input")
         elif args.strict_evidence:
             passes.append("PASS evidence_context is present for strict evidence mode")
+
+    if args.experiment_grounded:
+        exp_dir = experiment_dir(workspace, args.experiment_dir)
+        if not exp_dir.exists():
+            failures.append(f"FAIL experiment_validation directory missing: {exp_dir}")
+            plan = {}
+        else:
+            passes.append(f"PASS experiment_validation directory exists: {exp_dir}")
+            plan = load_plan(exp_dir, failures)
+        for filename in ["validation_targets.json", "experiment_grounding_report.json"]:
+            if not (exp_dir / filename).exists():
+                failures.append(f"FAIL missing experiment-grounded file: {filename}")
+            else:
+                passes.append(f"PASS experiment-grounded file exists: {filename}")
+        if plan:
+            unsafe = find_fabricated_result_wording(plan)
+            if unsafe:
+                failures.extend(f"FAIL fabricated result wording or unsupported empirical claim: {item}" for item in unsafe)
+            else:
+                passes.append("PASS no fabricated result wording in experiment plan")
+            p, w, f = evaluate_plan(plan, strict=args.strict_validation)
+            passes.extend(p)
+            warnings.extend(w)
+            failures.extend(f)
+        final_path = workspace / "06_final_topic_package" / "output.json"
+        if final_path.exists():
+            final = load_json(final_path, failures)
+            if isinstance(final, dict) and final.get("status") == "draft":
+                warnings.append("WARNING final_topic_package is draft; experiment validation section not required for draft workspace")
+            elif isinstance(final, dict):
+                structured = final.get("structured_output", {})
+                has_section = isinstance(structured, dict) and (
+                    structured.get("Experiment-Grounded Validation Plan")
+                    or structured.get("contribution_to_experiment_traceability_table")
+                    or structured.get("Contribution-to-Experiment Traceability Table")
+                )
+                if not has_section:
+                    failures.append("FAIL final_topic_package lacks experiment validation section")
+                if args.strict_validation and not (
+                    isinstance(structured, dict)
+                    and (structured.get("contribution_to_experiment_traceability_table") or structured.get("Contribution-to-Experiment Traceability Table"))
+                ):
+                    failures.append("FAIL final_topic_package lacks Contribution-to-Experiment Traceability Table")
+        elif args.strict_validation:
+            failures.append("FAIL final_topic_package output missing in experiment-grounded mode")
 
     summary_lines = [
         f"# Validation Summary",

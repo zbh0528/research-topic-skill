@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Validation Adequacy Audit",
+  "type": "object",
+  "required": [
+    "validation_chain_status",
+    "unsupported_contributions",
+    "missing_validation_targets",
+    "missing_experiment_designs",
+    "missing_baselines",
+    "weak_baseline_risks",
+    "missing_metrics",
+    "metric_claim_mismatches",
+    "missing_ablations",
+    "missing_statistical_tests",
+    "missing_reproducibility_items",
+    "fabricated_result_risks",
+    "unfair_comparison_risks",
+    "reviewer_validation_questions",
+    "repair_actions",
+    "pass_or_revise_decision"
+  ],
+  "properties": {
+    "validation_chain_status": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "pass_with_minor_risks",
+        "revise_required",
+        "fail_due_to_validation_gap"
+      ]
+    },
+    "unsupported_contributions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_validation_targets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_experiment_designs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_baselines": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "weak_baseline_risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_metrics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "metric_claim_mismatches": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_ablations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_statistical_tests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_reproducibility_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "fabricated_result_risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unfair_comparison_risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reviewer_validation_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "repair_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pass_or_revise_decision": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "pass_with_warnings",
+        "fail_requires_revision"
+      ]
+    },
+    "pass_count": {
+      "type": "integer"
+    },
+    "warning_count": {
+      "type": "integer"
+    },
+    "fail_count": {
+      "type": "integer"
+    },
+    "passes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "failures": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_demo_plan": {
+      "type": "boolean"
+    },
+    "requires_real_contribution_chain": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,186 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Experiment Grounding Report",
+  "type": "object",
+  "required": [
+    "project_id",
+    "validation_target_summary",
+    "experiment_design_summary",
+    "baseline_summary",
+    "metric_summary",
+    "ablation_summary",
+    "case_study_summary",
+    "statistical_analysis_summary",
+    "reproducibility_summary",
+    "validation_adequacy_summary",
+    "experiment_context",
+    "claims_not_yet_supported_by_validation_plan",
+    "reviewer_validation_risks"
+  ],
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "validation_target_summary": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "experiment_design_summary": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "baseline_summary": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "metric_summary": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "ablation_summary": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "case_study_summary": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "statistical_analysis_summary": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "reproducibility_summary": {
+      "type": "object"
+    },
+    "validation_adequacy_summary": {
+      "type": "object"
+    },
+    "experiment_context": {
+      "type": "object"
+    },
+    "claims_not_yet_supported_by_validation_plan": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reviewer_validation_risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "contribution_to_experiment_traceability_table": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/trace_row"
+      }
+    },
+    "is_demo_plan": {
+      "type": "boolean"
+    },
+    "requires_real_contribution_chain": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "trace_row": {
+      "type": "object",
+      "required": [
+        "contribution_id",
+        "contribution_claim",
+        "validation_target_id",
+        "experiment_id",
+        "baseline_ids",
+        "metric_ids",
+        "ablation_ids",
+        "statistical_test_ids",
+        "artifact_ids",
+        "success_condition",
+        "failure_condition",
+        "reviewer_risk",
+        "validation_status"
+      ],
+      "properties": {
+        "contribution_id": {
+          "type": "string"
+        },
+        "contribution_claim": {
+          "type": "string"
+        },
+        "validation_target_id": {
+          "type": "string"
+        },
+        "experiment_id": {
+          "type": "string"
+        },
+        "baseline_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "metric_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ablation_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "statistical_test_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "artifact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "success_condition": {
+          "type": "string"
+        },
+        "failure_condition": {
+          "type": "string"
+        },
+        "reviewer_risk": {
+          "type": "string"
+        },
+        "validation_status": {
+          "type": "string",
+          "enum": [
+            "validation_planned",
+            "partially_planned",
+            "insufficiently_planned",
+            "unsupported_by_experiment_plan",
+            "not_applicable",
+            "requires_empirical_results"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -86,3 +86,38 @@ Any one of these blocks acceptance:
 - Gap claim without `corpus_scope`.
 - Contribution claim without evidence link.
 - `audit_claim_grounding.py` cannot detect unsupported verified claims.
+
+## v0.3.0 Engineering Gates
+
+- Experiment schemas are legal JSON Schema files.
+- Experiment scripts run: `build_validation_plan.py`, `validate_experiment_plan.py`, `audit_validation_adequacy.py`, and `generate_reproducibility_checklist.py`.
+- New v0.3.0 tests pass.
+- Existing v0.1.0 and v0.2.0 tests still pass.
+- Validation plan generation, strict experiment validation, validation adequacy audit, and reproducibility checklist generation all work.
+
+## v0.3.0 Semantic Gates
+
+- Each contribution claim has a validation target.
+- Each algorithmic contribution has an ablation plan.
+- Each multi-objective claim has a Pareto metric plan.
+- Each constrained optimization claim has feasibility and violation metrics.
+- Each joint layout-cabling claim has a sequential or decoupled baseline unless justified.
+- Each baseline has `why_needed` and fairness requirements.
+- Each metric has a linked claim and interpretation rule.
+- Each statistical plan has independent runs and test rationale.
+- Experiment planning contains no fake results.
+- Final topic package has a Contribution-to-Experiment Traceability Table in complete-chain acceptance.
+
+## v0.3.0 Veto Conditions
+
+- Fabricated experimental results.
+- `outperform` claims without results.
+- Statistical significance claims without experiments.
+- Algorithmic contribution without ablation.
+- Multi-objective contribution without Pareto metric.
+- Constrained contribution without feasibility analysis.
+- Joint layout-cabling contribution without sequential or decoupled baseline and without justification.
+- Cherry-picked or obviously weak baseline.
+- Metric and contribution mismatch.
+- Final topic package missing the Contribution-to-Experiment Traceability Table in complete-chain acceptance.
+- v0.1.0 or v0.2.0 tests fail.

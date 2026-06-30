@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Reproducibility Plan",
+  "type": "object",
+  "required": [
+    "artifact_requirements",
+    "code_requirements",
+    "data_requirements",
+    "parameter_requirements",
+    "environment_requirements",
+    "random_seed_policy",
+    "computational_budget_policy",
+    "result_reporting_schema",
+    "figure_table_plan",
+    "experiment_log_requirements",
+    "reproducibility_risks",
+    "artifact_traceability_table"
+  ],
+  "properties": {
+    "artifact_requirements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/artifact"
+      }
+    },
+    "code_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "data_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "parameter_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "environment_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "random_seed_policy": {
+      "type": "string"
+    },
+    "computational_budget_policy": {
+      "type": "string"
+    },
+    "result_reporting_schema": {
+      "type": "object"
+    },
+    "figure_table_plan": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "experiment_log_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reproducibility_risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "artifact_traceability_table": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/artifact"
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_demo_plan": {
+      "type": "boolean"
+    },
+    "requires_real_contribution_chain": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "required": [
+        "artifact_id",
+        "artifact_type",
+        "linked_experiment_id",
+        "linked_contribution_id",
+        "description",
+        "required_for_claim",
+        "reproducibility_role",
+        "storage_location_placeholder",
+        "versioning_requirement",
+        "risk_if_missing"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string"
+        },
+        "artifact_type": {
+          "type": "string",
+          "enum": [
+            "source_code",
+            "configuration_file",
+            "input_instance",
+            "processed_dataset",
+            "raw_result",
+            "statistical_analysis_script",
+            "figure_generation_script",
+            "experiment_log",
+            "parameter_table",
+            "environment_file",
+            "readme",
+            "supplementary_material"
+          ]
+        },
+        "linked_experiment_id": {
+          "type": "string"
+        },
+        "linked_contribution_id": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "required_for_claim": {
+          "type": "boolean"
+        },
+        "reproducibility_role": {
+          "type": "string"
+        },
+        "storage_location_placeholder": {
+          "type": "string"
+        },
+        "versioning_requirement": {
+          "type": "string"
+        },
+        "risk_if_missing": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

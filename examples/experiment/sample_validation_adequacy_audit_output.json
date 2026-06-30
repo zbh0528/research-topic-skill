@@ -1,0 +1,33 @@
+{
+  "validation_chain_status": "pass_with_minor_risks",
+  "unsupported_contributions": [],
+  "missing_validation_targets": [],
+  "missing_experiment_designs": [],
+  "missing_baselines": [],
+  "weak_baseline_risks": [],
+  "missing_metrics": [],
+  "metric_claim_mismatches": [],
+  "missing_ablations": [],
+  "missing_statistical_tests": [],
+  "missing_reproducibility_items": [],
+  "fabricated_result_risks": [],
+  "unfair_comparison_risks": [],
+  "reviewer_validation_questions": [
+    "Are baselines fair?",
+    "Are metrics aligned with claims?"
+  ],
+  "repair_actions": [],
+  "pass_or_revise_decision": "pass_with_warnings",
+  "pass_count": 1,
+  "warning_count": 1,
+  "fail_count": 0,
+  "passes": [
+    "PASS sample audit fixture"
+  ],
+  "warnings": [
+    "WARNING demo plan requires real contribution chain"
+  ],
+  "failures": [],
+  "is_demo_plan": true,
+  "requires_real_contribution_chain": true
+}

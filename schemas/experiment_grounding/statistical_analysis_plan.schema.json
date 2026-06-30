@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Statistical Analysis Plan",
+  "type": "object",
+  "required": [
+    "statistical_analyses",
+    "statistical_adequacy_audit",
+    "assumptions",
+    "limitations"
+  ],
+  "properties": {
+    "statistical_analyses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/statistical_analysis"
+      }
+    },
+    "statistical_adequacy_audit": {
+      "type": "object",
+      "required": [
+        "missing_statistical_tests",
+        "missing_independent_runs",
+        "missing_seed_policy",
+        "recommended_repairs"
+      ],
+      "properties": {
+        "missing_statistical_tests": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing_independent_runs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing_seed_policy": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "recommended_repairs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_demo_plan": {
+      "type": "boolean"
+    },
+    "requires_real_contribution_chain": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "statistical_analysis": {
+      "type": "object",
+      "required": [
+        "statistical_test_id",
+        "linked_experiment_id",
+        "linked_metric_ids",
+        "linked_baseline_ids",
+        "test_name",
+        "test_type",
+        "why_needed",
+        "assumptions",
+        "independent_runs",
+        "random_seed_policy",
+        "significance_level",
+        "multiple_comparison_policy",
+        "effect_size_policy",
+        "confidence_interval_policy",
+        "reporting_format",
+        "interpretation_rule",
+        "limitations"
+      ],
+      "properties": {
+        "statistical_test_id": {
+          "type": "string"
+        },
+        "linked_experiment_id": {
+          "type": "string"
+        },
+        "linked_metric_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "linked_baseline_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "test_name": {
+          "type": "string"
+        },
+        "test_type": {
+          "type": "string",
+          "enum": [
+            "wilcoxon_signed_rank",
+            "mann_whitney_u",
+            "friedman_test",
+            "nemenyi_posthoc",
+            "paired_t_test",
+            "anova",
+            "bootstrap_confidence_interval",
+            "effect_size_analysis",
+            "descriptive_statistics_only",
+            "not_applicable"
+          ]
+        },
+        "why_needed": {
+          "type": "string"
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "independent_runs": {
+          "type": [
+            "integer",
+            "string"
+          ]
+        },
+        "random_seed_policy": {
+          "type": "string"
+        },
+        "significance_level": {
+          "type": "string"
+        },
+        "multiple_comparison_policy": {
+          "type": "string"
+        },
+        "effect_size_policy": {
+          "type": "string"
+        },
+        "confidence_interval_policy": {
+          "type": "string"
+        },
+        "reporting_format": {
+          "type": "string"
+        },
+        "interpretation_rule": {
+          "type": "string"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

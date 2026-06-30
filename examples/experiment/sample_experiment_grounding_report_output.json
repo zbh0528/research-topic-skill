@@ -1,0 +1,365 @@
+{
+  "project_id": "sample_experiment_project",
+  "validation_target_summary": [
+    {
+      "validation_target_id": "VT001",
+      "linked_contribution_id": "C1"
+    },
+    {
+      "validation_target_id": "VT002",
+      "linked_contribution_id": "C2"
+    },
+    {
+      "validation_target_id": "VT003",
+      "linked_contribution_id": "C3"
+    }
+  ],
+  "experiment_design_summary": [
+    {
+      "experiment_id": "EX001",
+      "linked_validation_target_ids": [
+        "VT001"
+      ]
+    },
+    {
+      "experiment_id": "EX002",
+      "linked_validation_target_ids": [
+        "VT002"
+      ]
+    },
+    {
+      "experiment_id": "EX003",
+      "linked_validation_target_ids": [
+        "VT003"
+      ]
+    }
+  ],
+  "baseline_summary": [
+    {
+      "baseline_id": "B001",
+      "baseline_type": "sequential_optimization"
+    },
+    {
+      "baseline_id": "B002",
+      "baseline_type": "layout_only_optimization"
+    },
+    {
+      "baseline_id": "B003",
+      "baseline_type": "cabling_only_optimization"
+    },
+    {
+      "baseline_id": "B004",
+      "baseline_type": "multi_objective_evolutionary_algorithm"
+    },
+    {
+      "baseline_id": "B005",
+      "baseline_type": "random_or_greedy_baseline"
+    },
+    {
+      "baseline_id": "B006",
+      "baseline_type": "ablated_variant"
+    }
+  ],
+  "metric_summary": [
+    {
+      "metric_id": "M001",
+      "metric_type": "pareto_quality_metric"
+    },
+    {
+      "metric_id": "M002",
+      "metric_type": "feasibility_metric"
+    },
+    {
+      "metric_id": "M003",
+      "metric_type": "constraint_violation_metric"
+    },
+    {
+      "metric_id": "M004",
+      "metric_type": "runtime_metric"
+    },
+    {
+      "metric_id": "M005",
+      "metric_type": "energy_metric"
+    },
+    {
+      "metric_id": "M006",
+      "metric_type": "wake_loss_metric"
+    },
+    {
+      "metric_id": "M007",
+      "metric_type": "cable_cost_metric"
+    },
+    {
+      "metric_id": "M008",
+      "metric_type": "levelized_cost_metric"
+    },
+    {
+      "metric_id": "M009",
+      "metric_type": "diversity_metric"
+    }
+  ],
+  "ablation_summary": [
+    {
+      "ablation_id": "A001",
+      "linked_contribution_id": "C2"
+    }
+  ],
+  "case_study_summary": [
+    {
+      "case_study_id": "CS001",
+      "is_synthetic": true
+    },
+    {
+      "case_study_id": "CS002",
+      "is_synthetic": true
+    }
+  ],
+  "statistical_analysis_summary": [
+    {
+      "statistical_test_id": "ST001",
+      "test_type": "wilcoxon_signed_rank"
+    }
+  ],
+  "reproducibility_summary": {
+    "artifact_count": 6,
+    "random_seed_policy": "Predeclare and publish all random seeds for independent runs."
+  },
+  "validation_adequacy_summary": {
+    "validation_chain_status": "pass_with_minor_risks"
+  },
+  "experiment_context": {
+    "experiment_grounding_mode": "experiment_grounded",
+    "validation_target_summary": [
+      {
+        "validation_target_id": "VT001",
+        "linked_contribution_id": "C1"
+      },
+      {
+        "validation_target_id": "VT002",
+        "linked_contribution_id": "C2"
+      },
+      {
+        "validation_target_id": "VT003",
+        "linked_contribution_id": "C3"
+      }
+    ],
+    "experiment_design_summary": [
+      {
+        "experiment_id": "EX001",
+        "linked_validation_target_ids": [
+          "VT001"
+        ]
+      },
+      {
+        "experiment_id": "EX002",
+        "linked_validation_target_ids": [
+          "VT002"
+        ]
+      },
+      {
+        "experiment_id": "EX003",
+        "linked_validation_target_ids": [
+          "VT003"
+        ]
+      }
+    ],
+    "baseline_summary": [
+      {
+        "baseline_id": "B001",
+        "baseline_type": "sequential_optimization"
+      },
+      {
+        "baseline_id": "B002",
+        "baseline_type": "layout_only_optimization"
+      },
+      {
+        "baseline_id": "B003",
+        "baseline_type": "cabling_only_optimization"
+      },
+      {
+        "baseline_id": "B004",
+        "baseline_type": "multi_objective_evolutionary_algorithm"
+      },
+      {
+        "baseline_id": "B005",
+        "baseline_type": "random_or_greedy_baseline"
+      },
+      {
+        "baseline_id": "B006",
+        "baseline_type": "ablated_variant"
+      }
+    ],
+    "metric_summary": [
+      {
+        "metric_id": "M001",
+        "metric_type": "pareto_quality_metric"
+      },
+      {
+        "metric_id": "M002",
+        "metric_type": "feasibility_metric"
+      },
+      {
+        "metric_id": "M003",
+        "metric_type": "constraint_violation_metric"
+      },
+      {
+        "metric_id": "M004",
+        "metric_type": "runtime_metric"
+      },
+      {
+        "metric_id": "M005",
+        "metric_type": "energy_metric"
+      },
+      {
+        "metric_id": "M006",
+        "metric_type": "wake_loss_metric"
+      },
+      {
+        "metric_id": "M007",
+        "metric_type": "cable_cost_metric"
+      },
+      {
+        "metric_id": "M008",
+        "metric_type": "levelized_cost_metric"
+      },
+      {
+        "metric_id": "M009",
+        "metric_type": "diversity_metric"
+      }
+    ],
+    "ablation_summary": [
+      {
+        "ablation_id": "A001",
+        "linked_contribution_id": "C2"
+      }
+    ],
+    "statistical_analysis_summary": [
+      {
+        "statistical_test_id": "ST001",
+        "test_type": "wilcoxon_signed_rank"
+      }
+    ],
+    "reproducibility_summary": {
+      "artifact_count": 6,
+      "random_seed_policy": "Predeclare and publish all random seeds for independent runs."
+    },
+    "validation_adequacy_summary": {
+      "validation_chain_status": "pass_with_minor_risks"
+    },
+    "experiment_risks": [
+      "demo plan requires real contribution chain",
+      "baseline implementation unavailable must be verified before execution",
+      "synthetic-only case-study evidence cannot support real field conclusions"
+    ],
+    "claims_not_yet_supported_by_validation_plan": [],
+    "trace_context": {
+      "contribution_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "validation_target_ids": [
+        "VT001",
+        "VT002",
+        "VT003"
+      ]
+    }
+  },
+  "claims_not_yet_supported_by_validation_plan": [],
+  "reviewer_validation_risks": [
+    "demo plan requires real contribution chain",
+    "baseline implementation unavailable must be verified before execution",
+    "synthetic-only case-study evidence cannot support real field conclusions"
+  ],
+  "contribution_to_experiment_traceability_table": [
+    {
+      "contribution_id": "C1",
+      "contribution_claim": "A joint layout-cabling optimization model for representing aerodynamic, electrical, economic, and feasibility trade-offs as a planned research contribution.",
+      "validation_target_id": "VT001",
+      "experiment_id": "EX001",
+      "baseline_ids": [
+        "B001",
+        "B002",
+        "B003",
+        "B004",
+        "B005"
+      ],
+      "metric_ids": [
+        "M001",
+        "M002",
+        "M003",
+        "M004"
+      ],
+      "ablation_ids": [],
+      "statistical_test_ids": [
+        "ST001"
+      ],
+      "artifact_ids": [
+        "AR001",
+        "AR002",
+        "AR003",
+        "AR006"
+      ],
+      "success_condition": "The contribution is supportable only if planned comparisons satisfy the evidence threshold without unsupported result language.",
+      "failure_condition": "The contribution remains unsupported if the plan lacks aligned baselines, metrics, statistical analysis, or artifacts.",
+      "reviewer_risk": "Reviewer may reject the contribution if validation evidence is weak, cherry-picked, or not reproducible.",
+      "validation_status": "validation_planned"
+    },
+    {
+      "contribution_id": "C2",
+      "contribution_claim": "A problem-structure-aware evolutionary mechanism for joint layout-cabling search, requiring ablation-based validation before any performance claim.",
+      "validation_target_id": "VT002",
+      "experiment_id": "EX002",
+      "baseline_ids": [
+        "B006"
+      ],
+      "metric_ids": [
+        "M004"
+      ],
+      "ablation_ids": [
+        "A001"
+      ],
+      "statistical_test_ids": [
+        "ST001"
+      ],
+      "artifact_ids": [
+        "AR004"
+      ],
+      "success_condition": "The contribution is supportable only if planned comparisons satisfy the evidence threshold without unsupported result language.",
+      "failure_condition": "The contribution remains unsupported if the plan lacks aligned baselines, metrics, statistical analysis, or artifacts.",
+      "reviewer_risk": "Reviewer may reject the contribution if validation evidence is weak, cherry-picked, or not reproducible.",
+      "validation_status": "validation_planned"
+    },
+    {
+      "contribution_id": "C3",
+      "contribution_claim": "An analysis plan for aerodynamic-electrical-economic Pareto trade-offs, requiring metrics and case studies before drawing conclusions.",
+      "validation_target_id": "VT003",
+      "experiment_id": "EX003",
+      "baseline_ids": [
+        "B001",
+        "B004"
+      ],
+      "metric_ids": [
+        "M001",
+        "M005",
+        "M006",
+        "M007",
+        "M008",
+        "M009"
+      ],
+      "ablation_ids": [],
+      "statistical_test_ids": [
+        "ST001"
+      ],
+      "artifact_ids": [
+        "AR005"
+      ],
+      "success_condition": "The contribution is supportable only if planned comparisons satisfy the evidence threshold without unsupported result language.",
+      "failure_condition": "The contribution remains unsupported if the plan lacks aligned baselines, metrics, statistical analysis, or artifacts.",
+      "reviewer_risk": "Reviewer may reject the contribution if validation evidence is weak, cherry-picked, or not reproducible.",
+      "validation_status": "validation_planned"
+    }
+  ],
+  "is_demo_plan": true,
+  "requires_real_contribution_chain": true
+}
