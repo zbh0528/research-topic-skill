@@ -224,5 +224,6 @@
     "grounded_count": 0,
     "corpus_scoped_only_count": 5,
     "verified_field_claim_count": 0
-  }
+  },
+  "is_synthetic_demo": true
 }

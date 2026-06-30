@@ -70,3 +70,9 @@ Default forbid `first`, `novel`, `state-of-the-art`, and `unprecedented`. Corpus
 ## Synthetic Policy
 
 Synthetic examples test structure only. They cannot support real `verified` field claims.
+
+## Audit Modes
+
+`audit_claim_grounding.py --strict` validates structured claims that already exist in module outputs and skips untouched `PENDING_MODULE_OUTPUT` draft placeholders. This mode is for incremental module checks.
+
+`audit_claim_grounding.py --strict --require-complete-chain` is for release-grade chain acceptance. It must fail when the final topic package is incomplete, the Evidence Traceability Table is missing, the selected problem lacks evidence links, or contribution claims lack evidence links.

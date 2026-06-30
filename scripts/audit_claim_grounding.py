@@ -154,10 +154,40 @@ def audit_output(data: dict, strict: bool, synthetic_papers: set[str], evidence_
     return passes, warnings, failures
 
 
+def complete_chain_failures(outputs: dict[str, dict]) -> list[str]:
+    failures: list[str] = []
+    problem = outputs.get("02_problem_identification/output.json")
+    contribution = outputs.get("04_contribution_argumentation/output.json")
+    final = outputs.get("06_final_topic_package/output.json")
+
+    if not final or final.get("status") == "draft":
+        failures.append("FAIL incomplete final topic package: final_topic_package output is missing or draft")
+    else:
+        structured = final.get("structured_output", {})
+        table = structured.get("evidence_traceability_table") or structured.get("Evidence Traceability Table")
+        if not table:
+            failures.append("FAIL missing evidence traceability table in final topic package")
+
+    selected = problem.get("structured_output", {}).get("selected_problem") if problem else None
+    if not isinstance(selected, dict) or not has_evidence(selected):
+        failures.append("FAIL missing selected problem evidence links")
+
+    structured = contribution.get("structured_output", {}) if contribution else {}
+    contribution_items: list[dict] = []
+    for key in ("contributions", "contribution_claims", "evidence_backed_contribution_claims"):
+        value = structured.get(key)
+        if isinstance(value, list):
+            contribution_items.extend(item for item in value if isinstance(item, dict))
+    if not contribution_items or not any(has_evidence(item) for item in contribution_items):
+        failures.append("FAIL missing contribution evidence links")
+    return failures
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--workspace", required=True, type=Path)
     parser.add_argument("--strict", action="store_true")
+    parser.add_argument("--require-complete-chain", "--require-final-topic-package", dest="require_complete_chain", action="store_true")
     args = parser.parse_args()
 
     workspace = args.workspace if args.workspace.is_absolute() else ROOT / args.workspace
@@ -169,6 +199,7 @@ def main() -> None:
     failures: list[str] = []
 
     final_output: dict | None = None
+    outputs: dict[str, dict] = {}
     for rel in MODULE_OUTPUTS:
         path = workspace / rel
         if not path.exists():
@@ -178,6 +209,7 @@ def main() -> None:
         if not isinstance(data, dict):
             failures.append(f"FAIL module output is not an object: {rel}")
             continue
+        outputs[rel] = data
         if rel.startswith("06_"):
             final_output = data
         p, w, f = audit_output(data, args.strict, synthetic_papers, evidence_to_paper, valid_evidence_ids)
@@ -205,6 +237,9 @@ def main() -> None:
                     missing_counter_ids.append(str(evidence_id))
         if missing_counter_ids:
             failures.append(f"FAIL hidden counterevidence ids in final topic package: {', '.join(sorted(set(missing_counter_ids)))}")
+
+    if args.require_complete_chain:
+        failures.extend(complete_chain_failures(outputs))
 
     decision = "fail_requires_revision" if failures else ("pass_with_warnings" if warnings else "pass")
     result = {

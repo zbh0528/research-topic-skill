@@ -571,6 +571,9 @@
     },
     "claim_grounding_summary": {
       "type": "object"
+    },
+    "is_synthetic_demo": {
+      "type": "boolean"
     }
   },
   "additionalProperties": false

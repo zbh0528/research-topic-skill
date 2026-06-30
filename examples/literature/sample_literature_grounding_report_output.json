@@ -149,5 +149,6 @@
         "EV005"
       ]
     }
-  }
+  },
+  "is_synthetic_demo": true
 }

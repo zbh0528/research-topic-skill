@@ -98,5 +98,6 @@
     "real paper abstracts/full texts",
     "baseline coverage review"
   ],
-  "audit_decision": "sufficient_for_corpus_scoped_problem_identification"
+  "audit_decision": "sufficient_for_corpus_scoped_problem_identification",
+  "is_synthetic_demo": true
 }

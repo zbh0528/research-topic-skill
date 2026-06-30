@@ -338,5 +338,6 @@
       "extraction_uncertainty": "claims are limited to user-provided text",
       "evidence_status": "user_provided"
     }
-  ]
+  ],
+  "is_synthetic_demo": true
 }

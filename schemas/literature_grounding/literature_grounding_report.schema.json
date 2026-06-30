@@ -487,6 +487,9 @@
         }
       },
       "additionalProperties": false
+    },
+    "is_synthetic_demo": {
+      "type": "boolean"
     }
   },
   "additionalProperties": false

@@ -123,3 +123,12 @@ def test_corpus_scoped_wording_can_pass(tmp_path: Path) -> None:
     path.write_text(json.dumps(output))
     result = run_cmd([sys.executable, "scripts/audit_claim_grounding.py", "--workspace", str(workspace), "--strict"], check=False)
     assert "absence-of-evidence" not in result.stdout
+
+
+def test_require_complete_chain_fails_on_draft_workspace(tmp_path: Path) -> None:
+    workspace = prepared_workspace(tmp_path)
+    result = run_cmd([sys.executable, "scripts/audit_claim_grounding.py", "--workspace", str(workspace), "--strict", "--require-complete-chain"], check=False)
+    assert result.returncode != 0
+    assert "incomplete final topic package" in result.stdout
+    assert "missing selected problem evidence links" in result.stdout
+    assert "missing contribution evidence links" in result.stdout

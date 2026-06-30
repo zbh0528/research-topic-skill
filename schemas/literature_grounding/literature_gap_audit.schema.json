@@ -58,6 +58,9 @@
         "contradicted",
         "mixed_evidence"
       ]
+    },
+    "is_synthetic_demo": {
+      "type": "boolean"
     }
   },
   "additionalProperties": false,

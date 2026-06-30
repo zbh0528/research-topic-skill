@@ -225,5 +225,6 @@
   "contradictory_cells": [],
   "matrix_limitations": [
     "This matrix is corpus-scoped and cannot prove a field-wide gap."
-  ]
+  ],
+  "is_synthetic_demo": true
 }

@@ -295,6 +295,11 @@ Usage boundaries:
 - DOI, authors, years, venues, and citation truth require external bibliographic verification.
 - v0.2.0 does not replace systematic review, discover all relevant papers, or prove novelty automatically.
 
+Strict audit boundary:
+
+- `audit_claim_grounding.py --strict` checks structured claims that already exist in module outputs. It intentionally skips untouched `PENDING_MODULE_OUTPUT` draft placeholders.
+- Use `audit_claim_grounding.py --strict --require-complete-chain` for release-grade chain acceptance. That mode fails if the final topic package is incomplete, the Evidence Traceability Table is missing, selected problem evidence links are missing, or contribution evidence links are missing.
+
 ## 测试命令
 
 ```bash

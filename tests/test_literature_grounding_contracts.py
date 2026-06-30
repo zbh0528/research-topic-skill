@@ -106,7 +106,11 @@ def test_sample_bibtex_can_ingest_without_metadata_fabrication(tmp_path: Path) -
     records = json.loads((workspace / "literature_evidence" / "bibliographic_records.json").read_text())
     first = records["bibliographic_records"][0]
     assert first["title"].startswith("Synthetic Example")
+    assert first["authors"] == []
+    assert first["year"] is None
     assert first["doi"] is None
+    assert "authors" in first["missing_metadata"]
+    assert "year" in first["missing_metadata"]
     assert "doi" in first["missing_metadata"]
 
 
