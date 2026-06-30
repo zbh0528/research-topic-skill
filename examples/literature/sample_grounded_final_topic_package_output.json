@@ -1,0 +1,68 @@
+{
+  "corpus_id": "synthetic_demo_corpus",
+  "corpus_scope": "within this synthetic demonstration corpus only",
+  "is_synthetic_demo": true,
+  "literature_evidence_summary": {
+    "paper_count": 5,
+    "real_literature_claims": 0,
+    "warning": "Synthetic examples test traceability only and are not real field evidence."
+  },
+  "evidence_backed_domain_gap": {
+    "gap_id": "G001",
+    "gap_statement": "within this synthetic demonstration corpus, evidence is insufficient for a field-wide joint layout-cabling novelty claim",
+    "grounding_status": "partially_grounded",
+    "supporting_evidence_ids": ["EV001", "EV002"],
+    "contradicting_evidence_ids": ["EV005"],
+    "corpus_scope": "within this synthetic demonstration corpus only",
+    "safer_wording": "within the provided corpus, the coupling evidence remains limited and requires broader verification"
+  },
+  "evidence_backed_problem_statement": {
+    "problem_id": "P_SYN_001",
+    "linked_gap_id": "G001",
+    "problem_statement": "How should a real study verify whether layout and cable-routing decisions require joint modeling beyond sequential design?",
+    "grounding_status": "corpus_scoped_only",
+    "linked_evidence_ids": ["EV001", "EV002", "EV005"],
+    "counterevidence": ["EV005"]
+  },
+  "evidence_backed_contribution_claims": [
+    {
+      "contribution_id": "C_SYN_001",
+      "claim_type": "contribution_claim",
+      "claim_scope": "corpus_scoped",
+      "claim_text": "A corpus-scoped candidate contribution is to formulate a traceable joint layout-cabling problem and test it against sequential baselines.",
+      "grounding_status": "corpus_scoped_only",
+      "linked_problem_id": "P_SYN_001",
+      "linked_evidence_ids": ["EV001", "EV002", "EV005"],
+      "linked_theory_elements": ["mixed_discrete_continuous_decisions", "spatial_network_coupling"],
+      "novelty_safety_level": "corpus_scoped",
+      "safer_wording": "candidate contribution requiring real literature verification"
+    }
+  ],
+  "counterevidence_and_risks": [
+    {
+      "evidence_id": "EV005",
+      "impact": "The synthetic joint candidate prevents any no-one-studied or field-wide absence claim."
+    }
+  ],
+  "claims_requiring_further_literature_verification": [
+    "Any real novelty claim",
+    "Any DOI, author, venue, or baseline sufficiency claim",
+    "Any field-wide research-gap claim"
+  ],
+  "evidence_traceability_table": [
+    {
+      "final_claim_id": "FC_SYN_001",
+      "final_claim_text": "A traceable joint layout-cabling topic is a corpus-scoped candidate only.",
+      "claim_type": "contribution_claim",
+      "claim_scope": "corpus_scoped",
+      "grounding_status": "corpus_scoped_only",
+      "support_strength": "contextual",
+      "linked_paper_ids": ["P001", "P002", "P005"],
+      "linked_evidence_ids": ["EV001", "EV002", "EV005"],
+      "linked_problem_id": "P_SYN_001",
+      "linked_contribution_id": "C_SYN_001",
+      "counterevidence": ["EV005"],
+      "safer_wording": "within the provided corpus"
+    }
+  ]
+}

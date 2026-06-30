@@ -1,0 +1,33 @@
+papers:
+  - title: "Synthetic Example: YAML Layout-Only Record"
+    authors: []
+    year:
+    venue:
+    doi:
+    url:
+    source_type: "synthetic_yaml"
+    is_synthetic: true
+    evidence_status: "user_provided"
+    abstract: "Synthetic YAML note for layout-only testing."
+    keywords: ["synthetic", "layout-only"]
+    user_notes: "Synthetic only; not real evidence."
+    relevant_excerpts:
+      - "Synthetic excerpt: layout variables are described without cable routing."
+    research_stream: "layout_only_optimization"
+    method_family: "evolutionary_algorithm"
+  - title: "Synthetic Example: YAML Cabling-Only Record"
+    authors: []
+    year:
+    venue:
+    doi:
+    url:
+    source_type: "synthetic_yaml"
+    is_synthetic: true
+    evidence_status: "user_provided"
+    abstract: "Synthetic YAML note for cabling-only testing."
+    keywords: ["synthetic", "cabling-only"]
+    user_notes: "Synthetic only; not real evidence."
+    relevant_excerpts:
+      - "Synthetic excerpt: cable topology is described with fixed turbine locations."
+    research_stream: "cabling_only_optimization"
+    method_family: "graph_algorithm"

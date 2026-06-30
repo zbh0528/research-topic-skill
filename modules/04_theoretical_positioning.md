@@ -123,3 +123,11 @@ Record risks that theory positioning is too shallow, method implications are gen
 ## Downstream Contract
 
 `next_input.json` must provide method implications and contribution design targets without exposing full upstream outputs.
+
+## Literature-Grounded Mode Requirements
+
+- Link each `problem_property` to evidence-backed problem records or matrix dimensions.
+- Each `method_implication` must state whether it comes from problem property, literature matrix, or theoretical reasoning.
+- Mark inferred theory as `inferred` or `needs_literature_verification`.
+- Do not write unsupported complexity sources as verified.
+- Preserve `corpus_scope` and counterevidence from selected problem.

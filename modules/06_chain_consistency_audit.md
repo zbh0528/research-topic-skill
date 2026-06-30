@@ -130,3 +130,11 @@ Summarize reviewer risks and required defenses for the final package.
 ## Downstream Contract
 
 `next_input.json` must contain only audited material, required repairs, and final package section requirements.
+
+## Literature-Grounded Mode Requirements
+
+- Check every `domain_tension`, `selected_problem`, and contribution has evidence links or explicit `needs_literature_verification`.
+- Check gap claims include `corpus_scope`.
+- Detect unsupported verified claims, hidden counterevidence, title-only inference, synthetic evidence misuse, field-general claims without evidence, and unsafe novelty wording.
+- Add output fields: `evidence_chain_status`, `unsupported_verified_claims`, `ungrounded_key_claims`, `hidden_counterevidence_risks`, `corpus_scope_risks`, `synthetic_evidence_misuse`, and `title_only_inference_risks`.
+- Fail readiness if a grounded claim lacks `evidence_id`.

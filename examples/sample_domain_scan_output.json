@@ -7,62 +7,231 @@
   "input_summary": {
     "direct_upstream_module_id": "00_project_intake",
     "summary": "Scans layout-cabling optimization based on project intake next_input.",
-    "consumed_files": ["workspaces/demo_project/00_project_intake/next_input.json"]
+    "consumed_files": [
+      "workspaces/demo_project/00_project_intake/next_input.json"
+    ]
   },
   "structured_output": {
-    "domain_boundaries": { "included": ["layout optimization", "cable routing", "joint optimization"], "excluded": ["blade design", "power protection"] },
-    "research_streams": [{ "stream_id": "rs_001", "name": "joint layout-cabling optimization", "evidence_status": "needs_literature_verification" }],
-    "method_problem_matrix": [{ "method_family": "evolutionary multi-objective optimization", "problem_properties": ["mixed spatial-network decisions"], "evidence_status": "needs_literature_verification" }],
-    "objective_constraint_map": [{ "objective": "energy-production and cable-cost trade-off", "constraints": ["wake spacing", "cable capacity", "substation connection"], "evidence_status": "needs_literature_verification" }],
-    "coupling_map": [{ "coupling_id": "cp_001", "statement": "Turbine positions shape both wake interactions and cable network topology.", "evidence_status": "needs_literature_verification" }],
+    "domain_boundaries": {
+      "included": [
+        "layout optimization",
+        "cable routing",
+        "joint optimization"
+      ],
+      "excluded": [
+        "blade design",
+        "power protection"
+      ]
+    },
+    "research_streams": [
+      {
+        "stream_id": "rs_001",
+        "name": "joint layout-cabling optimization",
+        "evidence_status": "needs_literature_verification"
+      }
+    ],
+    "method_problem_matrix": [
+      {
+        "method_family": "evolutionary multi-objective optimization",
+        "problem_properties": [
+          "mixed spatial-network decisions"
+        ],
+        "evidence_status": "needs_literature_verification"
+      }
+    ],
+    "objective_constraint_map": [
+      {
+        "objective": "energy-production and cable-cost trade-off",
+        "constraints": [
+          "wake spacing",
+          "cable capacity",
+          "substation connection"
+        ],
+        "evidence_status": "needs_literature_verification"
+      }
+    ],
+    "coupling_map": [
+      {
+        "coupling_id": "cp_001",
+        "statement": "Turbine positions shape both wake interactions and cable network topology.",
+        "evidence_status": "needs_literature_verification"
+      }
+    ],
     "domain_tensions": [
       {
         "tension_id": "dt_001",
         "tension_statement": "Sequentially optimizing layout and cabling may hide aerodynamic-electrical-economic trade-offs.",
-        "source_streams": ["rs_001"],
+        "source_streams": [
+          "rs_001"
+        ],
         "why_it_matters": "The final design quality may depend on coupled spatial and network decisions.",
         "possible_gap": "Need literature verification on whether existing approaches fully model this coupling.",
         "evidence_status": "needs_literature_verification",
-        "evidence_needed": ["survey joint layout-cabling studies", "check baselines using sequential optimization"],
+        "evidence_needed": [
+          "survey joint layout-cabling studies",
+          "check baselines using sequential optimization"
+        ],
         "downstream_problem_potential": "Can motivate a problem card about spatial-network coupled optimization."
       }
     ],
-    "saturated_areas": [{ "id": "sat_001", "statement": "Standalone layout optimization may be more mature than joint layout-cabling optimization.", "evidence_status": "needs_literature_verification", "source": "requires literature scan" }],
-    "active_areas": [{ "id": "active_001", "statement": "Multi-objective evolutionary optimization appears relevant.", "evidence_status": "needs_literature_verification", "source": "requires literature scan" }],
-    "underexplored_areas": [{ "id": "under_001", "statement": "Structure-aware joint encoding may be underexplored.", "evidence_status": "needs_literature_verification", "source": "requires literature scan" }],
+    "saturated_areas": [
+      {
+        "id": "sat_001",
+        "statement": "Standalone layout optimization may be more mature than joint layout-cabling optimization.",
+        "evidence_status": "needs_literature_verification",
+        "source": "requires literature scan"
+      }
+    ],
+    "active_areas": [
+      {
+        "id": "active_001",
+        "statement": "Multi-objective evolutionary optimization appears relevant.",
+        "evidence_status": "needs_literature_verification",
+        "source": "requires literature scan"
+      }
+    ],
+    "underexplored_areas": [
+      {
+        "id": "under_001",
+        "statement": "Structure-aware joint encoding may be underexplored.",
+        "evidence_status": "needs_literature_verification",
+        "source": "requires literature scan"
+      }
+    ],
     "evidence_requirements": [],
     "uncertainty_log": []
   },
   "next_input": {
-    "candidate_tensions": [{ "tension_id": "dt_001", "tension_statement": "Sequential layout-cabling optimization may miss coupled trade-offs.", "evidence_status": "needs_literature_verification" }],
-    "domain_boundaries": { "included": ["joint layout-cabling optimization"], "excluded": ["blade design"] },
-    "method_problem_matrix_summary": [{ "method_family": "evolutionary multi-objective optimization", "problem_property": "mixed spatial-network decision structure" }],
-    "objective_constraint_summary": [{ "objectives": ["energy production", "cable cost"], "constraints": ["wake spacing", "cable capacity"] }],
-    "coupling_summary": [{ "coupling_id": "cp_001", "statement": "layout affects cable topology and wake interaction" }],
+    "candidate_tensions": [
+      {
+        "tension_id": "dt_001",
+        "tension_statement": "Sequential layout-cabling optimization may miss coupled trade-offs.",
+        "evidence_status": "needs_literature_verification"
+      }
+    ],
+    "domain_boundaries": {
+      "included": [
+        "joint layout-cabling optimization"
+      ],
+      "excluded": [
+        "blade design"
+      ]
+    },
+    "method_problem_matrix_summary": [
+      {
+        "method_family": "evolutionary multi-objective optimization",
+        "problem_property": "mixed spatial-network decision structure"
+      }
+    ],
+    "objective_constraint_summary": [
+      {
+        "objectives": [
+          "energy production",
+          "cable cost"
+        ],
+        "constraints": [
+          "wake spacing",
+          "cable capacity"
+        ]
+      }
+    ],
+    "coupling_summary": [
+      {
+        "coupling_id": "cp_001",
+        "statement": "layout affects cable topology and wake interaction"
+      }
+    ],
     "evidence_policy": {
       "default_literature_status": "needs_literature_verification",
-      "allowed_statuses": ["verified", "user_provided", "inferred", "needs_literature_verification", "speculative"]
+      "allowed_statuses": [
+        "verified",
+        "user_provided",
+        "inferred",
+        "needs_literature_verification",
+        "speculative"
+      ]
     },
     "trace_context": {
-      "source_module_ids": ["00_project_intake", "01_domain_scan"],
-      "domain_tension_ids": ["dt_001"],
+      "source_module_ids": [
+        "00_project_intake",
+        "01_domain_scan"
+      ],
+      "domain_tension_ids": [
+        "dt_001"
+      ],
       "problem_ids": [],
       "theory_element_ids": [],
       "contribution_ids": [],
       "lineage": []
     }
   },
-  "assumptions": [{ "id": "assumption_001", "statement": "Joint optimization is meaningful only if coupling changes trade-offs.", "evidence_status": "inferred", "source": "domain reasoning" }],
-  "uncertainty_log": [{ "item": "Prior-work saturation is unverified.", "evidence_status": "needs_literature_verification", "action_required": "Run real literature scan." }],
-  "evidence_requirements": [{ "requirement_id": "er_002", "requirement": "Verify whether joint layout-cabling coupling is underexplored.", "evidence_status": "needs_literature_verification" }],
-  "reviewer_risks": [{ "risk_id": "rr_002", "question": "Is the gap already studied?", "mitigation": "Require literature matrix before final claim.", "evidence_status": "needs_literature_verification" }],
-  "revision_hooks": [{ "field": "domain_tensions", "action": "Edit if literature scan finds different core tension.", "affects": ["02_problem_identification"] }],
+  "assumptions": [
+    {
+      "id": "assumption_001",
+      "statement": "Joint optimization is meaningful only if coupling changes trade-offs.",
+      "evidence_status": "inferred",
+      "source": "domain reasoning"
+    }
+  ],
+  "uncertainty_log": [
+    {
+      "item": "Prior-work saturation is unverified.",
+      "evidence_status": "needs_literature_verification",
+      "action_required": "Run real literature scan."
+    }
+  ],
+  "evidence_requirements": [
+    {
+      "requirement_id": "er_002",
+      "requirement": "Verify whether joint layout-cabling coupling is underexplored.",
+      "evidence_status": "needs_literature_verification"
+    }
+  ],
+  "reviewer_risks": [
+    {
+      "risk_id": "rr_002",
+      "question": "Is the gap already studied?",
+      "mitigation": "Require literature matrix before final claim.",
+      "evidence_status": "needs_literature_verification"
+    }
+  ],
+  "revision_hooks": [
+    {
+      "field": "domain_tensions",
+      "action": "Edit if literature scan finds different core tension.",
+      "affects": [
+        "02_problem_identification"
+      ]
+    }
+  ],
   "trace_context": {
-    "source_module_ids": ["00_project_intake", "01_domain_scan"],
-    "domain_tension_ids": ["dt_001"],
+    "source_module_ids": [
+      "00_project_intake",
+      "01_domain_scan"
+    ],
+    "domain_tension_ids": [
+      "dt_001"
+    ],
     "problem_ids": [],
     "theory_element_ids": [],
     "contribution_ids": [],
     "lineage": []
-  }
+  },
+  "evidence_links": [],
+  "grounded_claims": [],
+  "grounding_summary": {
+    "grounded_count": 0,
+    "needs_literature_verification_count": 1,
+    "unsupported_verified_count": 0,
+    "summary": "v0.1.0 sample; no real literature grounding supplied."
+  },
+  "corpus_scope": "not literature-grounded; requires user-provided corpus",
+  "counterevidence": [],
+  "claim_grounding_risks": [
+    {
+      "risk": "sample output is not real literature evidence",
+      "severity": "medium",
+      "required_action": "run v0.2 literature grounding before treating claims as grounded"
+    }
+  ]
 }

@@ -41,6 +41,8 @@ UNSAFE_CLAIM_PATTERNS = [
     re.compile(r"(?<!algorithm-)\bfirst\b", re.IGNORECASE),
     re.compile(r"\bnovel\b", re.IGNORECASE),
     re.compile(r"state-of-the-art", re.IGNORECASE),
+    re.compile(r"state of the art", re.IGNORECASE),
+    re.compile(r"\bSOTA\b", re.IGNORECASE),
     re.compile(r"\bunprecedented\b", re.IGNORECASE),
     re.compile(r"outperforms all", re.IGNORECASE),
     re.compile(r"the first framework", re.IGNORECASE),
@@ -61,6 +63,8 @@ UNSAFE_ALLOWED_PATH_PARTS = {
     "exclusion_boundary",
     "required_repairs",
     "repair_actions",
+    "novelty_safety_level",
+    "counterevidence",
 }
 
 
@@ -113,12 +117,95 @@ def find_unsafe_claims(value: object, path: tuple[object, ...] = ()) -> list[str
     return findings
 
 
+def iter_dicts(value: object):
+    if isinstance(value, dict):
+        yield value
+        for child in value.values():
+            yield from iter_dicts(child)
+    elif isinstance(value, list):
+        for child in value:
+            yield from iter_dicts(child)
+
+
+def has_evidence_link(item: dict) -> bool:
+    return bool(item.get("linked_evidence_ids") or item.get("supporting_evidence_ids") or item.get("evidence_ids") or item.get("evidence_id"))
+
+
+def has_source_evidence(item: dict) -> bool:
+    return bool(item.get("source_field") or item.get("source_excerpt") or has_evidence_link(item))
+
+
+def contains_evidence_context(value: object) -> bool:
+    if isinstance(value, dict):
+        if "evidence_context" in value:
+            return True
+        return any(contains_evidence_context(child) for child in value.values())
+    if isinstance(value, list):
+        return any(contains_evidence_context(child) for child in value)
+    return False
+
+
+def find_forbidden_next_input_fields(value: object, path: tuple[object, ...] = ()) -> list[str]:
+    forbidden = {"source_excerpt", "abstract", "full_text", "relevant_excerpts", "paraphrase"}
+    findings: list[str] = []
+    if isinstance(value, dict):
+        for key, child in value.items():
+            if key in forbidden:
+                findings.append(".".join(map(str, (*path, key))))
+            findings.extend(find_forbidden_next_input_fields(child, (*path, key)))
+    elif isinstance(value, list):
+        for index, child in enumerate(value):
+            findings.extend(find_forbidden_next_input_fields(child, (*path, index)))
+    return findings
+
+
+def load_synthetic_papers(literature_dir: Path) -> set[str]:
+    records_path = literature_dir / "bibliographic_records.json"
+    if not records_path.exists():
+        return set()
+    records = json.loads(records_path.read_text())
+    if not isinstance(records, dict):
+        return set()
+    return {
+        record.get("paper_id")
+        for record in records.get("bibliographic_records", [])
+        if isinstance(record, dict) and record.get("is_synthetic")
+    }
+
+
+def load_evidence_index(literature_dir: Path) -> dict[str, dict]:
+    path = literature_dir / "evidence_claim_map.json"
+    if not path.exists():
+        return {}
+    data = json.loads(path.read_text())
+    if not isinstance(data, dict):
+        return {}
+    return {
+        obj.get("evidence_id"): obj
+        for obj in data.get("evidence_objects", [])
+        if isinstance(obj, dict) and obj.get("evidence_id")
+    }
+
+
+def evidence_ids_from(item: dict) -> list[str]:
+    ids = item.get("linked_evidence_ids") or item.get("supporting_evidence_ids") or item.get("evidence_ids") or item.get("evidence_id") or []
+    if isinstance(ids, str):
+        return [ids]
+    return [str(eid) for eid in ids]
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--workspace", required=True, type=Path)
+    parser.add_argument("--strict-evidence", action="store_true")
+    parser.add_argument("--literature-grounded", action="store_true")
+    parser.add_argument("--literature-dir", type=Path)
     args = parser.parse_args()
 
     workspace = args.workspace if args.workspace.is_absolute() else ROOT / args.workspace
+    literature_dir = args.literature_dir or workspace / "literature_evidence"
+    if args.literature_dir and not args.literature_dir.is_absolute():
+        literature_dir = workspace / args.literature_dir
     failures: list[str] = []
     warnings: list[str] = []
     passes: list[str] = []
@@ -143,6 +230,10 @@ def main() -> None:
     Validator, schema_warning = try_jsonschema()
     if schema_warning:
         warnings.append(schema_warning)
+
+    synthetic_papers = load_synthetic_papers(literature_dir) if args.literature_grounded else set()
+    evidence_index = load_evidence_index(literature_dir) if args.literature_grounded else {}
+    saw_evidence_context = False
 
     for index, module in enumerate(modules):
         module_id = module["workspace_id"]
@@ -175,6 +266,40 @@ def main() -> None:
         input_data = load_json(input_path, failures)
 
         if isinstance(output, dict):
+            placeholder_draft = output.get("status") == "draft" and "PENDING_MODULE_OUTPUT" in json.dumps(output)
+            if args.literature_grounded and not placeholder_draft:
+                for item in iter_dicts(output):
+                    if item.get("evidence_status") == "verified" and not has_source_evidence(item):
+                        failures.append(f"FAIL unsupported verified claim in {output_path}: {item.get('claim_id') or item.get('evidence_id') or item.get('contribution_id')}")
+                    if item.get("grounding_status") == "grounded" and not has_evidence_link(item):
+                        failures.append(f"FAIL grounded claim lacks evidence link in {output_path}: {item.get('claim_id') or item.get('gap_id')}")
+                    if item.get("grounding_status") == "grounded":
+                        missing_ids = [eid for eid in evidence_ids_from(item) if eid not in evidence_index]
+                        if missing_ids:
+                            failures.append(f"FAIL grounded claim links unknown evidence_id in {output_path}: {', '.join(missing_ids)}")
+                    if item.get("claim_type") == "gap_claim" and not item.get("corpus_scope"):
+                        failures.append(f"FAIL gap claim lacks corpus_scope in {output_path}: {item.get('claim_id')}")
+                    if item.get("claim_type") == "contribution_claim" and not item.get("claim_scope"):
+                        failures.append(f"FAIL contribution_claim lacks claim_scope in {output_path}: {item.get('claim_id') or item.get('contribution_id')}")
+                    if item.get("claim_scope") == "field_general" and item.get("support_strength") != "direct":
+                        failures.append(f"FAIL field_general claim lacks direct evidence in {output_path}: {item.get('claim_id')}")
+                    if item.get("evidence_status") == "verified":
+                        linked_papers = set(item.get("linked_paper_ids", []) or [item.get("paper_id")])
+                        for eid in evidence_ids_from(item):
+                            if eid not in evidence_index:
+                                failures.append(f"FAIL verified claim links unknown evidence_id in {output_path}: {eid}")
+                            elif evidence_index[eid].get("paper_id"):
+                                linked_papers.add(evidence_index[eid]["paper_id"])
+                        if linked_papers & synthetic_papers:
+                            failures.append(f"FAIL synthetic evidence used as verified evidence in {output_path}: {item.get('claim_id') or item.get('evidence_id')}")
+                if module_id == "02_problem_identification":
+                    selected = output.get("structured_output", {}).get("selected_problem", {})
+                    if isinstance(selected, dict) and selected and not selected.get("corpus_scope"):
+                        failures.append(f"FAIL selected_problem lacks corpus_scope in {output_path}")
+                if module_id == "06_final_topic_package":
+                    structured = output.get("structured_output", {})
+                    if isinstance(structured, dict) and not (structured.get("evidence_traceability_table") or structured.get("Evidence Traceability Table")):
+                        failures.append(f"FAIL final_topic_package lacks Evidence Traceability Table in {output_path}")
             missing = [field for field in GLOBAL_FIELDS if field not in output]
             if missing:
                 failures.append(f"FAIL {output_path} missing global fields: {', '.join(missing)}")
@@ -205,6 +330,11 @@ def main() -> None:
                     module_lines.append("PASS schema validation")
 
         if isinstance(next_input, dict):
+            forbidden_next_fields = find_forbidden_next_input_fields(next_input)
+            if args.literature_grounded and args.strict_evidence and forbidden_next_fields:
+                failures.append(f"FAIL next_input contains over-expanded evidence fields: {', '.join(forbidden_next_fields[:5])}")
+            if args.literature_grounded and contains_evidence_context(next_input):
+                saw_evidence_context = True
             if isinstance(output, dict) and "next_input" in output and next_input != output.get("next_input"):
                 failures.append(f"FAIL {next_path} must match output.json next_input")
                 module_lines.append("FAIL next_input.json differs from output.json next_input")
@@ -219,6 +349,8 @@ def main() -> None:
                     warnings.append(f"WARNING draft module has empty next_input.json: {next_path}")
 
         if index > 0 and isinstance(input_data, dict):
+            if args.literature_grounded and contains_evidence_context(input_data):
+                saw_evidence_context = True
             expected_upstream = module_order[index - 1]
             declared = input_data.get("source_module_id")
             if declared and declared != expected_upstream:
@@ -228,6 +360,16 @@ def main() -> None:
                 failures.append(f"FAIL {input_path} must not depend on upstream output.json")
 
         write_module_report(module_dir, module_lines)
+
+    if args.literature_grounded:
+        if not literature_dir.exists():
+            failures.append(f"FAIL literature_evidence directory missing: {literature_dir}")
+        else:
+            passes.append(f"PASS literature_evidence directory exists: {literature_dir}")
+        if not saw_evidence_context:
+            failures.append("FAIL literature-grounded mode requires evidence_context in module input or next_input")
+        elif args.strict_evidence:
+            passes.append("PASS evidence_context is present for strict evidence mode")
 
     summary_lines = [
         f"# Validation Summary",

@@ -1,0 +1,342 @@
+{
+  "corpus_id": "synthetic_demo_corpus",
+  "corpus_scope": "user-provided corpus only; not a field-wide systematic review",
+  "paper_cards": [
+    {
+      "paper_id": "P001",
+      "bibliographic_metadata": {
+        "title": "Synthetic Example: Layout-Only Wind Farm Optimization Study",
+        "authors": [],
+        "year": null,
+        "venue": null,
+        "doi": null,
+        "url": null
+      },
+      "source_type": "synthetic_json",
+      "is_synthetic": true,
+      "relevance_to_project": "user_provided_context",
+      "research_stream": "layout_only_optimization",
+      "research_problem": "unknown",
+      "method_family": "evolutionary_algorithm",
+      "optimization_type": "single_or_multi_objective",
+      "decision_variables": [
+        "continuous_layout_variables"
+      ],
+      "objectives": [
+        "annual_energy_production",
+        "wake_loss"
+      ],
+      "constraints": [
+        "turbine_spacing",
+        "site_boundary"
+      ],
+      "coupling_handled": "wake_layout_coupling",
+      "wake_model_handled": "unknown",
+      "cable_routing_handled": "not_handled",
+      "electrical_losses_handled": "unknown",
+      "network_topology_handled": "unknown",
+      "uncertainty_handled": "unknown",
+      "baseline_methods": [],
+      "evaluation_metrics": [],
+      "datasets_or_case_studies": [],
+      "reported_findings": [],
+      "stated_limitations": [],
+      "extracted_claims": [
+        {
+          "claim_id": "CL001",
+          "claim_text": "User-provided relevant_excerpts describes this record's declared wind-farm optimization scope.",
+          "claim_type": "domain_fact",
+          "claim_scope": "corpus_scoped",
+          "evidence_status": "user_provided",
+          "grounding_status": "corpus_scoped_only",
+          "support_strength": "contextual",
+          "supporting_evidence_ids": [
+            "EV001"
+          ],
+          "contradicting_evidence_ids": [],
+          "linked_paper_ids": [
+            "P001"
+          ],
+          "confidence": 0.5,
+          "limitations": "Synthetic examples and user notes are not verified field evidence.",
+          "safer_wording": "within the provided corpus",
+          "source_field": "relevant_excerpts",
+          "source_excerpt": "Synthetic excerpt: turbine layout variables are considered without cable-routing decisions.",
+          "paraphrase": "Synthetic excerpt: turbine layout variables are considered without cable-routing decisions."
+        }
+      ],
+      "extraction_uncertainty": "claims are limited to user-provided text",
+      "evidence_status": "user_provided"
+    },
+    {
+      "paper_id": "P002",
+      "bibliographic_metadata": {
+        "title": "Synthetic Example: Cabling-Only Wind Farm Routing Study",
+        "authors": [],
+        "year": null,
+        "venue": null,
+        "doi": null,
+        "url": null
+      },
+      "source_type": "synthetic_json",
+      "is_synthetic": true,
+      "relevance_to_project": "user_provided_context",
+      "research_stream": "cabling_only_optimization",
+      "research_problem": "unknown",
+      "method_family": "graph_algorithm",
+      "optimization_type": "discrete_network_optimization",
+      "decision_variables": [
+        "graph_topology_variables",
+        "cable_type_selection"
+      ],
+      "objectives": [
+        "cable_cost",
+        "electrical_loss"
+      ],
+      "constraints": [
+        "cable_capacity",
+        "radial_topology"
+      ],
+      "coupling_handled": "cable_capacity_topology_coupling",
+      "wake_model_handled": "unknown",
+      "cable_routing_handled": "handled",
+      "electrical_losses_handled": "unknown",
+      "network_topology_handled": "unknown",
+      "uncertainty_handled": "unknown",
+      "baseline_methods": [],
+      "evaluation_metrics": [],
+      "datasets_or_case_studies": [],
+      "reported_findings": [],
+      "stated_limitations": [],
+      "extracted_claims": [
+        {
+          "claim_id": "CL002",
+          "claim_text": "User-provided relevant_excerpts describes this record's declared wind-farm optimization scope.",
+          "claim_type": "domain_fact",
+          "claim_scope": "corpus_scoped",
+          "evidence_status": "user_provided",
+          "grounding_status": "corpus_scoped_only",
+          "support_strength": "contextual",
+          "supporting_evidence_ids": [
+            "EV002"
+          ],
+          "contradicting_evidence_ids": [],
+          "linked_paper_ids": [
+            "P002"
+          ],
+          "confidence": 0.5,
+          "limitations": "Synthetic examples and user notes are not verified field evidence.",
+          "safer_wording": "within the provided corpus",
+          "source_field": "relevant_excerpts",
+          "source_excerpt": "Synthetic excerpt: cable topology is optimized while turbine locations are treated as fixed.",
+          "paraphrase": "Synthetic excerpt: cable topology is optimized while turbine locations are treated as fixed."
+        }
+      ],
+      "extraction_uncertainty": "claims are limited to user-provided text",
+      "evidence_status": "user_provided"
+    },
+    {
+      "paper_id": "P003",
+      "bibliographic_metadata": {
+        "title": "Synthetic Example: Sequential Layout Then Cabling Study",
+        "authors": [],
+        "year": null,
+        "venue": null,
+        "doi": null,
+        "url": null
+      },
+      "source_type": "synthetic_json",
+      "is_synthetic": true,
+      "relevance_to_project": "user_provided_context",
+      "research_stream": "sequential_layout_then_cabling",
+      "research_problem": "unknown",
+      "method_family": "heuristic",
+      "optimization_type": "sequential_optimization",
+      "decision_variables": [
+        "continuous_layout_variables",
+        "graph_topology_variables"
+      ],
+      "objectives": [
+        "annual_energy_production",
+        "cable_cost"
+      ],
+      "constraints": [
+        "turbine_spacing",
+        "cable_capacity"
+      ],
+      "coupling_handled": "sequential_vs_joint_design",
+      "wake_model_handled": "unknown",
+      "cable_routing_handled": "handled_after_layout",
+      "electrical_losses_handled": "unknown",
+      "network_topology_handled": "unknown",
+      "uncertainty_handled": "unknown",
+      "baseline_methods": [],
+      "evaluation_metrics": [],
+      "datasets_or_case_studies": [],
+      "reported_findings": [],
+      "stated_limitations": [],
+      "extracted_claims": [
+        {
+          "claim_id": "CL003",
+          "claim_text": "User-provided relevant_excerpts describes this record's declared wind-farm optimization scope.",
+          "claim_type": "domain_fact",
+          "claim_scope": "corpus_scoped",
+          "evidence_status": "user_provided",
+          "grounding_status": "corpus_scoped_only",
+          "support_strength": "contextual",
+          "supporting_evidence_ids": [
+            "EV003"
+          ],
+          "contradicting_evidence_ids": [],
+          "linked_paper_ids": [
+            "P003"
+          ],
+          "confidence": 0.5,
+          "limitations": "Synthetic examples and user notes are not verified field evidence.",
+          "safer_wording": "within the provided corpus",
+          "source_field": "relevant_excerpts",
+          "source_excerpt": "Synthetic excerpt: layout is decided before cable routing is optimized in a second step.",
+          "paraphrase": "Synthetic excerpt: layout is decided before cable routing is optimized in a second step."
+        }
+      ],
+      "extraction_uncertainty": "claims are limited to user-provided text",
+      "evidence_status": "user_provided"
+    },
+    {
+      "paper_id": "P004",
+      "bibliographic_metadata": {
+        "title": "Synthetic Example: Multi-Objective Wind Farm Optimization Study",
+        "authors": [],
+        "year": null,
+        "venue": null,
+        "doi": null,
+        "url": null
+      },
+      "source_type": "synthetic_json",
+      "is_synthetic": true,
+      "relevance_to_project": "user_provided_context",
+      "research_stream": "multi_objective_wind_farm_optimization",
+      "research_problem": "unknown",
+      "method_family": "multi_objective_evolutionary_algorithm",
+      "optimization_type": "multi_objective_optimization",
+      "decision_variables": [
+        "continuous_layout_variables"
+      ],
+      "objectives": [
+        "annual_energy_production",
+        "wake_loss",
+        "levelized_cost_of_energy"
+      ],
+      "constraints": [
+        "turbine_spacing",
+        "site_boundary"
+      ],
+      "coupling_handled": "wake_layout_coupling",
+      "wake_model_handled": "unknown",
+      "cable_routing_handled": "not_handled",
+      "electrical_losses_handled": "unknown",
+      "network_topology_handled": "unknown",
+      "uncertainty_handled": "unknown",
+      "baseline_methods": [],
+      "evaluation_metrics": [],
+      "datasets_or_case_studies": [],
+      "reported_findings": [],
+      "stated_limitations": [],
+      "extracted_claims": [
+        {
+          "claim_id": "CL004",
+          "claim_text": "User-provided relevant_excerpts describes this record's declared wind-farm optimization scope.",
+          "claim_type": "domain_fact",
+          "claim_scope": "corpus_scoped",
+          "evidence_status": "user_provided",
+          "grounding_status": "corpus_scoped_only",
+          "support_strength": "contextual",
+          "supporting_evidence_ids": [
+            "EV004"
+          ],
+          "contradicting_evidence_ids": [],
+          "linked_paper_ids": [
+            "P004"
+          ],
+          "confidence": 0.5,
+          "limitations": "Synthetic examples and user notes are not verified field evidence.",
+          "safer_wording": "within the provided corpus",
+          "source_field": "relevant_excerpts",
+          "source_excerpt": "Synthetic excerpt: energy, wake loss, and cost objectives are considered together.",
+          "paraphrase": "Synthetic excerpt: energy, wake loss, and cost objectives are considered together."
+        }
+      ],
+      "extraction_uncertainty": "claims are limited to user-provided text",
+      "evidence_status": "user_provided"
+    },
+    {
+      "paper_id": "P005",
+      "bibliographic_metadata": {
+        "title": "Synthetic Example: Joint Layout-Cabling Optimization Candidate",
+        "authors": [],
+        "year": null,
+        "venue": null,
+        "doi": null,
+        "url": null
+      },
+      "source_type": "synthetic_json",
+      "is_synthetic": true,
+      "relevance_to_project": "user_provided_context",
+      "research_stream": "joint_layout_cabling_optimization",
+      "research_problem": "unknown",
+      "method_family": "hybrid_method",
+      "optimization_type": "mixed_discrete_continuous_optimization",
+      "decision_variables": [
+        "continuous_layout_variables",
+        "graph_topology_variables"
+      ],
+      "objectives": [
+        "annual_energy_production",
+        "cable_cost",
+        "electrical_loss"
+      ],
+      "constraints": [
+        "turbine_spacing",
+        "cable_capacity",
+        "radial_topology"
+      ],
+      "coupling_handled": "layout_cable_cost_coupling",
+      "wake_model_handled": "unknown",
+      "cable_routing_handled": "handled",
+      "electrical_losses_handled": "unknown",
+      "network_topology_handled": "unknown",
+      "uncertainty_handled": "unknown",
+      "baseline_methods": [],
+      "evaluation_metrics": [],
+      "datasets_or_case_studies": [],
+      "reported_findings": [],
+      "stated_limitations": [],
+      "extracted_claims": [
+        {
+          "claim_id": "CL005",
+          "claim_text": "User-provided relevant_excerpts describes this record's declared wind-farm optimization scope.",
+          "claim_type": "domain_fact",
+          "claim_scope": "corpus_scoped",
+          "evidence_status": "user_provided",
+          "grounding_status": "corpus_scoped_only",
+          "support_strength": "contextual",
+          "supporting_evidence_ids": [
+            "EV005"
+          ],
+          "contradicting_evidence_ids": [],
+          "linked_paper_ids": [
+            "P005"
+          ],
+          "confidence": 0.5,
+          "limitations": "Synthetic examples and user notes are not verified field evidence.",
+          "safer_wording": "within the provided corpus",
+          "source_field": "relevant_excerpts",
+          "source_excerpt": "Synthetic excerpt: layout variables and cable topology variables are represented in one candidate problem description.",
+          "paraphrase": "Synthetic excerpt: layout variables and cable topology variables are represented in one candidate problem description."
+        }
+      ],
+      "extraction_uncertainty": "claims are limited to user-provided text",
+      "evidence_status": "user_provided"
+    }
+  ]
+}

@@ -2,85 +2,796 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Problem Cards Output",
   "type": "object",
-  "required": ["status", "module_id", "module_name", "input_summary", "structured_output", "next_input", "assumptions", "uncertainty_log", "evidence_requirements", "reviewer_risks", "revision_hooks", "trace_context"],
+  "required": [
+    "status",
+    "module_id",
+    "module_name",
+    "input_summary",
+    "structured_output",
+    "next_input",
+    "assumptions",
+    "uncertainty_log",
+    "evidence_requirements",
+    "reviewer_risks",
+    "revision_hooks",
+    "trace_context"
+  ],
   "properties": {
-    "schema_version": { "type": "string" },
-    "project_id": { "type": "string" },
-    "status": { "$ref": "#/$defs/status" },
-    "module_id": { "const": "02_problem_identification" },
-    "module_name": { "const": "Problem Identification" },
-    "input_summary": { "$ref": "#/$defs/input_summary" },
+    "schema_version": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "status": {
+      "$ref": "#/$defs/status"
+    },
+    "module_id": {
+      "const": "02_problem_identification"
+    },
+    "module_name": {
+      "const": "Problem Identification"
+    },
+    "input_summary": {
+      "$ref": "#/$defs/input_summary"
+    },
     "structured_output": {
       "type": "object",
-      "required": ["candidate_problems", "selected_problem", "backup_problems", "ranking_criteria", "rejected_problems", "selection_rationale"],
+      "required": [
+        "candidate_problems",
+        "selected_problem",
+        "backup_problems",
+        "ranking_criteria",
+        "rejected_problems",
+        "selection_rationale"
+      ],
       "properties": {
-        "candidate_problems": { "type": "array", "items": { "$ref": "#/$defs/problem_card" } },
-        "selected_problem": { "$ref": "#/$defs/problem_card" },
-        "backup_problems": { "type": "array", "items": { "$ref": "#/$defs/problem_card" } },
-        "ranking_criteria": { "type": "array", "items": { "type": "string" } },
-        "rejected_problems": { "type": "array", "items": { "type": "object" } },
-        "selection_rationale": { "type": "string" },
-        "evidence_requirements": { "type": "array" },
-        "uncertainty_log": { "type": "array" }
+        "candidate_problems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/problem_card"
+          }
+        },
+        "selected_problem": {
+          "$ref": "#/$defs/problem_card"
+        },
+        "backup_problems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/problem_card"
+          }
+        },
+        "ranking_criteria": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rejected_problems": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "selection_rationale": {
+          "type": "string"
+        },
+        "evidence_requirements": {
+          "type": "array"
+        },
+        "uncertainty_log": {
+          "type": "array"
+        }
       },
       "additionalProperties": false
     },
     "next_input": {
       "type": "object",
-      "required": ["selected_problem", "backup_problems_summary", "problem_properties", "required_theoretical_positioning", "evidence_policy", "trace_context"],
+      "required": [
+        "selected_problem",
+        "backup_problems_summary",
+        "problem_properties",
+        "required_theoretical_positioning",
+        "evidence_policy",
+        "trace_context"
+      ],
       "properties": {
-        "selected_problem": { "type": "object" },
-        "backup_problems_summary": { "type": "array" },
-        "problem_properties": { "type": "array" },
-        "required_theoretical_positioning": { "type": "array" },
-        "evidence_policy": { "$ref": "#/$defs/evidence_policy" },
-        "trace_context": { "$ref": "#/$defs/trace_context" }
+        "selected_problem": {
+          "type": "object"
+        },
+        "backup_problems_summary": {
+          "type": "array"
+        },
+        "problem_properties": {
+          "type": "array"
+        },
+        "required_theoretical_positioning": {
+          "type": "array"
+        },
+        "evidence_policy": {
+          "$ref": "#/$defs/evidence_policy"
+        },
+        "trace_context": {
+          "$ref": "#/$defs/trace_context"
+        },
+        "evidence_context": {
+          "type": "object",
+          "required": [
+            "corpus_id",
+            "corpus_scope",
+            "paper_count",
+            "key_grounded_claims",
+            "candidate_gap_claims",
+            "counterevidence_summary",
+            "claims_requiring_verification",
+            "evidence_policy",
+            "trace_context"
+          ],
+          "properties": {
+            "corpus_id": {
+              "type": "string"
+            },
+            "corpus_scope": {
+              "type": "string"
+            },
+            "paper_count": {
+              "type": "integer"
+            },
+            "key_grounded_claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "claim_id",
+                  "grounding_status",
+                  "linked_evidence_ids"
+                ],
+                "properties": {
+                  "claim_id": {
+                    "type": "string"
+                  },
+                  "claim_type": {
+                    "enum": [
+                      "bibliographic_fact",
+                      "domain_fact",
+                      "method_classification",
+                      "objective_classification",
+                      "constraint_classification",
+                      "limitation_claim",
+                      "gap_claim",
+                      "problem_importance_claim",
+                      "theory_positioning_claim",
+                      "contribution_claim",
+                      "validation_requirement",
+                      "baseline_requirement",
+                      "reviewer_risk_claim"
+                    ]
+                  },
+                  "claim_scope": {
+                    "enum": [
+                      "corpus_scoped",
+                      "project_scoped",
+                      "field_general",
+                      "speculative",
+                      "user_provided_scope"
+                    ]
+                  },
+                  "grounding_status": {
+                    "enum": [
+                      "grounded",
+                      "partially_grounded",
+                      "ungrounded",
+                      "contradicted",
+                      "needs_literature_verification",
+                      "corpus_scoped_only"
+                    ]
+                  },
+                  "support_strength": {
+                    "enum": [
+                      "direct",
+                      "indirect",
+                      "weak",
+                      "contradictory",
+                      "contextual",
+                      "not_applicable"
+                    ]
+                  },
+                  "linked_paper_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "linked_evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "safer_wording": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "limitations": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "candidate_gap_claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "gap_id",
+                  "corpus_scope",
+                  "grounding_status",
+                  "supporting_evidence_ids",
+                  "contradicting_evidence_ids"
+                ],
+                "properties": {
+                  "gap_id": {
+                    "type": "string"
+                  },
+                  "corpus_scope": {
+                    "type": "string"
+                  },
+                  "grounding_status": {
+                    "enum": [
+                      "grounded",
+                      "partially_grounded",
+                      "ungrounded",
+                      "contradicted",
+                      "needs_literature_verification",
+                      "corpus_scoped_only"
+                    ]
+                  },
+                  "supporting_evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "contradicting_evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "novelty_risk": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "safer_gap_wording": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "counterevidence_summary": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "claims_requiring_verification": {
+              "type": "array"
+            },
+            "evidence_policy": {
+              "type": "object"
+            },
+            "trace_context": {
+              "type": "object"
+            }
+          },
+          "additionalProperties": false
+        }
       },
       "additionalProperties": false
     },
-    "assumptions": { "type": "array", "items": { "$ref": "#/$defs/evidence_item" } },
-    "uncertainty_log": { "type": "array", "items": { "$ref": "#/$defs/uncertainty_item" } },
-    "evidence_requirements": { "type": "array", "items": { "$ref": "#/$defs/evidence_requirement" } },
-    "reviewer_risks": { "type": "array", "items": { "$ref": "#/$defs/reviewer_risk" } },
-    "revision_hooks": { "type": "array", "items": { "$ref": "#/$defs/revision_hook" } },
-    "trace_context": { "$ref": "#/$defs/trace_context" }
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence_item"
+      }
+    },
+    "uncertainty_log": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/uncertainty_item"
+      }
+    },
+    "evidence_requirements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence_requirement"
+      }
+    },
+    "reviewer_risks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reviewer_risk"
+      }
+    },
+    "revision_hooks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/revision_hook"
+      }
+    },
+    "trace_context": {
+      "$ref": "#/$defs/trace_context"
+    },
+    "evidence_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "evidence_id",
+          "support_strength"
+        ],
+        "properties": {
+          "evidence_id": {
+            "type": "string"
+          },
+          "claim_id": {
+            "type": "string"
+          },
+          "paper_id": {
+            "type": "string"
+          },
+          "support_strength": {
+            "enum": [
+              "direct",
+              "indirect",
+              "weak",
+              "contradictory",
+              "contextual",
+              "not_applicable"
+            ]
+          },
+          "source_field": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "grounded_claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "claim_id",
+          "grounding_status"
+        ],
+        "properties": {
+          "claim_id": {
+            "type": "string"
+          },
+          "claim_text": {
+            "type": "string"
+          },
+          "grounding_status": {
+            "enum": [
+              "grounded",
+              "partially_grounded",
+              "ungrounded",
+              "contradicted",
+              "needs_literature_verification",
+              "corpus_scoped_only"
+            ]
+          },
+          "linked_evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "corpus_scope": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "grounding_summary": {
+      "type": "object",
+      "properties": {
+        "grounded_count": {
+          "type": "integer"
+        },
+        "needs_literature_verification_count": {
+          "type": "integer"
+        },
+        "unsupported_verified_count": {
+          "type": "integer"
+        },
+        "summary": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "corpus_scope": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "counterevidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "claim_id": {
+            "type": "string"
+          },
+          "evidence_id": {
+            "type": "string"
+          },
+          "impact": {
+            "type": "string"
+          },
+          "safer_reformulation": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "claim_grounding_risks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "risk",
+          "severity"
+        ],
+        "properties": {
+          "risk": {
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "required_action": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
   },
   "additionalProperties": false,
   "$defs": {
-    "status": { "enum": ["draft", "complete", "validated", "needs_revision"] },
-    "evidence_status": { "enum": ["verified", "user_provided", "inferred", "needs_literature_verification", "speculative"] },
+    "status": {
+      "enum": [
+        "draft",
+        "complete",
+        "validated",
+        "needs_revision"
+      ]
+    },
+    "evidence_status": {
+      "enum": [
+        "verified",
+        "user_provided",
+        "inferred",
+        "needs_literature_verification",
+        "speculative"
+      ]
+    },
     "problem_card": {
       "type": "object",
-      "required": ["problem_id", "problem_title", "problem_statement", "source_domain_tension_id", "source_domain_tension", "problem_type", "why_it_matters", "why_not_solved_yet", "research_question", "evidence_needed", "expected_contribution_opportunities", "feasibility", "novelty_risk", "reviewer_risk", "publishability_score", "scoring_breakdown", "next_input_fragment", "evidence_status"],
+      "required": [
+        "problem_id",
+        "problem_title",
+        "problem_statement",
+        "source_domain_tension_id",
+        "source_domain_tension",
+        "problem_type",
+        "why_it_matters",
+        "why_not_solved_yet",
+        "research_question",
+        "evidence_needed",
+        "expected_contribution_opportunities",
+        "feasibility",
+        "novelty_risk",
+        "reviewer_risk",
+        "publishability_score",
+        "scoring_breakdown",
+        "next_input_fragment",
+        "evidence_status"
+      ],
       "properties": {
-        "problem_id": { "type": "string" },
-        "problem_title": { "type": "string" },
-        "problem_statement": { "type": "string" },
-        "source_domain_tension_id": { "type": "string" },
-        "source_domain_tension": { "type": "string" },
-        "problem_type": { "type": "string" },
-        "why_it_matters": { "type": "string" },
-        "why_not_solved_yet": { "type": "string" },
-        "research_question": { "type": "string" },
-        "evidence_needed": { "type": "array", "items": { "type": "string" } },
-        "expected_contribution_opportunities": { "type": "array", "items": { "type": "string" } },
-        "feasibility": { "type": "string" },
-        "novelty_risk": { "type": "string" },
-        "reviewer_risk": { "type": "string" },
-        "publishability_score": { "type": "number" },
-        "scoring_breakdown": { "type": "object" },
-        "next_input_fragment": { "type": "object" },
-        "evidence_status": { "$ref": "#/$defs/evidence_status" }
+        "problem_id": {
+          "type": "string"
+        },
+        "problem_title": {
+          "type": "string"
+        },
+        "problem_statement": {
+          "type": "string"
+        },
+        "source_domain_tension_id": {
+          "type": "string"
+        },
+        "source_domain_tension": {
+          "type": "string"
+        },
+        "problem_type": {
+          "type": "string"
+        },
+        "why_it_matters": {
+          "type": "string"
+        },
+        "why_not_solved_yet": {
+          "type": "string"
+        },
+        "research_question": {
+          "type": "string"
+        },
+        "evidence_needed": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "expected_contribution_opportunities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "feasibility": {
+          "type": "string"
+        },
+        "novelty_risk": {
+          "type": "string"
+        },
+        "reviewer_risk": {
+          "type": "string"
+        },
+        "publishability_score": {
+          "type": "number"
+        },
+        "scoring_breakdown": {
+          "type": "object"
+        },
+        "next_input_fragment": {
+          "type": "object"
+        },
+        "evidence_status": {
+          "$ref": "#/$defs/evidence_status"
+        }
       },
       "additionalProperties": false
     },
-    "evidence_item": { "type": "object", "required": ["statement", "evidence_status"], "properties": { "id": { "type": "string" }, "statement": { "type": "string" }, "evidence_status": { "$ref": "#/$defs/evidence_status" }, "source": { "type": "string" } }, "additionalProperties": false },
-    "input_summary": { "type": "object", "required": ["direct_upstream_module_id", "summary"], "properties": { "direct_upstream_module_id": { "type": ["string", "null"] }, "summary": { "type": "string" }, "consumed_files": { "type": "array", "items": { "type": "string" } } }, "additionalProperties": false },
-    "evidence_policy": { "type": "object", "required": ["default_literature_status", "allowed_statuses"], "properties": { "default_literature_status": { "const": "needs_literature_verification" }, "allowed_statuses": { "type": "array", "items": { "$ref": "#/$defs/evidence_status" } } }, "additionalProperties": false },
-    "trace_context": { "type": "object", "required": ["source_module_ids", "domain_tension_ids", "problem_ids", "theory_element_ids", "contribution_ids", "lineage"], "properties": { "source_module_ids": { "type": "array", "items": { "type": "string" } }, "domain_tension_ids": { "type": "array", "items": { "type": "string" } }, "problem_ids": { "type": "array", "items": { "type": "string" } }, "theory_element_ids": { "type": "array", "items": { "type": "string" } }, "contribution_ids": { "type": "array", "items": { "type": "string" } }, "lineage": { "type": "array", "items": { "type": "object" } } }, "additionalProperties": false },
-    "uncertainty_item": { "type": "object", "required": ["item", "evidence_status", "action_required"], "properties": { "item": { "type": "string" }, "evidence_status": { "$ref": "#/$defs/evidence_status" }, "action_required": { "type": "string" } }, "additionalProperties": false },
-    "evidence_requirement": { "type": "object", "required": ["requirement_id", "requirement", "evidence_status"], "properties": { "requirement_id": { "type": "string" }, "requirement": { "type": "string" }, "evidence_status": { "$ref": "#/$defs/evidence_status" } }, "additionalProperties": false },
-    "reviewer_risk": { "type": "object", "required": ["risk_id", "question", "mitigation", "evidence_status"], "properties": { "risk_id": { "type": "string" }, "question": { "type": "string" }, "mitigation": { "type": "string" }, "evidence_status": { "$ref": "#/$defs/evidence_status" } }, "additionalProperties": false },
-    "revision_hook": { "type": "object", "required": ["field", "action", "affects"], "properties": { "field": { "type": "string" }, "action": { "type": "string" }, "affects": { "type": "array", "items": { "type": "string" } } }, "additionalProperties": false }
+    "evidence_item": {
+      "type": "object",
+      "required": [
+        "statement",
+        "evidence_status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "statement": {
+          "type": "string"
+        },
+        "evidence_status": {
+          "$ref": "#/$defs/evidence_status"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "input_summary": {
+      "type": "object",
+      "required": [
+        "direct_upstream_module_id",
+        "summary"
+      ],
+      "properties": {
+        "direct_upstream_module_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "summary": {
+          "type": "string"
+        },
+        "consumed_files": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence_policy": {
+      "type": "object",
+      "required": [
+        "default_literature_status",
+        "allowed_statuses"
+      ],
+      "properties": {
+        "default_literature_status": {
+          "const": "needs_literature_verification"
+        },
+        "allowed_statuses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_status"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "trace_context": {
+      "type": "object",
+      "required": [
+        "source_module_ids",
+        "domain_tension_ids",
+        "problem_ids",
+        "theory_element_ids",
+        "contribution_ids",
+        "lineage"
+      ],
+      "properties": {
+        "source_module_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "domain_tension_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "problem_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "theory_element_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "contribution_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "lineage": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "uncertainty_item": {
+      "type": "object",
+      "required": [
+        "item",
+        "evidence_status",
+        "action_required"
+      ],
+      "properties": {
+        "item": {
+          "type": "string"
+        },
+        "evidence_status": {
+          "$ref": "#/$defs/evidence_status"
+        },
+        "action_required": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence_requirement": {
+      "type": "object",
+      "required": [
+        "requirement_id",
+        "requirement",
+        "evidence_status"
+      ],
+      "properties": {
+        "requirement_id": {
+          "type": "string"
+        },
+        "requirement": {
+          "type": "string"
+        },
+        "evidence_status": {
+          "$ref": "#/$defs/evidence_status"
+        }
+      },
+      "additionalProperties": false
+    },
+    "reviewer_risk": {
+      "type": "object",
+      "required": [
+        "risk_id",
+        "question",
+        "mitigation",
+        "evidence_status"
+      ],
+      "properties": {
+        "risk_id": {
+          "type": "string"
+        },
+        "question": {
+          "type": "string"
+        },
+        "mitigation": {
+          "type": "string"
+        },
+        "evidence_status": {
+          "$ref": "#/$defs/evidence_status"
+        }
+      },
+      "additionalProperties": false
+    },
+    "revision_hook": {
+      "type": "object",
+      "required": [
+        "field",
+        "action",
+        "affects"
+      ],
+      "properties": {
+        "field": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "affects": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
   }
 }

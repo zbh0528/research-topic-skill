@@ -117,3 +117,11 @@ Record risks that the gap may be too broad, already studied, weakly connected to
 ## Downstream Contract
 
 `next_input.json` must provide candidate tensions and compact domain summaries only.
+
+## Literature-Grounded Mode Requirements
+
+- Read `evidence_context` from direct upstream `next_input`.
+- Link important `domain_boundaries`, `research_streams`, `method_problem_matrix`, and `domain_tensions` claims to `evidence_id` where available.
+- Mark unsupported literature claims `needs_literature_verification`.
+- Each `domain_tension` should add `linked_claim_ids`, `linked_evidence_ids`, `grounding_status`, `corpus_scope`, `counterevidence`, and `safer_wording`.
+- Do not treat an empty matrix cell as field-wide absence.

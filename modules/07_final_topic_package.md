@@ -135,3 +135,10 @@ Each contribution must include a likely reviewer risk and defense path.
 ## Downstream Contract
 
 The final package should be usable as input for introduction, related work, method overview, experiment design, and reviewer-response preparation.
+
+## Literature-Grounded Mode Requirements
+
+- Add sections: `Literature Evidence Summary`, `Corpus Scope`, `Evidence-Backed Domain Gap`, `Evidence-Backed Core Problem`, `Evidence-Backed Contribution Claims`, `Counterevidence and Limitations`, `Claims Requiring Further Literature Verification`, and `Evidence Traceability Table`.
+- Each traceability row must include `final_claim_id`, `final_claim_text`, `claim_type`, `claim_scope`, `grounding_status`, `support_strength`, `linked_paper_ids`, `linked_evidence_ids`, `linked_problem_id`, `linked_contribution_id`, `counterevidence`, and `safer_wording`.
+- Do not hide counterevidence.
+- Do not upgrade corpus-scoped evidence into field-general novelty.

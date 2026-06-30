@@ -2,81 +2,784 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Domain Scan Output",
   "type": "object",
-  "required": ["status", "module_id", "module_name", "input_summary", "structured_output", "next_input", "assumptions", "uncertainty_log", "evidence_requirements", "reviewer_risks", "revision_hooks", "trace_context"],
+  "required": [
+    "status",
+    "module_id",
+    "module_name",
+    "input_summary",
+    "structured_output",
+    "next_input",
+    "assumptions",
+    "uncertainty_log",
+    "evidence_requirements",
+    "reviewer_risks",
+    "revision_hooks",
+    "trace_context"
+  ],
   "properties": {
-    "schema_version": { "type": "string" },
-    "project_id": { "type": "string" },
-    "status": { "$ref": "#/$defs/status" },
-    "module_id": { "const": "01_domain_scan" },
-    "module_name": { "const": "Domain Scan" },
-    "input_summary": { "$ref": "#/$defs/input_summary" },
+    "schema_version": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "status": {
+      "$ref": "#/$defs/status"
+    },
+    "module_id": {
+      "const": "01_domain_scan"
+    },
+    "module_name": {
+      "const": "Domain Scan"
+    },
+    "input_summary": {
+      "$ref": "#/$defs/input_summary"
+    },
     "structured_output": {
       "type": "object",
-      "required": ["domain_boundaries", "research_streams", "method_problem_matrix", "objective_constraint_map", "coupling_map", "domain_tensions", "saturated_areas", "active_areas", "underexplored_areas"],
+      "required": [
+        "domain_boundaries",
+        "research_streams",
+        "method_problem_matrix",
+        "objective_constraint_map",
+        "coupling_map",
+        "domain_tensions",
+        "saturated_areas",
+        "active_areas",
+        "underexplored_areas"
+      ],
       "properties": {
-        "domain_boundaries": { "type": "object" },
-        "research_streams": { "type": "array", "items": { "type": "object" } },
-        "method_problem_matrix": { "type": "array", "items": { "type": "object" } },
-        "objective_constraint_map": { "type": "array", "items": { "type": "object" } },
-        "coupling_map": { "type": "array", "items": { "type": "object" } },
+        "domain_boundaries": {
+          "type": "object"
+        },
+        "research_streams": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "method_problem_matrix": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "objective_constraint_map": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "coupling_map": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
         "domain_tensions": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["tension_id", "tension_statement", "source_streams", "why_it_matters", "possible_gap", "evidence_status", "evidence_needed", "downstream_problem_potential"],
+            "required": [
+              "tension_id",
+              "tension_statement",
+              "source_streams",
+              "why_it_matters",
+              "possible_gap",
+              "evidence_status",
+              "evidence_needed",
+              "downstream_problem_potential"
+            ],
             "properties": {
-              "tension_id": { "type": "string" },
-              "tension_statement": { "type": "string" },
-              "source_streams": { "type": "array", "items": { "type": "string" } },
-              "why_it_matters": { "type": "string" },
-              "possible_gap": { "type": "string" },
-              "evidence_status": { "$ref": "#/$defs/evidence_status" },
-              "evidence_needed": { "type": "array", "items": { "type": "string" } },
-              "downstream_problem_potential": { "type": "string" }
+              "tension_id": {
+                "type": "string"
+              },
+              "tension_statement": {
+                "type": "string"
+              },
+              "source_streams": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "why_it_matters": {
+                "type": "string"
+              },
+              "possible_gap": {
+                "type": "string"
+              },
+              "evidence_status": {
+                "$ref": "#/$defs/evidence_status"
+              },
+              "evidence_needed": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "downstream_problem_potential": {
+                "type": "string"
+              }
             },
             "additionalProperties": false
           }
         },
-        "saturated_areas": { "type": "array", "items": { "$ref": "#/$defs/evidence_item" } },
-        "active_areas": { "type": "array", "items": { "$ref": "#/$defs/evidence_item" } },
-        "underexplored_areas": { "type": "array", "items": { "$ref": "#/$defs/evidence_item" } },
-        "evidence_requirements": { "type": "array" },
-        "uncertainty_log": { "type": "array" }
+        "saturated_areas": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_item"
+          }
+        },
+        "active_areas": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_item"
+          }
+        },
+        "underexplored_areas": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_item"
+          }
+        },
+        "evidence_requirements": {
+          "type": "array"
+        },
+        "uncertainty_log": {
+          "type": "array"
+        }
       },
       "additionalProperties": false
     },
     "next_input": {
       "type": "object",
-      "required": ["candidate_tensions", "domain_boundaries", "method_problem_matrix_summary", "objective_constraint_summary", "coupling_summary", "evidence_policy", "trace_context"],
+      "required": [
+        "candidate_tensions",
+        "domain_boundaries",
+        "method_problem_matrix_summary",
+        "objective_constraint_summary",
+        "coupling_summary",
+        "evidence_policy",
+        "trace_context"
+      ],
       "properties": {
-        "candidate_tensions": { "type": "array", "items": { "type": "object" } },
-        "domain_boundaries": { "type": "object" },
-        "method_problem_matrix_summary": { "type": "array" },
-        "objective_constraint_summary": { "type": "array" },
-        "coupling_summary": { "type": "array" },
-        "evidence_policy": { "$ref": "#/$defs/evidence_policy" },
-        "trace_context": { "$ref": "#/$defs/trace_context" }
+        "candidate_tensions": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "domain_boundaries": {
+          "type": "object"
+        },
+        "method_problem_matrix_summary": {
+          "type": "array"
+        },
+        "objective_constraint_summary": {
+          "type": "array"
+        },
+        "coupling_summary": {
+          "type": "array"
+        },
+        "evidence_policy": {
+          "$ref": "#/$defs/evidence_policy"
+        },
+        "trace_context": {
+          "$ref": "#/$defs/trace_context"
+        },
+        "evidence_context": {
+          "type": "object",
+          "required": [
+            "corpus_id",
+            "corpus_scope",
+            "paper_count",
+            "key_grounded_claims",
+            "candidate_gap_claims",
+            "counterevidence_summary",
+            "claims_requiring_verification",
+            "evidence_policy",
+            "trace_context"
+          ],
+          "properties": {
+            "corpus_id": {
+              "type": "string"
+            },
+            "corpus_scope": {
+              "type": "string"
+            },
+            "paper_count": {
+              "type": "integer"
+            },
+            "key_grounded_claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "claim_id",
+                  "grounding_status",
+                  "linked_evidence_ids"
+                ],
+                "properties": {
+                  "claim_id": {
+                    "type": "string"
+                  },
+                  "claim_type": {
+                    "enum": [
+                      "bibliographic_fact",
+                      "domain_fact",
+                      "method_classification",
+                      "objective_classification",
+                      "constraint_classification",
+                      "limitation_claim",
+                      "gap_claim",
+                      "problem_importance_claim",
+                      "theory_positioning_claim",
+                      "contribution_claim",
+                      "validation_requirement",
+                      "baseline_requirement",
+                      "reviewer_risk_claim"
+                    ]
+                  },
+                  "claim_scope": {
+                    "enum": [
+                      "corpus_scoped",
+                      "project_scoped",
+                      "field_general",
+                      "speculative",
+                      "user_provided_scope"
+                    ]
+                  },
+                  "grounding_status": {
+                    "enum": [
+                      "grounded",
+                      "partially_grounded",
+                      "ungrounded",
+                      "contradicted",
+                      "needs_literature_verification",
+                      "corpus_scoped_only"
+                    ]
+                  },
+                  "support_strength": {
+                    "enum": [
+                      "direct",
+                      "indirect",
+                      "weak",
+                      "contradictory",
+                      "contextual",
+                      "not_applicable"
+                    ]
+                  },
+                  "linked_paper_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "linked_evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "safer_wording": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "limitations": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "candidate_gap_claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "gap_id",
+                  "corpus_scope",
+                  "grounding_status",
+                  "supporting_evidence_ids",
+                  "contradicting_evidence_ids"
+                ],
+                "properties": {
+                  "gap_id": {
+                    "type": "string"
+                  },
+                  "corpus_scope": {
+                    "type": "string"
+                  },
+                  "grounding_status": {
+                    "enum": [
+                      "grounded",
+                      "partially_grounded",
+                      "ungrounded",
+                      "contradicted",
+                      "needs_literature_verification",
+                      "corpus_scoped_only"
+                    ]
+                  },
+                  "supporting_evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "contradicting_evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "novelty_risk": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "safer_gap_wording": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "counterevidence_summary": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "claims_requiring_verification": {
+              "type": "array"
+            },
+            "evidence_policy": {
+              "type": "object"
+            },
+            "trace_context": {
+              "type": "object"
+            }
+          },
+          "additionalProperties": false
+        }
       },
       "additionalProperties": false
     },
-    "assumptions": { "type": "array", "items": { "$ref": "#/$defs/evidence_item" } },
-    "uncertainty_log": { "type": "array", "items": { "$ref": "#/$defs/uncertainty_item" } },
-    "evidence_requirements": { "type": "array", "items": { "$ref": "#/$defs/evidence_requirement" } },
-    "reviewer_risks": { "type": "array", "items": { "$ref": "#/$defs/reviewer_risk" } },
-    "revision_hooks": { "type": "array", "items": { "$ref": "#/$defs/revision_hook" } },
-    "trace_context": { "$ref": "#/$defs/trace_context" }
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence_item"
+      }
+    },
+    "uncertainty_log": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/uncertainty_item"
+      }
+    },
+    "evidence_requirements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence_requirement"
+      }
+    },
+    "reviewer_risks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reviewer_risk"
+      }
+    },
+    "revision_hooks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/revision_hook"
+      }
+    },
+    "trace_context": {
+      "$ref": "#/$defs/trace_context"
+    },
+    "evidence_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "evidence_id",
+          "support_strength"
+        ],
+        "properties": {
+          "evidence_id": {
+            "type": "string"
+          },
+          "claim_id": {
+            "type": "string"
+          },
+          "paper_id": {
+            "type": "string"
+          },
+          "support_strength": {
+            "enum": [
+              "direct",
+              "indirect",
+              "weak",
+              "contradictory",
+              "contextual",
+              "not_applicable"
+            ]
+          },
+          "source_field": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "grounded_claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "claim_id",
+          "grounding_status"
+        ],
+        "properties": {
+          "claim_id": {
+            "type": "string"
+          },
+          "claim_text": {
+            "type": "string"
+          },
+          "grounding_status": {
+            "enum": [
+              "grounded",
+              "partially_grounded",
+              "ungrounded",
+              "contradicted",
+              "needs_literature_verification",
+              "corpus_scoped_only"
+            ]
+          },
+          "linked_evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "corpus_scope": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "grounding_summary": {
+      "type": "object",
+      "properties": {
+        "grounded_count": {
+          "type": "integer"
+        },
+        "needs_literature_verification_count": {
+          "type": "integer"
+        },
+        "unsupported_verified_count": {
+          "type": "integer"
+        },
+        "summary": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "corpus_scope": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "counterevidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "claim_id": {
+            "type": "string"
+          },
+          "evidence_id": {
+            "type": "string"
+          },
+          "impact": {
+            "type": "string"
+          },
+          "safer_reformulation": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "claim_grounding_risks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "risk",
+          "severity"
+        ],
+        "properties": {
+          "risk": {
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "required_action": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
   },
   "additionalProperties": false,
   "$defs": {
-    "status": { "enum": ["draft", "complete", "validated", "needs_revision"] },
-    "evidence_status": { "enum": ["verified", "user_provided", "inferred", "needs_literature_verification", "speculative"] },
-    "evidence_item": { "type": "object", "required": ["statement", "evidence_status"], "properties": { "id": { "type": "string" }, "statement": { "type": "string" }, "evidence_status": { "$ref": "#/$defs/evidence_status" }, "source": { "type": "string" } }, "additionalProperties": false },
-    "input_summary": { "type": "object", "required": ["direct_upstream_module_id", "summary"], "properties": { "direct_upstream_module_id": { "type": ["string", "null"] }, "summary": { "type": "string" }, "consumed_files": { "type": "array", "items": { "type": "string" } } }, "additionalProperties": false },
-    "evidence_policy": { "type": "object", "required": ["default_literature_status", "allowed_statuses"], "properties": { "default_literature_status": { "const": "needs_literature_verification" }, "allowed_statuses": { "type": "array", "items": { "$ref": "#/$defs/evidence_status" } } }, "additionalProperties": false },
-    "trace_context": { "type": "object", "required": ["source_module_ids", "domain_tension_ids", "problem_ids", "theory_element_ids", "contribution_ids", "lineage"], "properties": { "source_module_ids": { "type": "array", "items": { "type": "string" } }, "domain_tension_ids": { "type": "array", "items": { "type": "string" } }, "problem_ids": { "type": "array", "items": { "type": "string" } }, "theory_element_ids": { "type": "array", "items": { "type": "string" } }, "contribution_ids": { "type": "array", "items": { "type": "string" } }, "lineage": { "type": "array", "items": { "type": "object" } } }, "additionalProperties": false },
-    "uncertainty_item": { "type": "object", "required": ["item", "evidence_status", "action_required"], "properties": { "item": { "type": "string" }, "evidence_status": { "$ref": "#/$defs/evidence_status" }, "action_required": { "type": "string" } }, "additionalProperties": false },
-    "evidence_requirement": { "type": "object", "required": ["requirement_id", "requirement", "evidence_status"], "properties": { "requirement_id": { "type": "string" }, "requirement": { "type": "string" }, "evidence_status": { "$ref": "#/$defs/evidence_status" } }, "additionalProperties": false },
-    "reviewer_risk": { "type": "object", "required": ["risk_id", "question", "mitigation", "evidence_status"], "properties": { "risk_id": { "type": "string" }, "question": { "type": "string" }, "mitigation": { "type": "string" }, "evidence_status": { "$ref": "#/$defs/evidence_status" } }, "additionalProperties": false },
-    "revision_hook": { "type": "object", "required": ["field", "action", "affects"], "properties": { "field": { "type": "string" }, "action": { "type": "string" }, "affects": { "type": "array", "items": { "type": "string" } } }, "additionalProperties": false }
+    "status": {
+      "enum": [
+        "draft",
+        "complete",
+        "validated",
+        "needs_revision"
+      ]
+    },
+    "evidence_status": {
+      "enum": [
+        "verified",
+        "user_provided",
+        "inferred",
+        "needs_literature_verification",
+        "speculative"
+      ]
+    },
+    "evidence_item": {
+      "type": "object",
+      "required": [
+        "statement",
+        "evidence_status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "statement": {
+          "type": "string"
+        },
+        "evidence_status": {
+          "$ref": "#/$defs/evidence_status"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "input_summary": {
+      "type": "object",
+      "required": [
+        "direct_upstream_module_id",
+        "summary"
+      ],
+      "properties": {
+        "direct_upstream_module_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "summary": {
+          "type": "string"
+        },
+        "consumed_files": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence_policy": {
+      "type": "object",
+      "required": [
+        "default_literature_status",
+        "allowed_statuses"
+      ],
+      "properties": {
+        "default_literature_status": {
+          "const": "needs_literature_verification"
+        },
+        "allowed_statuses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_status"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "trace_context": {
+      "type": "object",
+      "required": [
+        "source_module_ids",
+        "domain_tension_ids",
+        "problem_ids",
+        "theory_element_ids",
+        "contribution_ids",
+        "lineage"
+      ],
+      "properties": {
+        "source_module_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "domain_tension_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "problem_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "theory_element_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "contribution_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "lineage": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "uncertainty_item": {
+      "type": "object",
+      "required": [
+        "item",
+        "evidence_status",
+        "action_required"
+      ],
+      "properties": {
+        "item": {
+          "type": "string"
+        },
+        "evidence_status": {
+          "$ref": "#/$defs/evidence_status"
+        },
+        "action_required": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence_requirement": {
+      "type": "object",
+      "required": [
+        "requirement_id",
+        "requirement",
+        "evidence_status"
+      ],
+      "properties": {
+        "requirement_id": {
+          "type": "string"
+        },
+        "requirement": {
+          "type": "string"
+        },
+        "evidence_status": {
+          "$ref": "#/$defs/evidence_status"
+        }
+      },
+      "additionalProperties": false
+    },
+    "reviewer_risk": {
+      "type": "object",
+      "required": [
+        "risk_id",
+        "question",
+        "mitigation",
+        "evidence_status"
+      ],
+      "properties": {
+        "risk_id": {
+          "type": "string"
+        },
+        "question": {
+          "type": "string"
+        },
+        "mitigation": {
+          "type": "string"
+        },
+        "evidence_status": {
+          "$ref": "#/$defs/evidence_status"
+        }
+      },
+      "additionalProperties": false
+    },
+    "revision_hook": {
+      "type": "object",
+      "required": [
+        "field",
+        "action",
+        "affects"
+      ],
+      "properties": {
+        "field": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "affects": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
   }
 }

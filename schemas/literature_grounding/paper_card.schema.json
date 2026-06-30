@@ -1,0 +1,322 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Paper Card Set",
+  "type": "object",
+  "required": [
+    "corpus_id",
+    "corpus_scope",
+    "paper_cards"
+  ],
+  "properties": {
+    "corpus_id": {
+      "type": "string"
+    },
+    "corpus_scope": {
+      "type": "string"
+    },
+    "paper_cards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "paper_id",
+          "bibliographic_metadata",
+          "source_type",
+          "is_synthetic",
+          "relevance_to_project",
+          "research_stream",
+          "research_problem",
+          "method_family",
+          "optimization_type",
+          "decision_variables",
+          "objectives",
+          "constraints",
+          "coupling_handled",
+          "wake_model_handled",
+          "cable_routing_handled",
+          "electrical_losses_handled",
+          "network_topology_handled",
+          "uncertainty_handled",
+          "baseline_methods",
+          "evaluation_metrics",
+          "datasets_or_case_studies",
+          "reported_findings",
+          "stated_limitations",
+          "extracted_claims",
+          "extraction_uncertainty",
+          "evidence_status"
+        ],
+        "properties": {
+          "paper_id": {
+            "type": "string"
+          },
+          "bibliographic_metadata": {
+            "type": "object",
+            "required": [
+              "title",
+              "authors",
+              "year",
+              "venue",
+              "doi",
+              "url"
+            ],
+            "properties": {
+              "title": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "authors": {
+                "type": "array"
+              },
+              "year": {
+                "type": [
+                  "string",
+                  "number",
+                  "null"
+                ]
+              },
+              "venue": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "doi": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false
+          },
+          "source_type": {
+            "type": "string"
+          },
+          "is_synthetic": {
+            "type": "boolean"
+          },
+          "relevance_to_project": {
+            "type": "string"
+          },
+          "research_stream": {
+            "type": "string"
+          },
+          "research_problem": {
+            "type": "string"
+          },
+          "method_family": {
+            "type": "string"
+          },
+          "optimization_type": {
+            "type": "string"
+          },
+          "decision_variables": {
+            "type": "array"
+          },
+          "objectives": {
+            "type": "array"
+          },
+          "constraints": {
+            "type": "array"
+          },
+          "coupling_handled": {
+            "type": "string"
+          },
+          "wake_model_handled": {
+            "type": "string"
+          },
+          "cable_routing_handled": {
+            "type": "string"
+          },
+          "electrical_losses_handled": {
+            "type": "string"
+          },
+          "network_topology_handled": {
+            "type": "string"
+          },
+          "uncertainty_handled": {
+            "type": "string"
+          },
+          "baseline_methods": {
+            "type": "array"
+          },
+          "evaluation_metrics": {
+            "type": "array"
+          },
+          "datasets_or_case_studies": {
+            "type": "array"
+          },
+          "reported_findings": {
+            "type": "array"
+          },
+          "stated_limitations": {
+            "type": "array"
+          },
+          "extracted_claims": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/grounded_claim"
+            }
+          },
+          "extraction_uncertainty": {
+            "type": "string"
+          },
+          "evidence_status": {
+            "$ref": "#/$defs/evidence_status"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "evidence_status": {
+      "enum": [
+        "verified",
+        "user_provided",
+        "inferred",
+        "needs_literature_verification",
+        "speculative"
+      ]
+    },
+    "grounded_claim": {
+      "type": "object",
+      "required": [
+        "claim_id",
+        "claim_text",
+        "claim_type",
+        "claim_scope",
+        "evidence_status",
+        "grounding_status",
+        "support_strength",
+        "supporting_evidence_ids",
+        "contradicting_evidence_ids",
+        "linked_paper_ids",
+        "confidence",
+        "limitations",
+        "safer_wording"
+      ],
+      "properties": {
+        "claim_id": {
+          "type": "string"
+        },
+        "claim_text": {
+          "type": "string"
+        },
+        "claim_type": {
+          "enum": [
+            "bibliographic_fact",
+            "domain_fact",
+            "method_classification",
+            "objective_classification",
+            "constraint_classification",
+            "limitation_claim",
+            "gap_claim",
+            "problem_importance_claim",
+            "theory_positioning_claim",
+            "contribution_claim",
+            "validation_requirement",
+            "baseline_requirement",
+            "reviewer_risk_claim"
+          ]
+        },
+        "claim_scope": {
+          "enum": [
+            "corpus_scoped",
+            "project_scoped",
+            "field_general",
+            "speculative",
+            "user_provided_scope"
+          ]
+        },
+        "evidence_status": {
+          "enum": [
+            "verified",
+            "user_provided",
+            "inferred",
+            "needs_literature_verification",
+            "speculative"
+          ]
+        },
+        "grounding_status": {
+          "enum": [
+            "grounded",
+            "partially_grounded",
+            "ungrounded",
+            "contradicted",
+            "needs_literature_verification",
+            "corpus_scoped_only"
+          ]
+        },
+        "support_strength": {
+          "enum": [
+            "direct",
+            "indirect",
+            "weak",
+            "contradictory",
+            "contextual",
+            "not_applicable"
+          ]
+        },
+        "supporting_evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "contradicting_evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "linked_paper_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "limitations": {
+          "type": "string"
+        },
+        "safer_wording": {
+          "type": "string"
+        },
+        "source_field": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_excerpt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "paraphrase": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Literature Gap Audit",
+  "type": "object",
+  "required": [
+    "corpus_id",
+    "corpus_scope",
+    "gap_candidates",
+    "accepted_gap_candidates",
+    "rejected_gap_candidates",
+    "counterevidence_summary",
+    "novelty_risk_summary",
+    "required_additional_literature",
+    "audit_decision"
+  ],
+  "properties": {
+    "corpus_id": {
+      "type": "string"
+    },
+    "corpus_scope": {
+      "type": "string"
+    },
+    "gap_candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/gap_candidate"
+      }
+    },
+    "accepted_gap_candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/gap_candidate"
+      }
+    },
+    "rejected_gap_candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/gap_candidate"
+      }
+    },
+    "counterevidence_summary": {
+      "type": "array"
+    },
+    "novelty_risk_summary": {
+      "type": "string"
+    },
+    "required_additional_literature": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "audit_decision": {
+      "enum": [
+        "sufficient_for_corpus_scoped_problem_identification",
+        "insufficient_evidence",
+        "requires_more_literature",
+        "contradicted",
+        "mixed_evidence"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "gap_candidate": {
+      "type": "object",
+      "required": [
+        "gap_id",
+        "gap_statement",
+        "source_claim_ids",
+        "source_matrix_cells",
+        "supporting_evidence_ids",
+        "contradicting_evidence_ids",
+        "corpus_scope",
+        "gap_type",
+        "grounding_status",
+        "confidence",
+        "novelty_risk",
+        "overclaim_risk",
+        "safer_gap_wording",
+        "required_additional_literature",
+        "downstream_problem_potential"
+      ],
+      "properties": {
+        "gap_id": {
+          "type": "string"
+        },
+        "gap_statement": {
+          "type": "string"
+        },
+        "source_claim_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source_matrix_cells": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "supporting_evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "contradicting_evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "corpus_scope": {
+          "type": "string"
+        },
+        "gap_type": {
+          "enum": [
+            "modeling_gap",
+            "algorithmic_gap",
+            "experimental_gap",
+            "benchmark_gap",
+            "theory_gap",
+            "validation_gap",
+            "application_gap",
+            "unclear_gap"
+          ]
+        },
+        "grounding_status": {
+          "enum": [
+            "grounded",
+            "partially_grounded",
+            "ungrounded",
+            "contradicted",
+            "needs_literature_verification",
+            "corpus_scoped_only"
+          ]
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "novelty_risk": {
+          "type": "string"
+        },
+        "overclaim_risk": {
+          "type": "string"
+        },
+        "safer_gap_wording": {
+          "type": "string"
+        },
+        "required_additional_literature": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "downstream_problem_potential": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "corpus_id": "synthetic_demo_corpus",
+  "corpus_scope": "user-provided corpus only; not a field-wide systematic review",
+  "gap_candidates": [
+    {
+      "gap_id": "G001",
+      "gap_statement": "within this synthetic demonstration corpus, evidence is insufficient for a field-wide joint layout-cabling novelty claim",
+      "source_claim_ids": [
+        "CL001",
+        "CL002",
+        "CL003",
+        "CL004",
+        "CL005"
+      ],
+      "source_matrix_cells": [
+        "MC001",
+        "MC002",
+        "MC003",
+        "MC004",
+        "MC005",
+        "MC006"
+      ],
+      "supporting_evidence_ids": [
+        "EV001",
+        "EV002"
+      ],
+      "contradicting_evidence_ids": [
+        "EV005"
+      ],
+      "corpus_scope": "user-provided corpus only; not a field-wide systematic review",
+      "gap_type": "validation_gap",
+      "grounding_status": "partially_grounded",
+      "confidence": 0.4,
+      "novelty_risk": "high unless broader literature verification is performed",
+      "overclaim_risk": "field-wide no-one-studied wording is unsafe",
+      "safer_gap_wording": "within the provided corpus, the coupling evidence remains limited and requires broader verification",
+      "required_additional_literature": [
+        "systematic search strategy",
+        "real paper abstracts/full texts",
+        "baseline coverage review"
+      ],
+      "downstream_problem_potential": "Use only as a corpus-scoped candidate problem."
+    }
+  ],
+  "accepted_gap_candidates": [
+    {
+      "gap_id": "G001",
+      "gap_statement": "within this synthetic demonstration corpus, evidence is insufficient for a field-wide joint layout-cabling novelty claim",
+      "source_claim_ids": [
+        "CL001",
+        "CL002",
+        "CL003",
+        "CL004",
+        "CL005"
+      ],
+      "source_matrix_cells": [
+        "MC001",
+        "MC002",
+        "MC003",
+        "MC004",
+        "MC005",
+        "MC006"
+      ],
+      "supporting_evidence_ids": [
+        "EV001",
+        "EV002"
+      ],
+      "contradicting_evidence_ids": [
+        "EV005"
+      ],
+      "corpus_scope": "user-provided corpus only; not a field-wide systematic review",
+      "gap_type": "validation_gap",
+      "grounding_status": "partially_grounded",
+      "confidence": 0.4,
+      "novelty_risk": "high unless broader literature verification is performed",
+      "overclaim_risk": "field-wide no-one-studied wording is unsafe",
+      "safer_gap_wording": "within the provided corpus, the coupling evidence remains limited and requires broader verification",
+      "required_additional_literature": [
+        "systematic search strategy",
+        "real paper abstracts/full texts",
+        "baseline coverage review"
+      ],
+      "downstream_problem_potential": "Use only as a corpus-scoped candidate problem."
+    }
+  ],
+  "rejected_gap_candidates": [],
+  "counterevidence_summary": [
+    {
+      "gap_id": "G001",
+      "contradicting_evidence_ids": [
+        "EV005"
+      ]
+    }
+  ],
+  "novelty_risk_summary": "No first or field-wide novelty claim is supported by this corpus.",
+  "required_additional_literature": [
+    "systematic search strategy",
+    "real paper abstracts/full texts",
+    "baseline coverage review"
+  ],
+  "audit_decision": "sufficient_for_corpus_scoped_problem_identification"
+}

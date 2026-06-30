@@ -7,11 +7,18 @@
   "input_summary": {
     "direct_upstream_module_id": "02_problem_identification",
     "summary": "Positions selected problem p_001 across multi-objective optimization, constrained optimization, mixed discrete-continuous optimization, spatial-network coupled optimization, and network topology optimization.",
-    "consumed_files": ["workspaces/demo_project/02_problem_identification/next_input.json"]
+    "consumed_files": [
+      "workspaces/demo_project/02_problem_identification/next_input.json"
+    ]
   },
   "structured_output": {
     "problem_class": [
-      { "id": "th_001", "statement": "The problem can be positioned as multi-objective optimization, constrained optimization, mixed discrete-continuous optimization, spatial-network coupled optimization, and network topology optimization.", "evidence_status": "inferred", "source": "p_001 problem properties" }
+      {
+        "id": "th_001",
+        "statement": "The problem can be positioned as multi-objective optimization, constrained optimization, mixed discrete-continuous optimization, spatial-network coupled optimization, and network topology optimization.",
+        "evidence_status": "inferred",
+        "source": "p_001 problem properties"
+      }
     ],
     "formal_problem_elements": {
       "decision_space": "Turbine coordinates plus cable network topology decisions.",
@@ -22,19 +29,44 @@
       "search_difficulty": "Mixed decision types and constrained Pareto search may make naive operators ineffective."
     },
     "decision_variables": [
-      { "id": "dv_001", "statement": "Turbine placement and cable topology decisions are treated as coupled decision variables.", "evidence_status": "inferred", "source": "p_001" }
+      {
+        "id": "dv_001",
+        "statement": "Turbine placement and cable topology decisions are treated as coupled decision variables.",
+        "evidence_status": "inferred",
+        "source": "p_001"
+      }
     ],
     "objective_functions": [
-      { "id": "obj_001", "statement": "Candidate objectives include energy production, cable cost, and electrical loss.", "evidence_status": "needs_literature_verification", "source": "domain scan" }
+      {
+        "id": "obj_001",
+        "statement": "Candidate objectives include energy production, cable cost, and electrical loss.",
+        "evidence_status": "needs_literature_verification",
+        "source": "domain scan"
+      }
     ],
     "constraints": [
-      { "id": "con_001", "statement": "Candidate constraints include turbine spacing, cable capacity, and topology feasibility.", "evidence_status": "needs_literature_verification", "source": "domain scan" }
+      {
+        "id": "con_001",
+        "statement": "Candidate constraints include turbine spacing, cable capacity, and topology feasibility.",
+        "evidence_status": "needs_literature_verification",
+        "source": "domain scan"
+      }
     ],
     "complexity_sources": [
-      { "id": "cx_001", "statement": "The search combines spatial layout variables with network topology variables.", "evidence_status": "inferred", "source": "p_001" }
+      {
+        "id": "cx_001",
+        "statement": "The search combines spatial layout variables with network topology variables.",
+        "evidence_status": "inferred",
+        "source": "p_001"
+      }
     ],
     "coupling_mechanisms": [
-      { "id": "cm_001", "statement": "Spatial turbine placement affects wake losses and feasible cable routing length/topology.", "evidence_status": "needs_literature_verification", "source": "requires domain evidence" }
+      {
+        "id": "cm_001",
+        "statement": "Spatial turbine placement affects wake losses and feasible cable routing length/topology.",
+        "evidence_status": "needs_literature_verification",
+        "source": "requires domain evidence"
+      }
     ],
     "method_implications": [
       {
@@ -46,15 +78,32 @@
       }
     ],
     "theory_to_contribution_bridge": [
-      { "id": "bridge_001", "statement": "A problem-guided evolutionary mechanism can be argued only if it addresses the mixed spatial-network structure.", "evidence_status": "inferred", "source": "method implication" }
+      {
+        "id": "bridge_001",
+        "statement": "A problem-guided evolutionary mechanism can be argued only if it addresses the mixed spatial-network structure.",
+        "evidence_status": "inferred",
+        "source": "method implication"
+      }
     ],
     "evidence_requirements": [],
     "uncertainty_log": []
   },
   "next_input": {
-    "selected_problem": { "problem_id": "p_001", "problem_statement": "How can turbine placement and cable routing be modeled as coupled decisions?" },
-    "problem_class": ["multi-objective optimization", "constrained optimization", "mixed discrete-continuous optimization", "spatial-network coupled optimization", "network topology optimization"],
-    "problem_properties": ["mixed spatial-network decision structure", "aerodynamic-electrical-economic trade-off"],
+    "selected_problem": {
+      "problem_id": "p_001",
+      "problem_statement": "How can turbine placement and cable routing be modeled as coupled decisions?"
+    },
+    "problem_class": [
+      "multi-objective optimization",
+      "constrained optimization",
+      "mixed discrete-continuous optimization",
+      "spatial-network coupled optimization",
+      "network topology optimization"
+    ],
+    "problem_properties": [
+      "mixed spatial-network decision structure",
+      "aerodynamic-electrical-economic trade-off"
+    ],
     "method_implications": [
       {
         "problem_property": "mixed spatial-network decision structure",
@@ -63,38 +112,139 @@
         "evidence_needed": "Ablation against sequential optimization."
       }
     ],
-    "theory_to_contribution_bridge": ["Problem-guided mechanisms should be linked to mixed spatial-network coupling."],
-    "contribution_design_targets": ["modeling contribution", "algorithmic mechanism", "empirical trade-off analysis"],
+    "theory_to_contribution_bridge": [
+      "Problem-guided mechanisms should be linked to mixed spatial-network coupling."
+    ],
+    "contribution_design_targets": [
+      "modeling contribution",
+      "algorithmic mechanism",
+      "empirical trade-off analysis"
+    ],
     "evidence_policy": {
       "default_literature_status": "needs_literature_verification",
-      "allowed_statuses": ["verified", "user_provided", "inferred", "needs_literature_verification", "speculative"]
+      "allowed_statuses": [
+        "verified",
+        "user_provided",
+        "inferred",
+        "needs_literature_verification",
+        "speculative"
+      ]
     },
     "trace_context": {
-      "source_module_ids": ["02_problem_identification", "03_theoretical_positioning"],
-      "domain_tension_ids": ["dt_001"],
-      "problem_ids": ["p_001"],
-      "theory_element_ids": ["th_001"],
+      "source_module_ids": [
+        "02_problem_identification",
+        "03_theoretical_positioning"
+      ],
+      "domain_tension_ids": [
+        "dt_001"
+      ],
+      "problem_ids": [
+        "p_001"
+      ],
+      "theory_element_ids": [
+        "th_001"
+      ],
       "contribution_ids": [],
       "lineage": [
-        { "from": "dt_001", "to": "p_001", "relation": "motivates", "evidence_status": "needs_literature_verification" },
-        { "from": "p_001", "to": "th_001", "relation": "is_positioned_by", "evidence_status": "inferred" }
+        {
+          "from": "dt_001",
+          "to": "p_001",
+          "relation": "motivates",
+          "evidence_status": "needs_literature_verification"
+        },
+        {
+          "from": "p_001",
+          "to": "th_001",
+          "relation": "is_positioned_by",
+          "evidence_status": "inferred"
+        }
       ]
     }
   },
-  "assumptions": [{ "id": "assumption_004", "statement": "Hybrid encoding or co-evolution may be suitable mechanisms.", "evidence_status": "speculative", "source": "method planning" }],
-  "uncertainty_log": [{ "item": "Theory novelty is not established.", "evidence_status": "needs_literature_verification", "action_required": "Compare with existing joint optimization formulations." }],
-  "evidence_requirements": [{ "requirement_id": "er_004", "requirement": "Show method requirements follow from problem properties.", "evidence_status": "inferred" }],
-  "reviewer_risks": [{ "risk_id": "rr_004", "question": "Are theory terms decorative?", "mitigation": "Tie each method implication to a problem property.", "evidence_status": "inferred" }],
-  "revision_hooks": [{ "field": "method_implications", "action": "Revise if problem properties change.", "affects": ["04_contribution_argumentation"] }],
+  "assumptions": [
+    {
+      "id": "assumption_004",
+      "statement": "Hybrid encoding or co-evolution may be suitable mechanisms.",
+      "evidence_status": "speculative",
+      "source": "method planning"
+    }
+  ],
+  "uncertainty_log": [
+    {
+      "item": "Theory novelty is not established.",
+      "evidence_status": "needs_literature_verification",
+      "action_required": "Compare with existing joint optimization formulations."
+    }
+  ],
+  "evidence_requirements": [
+    {
+      "requirement_id": "er_004",
+      "requirement": "Show method requirements follow from problem properties.",
+      "evidence_status": "inferred"
+    }
+  ],
+  "reviewer_risks": [
+    {
+      "risk_id": "rr_004",
+      "question": "Are theory terms decorative?",
+      "mitigation": "Tie each method implication to a problem property.",
+      "evidence_status": "inferred"
+    }
+  ],
+  "revision_hooks": [
+    {
+      "field": "method_implications",
+      "action": "Revise if problem properties change.",
+      "affects": [
+        "04_contribution_argumentation"
+      ]
+    }
+  ],
   "trace_context": {
-    "source_module_ids": ["02_problem_identification", "03_theoretical_positioning"],
-    "domain_tension_ids": ["dt_001"],
-    "problem_ids": ["p_001"],
-    "theory_element_ids": ["th_001"],
+    "source_module_ids": [
+      "02_problem_identification",
+      "03_theoretical_positioning"
+    ],
+    "domain_tension_ids": [
+      "dt_001"
+    ],
+    "problem_ids": [
+      "p_001"
+    ],
+    "theory_element_ids": [
+      "th_001"
+    ],
     "contribution_ids": [],
     "lineage": [
-      { "from": "dt_001", "to": "p_001", "relation": "motivates", "evidence_status": "needs_literature_verification" },
-      { "from": "p_001", "to": "th_001", "relation": "is_positioned_by", "evidence_status": "inferred" }
+      {
+        "from": "dt_001",
+        "to": "p_001",
+        "relation": "motivates",
+        "evidence_status": "needs_literature_verification"
+      },
+      {
+        "from": "p_001",
+        "to": "th_001",
+        "relation": "is_positioned_by",
+        "evidence_status": "inferred"
+      }
     ]
-  }
+  },
+  "evidence_links": [],
+  "grounded_claims": [],
+  "grounding_summary": {
+    "grounded_count": 0,
+    "needs_literature_verification_count": 1,
+    "unsupported_verified_count": 0,
+    "summary": "v0.1.0 sample; no real literature grounding supplied."
+  },
+  "corpus_scope": "not literature-grounded; requires user-provided corpus",
+  "counterevidence": [],
+  "claim_grounding_risks": [
+    {
+      "risk": "sample output is not real literature evidence",
+      "severity": "medium",
+      "required_action": "run v0.2 literature grounding before treating claims as grounded"
+    }
+  ]
 }

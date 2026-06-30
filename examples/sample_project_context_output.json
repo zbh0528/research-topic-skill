@@ -7,50 +7,120 @@
   "input_summary": {
     "direct_upstream_module_id": null,
     "summary": "User requests a modular research topic package for evolutionary computation in joint wind farm layout and cable routing optimization.",
-    "consumed_files": ["examples/sample_project_input.yaml"]
+    "consumed_files": [
+      "examples/sample_project_input.yaml"
+    ]
   },
   "structured_output": {
     "researcher_profile": {
       "role": "computer science researcher",
-      "background": ["evolutionary computation", "multi-objective optimization", "constrained optimization"]
+      "background": [
+        "evolutionary computation",
+        "multi-objective optimization",
+        "constrained optimization"
+      ]
     },
     "research_scope": [
-      { "id": "scope_001", "statement": "Wind farm layout and cable routing optimization are in scope.", "evidence_status": "user_provided", "source": "sample_project_input.yaml" }
+      {
+        "id": "scope_001",
+        "statement": "Wind farm layout and cable routing optimization are in scope.",
+        "evidence_status": "user_provided",
+        "source": "sample_project_input.yaml"
+      }
     ],
     "target_output": "research topic package for introduction, related work, method overview, and experiment design planning",
     "known_constraints": [
-      { "id": "constraint_001", "statement": "Do not fabricate literature conclusions or novelty claims.", "evidence_status": "user_provided", "source": "sample_project_input.yaml" }
+      {
+        "id": "constraint_001",
+        "statement": "Do not fabricate literature conclusions or novelty claims.",
+        "evidence_status": "user_provided",
+        "source": "sample_project_input.yaml"
+      }
     ],
     "preferred_methods": [
-      { "id": "method_pref_001", "statement": "Evolutionary multi-objective optimization is preferred.", "evidence_status": "user_provided", "source": "sample_project_input.yaml" }
+      {
+        "id": "method_pref_001",
+        "statement": "Evolutionary multi-objective optimization is preferred.",
+        "evidence_status": "user_provided",
+        "source": "sample_project_input.yaml"
+      }
     ],
     "avoided_directions": [
-      { "id": "avoid_001", "statement": "Pure power system protection and pure wind turbine blade design are out of scope.", "evidence_status": "user_provided", "source": "sample_project_input.yaml" }
+      {
+        "id": "avoid_001",
+        "statement": "Pure power system protection and pure wind turbine blade design are out of scope.",
+        "evidence_status": "user_provided",
+        "source": "sample_project_input.yaml"
+      }
     ],
     "expected_contribution_types": [
-      { "id": "contrib_type_001", "statement": "Modeling, algorithmic, and experimental planning contributions are possible but require evidence.", "evidence_status": "inferred", "source": "project intake" }
+      {
+        "id": "contrib_type_001",
+        "statement": "Modeling, algorithmic, and experimental planning contributions are possible but require evidence.",
+        "evidence_status": "inferred",
+        "source": "project intake"
+      }
     ],
     "available_resources": [
-      { "id": "resource_001", "statement": "Existing literature library or platform status is not confirmed.", "evidence_status": "speculative", "source": "missing input" }
+      {
+        "id": "resource_001",
+        "statement": "Existing literature library or platform status is not confirmed.",
+        "evidence_status": "speculative",
+        "source": "missing input"
+      }
     ],
     "uncertainty_log": [
-      { "item": "Target venue is not specified.", "evidence_status": "speculative", "action_required": "Ask user or keep venue assumptions conservative." }
+      {
+        "item": "Target venue is not specified.",
+        "evidence_status": "speculative",
+        "action_required": "Ask user or keep venue assumptions conservative."
+      }
     ]
   },
   "next_input": {
     "project_id": "demo_project",
-    "research_scope": ["wind farm layout optimization", "wind farm cable routing optimization", "joint layout-cabling optimization"],
-    "domain_keywords": ["wake effect", "cable routing", "network topology", "multi-objective optimization", "constraint handling"],
-    "inclusion_boundary": ["optimization problem structure", "layout-cabling coupling", "evolutionary computation"],
-    "exclusion_boundary": ["pure blade design", "pure power protection", "unsupported novelty claims"],
-    "preferred_methods": ["evolutionary computation", "multi-objective optimization", "constraint handling"],
+    "research_scope": [
+      "wind farm layout optimization",
+      "wind farm cable routing optimization",
+      "joint layout-cabling optimization"
+    ],
+    "domain_keywords": [
+      "wake effect",
+      "cable routing",
+      "network topology",
+      "multi-objective optimization",
+      "constraint handling"
+    ],
+    "inclusion_boundary": [
+      "optimization problem structure",
+      "layout-cabling coupling",
+      "evolutionary computation"
+    ],
+    "exclusion_boundary": [
+      "pure blade design",
+      "pure power protection",
+      "unsupported novelty claims"
+    ],
+    "preferred_methods": [
+      "evolutionary computation",
+      "multi-objective optimization",
+      "constraint handling"
+    ],
     "target_output": "research topic package",
     "evidence_policy": {
       "default_literature_status": "needs_literature_verification",
-      "allowed_statuses": ["verified", "user_provided", "inferred", "needs_literature_verification", "speculative"]
+      "allowed_statuses": [
+        "verified",
+        "user_provided",
+        "inferred",
+        "needs_literature_verification",
+        "speculative"
+      ]
     },
     "trace_context": {
-      "source_module_ids": ["00_project_intake"],
+      "source_module_ids": [
+        "00_project_intake"
+      ],
       "domain_tension_ids": [],
       "problem_ids": [],
       "theory_element_ids": [],
@@ -59,26 +129,69 @@
     }
   },
   "assumptions": [
-    { "id": "assumption_001", "statement": "A high-level paper topic package is useful before manuscript drafting.", "evidence_status": "inferred", "source": "user target output" }
+    {
+      "id": "assumption_001",
+      "statement": "A high-level paper topic package is useful before manuscript drafting.",
+      "evidence_status": "inferred",
+      "source": "user target output"
+    }
   ],
   "uncertainty_log": [
-    { "item": "Literature library availability is unknown.", "evidence_status": "speculative", "action_required": "Confirm before making literature-state claims." }
+    {
+      "item": "Literature library availability is unknown.",
+      "evidence_status": "speculative",
+      "action_required": "Confirm before making literature-state claims."
+    }
   ],
   "evidence_requirements": [
-    { "requirement_id": "er_001", "requirement": "Real literature search is needed before claiming underexplored gaps.", "evidence_status": "needs_literature_verification" }
+    {
+      "requirement_id": "er_001",
+      "requirement": "Real literature search is needed before claiming underexplored gaps.",
+      "evidence_status": "needs_literature_verification"
+    }
   ],
   "reviewer_risks": [
-    { "risk_id": "rr_001", "question": "Is the scope too broad?", "mitigation": "Constrain downstream scan to layout-cabling optimization structure.", "evidence_status": "inferred" }
+    {
+      "risk_id": "rr_001",
+      "question": "Is the scope too broad?",
+      "mitigation": "Constrain downstream scan to layout-cabling optimization structure.",
+      "evidence_status": "inferred"
+    }
   ],
   "revision_hooks": [
-    { "field": "research_scope", "action": "Edit if offshore or uncertainty modeling should be added.", "affects": ["01_domain_scan"] }
+    {
+      "field": "research_scope",
+      "action": "Edit if offshore or uncertainty modeling should be added.",
+      "affects": [
+        "01_domain_scan"
+      ]
+    }
   ],
   "trace_context": {
-    "source_module_ids": ["00_project_intake"],
+    "source_module_ids": [
+      "00_project_intake"
+    ],
     "domain_tension_ids": [],
     "problem_ids": [],
     "theory_element_ids": [],
     "contribution_ids": [],
     "lineage": []
-  }
+  },
+  "evidence_links": [],
+  "grounded_claims": [],
+  "grounding_summary": {
+    "grounded_count": 0,
+    "needs_literature_verification_count": 1,
+    "unsupported_verified_count": 0,
+    "summary": "v0.1.0 sample; no real literature grounding supplied."
+  },
+  "corpus_scope": "not literature-grounded; requires user-provided corpus",
+  "counterevidence": [],
+  "claim_grounding_risks": [
+    {
+      "risk": "sample output is not real literature evidence",
+      "severity": "medium",
+      "required_action": "run v0.2 literature grounding before treating claims as grounded"
+    }
+  ]
 }

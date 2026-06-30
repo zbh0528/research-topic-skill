@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Literature Matrix",
+  "type": "object",
+  "required": ["corpus_id", "corpus_scope", "paper_count", "research_streams", "method_families", "problem_dimensions", "objective_dimensions", "constraint_dimensions", "coupling_dimensions", "evidence_density", "coverage_map", "underrepresented_cells", "saturated_cells", "contradictory_cells", "matrix_limitations"],
+  "properties": {
+    "corpus_id": { "type": "string" },
+    "corpus_scope": { "type": "string" },
+    "paper_count": { "type": "integer", "minimum": 0 },
+    "research_streams": { "type": "array" },
+    "method_families": { "type": "array" },
+    "problem_dimensions": { "type": "array" },
+    "objective_dimensions": { "type": "array" },
+    "constraint_dimensions": { "type": "array" },
+    "coupling_dimensions": { "type": "array" },
+    "evidence_density": { "type": "object" },
+    "coverage_map": { "type": "array", "items": { "$ref": "#/$defs/cell" } },
+    "underrepresented_cells": { "type": "array", "items": { "$ref": "#/$defs/cell" } },
+    "saturated_cells": { "type": "array", "items": { "$ref": "#/$defs/cell" } },
+    "contradictory_cells": { "type": "array", "items": { "$ref": "#/$defs/cell" } },
+    "matrix_limitations": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "cell": {
+      "type": "object",
+      "required": ["cell_id", "dimension_values", "paper_ids", "evidence_ids", "coverage_level", "grounding_status", "limitations"],
+      "properties": {
+        "cell_id": { "type": "string" },
+        "dimension_values": { "type": "array" },
+        "paper_ids": { "type": "array", "items": { "type": "string" } },
+        "evidence_ids": { "type": "array", "items": { "type": "string" } },
+        "coverage_level": { "enum": ["empty_in_current_corpus", "weakly_covered", "moderately_covered", "strongly_covered", "contradictory"] },
+        "grounding_status": { "type": "string" },
+        "limitations": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

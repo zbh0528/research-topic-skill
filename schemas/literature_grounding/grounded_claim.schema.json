@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Grounded Claim",
+  "type": "object",
+  "required": ["claim_id", "claim_text", "claim_type", "claim_scope", "evidence_status", "grounding_status", "support_strength", "supporting_evidence_ids", "contradicting_evidence_ids", "linked_paper_ids", "confidence", "limitations", "safer_wording"],
+  "properties": {
+    "claim_id": { "type": "string" },
+    "claim_text": { "type": "string" },
+    "claim_type": { "$ref": "#/$defs/claim_type" },
+    "claim_scope": { "$ref": "#/$defs/claim_scope" },
+    "evidence_status": { "$ref": "#/$defs/evidence_status" },
+    "grounding_status": { "$ref": "#/$defs/grounding_status" },
+    "support_strength": { "$ref": "#/$defs/support_strength" },
+    "supporting_evidence_ids": { "type": "array", "items": { "type": "string" } },
+    "contradicting_evidence_ids": { "type": "array", "items": { "type": "string" } },
+    "linked_paper_ids": { "type": "array", "items": { "type": "string" } },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "limitations": { "type": "string" },
+    "safer_wording": { "type": "string" },
+    "source_field": { "type": ["string", "null"] },
+    "source_excerpt": { "type": ["string", "null"] },
+    "paraphrase": { "type": ["string", "null"] }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "claim_type": { "enum": ["bibliographic_fact", "domain_fact", "method_classification", "objective_classification", "constraint_classification", "limitation_claim", "gap_claim", "problem_importance_claim", "theory_positioning_claim", "contribution_claim", "validation_requirement", "baseline_requirement", "reviewer_risk_claim"] },
+    "claim_scope": { "enum": ["corpus_scoped", "project_scoped", "field_general", "speculative", "user_provided_scope"] },
+    "evidence_status": { "enum": ["verified", "user_provided", "inferred", "needs_literature_verification", "speculative"] },
+    "grounding_status": { "enum": ["grounded", "partially_grounded", "ungrounded", "contradicted", "needs_literature_verification", "corpus_scoped_only"] },
+    "support_strength": { "enum": ["direct", "indirect", "weak", "contradictory", "contextual", "not_applicable"] }
+  }
+}

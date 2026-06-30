@@ -1,0 +1,153 @@
+{
+  "corpus_id": "synthetic_demo_corpus",
+  "corpus_scope": "user-provided corpus only; not a field-wide systematic review",
+  "input_summary": [
+    "/Users/zbh0528/Documents/windfarm-research-topic-skill/examples/literature/sample_literature_input.json"
+  ],
+  "paper_card_summary": {
+    "paper_count": 5
+  },
+  "literature_matrix_summary": {
+    "claim_count": 5,
+    "evidence_object_count": 5
+  },
+  "claim_grounding_summary": {
+    "grounded_count": 0,
+    "corpus_scoped_only_count": 5,
+    "verified_field_claim_count": 0
+  },
+  "gap_audit_summary": {
+    "audit_decision": "sufficient_for_corpus_scoped_problem_identification"
+  },
+  "unsupported_claims": [],
+  "counterevidence": [
+    {
+      "gap_id": "G001",
+      "contradicting_evidence_ids": [
+        "EV005"
+      ]
+    }
+  ],
+  "claims_requiring_verification": [],
+  "downstream_evidence_context": {
+    "corpus_id": "synthetic_demo_corpus",
+    "corpus_scope": "user-provided corpus only; not a field-wide systematic review",
+    "paper_count": 5,
+    "key_grounded_claims": [
+      {
+        "claim_id": "CL001",
+        "claim_type": "domain_fact",
+        "claim_scope": "corpus_scoped",
+        "grounding_status": "corpus_scoped_only",
+        "support_strength": "contextual",
+        "linked_paper_ids": [
+          "P001"
+        ],
+        "linked_evidence_ids": [
+          "EV001"
+        ],
+        "safer_wording": "within the provided corpus",
+        "limitations": "Synthetic examples and user notes are not verified field evidence."
+      },
+      {
+        "claim_id": "CL002",
+        "claim_type": "domain_fact",
+        "claim_scope": "corpus_scoped",
+        "grounding_status": "corpus_scoped_only",
+        "support_strength": "contextual",
+        "linked_paper_ids": [
+          "P002"
+        ],
+        "linked_evidence_ids": [
+          "EV002"
+        ],
+        "safer_wording": "within the provided corpus",
+        "limitations": "Synthetic examples and user notes are not verified field evidence."
+      },
+      {
+        "claim_id": "CL003",
+        "claim_type": "domain_fact",
+        "claim_scope": "corpus_scoped",
+        "grounding_status": "corpus_scoped_only",
+        "support_strength": "contextual",
+        "linked_paper_ids": [
+          "P003"
+        ],
+        "linked_evidence_ids": [
+          "EV003"
+        ],
+        "safer_wording": "within the provided corpus",
+        "limitations": "Synthetic examples and user notes are not verified field evidence."
+      },
+      {
+        "claim_id": "CL004",
+        "claim_type": "domain_fact",
+        "claim_scope": "corpus_scoped",
+        "grounding_status": "corpus_scoped_only",
+        "support_strength": "contextual",
+        "linked_paper_ids": [
+          "P004"
+        ],
+        "linked_evidence_ids": [
+          "EV004"
+        ],
+        "safer_wording": "within the provided corpus",
+        "limitations": "Synthetic examples and user notes are not verified field evidence."
+      },
+      {
+        "claim_id": "CL005",
+        "claim_type": "domain_fact",
+        "claim_scope": "corpus_scoped",
+        "grounding_status": "corpus_scoped_only",
+        "support_strength": "contextual",
+        "linked_paper_ids": [
+          "P005"
+        ],
+        "linked_evidence_ids": [
+          "EV005"
+        ],
+        "safer_wording": "within the provided corpus",
+        "limitations": "Synthetic examples and user notes are not verified field evidence."
+      }
+    ],
+    "candidate_gap_claims": [
+      {
+        "gap_id": "G001",
+        "corpus_scope": "user-provided corpus only; not a field-wide systematic review",
+        "grounding_status": "partially_grounded",
+        "supporting_evidence_ids": [
+          "EV001",
+          "EV002"
+        ],
+        "contradicting_evidence_ids": [
+          "EV005"
+        ],
+        "novelty_risk": "high unless broader literature verification is performed",
+        "safer_gap_wording": "within the provided corpus, the coupling evidence remains limited and requires broader verification"
+      }
+    ],
+    "counterevidence_summary": [
+      {
+        "gap_id": "G001",
+        "contradicting_evidence_ids": [
+          "EV005"
+        ]
+      }
+    ],
+    "claims_requiring_verification": [],
+    "evidence_policy": {
+      "no_fabricated_literature": true,
+      "title_only_inference_allowed": false,
+      "synthetic_records_are_real_evidence": false
+    },
+    "trace_context": {
+      "evidence_ids": [
+        "EV001",
+        "EV002",
+        "EV003",
+        "EV004",
+        "EV005"
+      ]
+    }
+  }
+}

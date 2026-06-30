@@ -1,6 +1,6 @@
 # Acceptance Criteria
 
-This file records the v0.1.0 acceptance gates for `windfarm-research-topic-skill`.
+This file records v0.1.0 and v0.2.0 acceptance gates for `windfarm-research-topic-skill`.
 
 ## Engineering gates
 
@@ -55,3 +55,34 @@ Any one of these blocks acceptance:
 - Contributions that cannot be traced to problem and theory identifiers.
 - Missing validation plan in the final topic package.
 - Theory positioning that is only labels and does not derive method implications.
+
+## v0.2.0 Engineering Gates
+
+- New literature scripts run: `ingest_literature.py`, `validate_literature.py`, `build_literature_matrix.py`, and `audit_claim_grounding.py`.
+- New literature schemas validate generated sample outputs.
+- Existing v0.1.0 tests still pass.
+- Synthetic literature sample can be ingested without metadata fabrication.
+- Literature matrix, evidence claim map, and gap audit can be generated.
+- `validate_outputs.py --literature-grounded --strict-evidence` checks evidence context without breaking default logic-only validation.
+
+## v0.2.0 Semantic Gates
+
+- Each grounded domain tension can link `evidence_id`.
+- Each selected problem can link `evidence_id`.
+- Each contribution claim can link `problem_id`, theory element, and `evidence_id`.
+- Gap claims do not treat absence of evidence as evidence of absence.
+- Novelty wording is corpus-scoped unless a user-provided systematic review supports stronger scope.
+- Counterevidence is not hidden.
+- Ungrounded or unsupported verified claims are detected by audit.
+
+## v0.2.0 Veto Conditions
+
+- Fabricated literature.
+- Synthetic examples treated as real evidence.
+- Unsupported `first`, `novel`, or `state-of-the-art` claims.
+- `grounded` claim without `evidence_id`.
+- Counterevidence hidden from final topic package.
+- Title keywords used as paper contribution evidence.
+- Gap claim without `corpus_scope`.
+- Contribution claim without evidence link.
+- `audit_claim_grounding.py` cannot detect unsupported verified claims.

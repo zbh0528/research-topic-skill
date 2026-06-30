@@ -29,6 +29,7 @@ Project Intake
 固定论证链条：
 
 ```text
+logic-only mode:
 domain facts
 -> domain structure
 -> research tension
@@ -39,6 +40,17 @@ domain facts
 -> contribution claim
 -> validation evidence
 -> reviewer perception
+
+literature-grounded mode:
+bibliographic record
+-> paper card
+-> extracted evidence claim
+-> literature matrix
+-> domain fact
+-> domain tension
+-> research gap
+-> research problem
+-> contribution claim
 ```
 
 ## 目录结构
@@ -179,6 +191,109 @@ python scripts/validate_outputs.py --workspace workspaces/demo_project
 ```
 
 后续人工或 AI agent 可以按模块读取 `templates/*.template.md`，生成每个模块的 `output.md` 和 `output.json`，再把必要内容压缩到 `next_input.json` 传递给下游。
+
+## v0.2.0 literature grounding
+
+v0.2.0 adds a literature-grounding layer that links domain scan, problem identification, theoretical positioning, and contribution claims to user-provided literature evidence.
+
+Two modes are supported:
+
+- `logic-only mode`: no real literature input; keep v0.1.0 behavior and mark literature judgments `needs_literature_verification`.
+- `literature-grounded mode`: user provides literature data; build paper cards, literature matrix, evidence claim map, and gap audit.
+
+Supported input formats:
+
+- JSON
+- YAML
+- BibTeX
+- CSV optional
+- Markdown paper notes optional
+
+Minimum literature fields:
+
+- `paper_id` is assigned by the ingest script.
+- `title`
+- `source_type`
+- `is_synthetic`
+- `evidence_status`
+
+Recommended real-literature fields:
+
+- `authors`
+- `year`
+- `venue`
+- `doi`
+- `url`
+- `abstract`
+- `keywords`
+- `user_notes`
+- `relevant_excerpts`
+
+New commands:
+
+```bash
+python3 scripts/ingest_literature.py \
+  --workspace workspaces/demo_project \
+  --input examples/literature/sample_literature_input.json
+
+python3 scripts/validate_literature.py \
+  --workspace workspaces/demo_project
+
+python3 scripts/build_literature_matrix.py \
+  --workspace workspaces/demo_project
+
+python3 scripts/audit_claim_grounding.py \
+  --workspace workspaces/demo_project \
+  --strict
+```
+
+Literature artifacts are written to:
+
+```text
+literature_evidence/
+  paper_cards.json
+  literature_matrix.json
+  evidence_claim_map.json
+  literature_gap_audit.json
+```
+
+The compact `evidence_context` is injected into `next_input.json`. It is not a substitute for `paper_cards.json` and must not contain full paper text.
+
+v0.2.0 minimum flow:
+
+```bash
+cd windfarm-research-topic-skill
+
+python3 scripts/init_workspace.py \
+  --input examples/sample_project_input.yaml \
+  --project-id lit_demo \
+  --overwrite
+
+python3 scripts/ingest_literature.py \
+  --workspace workspaces/lit_demo \
+  --input examples/literature/sample_literature_input.json
+
+python3 scripts/validate_literature.py \
+  --workspace workspaces/lit_demo
+
+python3 scripts/build_literature_matrix.py \
+  --workspace workspaces/lit_demo
+
+python3 scripts/audit_claim_grounding.py \
+  --workspace workspaces/lit_demo \
+  --strict
+
+python3 scripts/validate_outputs.py \
+  --workspace workspaces/lit_demo
+```
+
+Usage boundaries:
+
+- Without real literature input, a gap cannot be marked verified.
+- Synthetic samples are only structure tests.
+- `audit_claim_grounding.py` checks structured evidence links; it does not replace human paper reading.
+- DOI, authors, years, venues, and citation truth require external bibliographic verification.
+- v0.2.0 does not replace systematic review, discover all relevant papers, or prove novelty automatically.
 
 ## 测试命令
 

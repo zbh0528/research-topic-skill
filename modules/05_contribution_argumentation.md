@@ -115,3 +115,11 @@ Each contribution must include likely reviewer question and defense strategy.
 ## Downstream Contract
 
 `next_input.json` must provide approved candidate claims, links, required validation, and reviewer risks for audit.
+
+## Literature-Grounded Mode Requirements
+
+- Each contribution must include `linked_evidence_ids`, `linked_claim_ids`, `corpus_scope`, `grounding_status`, `counterevidence`, `evidence_limitations`, `claim_scope`, and `novelty_safety_level`.
+- Allowed `novelty_safety_level`: `unsafe`, `corpus_scoped`, `evidence_supported_but_not_exhaustive`, `verified_by_user_provided_systematic_review`.
+- A contribution without evidence links is only a proposed contribution, not a verified contribution.
+- `first`, `novel`, `state-of-the-art`, and `unprecedented` are unsafe by default.
+- `safer_wording` must exist for every contribution claim.

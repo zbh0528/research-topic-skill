@@ -25,3 +25,11 @@
 ## Next target
 
 Build real-literature-grounded topic selection by connecting verified literature notes, citation metadata, and evidence-backed novelty boundaries.
+
+## v0.2.0
+
+- version: `v0.2.0-real-literature-grounded-topic-selection`
+- status: `literature-grounded upgrade`
+- capability: paper cards, literature matrix, evidence claim map, grounding audit, corpus-scoped gap judgment, stricter novelty safety
+- limitation: no automatic systematic review, no external DOI verification, no replacement for human literature reading, synthetic examples are not evidence
+- next target: `v0.3.0 experiment-grounded validation planning`

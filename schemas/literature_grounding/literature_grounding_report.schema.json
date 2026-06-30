@@ -1,0 +1,493 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Literature Grounding Report",
+  "type": "object",
+  "required": [
+    "corpus_id",
+    "corpus_scope",
+    "input_summary",
+    "paper_card_summary",
+    "literature_matrix_summary",
+    "claim_grounding_summary",
+    "gap_audit_summary",
+    "unsupported_claims",
+    "counterevidence",
+    "claims_requiring_verification",
+    "downstream_evidence_context"
+  ],
+  "properties": {
+    "corpus_id": {
+      "type": "string"
+    },
+    "corpus_scope": {
+      "type": "string"
+    },
+    "input_summary": {
+      "type": "array"
+    },
+    "paper_card_summary": {
+      "type": "object"
+    },
+    "literature_matrix_summary": {
+      "type": "object"
+    },
+    "claim_grounding_summary": {
+      "type": "object"
+    },
+    "gap_audit_summary": {
+      "type": "object"
+    },
+    "unsupported_claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "claim_id",
+          "claim_text",
+          "claim_type",
+          "claim_scope",
+          "evidence_status",
+          "grounding_status",
+          "support_strength",
+          "supporting_evidence_ids",
+          "contradicting_evidence_ids",
+          "linked_paper_ids",
+          "confidence",
+          "limitations",
+          "safer_wording"
+        ],
+        "properties": {
+          "claim_id": {
+            "type": "string"
+          },
+          "claim_text": {
+            "type": "string"
+          },
+          "claim_type": {
+            "enum": [
+              "bibliographic_fact",
+              "domain_fact",
+              "method_classification",
+              "objective_classification",
+              "constraint_classification",
+              "limitation_claim",
+              "gap_claim",
+              "problem_importance_claim",
+              "theory_positioning_claim",
+              "contribution_claim",
+              "validation_requirement",
+              "baseline_requirement",
+              "reviewer_risk_claim"
+            ]
+          },
+          "claim_scope": {
+            "enum": [
+              "corpus_scoped",
+              "project_scoped",
+              "field_general",
+              "speculative",
+              "user_provided_scope"
+            ]
+          },
+          "evidence_status": {
+            "enum": [
+              "verified",
+              "user_provided",
+              "inferred",
+              "needs_literature_verification",
+              "speculative"
+            ]
+          },
+          "grounding_status": {
+            "enum": [
+              "grounded",
+              "partially_grounded",
+              "ungrounded",
+              "contradicted",
+              "needs_literature_verification",
+              "corpus_scoped_only"
+            ]
+          },
+          "support_strength": {
+            "enum": [
+              "direct",
+              "indirect",
+              "weak",
+              "contradictory",
+              "contextual",
+              "not_applicable"
+            ]
+          },
+          "supporting_evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "contradicting_evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "linked_paper_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "limitations": {
+            "type": "string"
+          },
+          "safer_wording": {
+            "type": "string"
+          },
+          "source_field": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_excerpt": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "paraphrase": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "counterevidence": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "claims_requiring_verification": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "claim_id",
+          "claim_text",
+          "claim_type",
+          "claim_scope",
+          "evidence_status",
+          "grounding_status",
+          "support_strength",
+          "supporting_evidence_ids",
+          "contradicting_evidence_ids",
+          "linked_paper_ids",
+          "confidence",
+          "limitations",
+          "safer_wording"
+        ],
+        "properties": {
+          "claim_id": {
+            "type": "string"
+          },
+          "claim_text": {
+            "type": "string"
+          },
+          "claim_type": {
+            "enum": [
+              "bibliographic_fact",
+              "domain_fact",
+              "method_classification",
+              "objective_classification",
+              "constraint_classification",
+              "limitation_claim",
+              "gap_claim",
+              "problem_importance_claim",
+              "theory_positioning_claim",
+              "contribution_claim",
+              "validation_requirement",
+              "baseline_requirement",
+              "reviewer_risk_claim"
+            ]
+          },
+          "claim_scope": {
+            "enum": [
+              "corpus_scoped",
+              "project_scoped",
+              "field_general",
+              "speculative",
+              "user_provided_scope"
+            ]
+          },
+          "evidence_status": {
+            "enum": [
+              "verified",
+              "user_provided",
+              "inferred",
+              "needs_literature_verification",
+              "speculative"
+            ]
+          },
+          "grounding_status": {
+            "enum": [
+              "grounded",
+              "partially_grounded",
+              "ungrounded",
+              "contradicted",
+              "needs_literature_verification",
+              "corpus_scoped_only"
+            ]
+          },
+          "support_strength": {
+            "enum": [
+              "direct",
+              "indirect",
+              "weak",
+              "contradictory",
+              "contextual",
+              "not_applicable"
+            ]
+          },
+          "supporting_evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "contradicting_evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "linked_paper_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "limitations": {
+            "type": "string"
+          },
+          "safer_wording": {
+            "type": "string"
+          },
+          "source_field": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_excerpt": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "paraphrase": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "downstream_evidence_context": {
+      "type": "object",
+      "required": [
+        "corpus_id",
+        "corpus_scope",
+        "paper_count",
+        "key_grounded_claims",
+        "candidate_gap_claims",
+        "counterevidence_summary",
+        "claims_requiring_verification",
+        "evidence_policy",
+        "trace_context"
+      ],
+      "properties": {
+        "corpus_id": {
+          "type": "string"
+        },
+        "corpus_scope": {
+          "type": "string"
+        },
+        "paper_count": {
+          "type": "integer"
+        },
+        "key_grounded_claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "claim_id",
+              "grounding_status",
+              "linked_evidence_ids"
+            ],
+            "properties": {
+              "claim_id": {
+                "type": "string"
+              },
+              "claim_type": {
+                "enum": [
+                  "bibliographic_fact",
+                  "domain_fact",
+                  "method_classification",
+                  "objective_classification",
+                  "constraint_classification",
+                  "limitation_claim",
+                  "gap_claim",
+                  "problem_importance_claim",
+                  "theory_positioning_claim",
+                  "contribution_claim",
+                  "validation_requirement",
+                  "baseline_requirement",
+                  "reviewer_risk_claim"
+                ]
+              },
+              "claim_scope": {
+                "enum": [
+                  "corpus_scoped",
+                  "project_scoped",
+                  "field_general",
+                  "speculative",
+                  "user_provided_scope"
+                ]
+              },
+              "grounding_status": {
+                "enum": [
+                  "grounded",
+                  "partially_grounded",
+                  "ungrounded",
+                  "contradicted",
+                  "needs_literature_verification",
+                  "corpus_scoped_only"
+                ]
+              },
+              "support_strength": {
+                "enum": [
+                  "direct",
+                  "indirect",
+                  "weak",
+                  "contradictory",
+                  "contextual",
+                  "not_applicable"
+                ]
+              },
+              "linked_paper_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "linked_evidence_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "safer_wording": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "limitations": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "candidate_gap_claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "gap_id",
+              "corpus_scope",
+              "grounding_status",
+              "supporting_evidence_ids",
+              "contradicting_evidence_ids"
+            ],
+            "properties": {
+              "gap_id": {
+                "type": "string"
+              },
+              "corpus_scope": {
+                "type": "string"
+              },
+              "grounding_status": {
+                "enum": [
+                  "grounded",
+                  "partially_grounded",
+                  "ungrounded",
+                  "contradicted",
+                  "needs_literature_verification",
+                  "corpus_scoped_only"
+                ]
+              },
+              "supporting_evidence_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "contradicting_evidence_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "novelty_risk": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "safer_gap_wording": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "counterevidence_summary": {
+          "type": "array"
+        },
+        "claims_requiring_verification": {
+          "type": "array"
+        },
+        "evidence_policy": {
+          "type": "object"
+        },
+        "trace_context": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -113,3 +113,11 @@ Record why a reviewer may view the problem as too incremental, too applied, alre
 ## Downstream Contract
 
 `next_input.json` must provide the selected problem, compact backup summary, problem properties, and theoretical positioning requirements only.
+
+## Literature-Grounded Mode Requirements
+
+- Candidate problems must come from grounded or partially grounded `domain_tension` records.
+- `selected_problem` must include `linked_gap_id`, `linked_claim_ids`, `linked_evidence_ids`, `grounding_status`, `corpus_scope`, `counterevidence`, `novelty_risk`, and `evidence_limitations`.
+- Weak evidence lowers `publishability_score`.
+- Contradictory evidence must enter `reviewer_risk`.
+- Field-wide novelty must stay `needs_literature_verification` unless the user provides systematic review evidence.

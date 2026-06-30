@@ -1,0 +1,229 @@
+{
+  "corpus_id": "synthetic_demo_corpus",
+  "corpus_scope": "user-provided corpus only; not a field-wide systematic review",
+  "paper_count": 5,
+  "research_streams": [
+    "layout_only_optimization",
+    "cabling_only_optimization",
+    "joint_layout_cabling_optimization",
+    "sequential_layout_then_cabling",
+    "multi_objective_wind_farm_optimization",
+    "constrained_wind_farm_optimization"
+  ],
+  "method_families": [
+    "evolutionary_algorithm",
+    "graph_algorithm",
+    "heuristic",
+    "unknown"
+  ],
+  "problem_dimensions": [
+    "continuous_layout_variables",
+    "graph_topology_variables",
+    "mixed_discrete_continuous_decisions",
+    "spatial_network_coupling"
+  ],
+  "objective_dimensions": [
+    "annual_energy_production",
+    "wake_loss",
+    "cable_cost",
+    "electrical_loss",
+    "levelized_cost_of_energy"
+  ],
+  "constraint_dimensions": [
+    "turbine_spacing",
+    "site_boundary",
+    "cable_capacity",
+    "radial_topology",
+    "cable_crossing"
+  ],
+  "coupling_dimensions": [
+    "wake_layout_coupling",
+    "layout_cable_cost_coupling",
+    "sequential_vs_joint_design"
+  ],
+  "evidence_density": {
+    "claim_count": 5,
+    "evidence_object_count": 5
+  },
+  "coverage_map": [
+    {
+      "cell_id": "MC001",
+      "dimension_values": [
+        "layout_only_optimization"
+      ],
+      "paper_ids": [
+        "P001"
+      ],
+      "evidence_ids": [
+        "EV001"
+      ],
+      "coverage_level": "weakly_covered",
+      "grounding_status": "corpus_scoped_only",
+      "limitations": "Coverage is limited to explicit paper-card fields in the provided corpus."
+    },
+    {
+      "cell_id": "MC002",
+      "dimension_values": [
+        "cabling_only_optimization"
+      ],
+      "paper_ids": [
+        "P002"
+      ],
+      "evidence_ids": [
+        "EV002"
+      ],
+      "coverage_level": "weakly_covered",
+      "grounding_status": "corpus_scoped_only",
+      "limitations": "Coverage is limited to explicit paper-card fields in the provided corpus."
+    },
+    {
+      "cell_id": "MC003",
+      "dimension_values": [
+        "joint_layout_cabling_optimization"
+      ],
+      "paper_ids": [
+        "P005"
+      ],
+      "evidence_ids": [
+        "EV005"
+      ],
+      "coverage_level": "weakly_covered",
+      "grounding_status": "corpus_scoped_only",
+      "limitations": "Coverage is limited to explicit paper-card fields in the provided corpus."
+    },
+    {
+      "cell_id": "MC004",
+      "dimension_values": [
+        "sequential_layout_then_cabling"
+      ],
+      "paper_ids": [
+        "P003"
+      ],
+      "evidence_ids": [
+        "EV003"
+      ],
+      "coverage_level": "weakly_covered",
+      "grounding_status": "corpus_scoped_only",
+      "limitations": "Coverage is limited to explicit paper-card fields in the provided corpus."
+    },
+    {
+      "cell_id": "MC005",
+      "dimension_values": [
+        "multi_objective_wind_farm_optimization"
+      ],
+      "paper_ids": [
+        "P004"
+      ],
+      "evidence_ids": [
+        "EV004"
+      ],
+      "coverage_level": "weakly_covered",
+      "grounding_status": "corpus_scoped_only",
+      "limitations": "Coverage is limited to explicit paper-card fields in the provided corpus."
+    },
+    {
+      "cell_id": "MC006",
+      "dimension_values": [
+        "constrained_wind_farm_optimization"
+      ],
+      "paper_ids": [],
+      "evidence_ids": [],
+      "coverage_level": "empty_in_current_corpus",
+      "grounding_status": "needs_literature_verification",
+      "limitations": "Coverage is limited to explicit paper-card fields in the provided corpus."
+    }
+  ],
+  "underrepresented_cells": [
+    {
+      "cell_id": "MC001",
+      "dimension_values": [
+        "layout_only_optimization"
+      ],
+      "paper_ids": [
+        "P001"
+      ],
+      "evidence_ids": [
+        "EV001"
+      ],
+      "coverage_level": "weakly_covered",
+      "grounding_status": "corpus_scoped_only",
+      "limitations": "Coverage is limited to explicit paper-card fields in the provided corpus."
+    },
+    {
+      "cell_id": "MC002",
+      "dimension_values": [
+        "cabling_only_optimization"
+      ],
+      "paper_ids": [
+        "P002"
+      ],
+      "evidence_ids": [
+        "EV002"
+      ],
+      "coverage_level": "weakly_covered",
+      "grounding_status": "corpus_scoped_only",
+      "limitations": "Coverage is limited to explicit paper-card fields in the provided corpus."
+    },
+    {
+      "cell_id": "MC003",
+      "dimension_values": [
+        "joint_layout_cabling_optimization"
+      ],
+      "paper_ids": [
+        "P005"
+      ],
+      "evidence_ids": [
+        "EV005"
+      ],
+      "coverage_level": "weakly_covered",
+      "grounding_status": "corpus_scoped_only",
+      "limitations": "Coverage is limited to explicit paper-card fields in the provided corpus."
+    },
+    {
+      "cell_id": "MC004",
+      "dimension_values": [
+        "sequential_layout_then_cabling"
+      ],
+      "paper_ids": [
+        "P003"
+      ],
+      "evidence_ids": [
+        "EV003"
+      ],
+      "coverage_level": "weakly_covered",
+      "grounding_status": "corpus_scoped_only",
+      "limitations": "Coverage is limited to explicit paper-card fields in the provided corpus."
+    },
+    {
+      "cell_id": "MC005",
+      "dimension_values": [
+        "multi_objective_wind_farm_optimization"
+      ],
+      "paper_ids": [
+        "P004"
+      ],
+      "evidence_ids": [
+        "EV004"
+      ],
+      "coverage_level": "weakly_covered",
+      "grounding_status": "corpus_scoped_only",
+      "limitations": "Coverage is limited to explicit paper-card fields in the provided corpus."
+    },
+    {
+      "cell_id": "MC006",
+      "dimension_values": [
+        "constrained_wind_farm_optimization"
+      ],
+      "paper_ids": [],
+      "evidence_ids": [],
+      "coverage_level": "empty_in_current_corpus",
+      "grounding_status": "needs_literature_verification",
+      "limitations": "Coverage is limited to explicit paper-card fields in the provided corpus."
+    }
+  ],
+  "saturated_cells": [],
+  "contradictory_cells": [],
+  "matrix_limitations": [
+    "This matrix is corpus-scoped and cannot prove a field-wide gap."
+  ]
+}

@@ -9,6 +9,10 @@ description: Use when constructing an evidence-bounded research topic package fo
 
 `windfarm-research-topic-skill`
 
+## Version
+
+`v0.2.0-real-literature-grounded-topic-selection`
+
 ## Use This Skill For
 
 Use this skill to build a traceable research-topic reasoning chain before writing a paper. Valid scenarios include:
@@ -58,21 +62,39 @@ Ask for missing items or mark them in `uncertainty_log`; do not invent them.
 Run the workflow in this order unless resuming from a saved workspace:
 
 1. `01 Project Intake` using `modules/01_project_intake.md`.
-2. `02 Domain Scan` using `modules/02_domain_scan.md`.
-3. `03 Problem Identification` using `modules/03_problem_identification.md`.
-4. `04 Theoretical Positioning` using `modules/04_theoretical_positioning.md`.
-5. `05 Contribution Argumentation` using `modules/05_contribution_argumentation.md`.
-6. `06 Chain Consistency Audit` using `modules/06_chain_consistency_audit.md`.
-7. `07 Final Topic Package` using `modules/07_final_topic_package.md`.
+2. Optional literature grounding using `modules/literature_grounding/LG00_literature_grounding_protocol.md` through `LG06_grounded_pipeline_integration.md`.
+3. `02 Domain Scan` using `modules/02_domain_scan.md`.
+4. `03 Problem Identification` using `modules/03_problem_identification.md`.
+5. `04 Theoretical Positioning` using `modules/04_theoretical_positioning.md`.
+6. `05 Contribution Argumentation` using `modules/05_contribution_argumentation.md`.
+7. `06 Chain Consistency Audit` using `modules/06_chain_consistency_audit.md`.
+8. `07 Final Topic Package` using `modules/07_final_topic_package.md`.
 
 Always read `modules/00_global_protocol.md` before running any module.
+
+## Run Modes
+
+### Mode A: logic-only mode
+
+Use when the user has not provided real literature evidence. Keep the v0.1.0 logic chain. All judgments about existing research, research gaps, novelty, or baseline sufficiency must be marked `needs_literature_verification`. Do not claim a real gap is proven.
+
+### Mode B: literature-grounded mode
+
+Use when the user provides real literature data. Build paper cards, literature matrix, evidence claim map, and gap audit. Important claims in domain scan, problem identification, theoretical positioning, contribution argumentation, audit, and final topic package must link to `evidence_id` or be marked `ungrounded` / `needs_literature_verification`. Gap and novelty judgments are corpus-scoped unless the user provides systematic-review evidence.
 
 ## Fixed Reasoning Chain
 
 Maintain this chain explicitly:
 
+Logic-only mode starts at `domain facts`. Literature-grounded mode prepends the literature chain:
+
 ```text
-domain facts
+literature evidence
+-> bibliographic record
+-> paper card
+-> extracted evidence claim
+-> literature matrix
+-> domain fact
 -> domain structure
 -> research tension
 -> research gap
@@ -94,6 +116,9 @@ domain facts
 - Do not depend on hidden reasoning, unsaved drafts, or unstructured temporary notes.
 - Every substantive claim must include `evidence_status`.
 - Allowed `evidence_status` values are `verified`, `user_provided`, `inferred`, `needs_literature_verification`, and `speculative`.
+- Allowed `grounding_status` values are `grounded`, `partially_grounded`, `ungrounded`, `contradicted`, `needs_literature_verification`, and `corpus_scoped_only`.
+- Allowed `support_strength` values are `direct`, `indirect`, `weak`, `contradictory`, `contextual`, and `not_applicable`.
+- Allowed `claim_type` values are `bibliographic_fact`, `domain_fact`, `method_classification`, `objective_classification`, `constraint_classification`, `limitation_claim`, `gap_claim`, `problem_importance_claim`, `theory_positioning_claim`, `contribution_claim`, `validation_requirement`, `baseline_requirement`, and `reviewer_risk_claim`.
 - Include `uncertainty_log`, `reviewer_risks`, `revision_hooks`, and `trace_context` in every `output.json`.
 - Support resume from any module through saved direct-upstream `next_input.json`.
 - Support local reruns without forcing all upstream modules to rerun.
@@ -116,6 +141,15 @@ Every module `output.json` must include:
 - `revision_hooks`
 - `trace_context`
 
+In literature-grounded mode, every module `output.json` must also include or explicitly justify absence of:
+
+- `evidence_links`
+- `grounded_claims`
+- `grounding_summary`
+- `corpus_scope`
+- `counterevidence`
+- `claim_grounding_risks`
+
 Every module directory in a workspace must include:
 
 - `input.json`
@@ -135,6 +169,37 @@ Reject or rewrite unsupported strong claims. Prefer safer wording such as:
 - `a candidate framework requiring literature verification`
 
 If real literature evidence is unavailable, mark literature-related judgments as `needs_literature_verification`. If a statement is only a design idea, mark it as `speculative`.
+
+## Novelty Safety
+
+- `first`, `novel`, `state-of-the-art`, `unprecedented`, and equivalent strong wording are unsafe by default.
+- Without a user-provided systematic review and explicit search strategy, corpus absence only supports corpus-scoped wording.
+- `corpus_scoped_only` does not mean field-proven.
+- Never treat absence of evidence as evidence of absence.
+- Never use title keyword matching as sufficient evidence for a paper's method, baseline, metric, result, or contribution.
+
+## Final Topic Package Literature Requirements
+
+In literature-grounded mode, the final topic package must include:
+
+- `Literature Evidence Summary`
+- `Corpus Scope`
+- `Evidence-Backed Domain Gap`
+- `Evidence-Backed Problem Statement`
+- `Evidence-Backed Contribution Claims`
+- `Counterevidence and Risks`
+- `Claims Requiring Further Literature Verification`
+- `Evidence Traceability Table`
+
+Each evidence traceability row must include `final_claim_id`, `final_claim_text`, `claim_type`, `claim_scope`, `grounding_status`, `support_strength`, `linked_paper_ids`, `linked_evidence_ids`, `linked_problem_id`, `linked_contribution_id`, `counterevidence`, and `safer_wording`.
+
+## Literature Safety Boundaries
+
+- Do not automatically fabricate literature.
+- Do not claim full-field search is complete.
+- Do not treat synthetic examples as real evidence.
+- Do not treat bibliographic records or title keywords as sufficient claim support.
+- Do not hide counterevidence.
 
 ## Reviewer-Risk Checks
 
