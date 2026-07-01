@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Research Topic Skill Profile",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "display_name",
+    "scope",
+    "domain_terms",
+    "problem_structures",
+    "method_families",
+    "baseline_families",
+    "metric_families",
+    "reviewer_risks",
+    "claim_boundaries"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "domain_terms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "problem_structures": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "method_families": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "baseline_families": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "metric_families": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reviewer_risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "claim_boundaries": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

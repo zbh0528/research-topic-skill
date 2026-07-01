@@ -1,6 +1,6 @@
 # windfarm-research-topic-skill
 
-`windfarm-research-topic-skill` 是一个科研论文选题逻辑 Skill，用于帮助研究人员在“计算机 / 进化计算 / 风电场布局优化 / 风电场布线优化 / 布局-布线联合优化”方向构建可审稿、可追踪、可修改、可验证的选题论证链。
+`windfarm-research-topic-skill` 是一个已经成熟到 v0.4.0 的科研论文选题逻辑 Skill。当前仓库保留风电场布局/布线优化的成熟 profile，同时可以打包成通用 `research-topic-skill`，用于其他技术研究方向的可审稿、可追踪、可修改、可验证选题论证链。
 
 它不是普通 prompt，也不是论文生成器。它不会替代真实文献综述、实验运行、导师判断或投稿写作；没有真实文献输入时，所有文献相关判断都必须标记为 `needs_literature_verification`。
 
@@ -80,6 +80,7 @@ windfarm-research-topic-skill/
   schemas/                    # output.json JSON Schema
   templates/                  # output.md Markdown 模板
   scripts/                    # 初始化、验证、断点续跑工具
+  profiles/                   # 通用 profile 与领域 profile
   examples/                   # 示例输入和示例模块输出
   tests/                      # pytest 契约测试
   workspaces/                 # 生成的项目工作区
@@ -112,6 +113,34 @@ validation_report.md
 ```
 
 `workspaces/` 是运行产物目录，默认不提交到版本库；源码仓库只保留 `workspaces/.gitkeep`。需要保留的教学或验收材料应压缩成稳定 fixture，放在 `examples/acceptance_cases/`，不要提交完整运行 workspace。
+
+## 通用 research-topic-skill 打包
+
+当前仓库是成熟 windfarm profile 的源仓库。要构建真正通用、可安装的 skill 包：
+
+```bash
+python3 scripts/validate_profiles.py
+python3 scripts/build_skill_package.py --output /tmp --overwrite
+```
+
+输出目录：
+
+```text
+/tmp/research-topic-skill/
+```
+
+打包脚本会：
+
+- 将 `SKILL.md` 中的 skill name 改为 `research-topic-skill`。
+- 将 `skill_manifest.json` 中的 `name` 改为 `research-topic-skill`。
+- 保留 `profiles/generic-research` 和 `profiles/windfarm-layout-cabling`。
+- 不复制 `workspaces/` 运行产物。
+
+Profile 边界：
+
+- 通用逻辑放在 `modules/`、`schemas/`、`templates/`、`scripts/`。
+- 领域词表、baseline、metric、reviewer 风险放在 `profiles/<profile_id>/profile.json`。
+- 新领域不要改 core schema；先新增 profile。
 
 注意：`modules/01_project_intake.md` 是文档编号；workspace 中对应目录是 `00_project_intake/`。脚本会识别文档编号和 workspace 编号的映射。
 

@@ -1,0 +1,60 @@
+{
+  "profile_id": "generic-research",
+  "display_name": "Generic Research Topic",
+  "scope": "Domain-neutral research-topic reasoning for evidence-bounded topic selection, validation planning, and manuscript-structure planning.",
+  "domain_terms": [
+    "research domain",
+    "research gap",
+    "research problem",
+    "contribution claim",
+    "evidence claim",
+    "validation target",
+    "manuscript claim"
+  ],
+  "problem_structures": [
+    "unresolved limitation",
+    "method-context mismatch",
+    "measurement gap",
+    "validation gap",
+    "theory-practice gap",
+    "trade-off analysis need"
+  ],
+  "method_families": [
+    "modeling approach",
+    "algorithmic approach",
+    "empirical study",
+    "comparative evaluation",
+    "theoretical analysis",
+    "system or workflow design"
+  ],
+  "baseline_families": [
+    "existing method baseline",
+    "simple sanity baseline",
+    "domain-standard baseline",
+    "ablation baseline",
+    "human or expert baseline when applicable"
+  ],
+  "metric_families": [
+    "primary objective metric",
+    "secondary objective metric",
+    "feasibility or validity metric",
+    "cost or efficiency metric",
+    "robustness metric",
+    "reproducibility artifact metric"
+  ],
+  "reviewer_risks": [
+    "unclear problem importance",
+    "unsupported novelty",
+    "weak baseline",
+    "metric-claim mismatch",
+    "missing ablation",
+    "hidden limitation",
+    "overgeneralized conclusion"
+  ],
+  "claim_boundaries": [
+    "No field-wide novelty without systematic evidence.",
+    "No empirical result claim without traceable results.",
+    "No citation fact without verified bibliographic evidence.",
+    "No received reviewer comment unless supplied by the user."
+  ]
+}

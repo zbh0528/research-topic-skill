@@ -1,6 +1,6 @@
 ---
 name: windfarm-research-topic-skill
-description: Use when constructing an evidence-bounded research topic package or manuscript-grounding plan for computer science, evolutionary computation, wind farm layout optimization, wind farm cable routing optimization, joint layout-cabling optimization, multi-objective optimization, constrained optimization, mixed discrete-continuous optimization, or spatial-network coupled optimization. Typical inputs include researcher background, target domain, materials, method preferences, excluded directions, target venue level, literature notes, code or experiment platforms, manuscript section needs, reviewer-risk concerns, and constraints. Produces persistent modular outputs through project intake, domain scan, problem identification, theoretical positioning, contribution argumentation, chain audit, final topic package, optional literature grounding, optional experiment grounding, and optional manuscript grounding. Do not use for fabricating papers, literature reviews, citations, experiments, novelty claims, reviewer comments, or unsupported conclusions; route real literature review, experiment execution, final manuscript drafting, and citation verification elsewhere.
+description: Use when constructing an evidence-bounded, profile-driven research topic package or manuscript-grounding plan for technical research domains, with a mature wind farm layout/cabling optimization profile. Typical inputs include researcher background, target domain, materials, method preferences, excluded directions, target venue level, literature notes, code or experiment platforms, manuscript section needs, reviewer-risk concerns, and constraints. Produces persistent modular outputs through project intake, domain scan, problem identification, theoretical positioning, contribution argumentation, chain audit, final topic package, optional literature grounding, optional experiment grounding, optional manuscript grounding, and domain profile selection. Do not use for fabricating papers, literature reviews, citations, experiments, novelty claims, reviewer comments, or unsupported conclusions; route real literature review, experiment execution, final manuscript drafting, and citation verification elsewhere.
 ---
 
 # Windfarm Research Topic Skill
@@ -11,12 +11,23 @@ description: Use when constructing an evidence-bounded research topic package or
 
 ## Version
 
-`v0.4.0-manuscript-structure-and-reviewer-response-grounded-writing-support`
+`v0.4.1-generic-profile-packaging`
+
+## Generic Packaging
+
+This repository is the mature windfarm implementation and the source for a generic package. To build an installable generic package named `research-topic-skill`, run:
+
+```bash
+python3 scripts/build_skill_package.py --output /tmp --overwrite
+```
+
+The packaged skill rewrites the skill name to `research-topic-skill` and keeps domain-specific guidance in `profiles/`.
 
 ## Use This Skill For
 
 Use this skill to build a traceable research-topic reasoning chain before writing a paper. Valid scenarios include:
 
+- Generic technical research topic construction using `profiles/generic-research/profile.json`.
 - Research topic construction for wind farm layout optimization.
 - Research topic construction for wind farm cable routing optimization.
 - Joint layout-cabling optimization topic design.
@@ -61,6 +72,16 @@ Ask for missing items or mark them in `uncertainty_log`; do not invent them.
 - Whether a literature library exists.
 - Whether code or experimental platform exists.
 - Whether a target journal or conference exists.
+- Which domain profile should be used; default to `generic-research` if no mature profile matches.
+
+## Profiles
+
+Profiles hold domain-specific vocabulary, problem structures, baseline families, metric families, reviewer risks, and claim boundaries. Core modules must remain profile-neutral; add domain knowledge to `profiles/<profile_id>/profile.json`, not to core schemas.
+
+Available profiles:
+
+- `generic-research`: domain-neutral default.
+- `windfarm-layout-cabling`: mature profile for wind farm layout/cabling optimization.
 
 ## Fixed Workflow
 

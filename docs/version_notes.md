@@ -81,3 +81,18 @@ Build real-literature-grounded topic selection by connecting verified literature
   - result placeholders are not results
   - anticipated objections are not received reviewer comments
 - next target: real user manuscript drafting can be added only after verified final topic package, verified citations, and real experiment outputs exist.
+
+## v0.4.1
+
+- version: `v0.4.1-generic-profile-packaging`
+- status: `generic packaging patch`
+- new capabilities:
+  - domain-neutral `generic-research` profile
+  - mature `windfarm-layout-cabling` profile
+  - profile schema and profile validator
+  - self-contained package builder for `research-topic-skill`
+  - package output excludes generated workspaces
+- known limitations:
+  - current source repository remains the windfarm-mature implementation
+  - the packaged `research-topic-skill` still requires real evidence, real experiments, and real reviewer comments for real projects
+  - new domains should start as profiles, not schema forks

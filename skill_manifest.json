@@ -1,6 +1,6 @@
 {
   "name": "windfarm-research-topic-skill",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "A modular, literature-grounded, experiment-grounded, and manuscript-grounded research-topic reasoning skill for evolutionary computation applied to wind farm layout and cable routing optimization.",
   "entrypoint": "SKILL.md",
   "domain": [
@@ -125,7 +125,8 @@
     "traceability from contribution claim to manuscript section, paragraph claim, citation requirement, result placeholder, reviewer objection, and response strategy",
     "manuscript adequacy audit before drafting",
     "reviewer-objection planning without fabricated reviewer comments",
-    "manuscript structure support without generating final paper text"
+    "manuscript structure support without generating final paper text",
+    "profile-driven generic packaging"
   ],
   "limitations": [
     "does not fabricate literature",
@@ -142,7 +143,8 @@
     "does not generate a final manuscript",
     "does not fabricate citations, DOI values, author-year references, numerical results, p-values, or reviewer comments",
     "does not turn result placeholders into empirical findings",
-    "does not replace human manuscript writing or reviewer-response judgment"
+    "does not replace human manuscript writing or reviewer-response judgment",
+    "generic package still requires domain evidence and real validation for real projects"
   ],
   "modules": [
     {
@@ -558,6 +560,27 @@
       "schema": "schemas/manuscript_grounding/manuscript_grounding_report.schema.json",
       "template": "templates/manuscript_grounding/manuscript_grounding_report.template.md",
       "script": "scripts/validate_manuscript_plan.py"
+    }
+  ],
+  "packaged_skill_name": "research-topic-skill",
+  "generic_core": {
+    "default_profile": "generic-research",
+    "profile_schema": "profiles/profile.schema.json",
+    "package_script": "scripts/build_skill_package.py",
+    "profile_validator": "scripts/validate_profiles.py"
+  },
+  "profiles": [
+    {
+      "profile_id": "generic-research",
+      "display_name": "Generic Research Topic",
+      "path": "profiles/generic-research/profile.json",
+      "role": "domain-neutral default"
+    },
+    {
+      "profile_id": "windfarm-layout-cabling",
+      "display_name": "Wind Farm Layout and Cabling Optimization",
+      "path": "profiles/windfarm-layout-cabling/profile.json",
+      "role": "mature domain profile"
     }
   ]
 }

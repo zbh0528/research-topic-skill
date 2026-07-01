@@ -1,0 +1,60 @@
+{
+  "profile_id": "windfarm-layout-cabling",
+  "display_name": "Wind Farm Layout and Cabling Optimization",
+  "scope": "Wind farm layout optimization, cable routing optimization, joint layout-cabling optimization, and evolutionary multi-objective optimization topic planning.",
+  "domain_terms": [
+    "wind farm layout optimization",
+    "wind farm cable routing optimization",
+    "joint layout-cabling optimization",
+    "wake interaction",
+    "electrical collection system",
+    "multi-objective optimization",
+    "constrained optimization",
+    "spatial-network coupling"
+  ],
+  "problem_structures": [
+    "aerodynamic-electrical-economic coupling",
+    "layout-cabling sequential-decoupling limitation",
+    "mixed discrete-continuous decision coupling",
+    "constraint feasibility and violation handling",
+    "Pareto trade-off interpretation"
+  ],
+  "method_families": [
+    "evolutionary multi-objective optimization",
+    "problem-structure-aware search",
+    "hybrid heuristic optimization",
+    "constraint-handling mechanism",
+    "layout-cabling co-optimization"
+  ],
+  "baseline_families": [
+    "layout-only baseline",
+    "cabling-only baseline",
+    "sequential layout-then-cabling baseline",
+    "decoupled optimization baseline",
+    "standard evolutionary algorithm baseline",
+    "ablation variant"
+  ],
+  "metric_families": [
+    "energy production proxy",
+    "wake loss proxy",
+    "cable length or cable cost",
+    "feasibility rate",
+    "constraint violation",
+    "Pareto quality",
+    "runtime or evaluation budget"
+  ],
+  "reviewer_risks": [
+    "algorithm wrapping without problem-property link",
+    "weak sequential baseline",
+    "missing ablation for coupling mechanism",
+    "metric ignores electrical cost",
+    "hidden synthetic case-study limitation",
+    "overclaim beyond provided wind-farm evidence"
+  ],
+  "claim_boundaries": [
+    "Synthetic examples are not real wind-energy evidence.",
+    "Layout-cabling benefit requires real comparison results.",
+    "Pareto insight requires metric and case-study traceability.",
+    "Engineering value cannot be inferred from a placeholder validation plan."
+  ]
+}
