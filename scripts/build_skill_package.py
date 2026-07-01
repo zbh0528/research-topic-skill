@@ -14,6 +14,7 @@ INCLUDE = [
     ".gitignore",
     "SKILL.md",
     "README.md",
+    "README.en.md",
     "skill_manifest.json",
     "docs",
     "examples",

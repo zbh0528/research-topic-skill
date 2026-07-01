@@ -29,5 +29,6 @@ def test_build_generic_skill_package(tmp_path: Path) -> None:
     manifest = json.loads((package / "skill_manifest.json").read_text())
     assert "name: research-topic-skill" in skill
     assert manifest["name"] == "research-topic-skill"
+    assert (package / "README.en.md").exists()
     assert (package / "profiles" / "generic-research" / "profile.json").exists()
     assert not (package / "workspaces").exists()
